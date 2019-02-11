@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ThingDef[defName = "DrugLab"]</xpath>
+	  <value>
+		<recipes>
+			<li>Make_GlitterworldMedicine</li>
+			<li>Make_GlitterworldMedicine_Bulk</li>
+		</recipes>
+	  </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ThingDef[defName = "FabricationBench"]/recipes</xpath>
+	  <value>
+		<li>Make_Nanoforge</li>
+	  </value>
+	</Operation>
+</Patch>

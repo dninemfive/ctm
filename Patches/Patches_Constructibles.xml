@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	<!-- check whether the Megascreen TV is already constructible -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/designationCategory</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<value><designationCategory>Joy</designationCategory></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/researchPrerequisites</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<value><researchPrerequisites><li>D9Megascreen</li></researchPrerequisites></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/constructionSkillPrerequisite</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<value><constructionSkillPrerequisite>10</constructionSkillPrerequisite></value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- change the megascreen's materials to be more interesting -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "MegascreenTelevision"]/costList</xpath>
+	  <value>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>40</Plasteel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+	  </value>
+	</Operation>
+	<!-- check whether the vanometric ~~power cell~~ battery is already constructible -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/designationCategory</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<value><designationCategory>Power</designationCategory></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/researchPrerequisites</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<value><researchPrerequisites><li>D9Vanometrics</li></researchPrerequisites></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/constructionSkillPrerequisite</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- make the Infinite Chemreactor constructible -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/designationCategory</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<value><designationCategory>Production</designationCategory></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/researchPrerequisites</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<value><researchPrerequisites><li>D9InfiniteChemreactor</li></researchPrerequisites></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/constructionSkillPrerequisite</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/costList</xpath>
+	  <value>
+	    <D9VanometricCell>4</D9VanometricCell>
+	  </value>
+	</Operation>
+	<!-- check whether the psychic emitter is already constructible -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]/designationCategory</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<value><designationCategory>Joy</designationCategory></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]/researchPrerequisites</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<value><researchPrerequisites><li>D9PsychicEmanator</li></researchPrerequisites></value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]/constructionSkillPrerequisite</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- change the megascreen's materials to be more interesting -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "PsychicEmanator"]/costList</xpath>
+	  <value>
+		<costList>
+			<AIPersonaFragment>1</AIPersonaFragment>
+			<PsychicFoil>50</PsychicFoil>
+			<Plasteel>80</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+	  </value>
+	</Operation>
+</Patch>

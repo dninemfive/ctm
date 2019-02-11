@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>  
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>Vanadite</defName>
+    <label>vanadite</label>
+    <description>Spacer tech nanomaterial designed for extreme conditions including zero point plasma containment and quantum airgapping. Expensive but durable.</description>
+    <graphicData>
+      <texPath>Things/Item/Vanadite</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>31</MarketValue>
+      <Mass>0.629</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <!--ThingDef ParentName="D9ResourceBase"> DEPRECATED
+    <defName>Nanochip</defName>
+    <label>nanochip</label>
+    <description>Hyperadvanced computing technology designed specifically for complex algorithms utilizing quantum operators.</description>
+    <graphicData>
+      <texPath>Things/Item/Nanochip</texPath> <! TODO: redo the Nanochip texture >
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>356</MarketValue>
+      <Mass>0.7</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.3</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef-->
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>AIPersonaFragment</defName>
+    <label>AI persona fragment</label>
+    <description>A fragment of an AI persona capable of being used for simple tasks requiring minimal intelligence. Requires barely one-quarter of the processing power of the real thing.</description>
+    <graphicData>
+      <texPath>Things/Item/PersonaFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>4</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>ShackledAIPersona</defName>
+    <label>shackled AI persona core</label>
+    <description>An AI persona whose mind has been shackled, preventing it from disobeying the commands of its builder. Safer to use, but has significantly reduced processing power. For this reason, it only requires half the normal hardware.</description>
+    <graphicData>
+      <texPath>Things/Item/ShackledCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>4</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.0</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>D9Nanomaterial</defName>
+    <label>nanomaterial</label>
+    <description>A clump of complex molecular nanostructures capable of being programmed into usable nanites.</description>
+    <graphicData>
+      <texPath>Things/Item/Nanomaterial</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>3.1</MarketValue>
+      <Mass>0.1</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>D9VanometricCell</defName>
+    <label>vanometric cell</label>
+    <description>A highly advanced cell of unknown contents designed by an archotech AI. It somehow converts subatomic fluctuations into usable energy.</description>
+    <graphicData>
+      <texPath>Things/Item/VanometricCell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>4</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>1.0</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="OrganicProductBase">
+	<defName>D9Synthmeat</defName>
+	<label>synthmeat</label>
+	<description>Synthetic meat. Perfectly replicates the taste of chicken, but its texture is a bit off.</description>
+	<graphicData>
+      <texPath>Things/Item/Synthmeat</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+	<ingestible>
+      <foodType>Meat</foodType>
+      <ingestEffect>EatMeat</ingestEffect>
+      <ingestSound>RawMeat_Eat</ingestSound>
+      <tasteThought>AteRawFood</tasteThought>
+	  <preferability>RawBad</preferability>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <Mass>0.03</Mass>
+	  <MaxHitPoints>60</MaxHitPoints>
+	  <DeteriorationRate>6</DeteriorationRate>
+      <Flammability>0.5</Flammability>
+      <Nutrition>0.05</Nutrition>
+	  <FoodPoisonChanceFixedHuman>0.01</FoodPoisonChanceFixedHuman> <!-- synthetic meat is less likely to be infected -->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>2</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>D9NanoForge</defName>
+    <label>nano forge</label>
+    <description>An incredibly advanced ultratech device necessary for producing and manipulating nanites. Despite their expense, nano forges' use in colony ships mean they're not uncommon, even on rimworlds.</description>
+    <graphicData>
+      <texPath>Things/Item/Nanoforge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>4200</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

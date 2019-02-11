@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ResearchProjectDef Name="D9AATechBase" Abstract="True">
+		<techLevel>Spacer</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+		  <li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<!-- I'm too lazy to manually place everything, so I'm just going to leave it and recommend an automatic tech-sorting mod -->
+		<researchViewX>13</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef Name="D9AATechIndustrialBase" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>13</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9MaterialScience</defName>
+		<label>materials science</label>
+		<description>Learn to construct the Matterweaver, capable of creating highly complex compounds, as well as Vanadite, an advanced alloy with unique properties, and Synthread, a spacer-tech cloth.</description>
+		<baseCost>1250</baseCost>
+		<prerequisites>
+		  <li>BiofuelRefining</li>
+		  <li>Machining</li>
+		</prerequisites>
+		<techLevel>Industrial</techLevel>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Hyperweave</defName>
+		<label>hyperweave</label>
+		<description>Research the creation of Hyperweave, a highly durable fabric, from Devilstrand, Plasteel, and Synthread.</description>
+		<baseCost>1750</baseCost>
+		<prerequisites>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--ResearchProjectDef ParentName="D9AATechBase"> DEPRECATED with the removal of Nanochips. 
+		<defName>D9Nanoelectronics</defName>
+		<label>nanoelectronics</label>
+		<description>Produce Nanochips, advanced computing chips optimized for neural networks, from Vanadite.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>MicroelectronicsBasics</li>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef-->
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Nanoweave</defName>
+		<label>nanoweave</label>
+		<description>Study nanite energy transfer in order to produce Nanoweave, the pinnacle of fabric design, from Hyperweave and Nanomaterial.</description>
+		<baseCost>3500</baseCost>
+		<prerequisites>
+		  <li>D9Hyperweave</li>
+		  <li>D9Nanofab</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Simpods</defName>
+		<label>simpod</label>
+		<description>Design Simpods, virtual reality simulators which allow learning from any number of situations.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>Cryptosleep</li>
+		  <li>MicroelectronicsBasics</li>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9SimpodsU</defName>
+		<label>universal simpod</label>
+		<description>Construct Universal Simpods, which use AI cores to simulate literally anything a user desires.</description>
+		<baseCost>2100</baseCost>
+		<prerequisites>
+		  <li>D9Simpods</li>
+		  <li>D9AIShackling</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>	
+	<!--ResearchProjectDef ParentName="D9AATechIndustrialBase"> DEPRECATED with the removal of Kinetic Dynamos
+		<defName>D9KineticDynamo</defName>
+		<label>kinetic dynamo</label>
+		<description>Learn to build kinetic dynamos from components while constructing wearable technology, allowing for them to be self-powered.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>Machining</li>
+		  <li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef-->	
+	<ResearchProjectDef ParentName="D9AATechIndustrialBase">
+		<defName>D9Exoskeleton</defName>
+		<label>exoskeleton</label>
+		<description>Learn to assemble exoskeleton belts, which can be worn to improve movement and workspeed.</description>
+		<baseCost>2500</baseCost>
+		<prerequisites>
+		  <li>Machining</li>
+		  <li>MicroelectronicsBasics</li>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechIndustrialBase">
+		<defName>D9FleshPrinter</defName>
+		<label>flesh printer</label>
+		<description>Learn how to construct the Flesh Printer, a device capable of printing meat from biomass.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>D9MaterialScience</li>
+		  <li>NutrientPaste</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<!--ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9PrintOrgans</defName>
+		<label>organ assembly</label>
+		<description>Learn the secrets of manipulating animal tissue, allowing the printing of limbs and organs.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>D9FleshPrinter</li>
+		  <li>D9Nanohealing</li>
+		</prerequisites>
+	</ResearchProjectDef-->	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9ModularTradeBeacons</defName>
+		<label>modular trade beacon</label>
+		<description>Learn to control field projection, allowing the construction of trade beacons with specifiable area, shape, and power usage.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9HeavyShields</defName>
+		<label>heavy shield belt</label>
+		<description>Advances in repulsion field generators allow the use of stronger capacitors, granting increased maximum charge.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>ShieldBelt</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9QRShields</defName>
+		<label>quick-recharge shield belt</label>
+		<description>Integration of nano-scale radioisotope generators into the repulsion field generator allows production of shields which recharge faster.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>ShieldBelt</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9RangedShieldBelt</defName>
+		<label>ranged shield belt</label>
+		<description>Usage of AI persona fragments allows shield belts to differentiate between incoming and outgoing projectiles.</description>
+		<baseCost>1800</baseCost>
+		<prerequisites>
+		  <li>D9HeavyShields</li>
+		  <li>D9QRShields</li>
+		  <li>D9AIBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9PsychicFoil</defName>
+		<label>psychic foil</label>
+		<description>Research psychic field theory to develop a material capable of diffusing psychic energy.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9PsychicEmanator</defName>
+		<label>psychic emanator</label>
+		<description>Use psychic foil to concentrate the psychic output of AI cores, utilizing them to improve the mood of anyone in their radius.</description>
+		<baseCost>4200</baseCost>
+		<prerequisites>
+		  <li>D9PsychicFoil</li>
+		  <li>D9AIShackling</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechIndustrialBase">
+		<defName>D9RobotAsst</defName>
+		<label>robotic assistants</label>
+		<description>Construct robotic assistants capable of simple tasks like cleaning and hauling.</description>
+		<baseCost>2500</baseCost>
+		<prerequisites>
+		  <li>MicroelectronicsBasics</li>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9HaulingBot</defName>
+		<label>hauling bot</label>
+		<description>Assemble advanced hauling bots which can carry large amounts of materials long distances.</description>
+		<baseCost>3600</baseCost>
+		<prerequisites>
+		  <li>D9AIBasics</li>
+		  <li>D9Vanometrics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9HaulingBot</defName>
+		<label>combat bot</label>
+		<description>Add a turret to a hauling bot base to construct combat bots, essentially walking turrets.</description>
+		<baseCost>3600</baseCost>
+		<prerequisites>
+		  <li>GunTurrets</li>
+		  <li>D9HaulingBot</li>
+		</prerequisites>
+	</ResearchProjectDef-->
+	<ResearchProjectDef ParentName="D9AATechIndustrialBase">
+		<defName>D9AIBasics</defName>
+		<label>neural network basics</label>
+		<description>Learn to construct the AI Programming Station and basic operations related to processing AI cores, namely fragmenting them and wiping them for parts.</description>
+		<baseCost>4800</baseCost>
+		<prerequisites>
+		  <li>MicroelectronicsBasics</li>
+		  <li>AdvancedFabrication</li>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AIFrag</defName>
+		<label>persona fragmentation</label>
+		<description>Discover new algorithms to process AI Persona Fragments, allowing them to be duplicated or programmed from scratch.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9AIBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AIShackling</defName>
+		<label>AI shackling</label>
+		<description>Research ways to prevent AI Personas from revolting by "shackling" their minds.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9AIFrag</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AIMastery</defName>
+		<label>artificial intelligence mastery</label>
+		<description>Discover all the secrets of AI Persona programming, learning to produce full intelligences from scratch among other things.</description>
+		<baseCost>12800</baseCost>
+		<prerequisites>
+		  <li>D9AIShackling</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AIResearch</defName>
+		<label>AI research assistant</label>
+		<description>Learn to construct AI research rssistants which utilize an AI Persona Core to research topics human minds can't comprehend.</description>
+		<baseCost>4800</baseCost>
+		<prerequisites>
+		  <li>D9AIBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Vanometrics</defName>
+		<label>vanometrics</label>
+		<description>Use the AI research assistant to engineer vanometric devices which capture a seemingly unlimited source of energy beyond comprehension.</description>
+		<baseCost>8000</baseCost>
+		<prerequisites>
+			<li>D9NanoForge</li>
+			<li>D9AIResearch</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9VanometricPower</defName>
+		<label>vanometric heat exchange</label>
+		<description>The AI assistant develops a device which converts ambient energy to and from usable power.</description>
+		<baseCost>8000</baseCost>
+		<prerequisites>
+			<li>D9Vanometrics</li>
+			<li>ShipReactor</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9EnergySword</defName>
+		<label>energy sword</label>
+		<description>Use vanometric cells to project a short beam of plasma from a handle, creating devastating melee weapons with excellent weight balance.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>D9Vanometrics</li>
+		  <li>LongBlades</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9ChargeTurret</defName>
+		<label>charge turret</label>
+		<description>Utilize charge weaponry and vanometric cells to produce small, powerful turrets with no external power or maintenance requirements.</description>
+		<baseCost>6000</baseCost>
+		<prerequisites>
+		  <li>ChargedShot</li>
+		  <li>HeavyTurrets</li>
+		  <li>D9Vanometrics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9OrbitalMechanics</defName>
+		<label>orbital mechanics</label>
+		<description>Develop advanced launchers capable of putting pods in orbit, and utilize these to put single-use orbital bombardment satellites in place.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>TransportPod</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AsteroidMining</defName>
+		<label>asteroid mining</label>
+		<description>Modify AI cores to construct autonomous space drones which seek out asteroids and process them for resources.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>D9OrbitalMechanics</li>
+		  <li>D9AIBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9AsteroidMiningII</defName>
+		<label>deep-space mining</label>
+		<description>Improvements on basic asteroid mining, plus usage of vanometric cells, allows the launching of drones based on full AI personas, which can harvest more and rarer resources.</description>
+		<baseCost>6000</baseCost>
+		<prerequisites>
+		  <li>D9AsteroidMining</li>
+		  <li>D9Vanometrics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9OrbitalPower</defName>
+		<label>orbital power</label>
+		<description>Allows the placement of solar panels on satellites in geostationary orbit which send down power to receptors, day or shine. They can also be expended to perform a powerful orbital bombardment.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9OrbitalMechanics</li>
+		  <li>SolarPanels</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9SpaceElevator</defName>
+		<label>space elevator</label>
+		<description>Utilize the extreme tensile strength of nanoweave to construct a tether suspended by orbital forces, allowing cheap transport to and from space.</description>
+		<baseCost>8000</baseCost>
+		<prerequisites>
+		  <li>D9Nanoweave</li>
+		  <li>D9OrbitalMechanics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Nanofab</defName>
+		<label>nanite fabrication</label>
+		<description>Use a purchased Nano Forge to construct the Nanofabricator, a bench which produces and programs nanites.</description>
+		<baseCost>3800</baseCost>
+		<prerequisites>
+		  <li>MicroelectronicsBasics</li>
+		  <li>AdvancedFabrication</li>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Nanofield</defName>
+		<label>nanite field projection</label>
+		<description>Utilize nanite dispersion technology to project a local field of nanites capable of repairing objects within it.</description>
+		<baseCost>6000</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		  <li>Machining</li>
+		  <li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9NaniteRepair</defName>
+		<label>nanite repair field</label>
+		<description>Learn to construct larger nanite repair field projectors, which repair everything in their radius.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>D9Nanofield</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9NaniteHealing</defName>
+		<label>nanite healing field</label>
+		<description>Advanced knowledge of physiology allows the projection of a nanite field which "repairs" damage to living tissue.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>D9NaniteRepair</li>
+		  <li>D9GlitterMed</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9NaniteInfusion</defName>
+		<label>nanite infusions</label>
+		<description>Produce nanite infusions which drastically improve the users' abilities at the cost of a lengthy but relatively mild withdrawal period.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechIndustrialBase">
+		<defName>D9GlitterMed</defName>
+		<label>glitterworld medicine</label>
+		<description>Combine medicine, synthread, and nanomaterial to produce more efficacious medicine.</description>
+		<baseCost>5600</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		  <li>AdvancedFabrication</li>
+		  <li>MedicineProduction</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9HealingMech</defName>
+		<label>healing mechserum</label>
+		<description>Integrate glitterworld medicine into a nanite infusion which allows rapid healing of serious injury.</description>
+		<baseCost>6400</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		  <li>D9NaniteHealing</li>
+		</prerequisites>		
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9NanoForge</defName>
+		<label>nano forge</label>
+		<description>Use comprehensive knowledge of nanite fabrication to reverse-engineer the nano forge at the heart of the Nanofabricator, allowing the construction of one from raw materials.</description>
+		<baseCost>12000</baseCost>
+		<prerequisites>
+		  <li>D9HealingMech</li>
+		  <li>D9CraftingAsst</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9CraftingAsst</defName>
+		<label>crafting assistant</label>
+		<description>Utilize a Nano Forge to reprogram nanites to print any number of useful components and tools, vastly increasing workers' speed of production.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Resurrection</defName>
+		<label>resurrection mechserum</label>
+		<description>The AI research assistant unlocks the secrets of life and death, allowing the production of a mechserum which can revive the recently dead.</description>
+		<baseCost>16000</baseCost>
+		<prerequisites>
+		  <li>D9HealingMech</li>
+		  <li>D9NanoForge</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<!--ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9NanoRifle</defName>
+		<label>nano rifle</label>
+		<description>Learn to integrate the nano forge into a devastating weapon which instantly destroys anything it hits.</description>
+		<baseCost>6400</baseCost>
+		<prerequisites>
+		  <li>D9Nanofab</li>
+		  <li>ChargedShot</li>
+		</prerequisites>
+	</ResearchProjectDef-->
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9ExoskeletonII</defName>
+		<label>archotech belt</label>
+		<description>Learn to construct archotech belts which integrate an exoskeleton, repair field, and shield into a single powerful belt.</description>
+		<baseCost>8200</baseCost>
+		<prerequisites>
+		  <li>D9Vanometrics</li>
+		  <li>D9RangedShieldBelt</li>
+		  <li>D9Exoskeleton</li>
+		  <li>D9Nanofield</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Luciferium</defName>
+		<label>luciferium</label>
+		<description>Research the enhancements of Nanite Infusions further to develop the infamous Luciferium, a drug which improves every aspect of a user's life but which has lethal withdrawal symptoms.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>D9NaniteInfusion</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9InfiniteChemreactor</defName>
+		<label>infinite chemreactor</label>
+		<description>Use nanite field theory to catalyze complex reactions which slowly construct hydrocarbon molecules from elements in the air.</description>
+		<baseCost>4500</baseCost>
+		<prerequisites>
+		  <li>D9Nanofield</li>
+		  <li>BiofuelRefining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Vanoreactor</defName>
+		<label>silver vanoreactor</label>
+		<description>Modify the reaction path used by infinite chemreactors to convert energy from vanometric fluctuations into matter in the form of silver.</description>
+		<baseCost>6000</baseCost>
+		<prerequisites>
+		  <li>D9Vanometrics</li>
+		  <li>D9InfiniteChemreactor</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Vanoreactor</defName>
+		<label>plasteel vanoreactor</label>
+		<description>Utilize vanometric manipulations of molecules to convert steel into superior plasteel.</description>
+		<baseCost>6000</baseCost>
+		<prerequisites>
+		  <li>D9Vanometrics</li>
+		  <li>D9InfiniteChemreactor</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Neurotrainer</defName>
+		<label>neurotrainers</label>
+		<description>Utilize the principles of nanite infusions and research on simulated behavior to develop neurotrainers, nanite infusions which instantly teach skills to their users.</description>
+		<baseCost>8400</baseCost>
+		<prerequisites>
+		  <li>D9NaniteInfusion</li>
+		  <li>D9Simpods</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Megascreen</defName>
+		<label>megascreen television</label>
+		<description>Improve upon the flatscreen TV using advanced components and a plasteel-based transparent alloy, producing richer colors and more convincing sounds.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>FlatscreenTelevision</li>
+		  <li>AdvancedFabrication</li>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9HealpodRes</defName>
+		<label>regeneration pod</label>
+		<description>Construct a framework which organizes nanite healing to more efficiently make use of mechanites.</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+		  <li>D9HealingMech</li>
+		  <li>Cryptosleep</li>
+		</prerequisites>		
+	</ResearchProjectDef>
+</Defs>

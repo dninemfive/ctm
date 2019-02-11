@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <StatDef>
+    <defName>D9NaniteRepairRate</defName> <!-- this and next: only for apparel -->
+    <label>nanite repair rate</label>
+    <description>The speed at which this item repairs things using nanites.</description>
+    <category>Apparel</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+	<showIfUndefined>false</showIfUndefined>
+  </StatDef>
+  <StatDef>
+    <defName>D9NaniteHealRate</defName>
+    <label>nanite heal rate</label>
+    <description>The speed at which this item heals pawns using nanites.</description>
+    <category>Apparel</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+	<showIfUndefined>false</showIfUndefined>
+  </StatDef>
+  <!-- for buildings -->
+  <!--StatDef>
+    <defName>D9NaniteRepairRateBuilding</defName>
+    <label>nanite repair rate</label>
+    <description>The speed at which this object repairs things using nanites. Has no effect if the object does not use nanites.</description>
+    <category>Building</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+	<showIfUndefined>false</showIfUndefined>
+  </StatDef>
+  <StatDef>
+    <defName>D9NaniteHealRateBuilding</defName>
+    <label>nanite heal rate</label>
+    <description>The speed at which this object heals pawns using nanites. Has no effect if the object does not use nanites.</description>
+    <category>Building</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+	<showIfUndefined>false</showIfUndefined>
+  </StatDef-->
+</Defs>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Nanoweave</defName>
+    <label>nanoweave</label>
+    <description>Nanofibers with interwoven nanite cells which absorb and diffuse incoming energy. Less flexible, but features unparalleled strength.</description>
+    <graphicData>
+      <texPath>Things/Item/Nanoweave</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+      <MarketValue>22</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.1</Flammability>
+	  <DeteriorationRate>0.8</DeteriorationRate>
+      <StuffPower_Armor_Sharp>3.0</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>1.08</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>3.0</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>33</StuffPower_Insulation_Heat>
+		</statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.001</commonality>
+      <color>(54,54,54)</color>
+      <statFactors>
+        <Flammability>0</Flammability>
+        <MaxHitPoints>3</MaxHitPoints>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>PsychicFoil</defName>
+    <label>psychic foil</label>
+    <description>Densely-interwoven steel and plasteel strands allow this material to diffract and absorb psychic energy. It's also good at reflecting thermal radiation, though it's susceptible to tearing and provides little insulation in the long term.</description>
+    <graphicData>
+      <texPath>Things/Item/PsychicFoil</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <StuffPower_Armor_Sharp>0.24</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.68</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>0</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>9</StuffPower_Insulation_Heat>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>2</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>1.2</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+		<!--li>Metallic</li--><!-- only if I can prevent it from being a building material -->
+      </categories>
+      <commonality>0.05</commonality>
+      <color>(161,161,161)</color>
+      <statFactors>
+        <Flammability>0.6</Flammability>
+        <MaxHitPoints>0.75</MaxHitPoints>
+		<PsychicSensitivity>2</PsychicSensitivity>
+      </statFactors>
+	  <statOffsets>
+        <PsychicSensitivity>-0.1</PsychicSensitivity>
+      </statOffsets>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- make the infinite chemreactor produce a dripfeed of chemfuel instead of lumps of 75 
+		 balanced so that output is the same -->
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ThingDef[defName = "Gun_ChargeRifle"]/costList</xpath>
+	  <value>
+		  <D9VanometricCell>1</D9VanometricCell>
+	  </value>
+	</Operation>
+</Patch>

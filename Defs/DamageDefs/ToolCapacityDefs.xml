@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ToolCapacityDef>
+    <defName>D9PlasmaCut</defName>
+  </ToolCapacityDef>
+  <ToolCapacityDef>
+    <defName>D9PlasmaStab</defName>
+  </ToolCapacityDef>
+</Defs>

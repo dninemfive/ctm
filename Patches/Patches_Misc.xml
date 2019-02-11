@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- make the infinite chemreactor produce a dripfeed of chemfuel instead of lumps of 75 
+		 balanced so that output is the same -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnCount</xpath>
+	  <value>
+		<spawnCount>1</spawnCount>
+	  </value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnIntervalRange</xpath>
+	  <value>
+		<spawnIntervalRange><min>8000</min><max>8000</max></spawnIntervalRange>
+	  </value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/showMessageIfOwned</xpath>
+	  <value>
+		<showMessageIfOwned>false</showMessageIfOwned>
+	  </value>
+	</Operation>
+	<!-- buff the Vanometric Cell, but not too much -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+	  <value>
+		<basePowerConsumption>-2400</basePowerConsumption>
+	  </value>
+	</Operation>
+	<!-- corrects the Vanometric Cell's name, given that it actually is a battery of power-generating cells -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/label</xpath>
+	  <value>
+		<label>vanometric battery</label>
+	  </value>
+	</Operation>
+	<!-- corrects the Vanometric Cell's costlist to require this mod's items
+		 Much more expensive given how much power it now generates, and the fact that it's free
+		 However, its cost is reduced to prevent gaining too many resources from deconstructing these -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/costList</xpath>
+	  <value>
+		<costList>
+		  <Vanadite>80</Vanadite>
+		  <D9VanometricCell>8</D9VanometricCell>
+		  <ComponentSpacer>4</ComponentSpacer>
+		</costList>
+	  </value>
+	</Operation>
+	<!-- restores sun lamp power consumption if another mod (e.g. Medieval Times) changes it 
+		 this is a really important power sink given how much powergen you can get with this mod -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "SunLamp"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+	  <value>
+		<basePowerConsumption>2900</basePowerConsumption>
+	  </value>
+	</Operation>
+</Patch>

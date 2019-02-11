@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--ThingDef ParentName="BuildingBase">
+    <defName>D9ModularTradeBeacon</defName>
+    <label>modular trade beacon</label>
+    <thingClass>CTM.Building_ModularTradeBeacon</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/DropBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.2, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>900</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>5.4</Mass>
+    </statBases>
+    <description>An advanced orbital trade beacon allowing the user to set its radius and shape, reducing overall electricity and resource costs.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <fillPercent>0.15</fillPercent>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+	  <! TODO: custom power comp reflecting different areas covered >
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>40</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>8</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <rotatable>false</rotatable>
+    <placeWorkers>
+      <li>PlaceWorker_ShowTradeBeaconRadius</li> <! TODO: custom trade beacon placeWorker showing maximum and/or currently-set radius >
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>D9ModularTradeBeacons</li>
+    </researchPrerequisites>
+  </ThingDef-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>D9ResearchAssistant</defName>
+    <label>AI research assistant</label>
+    <description>A peripheral for the research bench allowing it to use the expertise and additional processing power of an AI core to research hyperadvanced techs.</description>
+    <graphicData>
+      <texPath>Things/Building/ResearchAssistant</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.46875</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites><li>D9AIResearch</li></researchPrerequisites>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>225</MaxHitPoints>
+      <WorkToBuild>14000</WorkToBuild>
+      <Mass>140</Mass>
+      <Flammability>0.8</Flammability>
+    </statBases>
+    <costList>
+      <AIPersonaCore>1</AIPersonaCore>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>20</Gold>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.4</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+      </li>
+    </comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>D9InfiniteSilverreactor</defName>
+    <label>silver vanoreactor</label>
+    <description>Passively generates silver atoms from vanometric fluctuations. The reaction path requires additional external power and a significant amount of existing silver as a catalyst.</description>
+    <graphicData>
+      <texPath>Things/Building/Special/InfiniteChemreactor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(1.8, 1.0, 0.2)</volume>
+        <offset>(0.0, 0.0, -0.4)</offset>
+      </shadowData>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+	<designationCategory>Production</designationCategory>
+	<researchPrerequisites><li>D9Vanoreactor</li></researchPrerequisites>
+    <costList>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+	  <D9VanometricCell>4</D9VanometricCell>
+	  <Silver>500</Silver>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>true</requiresPower>
+        <thingToSpawn>Silver</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange><min>10000</min><max>10000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>false</showMessageIfOwned>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>8</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+      </li>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>-10</Beauty>
+      <Mass>35</Mass>
+      <WorkToBuild>8000</WorkToBuild>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <tickerType>Normal</tickerType>
+    <size>(2, 2)</size>
+    <fillPercent>1.0</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <passability>Impassable</passability>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+	<constructionSkillPrerequisite>14</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- healpod -->
+  <ThingDef ParentName="BuildingBase">    
+	<defName>D9Healpod</defName>
+    <label>regeneration pod</label>
+    <description>A pod which utilizes healing mechanites to quickly heal wounds, as well as much more slowly repairing permanent damage.</description>
+	<thingClass>D9CTM.Healpod</thingClass> <!-- class variables are hardcoded; might consider un-hardcoding at request -->
+    <graphicData>
+      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <!-- TODO: make custom texture -->
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.83, 0.3, 1.7)</volume>
+      </shadowData>
+    </graphicData>
+    <researchPrerequisites><li>D9HealpodRes</li></researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <WorkToBuild>8000</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(1,2)</size>
+    <designationCategory>Joy</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(1,0,0)</interactionCellOffset>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+	  <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- 1 mechserum = 1 day of fuel -->
+        <fuelCapacity>2.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>MechSerumHealer</li>
+          </thingDefs>
+        </fuelFilter>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
+    </comps>
+    <building>
+      <isPlayerEjectable>true</isPlayerEjectable>
+    </building>
+    <costList>
+		<Steel>120</Steel>
+		<Plasteel>80</Plasteel>
+		<AIPersonaFragment>1</AIPersonaFragment>
+		<ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>14</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- nanite assistant -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>D9CTMToolCabinet</defName>
+    <label>nanite crafting assistant</label>
+    <description>An advanced cabinet allowing fabrication of arbitrary tools and parts, greatly speeding up work speed. One workbench can make use of at most one crafting assistant.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/ToolCabinet</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <color>(96,114,95)</color>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>60</pathCost>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(2,1)</size>
+    <costList>
+      <Plasteel>160</Plasteel>
+	  <ComponentSpacer>2</ComponentSpacer>
+	  <Steel>200</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>D9CraftingAsst</li>
+    </researchPrerequisites>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="D9CTM.CompProperties_FacilityRequireFuel">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>90.0</fuelConsumptionRate> <!-- a full fueling lasts five days -->
+        <fuelCapacity>450.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>D9Nanomaterial</li>
+          </thingDefs>
+        </fuelFilter>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
+    </comps>
+    <designationHotKey>Misc6</designationHotKey>
+	<placeWorkers>
+		<li>PlaceWorker_ShowFacilitiesConnections</li>
+	</placeWorkers>
+  </ThingDef>
+</Defs>

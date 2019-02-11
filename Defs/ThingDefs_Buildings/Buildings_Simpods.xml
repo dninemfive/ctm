@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase" Name="SimpodBase" Abstract="True">
+    <thingClass>D9CTM.Simpod</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <!-- TODO: make custom texture -->
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.83, 0.3, 1.7)</volume>
+      </shadowData>
+    </graphicData>
+    <researchPrerequisites><li>D9Simpods</li></researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <WorkToBuild>6000</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(1,2)</size>
+    <designationCategory>Joy</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(1,0,0)</interactionCellOffset>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>400</basePowerConsumption>
+      </li>
+	  <!-- TODO: change ModExtension to Comp -->
+    </comps>
+    <!--defaultPlacingRot>South</defaultPlacingRot-->
+    <building>
+      <isPlayerEjectable>true</isPlayerEjectable>
+    </building>
+    <costList>
+		<Steel>120</Steel>
+		<AIPersonaFragment>1</AIPersonaFragment>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  <ThingDef ParentName="SimpodBase">
+	<defName>D9SimpodCombat</defName>
+    <label>combat simpod</label>
+    <description>A virtual-reality pod capable of generating extremely convincing simulations.\n\nThis one simulates combat, training the user in both shooting and melee.</description>
+	<modExtensions>
+		<li Class="D9CTM.SimpodModExtension">
+			<SkillsToTrain>
+				<li>Shooting</li>
+				<li>Melee</li>
+			</SkillsToTrain>
+			<JoyKind>Gaming_Dexterity</JoyKind> <!-- TODO: custom JoyKinds for all simpods -->
+			<SatisfiesOutdoors>false</SatisfiesOutdoors>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="SimpodBase">
+	<defName>D9SimpodEngineering</defName>
+    <label>engineering simpod</label>
+    <description>A virtual-reality pod capable of generating extremely convincing simulations.\n\nThis one teaches engineering, training the user in construction, crafting, and mining.</description>
+	<modExtensions>
+		<li Class="D9CTM.SimpodModExtension">
+			<SkillsToTrain>
+				<li>Construction</li>
+				<li>Mining</li>
+				<li>Crafting</li>
+			</SkillsToTrain>
+			<JoyKind>Gaming_Cerebral</JoyKind>
+			<SatisfiesOutdoors>false</SatisfiesOutdoors>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="SimpodBase">
+	<defName>D9SimpodFarming</defName>
+    <label>farming simpod</label>
+    <description>A virtual-reality pod capable of generating extremely convincing simulations.\n\nThis one simulates farming, teaching the user how to handle both plants and animals.</description>
+	<modExtensions>
+		<li Class="D9CTM.SimpodModExtension">
+			<SkillsToTrain>
+				<li>Plants</li>
+				<li>Animals</li>
+			</SkillsToTrain>
+			<JoyKind>Gaming_Dexterity</JoyKind>
+			<SatisfiesOutdoors>false</SatisfiesOutdoors>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="SimpodBase">
+	<defName>D9SimpodCooking</defName>
+    <label>cooking simpod</label>
+    <description>A virtual-reality pod capable of generating extremely convincing simulations.\n\nThis one simulates cooking, training the user to make all kinds of meals.</description>
+	<modExtensions>
+		<li Class="D9CTM.SimpodModExtension">
+			<SkillsToTrain>
+				<li>Cooking</li>
+			</SkillsToTrain>
+			<JoyKind>Gaming_Dexterity</JoyKind>
+			<SatisfiesOutdoors>false</SatisfiesOutdoors>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="SimpodBase">
+	<defName>D9SimpodMedical</defName>
+    <label>medical simpod</label>
+    <description>A virtual-reality pod capable of generating extremely convincing simulations.\n\nThis one is for teaching doctors, training the user's medical knowledge.</description>
+	<modExtensions>
+		<li Class="D9CTM.SimpodModExtension">
+			<SkillsToTrain>
+			  <li>Medicine</li>
+			</SkillsToTrain>
+			<JoyKind>Gaming_Cerebral</JoyKind>
+			<SatisfiesOutdoors>false</SatisfiesOutdoors>
+		</li>
+	</modExtensions>
+  </ThingDef>
+</Defs>

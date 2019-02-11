@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>Make_D9Synthmeat</defName>
+    <label>make synthmeat</label>
+    <description>Make synthetic meat from plant food. The process is highly inefficient, yielding only ten percent of the nutrition of the inputs.</description>
+    <jobString>Making synthmeat.</jobString> 
+    <workAmount>500</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmeat>1</D9Synthmeat>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>PlantFoodRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>6</Cooking>
+	</skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_D9Synthmeat_Bulk</defName>
+    <label>make synthmeat in bulk</label>
+    <description>Make synthetic meat from plant food. Though still highly inefficient, producing meat in bulk allows converting about 10% more nutrition.</description>
+    <jobString>Making synthmeat.</jobString> 
+    <workAmount>4300</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmeat>11</D9Synthmeat>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>PlantFoodRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>8</Cooking>
+	</skillRequirements>
+  </RecipeDef>
+</Defs>

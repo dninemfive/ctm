@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "MedTimes_Ranged_ChargeMG_Art"]</xpath><!-- checks if MT is installed -->
+			</li>
+			<!-- make the Eternity Forge constructible with the Nano Forge tech -->
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "MedTimes_EternityForge"]</xpath>
+				<value>
+					<designationCategory>Production</designationCategory>
+					<researchPrerequisites><li>D9NanoForge</li></researchPrerequisites>
+					<constructionSkillPrerequisite>16</constructionSkillPrerequisite>
+					<costList>
+						<D9NanoForge>1</D9NanoForge>
+						<ShackledAIPersona>1</ShackledAIPersona>
+						<Plasteel>250</Plasteel>
+						<ComponentSpacer>8</ComponentSpacer>
+					</costList>
+				</value>
+			</li>
+			<!-- TODO:
+				 - craft the Techno Sword with the Energy Sword research, a vanometric cell, 50 plasteel, and a spacer component
+				 - craft the C10MG with Charged Shot, two vanometric cells &c
+				 - make nanite vials from a shitton of nanomaterial and some plasteel(+ spacer components?) 
+				 - add a Techno Clothing research (or piggyback an Apparello one if present), requiring Materials Science, Hyperweave, and Complex Clothing
+				 - craft Combat Armor, Combat Boots, Combat Gloves, Combat Helmet from Hyperweave (and Plasteel for the helmet/armor)
+				 - Techno Boots/Socks/Gauntlets from synthread and spacer components -->
+		</operations>
+	</Operation>
+</Patch>
