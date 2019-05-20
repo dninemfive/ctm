@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88FBE871-BDB7-4A20-8CA6-4F0C83B9F379}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CTM</RootNamespace>
+    <AssemblyName>CTM</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\Downloads\rimods\f1.0_res\DLLs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\Downloads\rimods\f1.0_res\DLLs\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\Downloads\rimods\f1.0_res\DLLs\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Belts\Repair\CompProperties_RepairBelt.cs" />
+    <Compile Include="Belts\Repair\CompRepairBelt.cs" />
+    <Compile Include="CompFacilityRequireFuel.cs" />
+    <Compile Include="Belts\Heal\CompHealBelt.cs" />
+    <Compile Include="CompLaunchableSatellite.cs" />
+    <Compile Include="CompNanoRepair.cs" />
+    <Compile Include="CompPowerHeatExchange.cs" />
+    <Compile Include="CompProperties_FacilityRequireFuel.cs" />
+    <Compile Include="Belts\Heal\CompProperties_HealBelt.cs" />
+    <Compile Include="CompProperties_HeatExchange.cs" />
+    <Compile Include="CompProperties_LaunchableSatellite.cs" />
+    <Compile Include="CompProperties_NanoRepair.cs" />
+    <Compile Include="DefsOf.cs" />
+    <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
+    <Compile Include="HealingUtility.cs" />
+    <Compile Include="Healpod.cs" />
+    <Compile Include="IngredientValueGetter_Mass.cs" />
+    <Compile Include="JoyGiver_EnterBuilding.cs" />
+    <Compile Include="ModularBeacon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GlitterBelt.cs" />
+    <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
+    <Compile Include="OutsideNeedPatch.cs" />
+    <Compile Include="Belts\Repair\RepairBelt.cs" />
+    <Compile Include="Simpod.cs" />
+    <Compile Include="SimpodModExtension.cs" />
+    <Compile Include="SpecialStuffProperties.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

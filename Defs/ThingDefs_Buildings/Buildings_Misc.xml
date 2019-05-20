@@ -57,7 +57,7 @@
   </ThingDef-->
   <ThingDef ParentName="BuildingBase">
     <defName>D9ResearchAssistant</defName>
-    <label>AI research assistant</label>
+    <label>archotech</label>
     <description>A peripheral for the research bench allowing it to use the expertise and additional processing power of an AI core to research hyperadvanced techs.</description>
     <graphicData>
       <texPath>Things/Building/ResearchAssistant</texPath>
@@ -146,7 +146,7 @@
         <requiresPower>true</requiresPower>
         <thingToSpawn>Silver</thingToSpawn>
         <spawnCount>1</spawnCount>
-        <spawnIntervalRange><min>10000</min><max>10000</max></spawnIntervalRange>
+        <spawnIntervalRange><min>2500</min><max>2500</max></spawnIntervalRange>
         <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
         <showMessageIfOwned>false</showMessageIfOwned>
       </li>
@@ -211,6 +211,7 @@
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(1,0,0)</interactionCellOffset>
     <comps>
+	  <!-- TODO: RePower compat -->
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
@@ -218,7 +219,7 @@
       </li>
 	  <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- 1 mechserum = 1 day of fuel -->
+        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- 1 mechserum ~= 1 day of fuel when a pawn is present -->
         <fuelCapacity>2.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>

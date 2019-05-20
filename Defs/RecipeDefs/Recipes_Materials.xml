@@ -510,4 +510,67 @@
 			<Hyperweave>45</Hyperweave>
 		</products>
 	</RecipeDef>
+	<RecipeDef>
+		<defName>Make_Wood_D9</defName>
+		<label>make wood</label>
+		<description>Produce wood from cellulose found in plant matter.</description>
+		<jobString>Making wood.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>800</workAmount>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<researchPrerequisite>D9WoodSynthesis</researchPrerequisite>
+		<ingredientValueGetterClass>D9CTM.IngredientValueGetter_Mass</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+			<filter>
+			  <categories>
+				<li>PlantFoodRaw</li>
+				<li>PlantMatter</li>
+			  </categories>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+				<li>PlantMatter</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<WoodLog>1</WoodLog>
+		</products>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>Make_Wood_D9_Bulk</defName>
+		<label>make wood in bulk</label>
+		<description>Produce ten wood from plant matter.</description>
+		<jobString>Making wood in bulk.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>6400</workAmount>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<researchPrerequisite>D9WoodSynthesis</researchPrerequisite>
+		<ingredients>
+			<li>
+			<filter>
+			  <categories>
+				<li>PlantFoodRaw</li>
+				<li>PlantMatter</li>
+			  </categories>
+			</filter>
+			<count>50</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+				<li>PlantMatter</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<WoodLog>10</WoodLog>
+		</products>
+	</RecipeDef>
 </Defs>

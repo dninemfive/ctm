@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>D9HealingFoam</defName>
+		<label>healing foam injector</label>
+		<description>A single-use injector of nanite-infused foam which immediately stops all bleeding and lets wounds begin healing immediately.</description>
+		<graphicData>
+		  <texPath>Things/Item/HealingFoam</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>10</stackLimit>
+		<statBases>
+		  <MarketValue>900</MarketValue>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use healing foam injector</useLabel>
+			<useDuration>600</useDuration>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>D9CTM.CompUseEffect_TendAllWounds</compClass>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>
+		<thingSetMakerTags>
+		  <li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<thingClass>ThingWithComps</thingClass>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>90</MaxHitPoints>
+		  <Mass>0.2</Mass>
+		  <DeteriorationRate>2.0</DeteriorationRate>
+		  <Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+  </ThingDef>
+</Defs>

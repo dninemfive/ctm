@@ -295,7 +295,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_HealBelt</defName>
 		<label>nanite healing belt</label>
-    <description>A belt which slowly heals the wearer's injuries over time. Much slower than a dedicated healing field, but portable and self-powered.</description>
+    <description>A belt which slowly heals the wearer's injuries over time. Much slower than a dedicated healing field, but portable and self-powered.\n\nThe field extends just far enough that the wearer can use it to help when healing others as well.</description>
 		<thingClass>D9CTM.RepairBelt</thingClass>
 		<graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
