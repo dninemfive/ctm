@@ -10,7 +10,7 @@ namespace D9CTM
     class CompProperties_LaunchableSatellite : CompProperties
     {
         public float fuelToLaunch = 1000f;
-        public List<Thing> thingsToCreateOnLaunch;
-        public List<IncidentDef> Incidents; //TODO: weighted list
+        public List<ThingDefCountClass> thingsToCreateOnLaunch;
+        public List<IncidentInfo> Incidents; //TODO: weighted list
     }
 }

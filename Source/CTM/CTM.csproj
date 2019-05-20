@@ -7,7 +7,7 @@
     <ProjectGuid>{88FBE871-BDB7-4A20-8CA6-4F0C83B9F379}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CTM</RootNamespace>
+    <RootNamespace>D9CTM</RootNamespace>
     <AssemblyName>CTM</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -63,6 +63,7 @@
     <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Healpod.cs" />
+    <Compile Include="IncidentInfo.cs" />
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="JoyGiver_EnterBuilding.cs" />
     <Compile Include="ModularBeacon.cs" />
