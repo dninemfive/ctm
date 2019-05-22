@@ -145,15 +145,15 @@
       <li Class="CompProperties_Spawner">
         <requiresPower>true</requiresPower>
         <thingToSpawn>Silver</thingToSpawn>
-        <spawnCount>1</spawnCount>
-        <spawnIntervalRange><min>2500</min><max>2500</max></spawnIntervalRange>
+        <spawnCount>15</spawnCount>
+        <spawnIntervalRange><min>15000</min><max>15000</max></spawnIntervalRange>
         <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
         <showMessageIfOwned>false</showMessageIfOwned>
       </li>
-      <li Class="CompProperties_Explosive">
+      <!--li Class="CompProperties_Explosive">
         <explosiveRadius>8</explosiveRadius>
         <explosiveDamageType>Flame</explosiveDamageType>
-      </li>
+      </li-->
     </comps>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>

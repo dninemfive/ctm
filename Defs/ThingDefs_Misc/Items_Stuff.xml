@@ -12,7 +12,7 @@
 			<MaxHitPoints>250</MaxHitPoints>
       <MarketValue>22</MarketValue>
       <Mass>0.1</Mass>
-      <Flammability>0.1</Flammability>
+      <Flammability>0</Flammability>
 	  <DeteriorationRate>0.8</DeteriorationRate>
       <StuffPower_Armor_Sharp>3.0</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>1.08</StuffPower_Armor_Blunt>
