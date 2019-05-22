@@ -151,40 +151,40 @@
   <!-- Ranged Shield Belt -->
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_RangedShieldBelt</defName>
-		<label>ranged shield belt</label>
+	<label>ranged shield belt</label>
     <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It shuts down instantly if hit by EMP.\n\nThis advanced version allows the wearer to fire outward, but the increased energy expenditure makes it weaker and slower to recharge.</description>
-		<thingClass>D9CTM.RangedShieldBelt</thingClass>
-		<graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+	<thingClass>D9CTM.RangedShieldBelt</thingClass>
+	<graphicData>
+    <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
     <statBases>
       <Mass>3</Mass>
       <EnergyShieldRechargeRate>0.117</EnergyShieldRechargeRate>
       <EnergyShieldEnergyMax>0.99</EnergyShieldEnergyMax>
-			<WorkToMake>28000</WorkToMake>
+      <WorkToMake>28000</WorkToMake>
     </statBases>
-		<costList>
-			<ComponentIndustrial>3</ComponentIndustrial>
-			<Plasteel>45</Plasteel>
-			<Steel>50</Steel>
-			<AIPersonaFragment>1</AIPersonaFragment>
-		</costList>
-		<recipeMaker>
-			<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
-			<researchPrerequisite>D9RangedShieldBelt</researchPrerequisite>
-			<workSpeedStat>SmithingSpeed</workSpeedStat>
-			<workSkill>Crafting</workSkill>
-			<effectWorking>Smith</effectWorking>
-			<soundWorking>Recipe_Machining</soundWorking>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-			<skillRequirements>
-				<Crafting>12</Crafting>
-			</skillRequirements>
-		</recipeMaker>
+	<costList>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<Plasteel>45</Plasteel>
+		<Steel>50</Steel>
+		<AIPersonaFragment>1</AIPersonaFragment>
+	</costList>
+	<recipeMaker>
+		<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+		<researchPrerequisite>D9RangedShieldBelt</researchPrerequisite>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+	</recipeMaker>
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
@@ -224,40 +224,37 @@
   </ThingDef>
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_RepairBelt</defName>
-		<label>nanite repair belt</label>
-    <description>A belt which slowly repairs the wearer's equipment over time. Much slower than a dedicated repair field, but portable and self-powered.</description>
-		<thingClass>D9CTM.RepairBelt</thingClass>
-		<graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
+	<label>nanite repair belt</label>
+    <description>A belt which slowly repairs the wearer's equipment over time. Much slower than a dedicated repair field, but portable and self-powered.\n\nThe field extends just far enough that the wearer can use it to help when repairing buildings as well.</description>
+	<graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SmokepopBelt/SmokepopBelt</texPath> <!-- modify this texture -->
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
     <statBases>
       <Mass>3</Mass>
-	  <D9NaniteRepairRate>0.5</D9NaniteRepairRate>
-	  <D9NaniteHealRate>0</D9NaniteHealRate>
 	  <WorkToMake>22000</WorkToMake>
     </statBases>
-		<costList>
-			<ComponentIndustrial>3</ComponentIndustrial>
-			<Plasteel>45</Plasteel>
-			<D9Nanomaterial>10</D9Nanomaterial>
-			<ComponentSpacer>1</ComponentSpacer>
-		</costList>
-		<recipeMaker>
-			<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
-			<researchPrerequisite>D9Nanofield</researchPrerequisite>
-			<workSpeedStat>SmithingSpeed</workSpeedStat>
-			<workSkill>Crafting</workSkill>
-			<effectWorking>Smith</effectWorking>
-			<soundWorking>Recipe_Machining</soundWorking>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-			<skillRequirements>
-				<Crafting>14</Crafting>
-			</skillRequirements>
-		</recipeMaker>
+	<costList>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<Plasteel>45</Plasteel>
+		<D9Nanomaterial>10</D9Nanomaterial>
+		<ComponentSpacer>1</ComponentSpacer>
+	</costList>
+	<recipeMaker>
+		<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+		<researchPrerequisite>D9Nanofield</researchPrerequisite>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>14</Crafting>
+		</skillRequirements>
+	</recipeMaker>
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
@@ -291,12 +288,18 @@
         </li>
       </options>
     </colorGenerator>
+	<comps>
+		<li Class="D9CTM.CompProperties_RepairBelt">
+			<RepairChance10PerHour>1.0</RepairChance10PerHour>
+			<RepairsPerProc>1</RepairsPerProc>
+			<HPPerRepair>1</HPPerRepair>
+	    </li>
+	</comps>
   </ThingDef>
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_HealBelt</defName>
 		<label>nanite healing belt</label>
     <description>A belt which slowly heals the wearer's injuries over time. Much slower than a dedicated healing field, but portable and self-powered.\n\nThe field extends just far enough that the wearer can use it to help when healing others as well.</description>
-		<thingClass>D9CTM.RepairBelt</thingClass>
 		<graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
       <graphicClass>Graphic_Single</graphicClass>
@@ -304,8 +307,6 @@
     <tickerType>Normal</tickerType>
     <statBases>
       <Mass>3</Mass>
-	  <D9NaniteRepairRate>0</D9NaniteRepairRate>
-	  <D9NaniteHealRate>1</D9NaniteHealRate>
 	  <WorkToMake>22000</WorkToMake>
     </statBases>
 		<costList>
@@ -361,6 +362,15 @@
         </li>
       </options>
     </colorGenerator>
+	<comps>
+		<li Class="D9CTM.CompProperties_HealBelt">
+			<HealChance10PerHour>1.0</HealChance10PerHour>
+			<BloodLossReduction10PerHour>0.0</BloodLossReduction10PerHour>
+			<HealsPerProc>1</HealsPerProc>
+			<HPPerHeal>1</HPPerHeal>
+			<IncreaseImmunity>false</IncreaseImmunity>
+	    </li>
+	</comps>
   </ThingDef>
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_ExoskeletonBelt</defName>
@@ -439,7 +449,7 @@
     <defName>Apparel_GlitterBelt</defName>
 		<label>archotech belt</label>
     <description>A highly advanced apparatus combining a ranged shield, nanite repair, and a personal exoskeleton, enhancing the wearer's abilities in many aspects.\n\nUnfortunately, it is prohibitively expensive for all but the richest glitterworlds.</description>
-		<thingClass>D9CTM.GlitterBelt</thingClass>
+		<thingClass>D9CTM.RangedShieldBelt</thingClass>
 		<graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
       <graphicClass>Graphic_Single</graphicClass>
@@ -447,8 +457,6 @@
     <tickerType>Normal</tickerType>
     <statBases>
       <Mass>3</Mass>
-	  <D9NaniteRepairRate>0.65</D9NaniteRepairRate>
-	  <EnergyShieldRechargeRate>0.35</EnergyShieldRechargeRate>
       <EnergyShieldEnergyMax>2</EnergyShieldEnergyMax>
 	  <WorkToMake>42000</WorkToMake>
     </statBases>
@@ -512,5 +520,19 @@
         </li>
       </options>
     </colorGenerator>
+	<comps>
+		<li Class="D9CTM.CompProperties_RepairBelt">
+			<RepairChance10PerHour>1.0</RepairChance10PerHour>
+			<RepairsPerProc>1</RepairsPerProc>
+			<HPPerRepair>1</HPPerRepair>
+	    </li>
+		<li Class="D9CTM.CompProperties_HealBelt">
+			<HealChance10PerHour>1.0</HealChance10PerHour>
+			<BloodLossReduction10PerHour>0.05</BloodLossReduction10PerHour>
+			<HealsPerProc>1</HealsPerProc>
+			<HPPerHeal>1</HPPerHeal>
+			<IncreaseImmunity>false</IncreaseImmunity>
+	    </li>
+	</comps>
   </ThingDef>
 </Defs>

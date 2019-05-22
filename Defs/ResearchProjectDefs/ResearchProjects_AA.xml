@@ -31,6 +31,15 @@
 		<defName>D9Insulene</defName>
 		<label>insulene</label>
 		<description>Discover advanced material fabrication techniques allowing you to produce Insulene, a weak but incredibly insulative fabric.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>D9MaterialScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9WoodSynthesis</defName>
+		<label>wood synthesis</label>
+		<description>Learn to sculpt raw cellulose into wood in the matterweaver.</description>
 		<baseCost>600</baseCost>
 		<prerequisites>
 		  <li>D9MaterialScience</li>
