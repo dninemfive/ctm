@@ -9,9 +9,6 @@
 		  <graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<stackLimit>10</stackLimit>
-		<statBases>
-		  <MarketValue>900</MarketValue>
-		</statBases>
 		<tradeability>Sellable</tradeability>
 		<comps>
 		  <li Class="CompProperties_Usable">
@@ -37,6 +34,7 @@
 		  <Mass>0.2</Mass>
 		  <DeteriorationRate>2.0</DeteriorationRate>
 		  <Flammability>0.2</Flammability>
+		  <MarketValue>900</MarketValue>
 		</statBases>
 		<thingCategories>
 		  <li>Items</li>
