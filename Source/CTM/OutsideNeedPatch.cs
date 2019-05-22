@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,23 +14,9 @@ namespace D9CTM
     {
         static OutsideNeedPatch()
         {
-            
             var harmony = HarmonyInstance.Create("com.dninemfive.combinedtechmod");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             Log.Message("Loaded CTM outdoors need patch");
-            
-            // manual patch code
-            /*
-            var harmony = HarmonyInstance.Create("com.dninemfive.advancedshields");
-            var original = typeof(WorkGiver_HunterHunt).GetMethod("HasShieldAndRangedWeapon");
-            var prefix = typeof(Hunterfix).GetMethod("HunterPrefix");
-            harmony.Patch(original, new HarmonyMethod(prefix), null);
-            original = typeof(Alert_ShieldUserHasRangedWeapon).GetMethod("GetReport");
-            prefix = typeof(GenericFix).GetMethod("GenericPrefix");
-            harmony.Patch(original, new HarmonyMethod(prefix), null);
-            Log.Message("THIS IS COMMENTED OUT WHY ARE YOU READING IT");
-            */
-            
         }
 
         [HarmonyPatch(typeof(Need_Outdoors), "NeedInterval", new Type[] { })]
@@ -56,4 +42,4 @@ namespace D9CTM
             }
         }
     }
-}
+}*/
