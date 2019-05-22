@@ -14,7 +14,7 @@ namespace D9CTM
         {
             base.DoEffect(usedBy);
             IEnumerable<Hediff> toTend = HediffsToTend(usedBy);
-            foreach (Hediff h in toTend) h.Tended(1.5f); //slightly worse than Glitterworld, but much better than other medicine
+            foreach (Hediff h in toTend) h.Tended(1.0f); //equivalent to Industrial medicine
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)
