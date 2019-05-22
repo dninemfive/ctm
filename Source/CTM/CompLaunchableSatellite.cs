@@ -8,6 +8,7 @@ using RimWorld;
 
 namespace D9CTM
 {
+    [StaticConstructorOnStartup]
     class CompLaunchableSatellite : ThingComp
     {
         public static readonly Texture2D TargeterMouseAttachment = ContentFinder<Texture2D>.Get("UI/Overlays/LaunchableMouseAttachment", true); 
