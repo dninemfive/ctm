@@ -375,7 +375,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_ExoskeletonBelt</defName>
 		<label>exoskeleton belt</label>
-    <description>A simple self-powered exoskeleton which generally improve's the wearer's strength and dexterity, improving both work speed and combat skills.</description>
+    <description>A simple self-powered exoskeleton which generally improves the wearer's strength and dexterity, improving both work speed and combat skills.</description>
 		<graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
       <graphicClass>Graphic_Single</graphicClass>
