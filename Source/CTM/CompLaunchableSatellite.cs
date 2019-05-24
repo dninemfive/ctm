@@ -71,31 +71,37 @@ namespace D9CTM
         {
             if (!CanLaunch) return; //TODO: throw message
             if (FuelingPortSource != null) FuelingPortSource.TryGetComp<CompRefuelable>().ConsumeFuel(FuelToLaunch);
-            Skyfaller skyfaller = SkyfallerMaker.MakeSkyfaller(CTMDefOf.SatelliteLeaving);
-            parent.Destroy(DestroyMode.Vanish);
-            GenSpawn.Spawn(skyfaller, parent.Position, parent.Map, WipeMode.Vanish);
-            if (toCreate != null)
+            Skyfaller skyfaller = SkyfallerMaker.MakeSkyfaller(CTMDefOf.SatelliteLeaving);            
+            GenSpawn.Spawn(skyfaller, parent.Position, map, WipeMode.Vanish);
+            try
             {
-                ThingOwner<Thing> owner = new ThingOwner<Thing>();
-                foreach (ThingDefCountClass td in toCreate)
+                if (toCreate != null)
                 {
-                    Thing t = ThingMaker.MakeThing(td.thingDef, null);
-                    owner.TryAdd(t);
+                    ThingOwner<Thing> owner = new ThingOwner<Thing>();
+                    foreach (ThingDefCountClass td in toCreate)
+                    {
+                        Thing t = ThingMaker.MakeThing(td.thingDef, null);
+                        owner.TryAdd(t);
+                    }
+                    Thing last;
+                    do
+                    {
+                        if (owner.Count <= 0) return;
+                    }
+                    while (owner.TryDrop(owner[0], base.parent.Position, map, ThingPlaceMode.Near, out last, null, null));
                 }
-                Thing last;
-                do
+                if (incidents != null)
                 {
-                    if (owner.Count <= 0) return;
+                    IncidentInfo info = incidents.RandomElementByWeight(x => x.weight);
+                    IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, map);
+                    int day = GenDate.TicksPerDay;
+                    IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
+                    Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
                 }
-                while (owner.TryDrop(owner[0], base.parent.Position, map, ThingPlaceMode.Near, out last, null, null));
             }
-            if (incidents != null)
+            finally
             {
-                IncidentInfo info = incidents.RandomElementByWeight(x => x.weight);
-                IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, map);
-                int day = GenDate.TicksPerDay;
-                IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
-                Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
+                parent.Destroy(DestroyMode.Vanish);
             }
         }
     }
