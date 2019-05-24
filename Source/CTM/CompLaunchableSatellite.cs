@@ -13,13 +13,14 @@ namespace D9CTM
     {
         public static readonly Texture2D TargeterMouseAttachment = ContentFinder<Texture2D>.Get("UI/Overlays/LaunchableMouseAttachment", true); 
         private static readonly Texture2D LaunchCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/LaunchShip", true); //should probably expose in CompProperties
-        public Building FuelingPortSource => FuelingPortUtility.FuelingPortGiverAtFuelingPortCell(base.parent.Position, base.parent.Map);
+        public Building FuelingPortSource => FuelingPortUtility.FuelingPortGiverAtFuelingPortCell(base.parent.Position, map);
         public bool ConnectedToFuelingPort => FuelingPortSource != null;
         public bool FuelingPortSourceHasAnyFuel => ConnectedToFuelingPort && FuelingPortSource.GetComp<CompRefuelable>().HasFuel;
-        public bool IsUnderRoof => parent.Position.Roofed(base.parent.Map);
+        public bool IsUnderRoof => parent.Position.Roofed(map);
         public float FuelingPortSourceFuel => !ConnectedToFuelingPort ? 0f : FuelingPortSource.GetComp<CompRefuelable>().Fuel;
         public bool EnoughFuel => FuelingPortSourceFuel >= FuelToLaunch;
         public bool CanLaunch => EnoughFuel && !IsUnderRoof;
+        private Map map => base.parent.Map;
 
         public CompProperties_LaunchableSatellite Props => (CompProperties_LaunchableSatellite)props;
         public float FuelToLaunch => Props.fuelToLaunch;
@@ -73,23 +74,29 @@ namespace D9CTM
             Skyfaller skyfaller = SkyfallerMaker.MakeSkyfaller(CTMDefOf.SatelliteLeaving);
             parent.Destroy(DestroyMode.Vanish);
             GenSpawn.Spawn(skyfaller, parent.Position, parent.Map, WipeMode.Vanish);
-            ThingOwner<Thing> owner = new ThingOwner<Thing>();
-            foreach (ThingDefCountClass td in toCreate)
+            if (toCreate != null)
             {
-                Thing t = ThingMaker.MakeThing(td.thingDef, null);
-                owner.TryAdd(t);
+                ThingOwner<Thing> owner = new ThingOwner<Thing>();
+                foreach (ThingDefCountClass td in toCreate)
+                {
+                    Thing t = ThingMaker.MakeThing(td.thingDef, null);
+                    owner.TryAdd(t);
+                }
+                Thing last;
+                do
+                {
+                    if (owner.Count <= 0) return;
+                }
+                while (owner.TryDrop(owner[0], base.parent.Position, map, ThingPlaceMode.Near, out last, null, null));
             }
-            Thing last;
-            do
+            if (incidents != null)
             {
-                if (owner.Count <= 0) return;
+                IncidentInfo info = incidents.RandomElementByWeight(x => x.weight);
+                IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, map);
+                int day = GenDate.TicksPerDay;
+                IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
+                Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
             }
-            while (owner.TryDrop(owner[0], base.parent.Position, base.parent.Map, ThingPlaceMode.Near, out last, null, null));
-            IncidentInfo info = incidents.RandomElementByWeight(x => x.weight);
-            IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, base.parent.Map);
-            int day = GenDate.TicksPerDay;
-            IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
-            Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
         }
     }
 }

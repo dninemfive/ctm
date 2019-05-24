@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>D9OrbitalPodLauncher</defName>
+		<label>orbital pod launcher</label>
+		<description>A fueling port for launching one transport pod. Pod launchers can launch as a group - but the launchers must be placed adjacent to each other.\n\nThis one has a vastly increased fuel capacity and can therefore launch spacecraft into orbit.</description>
+		<graphicData>
+		  <texPath>Things/Building/Misc/PodLauncher</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,3)</drawSize>
+		</graphicData>
+		<size>(1,2)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1.0</fillPercent>
+		<designationCategory>Misc</designationCategory>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<building>
+		  <hasFuelingPort>true</hasFuelingPort>
+		</building>
+		<statBases>
+		  <MaxHitPoints>200</MaxHitPoints>
+		  <WorkToBuild>3000</WorkToBuild>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+		  <Steel>50</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="CompProperties_Refuelable">
+			<fuelCapacity>1500.0</fuelCapacity>
+			<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+			<initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+			<fuelFilter>
+			  <thingDefs>
+				<li>Chemfuel</li>
+			  </thingDefs>
+			</fuelFilter>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<autoRefuelPercent>1</autoRefuelPercent>
+			<showFuelGizmo>true</showFuelGizmo>
+			<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+			<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
+		  </li>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_FuelingPort</li>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.9</uiIconScale>
+	</ThingDef>
+	<!-- satellite base -->
+	<ThingDef ParentName="BuildingBase" Name="D9SatelliteBase" Abstract="True">
+		<graphicData>
+		  <texPath>Things/Special/DropPod</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<designationCategory>Misc</designationCategory>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<statBases>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <WorkToBuild>1600</WorkToBuild>
+		  <Flammability>0.5</Flammability>
+		</statBases>		
+		<inspectorTabs>
+		  <li>ITab_TransporterContents</li>
+		</inspectorTabs>
+		<placeWorkers>
+		  <li>PlaceWorker_NeedsFuelingPort</li>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.65</uiIconScale>
+	</ThingDef>
+	<!-- Asteroid Miners -->
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatelliteFragment</defName>
+		<label>asteroid miner pod (AI fragment)</label>
+		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThis one contains an AI fragment, meaning reduced but more reliable yields.</description>
+		<costList>
+		  <Steel>60</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>1000.0</fuelToLaunch>
+			<Incidents>
+				<li>
+					<def>ResourcePodCrash</def>
+					<weight>1.0</weight>
+					<minDelayDays>5</minDelayDays>
+					<maxDelayDays>6</maxDelayDays>
+				</li>
+			</Incidents>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatelliteShackled</defName>
+		<label>asteroid miner pod (shackled AI core)</label>
+		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThis one contains a shackled AI core, meaning it will produce good yields but restricts overextending itself and being lost in space.</description>
+		<costList>
+		  <Steel>60</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>1000.0</fuelToLaunch>
+			<Incidents>
+				<li>
+					<def>ResourcePodCrash</def>
+					<weight>1.0</weight>
+					<minDelayDays>5</minDelayDays>
+					<maxDelayDays>6</maxDelayDays>
+				</li>
+			</Incidents>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatelliteCore</defName>
+		<label>asteroid miner pod (AI persona core)</label>
+		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThe contained AI persona core will risk itself to get as many resources as possible and has only a minor chance of rebelling against you.</description>
+		<costList>
+		  <Steel>60</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>1000.0</fuelToLaunch>
+			<Incidents>
+				<li>
+					<def>ResourcePodCrash</def>
+					<weight>1.0</weight>
+					<minDelayDays>5</minDelayDays>
+					<maxDelayDays>6</maxDelayDays>
+				</li>
+			</Incidents>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<!-- Actual Satellites -->
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatelliteBombardment</defName>
+		<label>orbital bombardment satellite</label>
+		<description>A launchable satellite containing a manually-targeted "rods from god" bombardment system. Only active for one use before the firing exhausts the satellite's ammo and pushes it out of its orbit.</description>
+		<costList>
+		  <Steel>60</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>750.0</fuelToLaunch>
+			<thingsToCreateOnLaunch>
+				<OrbitalTargeterBombardment>1</OrbitalTargeterBombardment>
+			</thingsToCreateOnLaunch>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatellitePower</defName>
+		<label>orbital power satellite</label>
+		<description>A launchable satellite which forms a solar collection system in orbit, producing consistent power which can be collected on the ground. The system may be targeted elsewhere, but this would burn out the satellite's power exchangers and render it unusable.</description>
+		<costList>
+		  <Steel>60</Steel>
+		  <ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>750.0</fuelToLaunch>
+			<thingsToCreateOnLaunch>
+				<OrbitalTargeterPowerBeam>1</OrbitalTargeterPowerBeam>
+			</thingsToCreateOnLaunch>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+		</researchPrerequisites>
+	</ThingDef>
+</Defs>
