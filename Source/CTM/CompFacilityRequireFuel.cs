@@ -13,10 +13,10 @@ namespace D9CTM
     {
         private List<Thing> linkedBuildings = new List<Thing>();
         private HashSet<Thing> thingsToNotify = new HashSet<Thing>();
-        public CompProperties_FacilityRequireFuel Props => (CompProperties_FacilityRequireFuel)props;
+        public CompProperties_Facility Props => (CompProperties_Facility)props;
         public static void DrawLinesToPotentialThingsToLinkTo(ThingDef myDef, IntVec3 myPos, Rot4 myRot, Map map)
         {
-            CompProperties_FacilityRequireFuel compProperties = myDef.GetCompProperties<CompProperties_FacilityRequireFuel>();
+            CompProperties_Facility compProperties = myDef.GetCompProperties<CompProperties_Facility>();
             Vector3 a = GenThing.TrueCenter(myPos, myRot, myDef.size, myDef.Altitude);
             for (int i = 0; i < compProperties.linkableBuildings.Count; i++)
             {

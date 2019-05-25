@@ -287,7 +287,8 @@
       <li>BuildingsMisc</li>
     </thingCategories>
     <comps>
-      <li Class="D9CTM.CompProperties_FacilityRequireFuel">
+      <li Class="CompProperties_Facility">
+		<compClass>D9CTM.CompFacilityRequireFuel</compClass>
         <statOffsets>
           <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
         </statOffsets>

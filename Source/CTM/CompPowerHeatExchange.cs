@@ -11,10 +11,10 @@ namespace D9CTM
     class CompPowerHeatExchange : CompPowerPlant
     {
 
-        public CompProperties_HeatExchange Props => (CompProperties_HeatExchange)props;
-        private float StandbyPower => Props.standbyPower;
+        public CompProperties_HeatExchange Props2 => (CompProperties_HeatExchange)props;
+        private float StandbyPower => Props2.standbyPower;
         public float targetTemperature = -99999f;
-        private float defaultTargetTemperature => Props.defaultTargetTemperature;
+        private float defaultTargetTemperature => Props2.defaultTargetTemperature;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -71,6 +71,11 @@ namespace D9CTM
             float dif = Mathf.Abs(targetTemperature - GridsUtility.GetTemperature(IntVec3Utility.ToIntVec3(b.TrueCenter()), b.Map));
             return dif;// * dif;
         }
+
+        /*private float GetHeatPushEnergy()
+        {
+
+        }*/
 
         enum Mode { Standby, StandbyForced, Power, Temperature };
     }

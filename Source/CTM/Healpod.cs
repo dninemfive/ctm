@@ -24,15 +24,15 @@ namespace D9CTM
 
         public Healpod()
         {
-            ticksUntilNextMajorHeal = GenDate.TicksPerHour * 6;
-            ticksUntilNextMinorHeal = GenDate.TicksPerHour;
+            //ticksUntilNextMajorHeal = GenDate.TicksPerHour * 6;
+            //ticksUntilNextMinorHeal = GenDate.TicksPerHour;
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
-            Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
+            //Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
+            //Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
         }
 
         public override void Tick()
