@@ -4,6 +4,7 @@
 	  <xpath>*/ThingDef[defName = "Human"]/recipes</xpath>
 	  <value>
 		<li>D9AdminsterHealingFoam</li>
+		<li>D9AdminsterAutoImmunizer</li>
 	  </value>
 	</Operation>
 </Patch>

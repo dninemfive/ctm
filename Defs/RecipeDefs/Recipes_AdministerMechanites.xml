@@ -27,4 +27,31 @@
 		  </thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
+	<RecipeDef>
+		<defName>D9AdminsterAutoImmunizer</defName>
+		<label>administer auto-immunizer</label>
+		<description>Administer auto-immunizer.</description>
+		<workerClass>Recipe_AdministerUsableItem</workerClass>
+		<jobString>Administering auto-immunizer.</jobString>
+		<targetsBodyPart>false</targetsBodyPart>
+		<anesthetize>false</anesthetize>
+		<workAmount>600</workAmount>
+		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>D9AutoImmunizer</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>D9AutoImmunizer</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
 </Defs>

@@ -12,36 +12,34 @@ namespace D9CTM
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
-            IEnumerable<Hediff> toTend = HediffsToTend(usedBy);
-            foreach (Hediff h in toTend) h.Tended(1.0f); //equivalent to Industrial medicine
+            foreach (ImmunityRecord ir in ImmunitiesToSet(usedBy)) ir.immunity = 1f;
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)
         {
-            IEnumerable<Hediff> toTend = HediffsToTend(p);
-            bool boo = toTend.Any();
+            bool boo = hasAnyDisease(p);
             if (!boo) failReason = "D9NoDiseases".Translate(p.LabelShort);
             else failReason = null;
             return boo;
         }
 
-        public IEnumerable<Hediff> HediffsToTend(Pawn p)
+        public IEnumerable<ImmunityRecord> ImmunitiesToSet(Pawn p)
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                if (h.TendableNow())
-                {
-                    HediffWithComps com = (HediffWithComps)h;
-                    if (com != null && immunizable(com)) yield return h;
-                }
+                ImmunityRecord ir = p.health.immunity.GetImmunityRecord(h.def);
+                if (ir != null) yield return ir;
             }
         }
 
-        private bool immunizable(HediffWithComps h)
+        public bool hasAnyDisease(Pawn p)
         {
-            foreach (HediffComp c in h.comps)
+            foreach(Hediff h in p.health.hediffSet.hediffs)
             {
-                if (c is HediffComp_Immunizable) return true;
+                HediffWithComps hwc = h as HediffWithComps;
+                HediffComp_Immunizable hci = null;
+                if (hwc != null) hci = hwc.TryGetComp<HediffComp_Immunizable>();
+                if (hci != null) return true;
             }
             return false;
         }

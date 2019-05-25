@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<!-- Usables -->
-	<D9NoTendableWounds>{0} has no wounds that need tending.</D9NoTendableWounds>
-	<D9NoDiseases>{0} has no diseases needing immunization.</D9NoDiseases>
+	<D9NoTendableWounds>{0} has no wounds that need tending</D9NoTendableWounds>
+	<D9NoDiseases>{0} has no diseases needing immunization</D9NoDiseases>
 	<!-- Satellites -->
 	<CommandLaunchSatellite>Launch {0}</CommandLaunchSatellite>
 	<CommandLaunchSatelliteDesc>Launch this {0} into space.</CommandLaunchSatelliteDesc>
