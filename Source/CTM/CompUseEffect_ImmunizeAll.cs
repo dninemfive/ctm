@@ -13,6 +13,14 @@ namespace D9CTM
         {
             base.DoEffect(usedBy);
             foreach (ImmunityRecord ir in ImmunitiesToSet(usedBy)) ir.immunity = 1f;
+            CauseComa(usedBy);
+        }
+
+        public static void CauseComa(Pawn p)
+        {
+            p.health.forceIncap = true;
+            p.health.AddHediff(CTMDefOf.D9NanComa, null, null, null);
+            p.health.forceIncap = false;
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)

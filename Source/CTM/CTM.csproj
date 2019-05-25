@@ -65,6 +65,8 @@
     <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Healpod.cs" />
+    <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
+    <Compile Include="HediffComp_TimePerImmunity.cs" />
     <Compile Include="IncidentInfo.cs" />
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="JoyGiver_EnterBuilding.cs" />

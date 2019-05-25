@@ -50,7 +50,7 @@
 		<label>auto-immunizer</label>
 		<description>A single-use injector which floods the body with nanites programmed to kill any known disease. Cures all infectious diseases but leaves the person who used it in a deep sleep for many hours or even days.</description>
 		<graphicData>
-		  <texPath>Things/Item/HealingFoam</texPath>
+		  <texPath>Things/Item/AutoImmunizer</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<stackLimit>10</stackLimit>
