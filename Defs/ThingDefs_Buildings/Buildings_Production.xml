@@ -74,6 +74,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
+		  <li>D9CTMToolCabinet</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -156,6 +157,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
+		  <li>D9CTMToolCabinet</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -303,6 +305,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
+		  <li>D9CTMToolCabinet</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>

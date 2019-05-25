@@ -13,10 +13,10 @@ namespace D9CTM
     {
         private List<Thing> linkedBuildings = new List<Thing>();
         private HashSet<Thing> thingsToNotify = new HashSet<Thing>();
-        public CompProperties_Facility Props => (CompProperties_Facility)props;
+        public CompProperties_FacilityRequireFuel Props => (CompProperties_FacilityRequireFuel)props;
         public static void DrawLinesToPotentialThingsToLinkTo(ThingDef myDef, IntVec3 myPos, Rot4 myRot, Map map)
         {
-            CompProperties_Facility compProperties = myDef.GetCompProperties<CompProperties_Facility>();
+            CompProperties_FacilityRequireFuel compProperties = myDef.GetCompProperties<CompProperties_FacilityRequireFuel>();
             Vector3 a = GenThing.TrueCenter(myPos, myRot, myDef.size, myDef.Altitude);
             for (int i = 0; i < compProperties.linkableBuildings.Count; i++)
             {
@@ -37,7 +37,7 @@ namespace D9CTM
             {
                 if (linkedBuildings[i] == thing)
                 {
-                    Log.Error("Notify_NewLink was called but the link is already here. Error from dninemfive's Accessible Archotech (D9CTM.CompFacilityRequireFuel)", false);
+                    Log.Error("Notify_NewLink was called but the link is already here.", false);
                     return;
                 }
             }
@@ -97,16 +97,15 @@ namespace D9CTM
         }
         public override string CompInspectStringExtra()
         {
-            CompProperties_Facility props = Props;
-            if (props.statOffsets == null)
+            if (Props.statOffsets == null)
             {
                 return null;
             }
             bool flag = AmIActiveForAnyone();
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < props.statOffsets.Count; i++)
+            for (int i = 0; i < Props.statOffsets.Count; i++)
             {
-                StatModifier statModifier = props.statOffsets[i];
+                StatModifier statModifier = Props.statOffsets[i];
                 StatDef stat = statModifier.stat;
                 stringBuilder.Append(stat.LabelCap);
                 stringBuilder.Append(": ");
@@ -117,7 +116,7 @@ namespace D9CTM
                     stringBuilder.Append("InactiveFacility".Translate());
                     stringBuilder.Append(")");
                 }
-                if (i < props.statOffsets.Count - 1)
+                if (i < Props.statOffsets.Count - 1)
                 {
                     stringBuilder.AppendLine();
                 }
@@ -131,12 +130,11 @@ namespace D9CTM
         private void LinkToNearbyBuildings()
         {
             UnlinkAll();
-            CompProperties_Facility props = Props;
-            if (props.linkableBuildings != null)
+            if (Props.linkableBuildings != null)
             {
-                for (int i = 0; i < props.linkableBuildings.Count; i++)
+                for (int i = 0; i < Props.linkableBuildings.Count; i++)
                 {
-                    foreach (Thing item in base.parent.Map.listerThings.ThingsOfDef(props.linkableBuildings[i]))
+                    foreach (Thing item in base.parent.Map.listerThings.ThingsOfDef(Props.linkableBuildings[i]))
                     {
                         CompAffectedByFacilities compAffectedByFacilities = item.TryGetComp<CompAffectedByFacilities>();
                         if (compAffectedByFacilities != null && compAffectedByFacilities.CanLinkTo(base.parent))
@@ -168,7 +166,6 @@ namespace D9CTM
             }
             linkedBuildings.Clear();
         }
-        // my only original code in this class
         public bool CanBeActive {
             get
             {
