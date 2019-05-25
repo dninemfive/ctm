@@ -34,8 +34,8 @@ namespace D9CTM
                 yield return g;
             }
             Command_Action launch = new Command_Action();
-            launch.defaultLabel = "CommandLaunchSatellite".Translate();
-            launch.defaultDesc = "CommandLaunchSatelliteDesc".Translate();
+            launch.defaultLabel = "CommandLaunchSatellite".Translate(base.parent.Label);
+            launch.defaultDesc = "CommandLaunchSatelliteDesc".Translate(base.parent.Label);
             launch.icon = LaunchCommandTex;
             launch.alsoClickIfOtherInGroupClicked = false;
             launch.action = delegate
@@ -44,11 +44,11 @@ namespace D9CTM
             };
             if (!EnoughFuel)
             {
-                launch.Disable("NotEnoughFuelToLaunchSatellite".Translate());
+                launch.Disable("NotEnoughFuelToLaunchSatellite".Translate(base.parent.Label));
             }
             else if (IsUnderRoof)
             {
-                launch.Disable("SatelliteIsUnderRoof".Translate());
+                launch.Disable("SatelliteIsUnderRoof".Translate(base.parent.Label));
             }
             yield return launch;
         }
@@ -61,8 +61,8 @@ namespace D9CTM
             }
             else
             {
-                if (IsUnderRoof) return "SatelliteIsUnderRoof".Translate();
-                if (!EnoughFuel) return "NotEnoughFuelToLaunchSatellite".Translate();                                
+                if (IsUnderRoof) return "SatelliteIsUnderRoof".Translate(base.parent.Label);
+                if (!EnoughFuel) return "NotEnoughFuelToLaunchSatellite".Translate(base.parent.Label);                                
             }
             return null;
         }

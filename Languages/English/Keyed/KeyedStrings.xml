@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+	<!-- Usables -->
 	<D9NoTendableWounds>{0} has no wounds that need tending.</D9NoTendableWounds>
+	<D9NoDiseases>{0} has no diseases needing immunization.</D9NoDiseases>
+	<!-- Satellites -->
+	<CommandLaunchSatellite>Launch {0}</CommandLaunchSatellite>
+	<CommandLaunchSatelliteDesc>Launch this {0} into space.</CommandLaunchSatelliteDesc>
+	<NotEnoughFuelToLaunchSatellite>This {0} doesn't have enough fuel to launch.</NotEnoughFuelToLaunchSatellite>
+	<SatelliteIsUnderRoof>You can't launch a spacecraft from under a roof!</SatelliteIsUnderRoof>
+	<ReadyForLaunchSatellite>Ready to launch.</ReadyForLaunchSatellite>
+	
 </LanguageData>
