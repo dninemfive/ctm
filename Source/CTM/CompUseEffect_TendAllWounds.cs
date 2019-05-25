@@ -9,7 +9,6 @@ namespace D9CTM
 {
     class CompUseEffect_TendAllWounds : CompUseEffect
     {
-
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
@@ -21,7 +20,7 @@ namespace D9CTM
         {
             IEnumerable<Hediff> toTend = HediffsToTend(p);
             bool boo = toTend.Any();
-            if (!boo) failReason = "D9NoTendableWounds".Translate();
+            if (!boo) failReason = "D9NoTendableWounds".Translate(p.LabelShort);
             else failReason = null;
             return boo;
         }

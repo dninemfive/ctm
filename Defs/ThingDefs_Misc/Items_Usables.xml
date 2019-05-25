@@ -18,6 +18,7 @@
 		  </li>
 		  <li Class="CompProperties_UseEffect">
 			<compClass>D9CTM.CompUseEffect_TendAllWounds</compClass>
+			<!--TODO: expose: tendQuality>1.0</tendQuality> equivalent to industrial meds -->
 		  </li>
 		  <li Class="CompProperties_UseEffect">
 			<compClass>CompUseEffect_DestroySelf</compClass>

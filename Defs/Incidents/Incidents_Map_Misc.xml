@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--
+	<IncidentDef>
+		<defName>ResourcePodCrash</defName>
+		<label>resource pod crash</label>
+		<category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+		<workerClass>IncidentWorker_ResourcePodCrash</workerClass>
+		<baseChance>2.6</baseChance>
+	</IncidentDef>-->
+</Defs>
