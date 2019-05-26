@@ -7,54 +7,59 @@ using RimWorld;
 
 namespace D9CTM
 {
+    /*   TODO:
+     *   - Make pawns remove fuel when target less than current
+     *   - Make orbital beam work; remove comp and rewrite, including [StaticConstructorOnStartup]
+     */
     class CompOrbitalPowerPlant : CompPowerPlant
     {
-        private Building_Storage par;
-        //public float powerPerDef => Props.powerPerItem;
-        public float powerPerDef => base.Props.basePowerConsumption;
-        private float cachedCount;
-        //public List<ThingDef> defsToCount => Props.defsToCount;
+        private CompOrbitalBeam beam = null; 
+        private readonly int TickRareNum = GenDate.TicksPerHour/10;
+        private bool active
+        {
+            get
+            {
+                bool broken = breakdownableComp != null && breakdownableComp.BrokenDown;
+                bool fueled = refuelableComp != null && refuelableComp.HasFuel;
+                bool on = flickableComp != null && flickableComp.SwitchIsOn;
+                Log.Message("broken: " + broken + ", fueled: " + fueled + ", on: " + on + ", powerOn: " + base.PowerOn);
+                return !broken && !roofed && fueled && on && base.PowerOn;
+            }
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            par = base.parent as Building_Storage;
-            if (par == null) Log.Error("[Accessible Archotech] A Thing has the comp CompOrbitalPowerPlant but is not of class Building_Storage. This is a big problem.");
-            cachedCount = count();
+            beam = base.parent.GetComp<CompOrbitalBeam>();
+            Log.Message("beam: " + beam);
+        }
+        
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (Find.TickManager.TicksGame % TickRareNum == 0) DoBeam();
+        }
+
+        public void DoBeam()
+        {
+            if (active && beam != null) beam.StartAnimation(TickRareNum, 0, 0f);
         }
 
         protected override float DesiredPowerOutput
         {
             get
             {
-                return powerPerDef * cachedCount;
+                return !roofed || refuelableComp == null ? 0 : 0f - (refuelableComp.Fuel * base.Props.basePowerConsumption);
             }
         }
 
-        public override void CompTickRare()
+        public bool roofed
         {
-            base.CompTickRare();
-            cachedCount = count();
-        }
-
-        private float count()
-        {
-            int ct = 0;
-            if (par != null)
+            get
             {
-                foreach (Thing t in par.slotGroup.HeldThings)
-                {
-                    ct++;
-                    /*
-                    foreach (ThingDef d in defsToCount) if (t.def == d)
-                        {
-                            ct++;
-                            break; //note: check if break only breaks one layer or both together. I miss labels.
-                        }
-                    */
-                }
+                foreach (IntVec3 cell in base.parent.OccupiedRect()) if (base.parent.Map.roofGrid.Roofed(cell)) return false;
+                return true;
             }
-            return ct;
         }
     }
 }
