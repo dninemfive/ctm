@@ -116,7 +116,7 @@
     <label>silver vanoreactor</label>
     <description>Passively generates silver atoms from vanometric fluctuations. The reaction path requires additional external power and a significant amount of existing silver as a catalyst.</description>
     <graphicData>
-      <texPath>Things/Building/Special/InfiniteChemreactor</texPath>
+      <texPath>Things/Building/SilverVanoreactor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,1)</drawSize>
       <!--shadowData>
