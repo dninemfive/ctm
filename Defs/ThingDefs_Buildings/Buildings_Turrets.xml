@@ -1,11 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Charge Rifle turret -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>Turret_D9_ChargeRifles</defName>
+		<label>charge rifle mini-turret</label>
+		<description>A short-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Security/TurretMini_Base</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(3,3)</drawSize>
+		  <damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		  </damageData>
+		  <shadowData>
+			<volume>(0.27,0.25,0.27)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Turret_ChargeRifles_MenuIcon</uiIconPath>
+		<uiIconScale>2.1</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<thingCategories>
+		  <li>BuildingsSecurity</li>
+		</thingCategories>
+		<statBases>
+		  <MaxHitPoints>160</MaxHitPoints>
+		  <Flammability>0.5</Flammability>
+		  <WorkToBuild>4000</WorkToBuild>
+		  <Mass>8</Mass>
+		  <Beauty>-16</Beauty>
+		  <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+		  <li Class="CompProperties_Explosive">
+			<explosiveRadius>2.5</explosiveRadius>
+			<explosiveDamageType>BombSuper</explosiveDamageType>
+			<chanceNeverExplodeFromDamage>0.8</chanceNeverExplodeFromDamage>
+		  </li>
+		  <li Class="CompProperties_Forbiddable"/>
+		  <li Class="CompProperties_Flickable"/>
+		  <li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+		  <li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>70</costStuffCount>
+		<costList>
+		  <D9VanometricCell>4</D9VanometricCell>
+		  <AIPersonaFragment>1</AIPersonaFragment>
+		  <Plasteel>80</Plasteel>
+		  <ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>20.9</specialDisplayRadius>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_ChargeRifles_Mounted</turretGunDef>
+			<turretBurstCooldownTime>3.2</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Item/ChargeRifles</turretTopGraphicPath>
+		</building>
+		<placeWorkers>
+		  <li>PlaceWorker_TurretTop</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+		  <li>GunTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_ChargeRifles_Mounted</defName>
+    <label>twin-linked charge rifles (mounted)</label>
+    <description>two twin-linked charge rifles, optimized for a high rate of fire. Unfortunately, the overcharged barrels produce less coherent plasma, reducing range.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/ChargeRifles</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <Mass>4.6</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.68</AccuracyShort>
+      <AccuracyMedium>0.58</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>20.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
 	<!-- Charge Lance turret -->
 	<ThingDef ParentName="BuildingBase">
 		<defName>Turret_D9_ChargeLance</defName>
 		<label>charge lance mini-turret</label>
-		<description>A portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+		<description>A long-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
 		<thingClass>Building_TurretGun</thingClass>
 		<graphicData>
 		  <texPath>Things/Building/Security/TurretMini_Base</texPath>
@@ -20,7 +139,7 @@
 		  </shadowData>
 		</graphicData>
 		<uiIconPath>Things/Building/Turret_ChargeLance_MenuIcon</uiIconPath>
-		<uiIconScale>0.90</uiIconScale>
+		<uiIconScale>2.1</uiIconScale>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
@@ -34,7 +153,7 @@
 		  <WorkToBuild>4200</WorkToBuild>
 		  <Mass>10</Mass>
 		  <Beauty>-16</Beauty>
-		  <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		  <ShootingAccuracyTurret>0.99</ShootingAccuracyTurret>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<comps>
