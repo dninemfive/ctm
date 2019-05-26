@@ -6,6 +6,12 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
+/*
+ *  REWORK: Structure: Building_HeatExchange
+- CompTempControl
+- CompPowerPlant ?? CompHeatExchangePowerGen
+ */
+
 namespace D9CTM
 {
     class CompPowerHeatExchange : CompPowerPlant

@@ -118,11 +118,11 @@
     <graphicData>
       <texPath>Things/Building/Special/InfiniteChemreactor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3, 3)</drawSize>
-      <shadowData>
+      <drawSize>(1,1)</drawSize>
+      <!--shadowData>
         <volume>(1.8, 1.0, 0.2)</volume>
         <offset>(0.0, 0.0, -0.4)</offset>
-      </shadowData>
+      </shadowData-->
     </graphicData>
     <thingCategories>
       <li>BuildingsSpecial</li>
@@ -133,12 +133,12 @@
       <Plasteel>200</Plasteel>
       <ComponentSpacer>6</ComponentSpacer>
 	  <D9VanometricCell>4</D9VanometricCell>
-	  <Silver>500</Silver>
+	  <Silver>1000</Silver>
     </costList>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>300</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Breakdownable"/>
       <li Class="CompProperties_Flickable"/>
@@ -157,7 +157,7 @@
     </comps>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
-      <MarketValue>1500</MarketValue>
+      <MarketValue>2000</MarketValue>
       <MaxHitPoints>200</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <Beauty>-10</Beauty>
@@ -168,7 +168,7 @@
       <li>RewardSpecial</li>
     </thingSetMakerTags>
     <tickerType>Normal</tickerType>
-    <size>(2, 2)</size>
+    <size>(1, 1)</size>
     <fillPercent>1.0</fillPercent>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
