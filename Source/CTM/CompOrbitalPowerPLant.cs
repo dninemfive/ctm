@@ -9,11 +9,11 @@ namespace D9CTM
 {
     /*   TODO:
      *   - Make pawns remove fuel when target less than current
-     *   - Make orbital beam work; remove comp and rewrite, including [StaticConstructorOnStartup]
+     *   - Take over heat output from CompHeatPusher?
      */
     class CompOrbitalPowerPlant : CompPowerPlant
     {
-        private CompOrbitalBeam beam = null; 
+        private CompOPRBeam beam = null; 
         private readonly int TickRareNum = GenDate.TicksPerHour/10;
         private bool active
         {
@@ -30,7 +30,7 @@ namespace D9CTM
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            beam = base.parent.GetComp<CompOrbitalBeam>();
+            beam = base.parent.GetComp<CompOPRBeam>();
             Log.Message("beam: " + beam);
         }
         
@@ -42,7 +42,7 @@ namespace D9CTM
 
         public void DoBeam()
         {
-            if (active && beam != null) beam.StartAnimation(TickRareNum, 0, 0f);
+            if (beam != null) beam.ShouldBeActive = active;
         }
 
         protected override float DesiredPowerOutput

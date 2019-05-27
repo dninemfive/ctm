@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompOPRBeam.cs" />
     <Compile Include="CompOrbitalPowerPlant.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
