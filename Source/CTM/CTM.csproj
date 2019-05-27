@@ -47,8 +47,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompOPRBeam.cs" />
-    <Compile Include="CompOrbitalPowerPlant.cs" />
+    <Compile Include="Buildings\Satellite\OPR\CompOPRBeam.cs" />
+    <Compile Include="Buildings\Satellite\OPR\CompOrbitalPowerPlant.cs" />
+    <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeExcessFuel.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="Belts\Repair\CompProperties_RepairBelt.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="IncidentInfo.cs" />
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="Buildings\Pods\Sim\JoyGiver_EnterBuilding.cs" />
+    <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeOneFuel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
     <Compile Include="OutsideNeedPatch.cs" />

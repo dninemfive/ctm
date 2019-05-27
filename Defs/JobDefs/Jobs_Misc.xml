@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<JobDef>
+		<defName>d9TakeOneFuel</defName>
+		<driverClass>D9CTM.JobDriver_TakeOneFuel</driverClass>
+		<reportString>taking an TargetB.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	<JobDef>
+		<defName>d9UnloadExcessFuel</defName>
+		<driverClass>D9CTM.JobDriver_TakeExcessFuel</driverClass>
+		<reportString>unloading TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+</Defs>

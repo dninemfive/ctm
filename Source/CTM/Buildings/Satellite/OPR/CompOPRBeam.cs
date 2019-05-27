@@ -25,7 +25,6 @@ namespace D9CTM
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            Log.Message("" + Props.sound);
             CheckSpawnSustainer();
         }
 

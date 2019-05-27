@@ -14,6 +14,8 @@ namespace D9CTM
         public static StatDef D9NaniteHealRate;
         public static ThingDef SatelliteLeaving;
         public static HediffDef D9NanComa;
+        public static JobDef d9TakeOneFuel;
+        public static JobDef d9UnloadExcessFuel;
         //public static StatDef D9NaniteRepairRateBuilding;
         //public static StatDef D9NaniteHealRateBuilding;
 

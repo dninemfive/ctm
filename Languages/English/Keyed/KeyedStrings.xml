@@ -9,5 +9,7 @@
 	<NotEnoughFuelToLaunchSatellite>This {0} doesn't have enough fuel to launch.</NotEnoughFuelToLaunchSatellite>
 	<SatelliteIsUnderRoof>You can't launch a spacecraft from under a roof!</SatelliteIsUnderRoof>
 	<ReadyForLaunchSatellite>Ready to launch.</ReadyForLaunchSatellite>
-	
+	<!-- Orbital Power Receiver -->
+	<D9TakeOneOPR>Remove one {0}</D9TakeOneOPR>
+	<D9EmptyToTargetOPR>Empty to target fuel level</D9EmptyToTargetOPR>
 </LanguageData>
