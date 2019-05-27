@@ -13,9 +13,6 @@ namespace D9CTM
     class CompOPRBeam : ThingComp
     {
         CompProperties_OrbitalBeam Props => (CompProperties_OrbitalBeam)base.props;
-        //initializer
-        //render beam
-        // check whether beam should end (tickRare)
         private const float angle = 0f;
         private Sustainer sustainer;
         private static readonly Material BeamMat = MaterialPool.MatFrom("Other/OrbitalBeam", ShaderDatabase.MoteGlow, MapMaterialRenderQueues.OrbitalBeam);
@@ -28,6 +25,7 @@ namespace D9CTM
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+            Log.Message("" + Props.sound);
             CheckSpawnSustainer();
         }
 
@@ -73,6 +71,8 @@ namespace D9CTM
             int TicksPassed = 100;
             int TicksLeft = 100;
             int fadeOutDuration = 99;
+            //offset down so it doesn't look like the beam lands above the building
+            float offset = 2;
             if (ShouldBeActive)
             {
                 Vector3 drawPos = base.parent.DrawPos;
@@ -82,7 +82,7 @@ namespace D9CTM
                 Vector3 a2 = drawPos + a * num * 0.5f;
                 a2.y = AltitudeLayer.MetaOverlays.AltitudeFor();
                 float num2 = Mathf.Min((float)TicksPassed / 10f, 1f);
-                Vector3 b = a * ((1f - num2) * num);
+                Vector3 b = a * ((1f - num2) * num) - new Vector3(0f, 0f, offset);
                 float num3 = 0.975f + Mathf.Sin((float)TicksPassed * 0.3f) * 0.025f;
                 if (TicksLeft < fadeOutDuration)
                 {
