@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using RimWorld;
 
@@ -61,6 +62,56 @@ namespace D9CTM
                 foreach (IntVec3 cell in base.parent.OccupiedRect()) if (base.parent.Map.roofGrid.Roofed(cell)) return true;
                 return false;
             }
+        }
+
+        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn p)
+        {
+            if (refuelableComp != null)
+            {
+                float fuel = refuelableComp.Fuel;
+                if (fuel >= 1f)
+                {
+                    yield return FMO_TakeOne();
+                    if (fuel > refuelableComp.TargetFuelLevel) yield return FMO_EmptyToTarget();
+                }
+            }
+        }
+
+        private FloatMenuOption FMO_TakeOne()
+        {
+            ThingDef defReceived = refuelableComp.Props.fuelFilter.AllowedThingDefs.ElementAt(0);// ?? ThingDefOf.Beer; //just to prevent thrown errors, I guess
+            Action act = delegate
+            {
+                refuelableComp.ConsumeFuel(1f);
+                ThingOwner<Thing> owner = new ThingOwner<Thing>();
+                Thing t = ThingMaker.MakeThing(defReceived, null);
+                owner.TryAdd(t);
+                if(owner.Count > 0)owner.TryDrop(owner[0], base.parent.Position, base.parent.Map, ThingPlaceMode.Near, out t, null, null);
+            };
+            return new FloatMenuOption("D9TakeOneOPR".Translate(defReceived.label), act);
+        }
+
+        private FloatMenuOption FMO_EmptyToTarget()
+        {
+            ThingDef defReceived = refuelableComp.Props.fuelFilter.AllowedThingDefs.ElementAt(0);
+            Action act = delegate
+            {
+                float toTake = Mathf.RoundToInt(refuelableComp.Fuel - refuelableComp.TargetFuelLevel);
+                ThingOwner<Thing> owner = new ThingOwner<Thing>();
+                for (int i = 0; i < toTake; i++)
+                {
+                    Thing t = ThingMaker.MakeThing(defReceived, null);
+                    owner.TryAdd(t);
+                }
+                refuelableComp.ConsumeFuel(toTake);
+                Thing last;
+                do
+                {
+                    if (owner.Count <= 0) return;
+                }
+                while (owner.TryDrop(owner[0], base.parent.Position, base.parent.Map, ThingPlaceMode.Near, out last, null, null));
+            };
+            return new FloatMenuOption("D9EmptyToTargetOPR".Translate(), act);
         }
     }
 }
