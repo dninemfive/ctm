@@ -16,22 +16,37 @@ namespace D9CTM
 {
     class CompPowerHeatExchange : CompPowerPlant
     {
-
-        public CompProperties_HeatExchange Props2 => (CompProperties_HeatExchange)props;
-        private float StandbyPower => Props2.standbyPower;
-        public float targetTemperature = -99999f;
-        private float defaultTargetTemperature => Props2.defaultTargetTemperature;
+        private float StandbyPower => Props.basePowerConsumption;
+        public CompTempControl temp;
+        private SimpleCurve powerFromTempCurve;
+        private const float powerPerHeat = 10f;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (targetTemperature < -200f) targetTemperature = defaultTargetTemperature;
+            temp = base.parent.TryGetComp<CompTempControl>();
+            initCurve();
         }
 
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref targetTemperature, "targetTemperature", 0f, false);
+            initCurve();
+        }
+
+        private void initCurve()
+        {
+            //just an approximation about how I think it should work
+            //very low power gen under most conditions (much lower than standby power), increasing a lot across livable range and then having greatly reduced increases above that
+            powerFromTempCurve = new SimpleCurve();
+            powerFromTempCurve.Add(-273.15f, 0f);
+            powerFromTempCurve.Add(-100f, 100f);
+            powerFromTempCurve.Add(0f, 1000f);
+            powerFromTempCurve.Add(50f, 10000f);
+            powerFromTempCurve.Add(100f, 24000f);
+            powerFromTempCurve.Add(150f, 40000f);
+            powerFromTempCurve.Add(200f, 50000f);
+            powerFromTempCurve.Add(2000f, 60000f);
         }
 
         private Mode preferredMode
@@ -63,7 +78,7 @@ namespace D9CTM
                 switch (mode)
                 {                    
                     case Mode.Power: return getPowerDif();
-                    case Mode.Temperature: return 0 - getPowerDif();
+                    case Mode.Temperature: return heatToPush() * powerPerHeat;
                     case Mode.Standby:
                     case Mode.StandbyForced:
                     default: return 0 - StandbyPower;
@@ -74,14 +89,17 @@ namespace D9CTM
         private float getPowerDif()
         {
             Building b = (Building)base.parent;
-            float dif = Mathf.Abs(targetTemperature - GridsUtility.GetTemperature(IntVec3Utility.ToIntVec3(b.TrueCenter()), b.Map));
-            return dif;// * dif;
+            float local = GridsUtility.GetTemperature(IntVec3Utility.ToIntVec3(b.TrueCenter()), b.Map);
+            return powerFromTempCurve.Evaluate(local);
         }
 
-        /*private float GetHeatPushEnergy()
+        private float heatToPush()
         {
-
-        }*/
+            float target = temp.targetTemperature;
+            Building b = (Building)base.parent;
+            float local = GridsUtility.GetTemperature(IntVec3Utility.ToIntVec3(b.TrueCenter()), b.Map);
+            return Mathf.Clamp((target - local) * temp.Props.energyPerSecond, -200, 200);
+        }
 
         enum Mode { Standby, StandbyForced, Power, Temperature };
     }

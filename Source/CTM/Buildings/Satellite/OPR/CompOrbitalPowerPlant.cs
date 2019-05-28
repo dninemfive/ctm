@@ -10,9 +10,6 @@ using RimWorld;
 namespace D9CTM
 {
     /*   TODO:
-     *   - Make pawns remove fuel when target less than current
-     *      - Gizmo to eject all excess fuel
-     *      - context menu to have a pawn take one targeter
      *   - Take over heat output from CompHeatPusher?
      */
     class CompOrbitalPowerPlant : CompPowerPlant
