@@ -19,7 +19,6 @@ namespace D9CTM
         private bool canRepair => repairRate > 0;
         private float healRate => Props.healHP10PerHour;
         private bool canHeal => healRate > 0;
-        //private int ticksUntilNextRepair = 0, ticksUntilNextHeal = 0;
 
         public bool CanBeActive
         {
@@ -30,6 +29,7 @@ namespace D9CTM
                 return ((trader == null) || (trader != null && trader.PowerOn)) && ((fuelable == null) || (fuelable != null && fuelable.HasFuel));
             }
         }
+        //Look at WorkGiver_DoBill.TryFindBestBillIngredients to optimize
         private void getAffectedThings()
         {
             affectedBuildings.Clear();
@@ -60,15 +60,13 @@ namespace D9CTM
                 {
                     foreach (Thing t in affectedBuildings) if (t.HitPoints < t.MaxHitPoints) t.HitPoints++;
                     foreach (Pawn p in affectedPawns) foreach (ThingWithComps t in p.equipment.AllEquipmentListForReading) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints) t.HitPoints++;
-                    //ticksUntilNextRepair = ticksUntilNextRepair = (int)(10 / repairRate); //so a repair rate of 100% equals 1 HP repaired per hour, 50% = 2hr, &c. 
                 }
                 if (canHeal && affectedPawns.Count > 0)
                 {
                     foreach (Pawn p in affectedPawns)
                     {
-                        HealingUtility.doMinorHeal(p);
+                        HealingUtility.PartiallyHealAllNonPermInjuries(p, healRate/100f);
                     }
-                    //ticksUntilNextHeal = (int)(2500 / healRate); //so a heal rate of 100% equals one heal pulse per hour, 50% = 2hr, &c
                 }
             }
         }

@@ -42,6 +42,13 @@ namespace D9CTM
 
             }
         }
+        public static void PartiallyHealAllNonPermInjuries(Pawn p, float hp)
+        {
+            foreach(Hediff_Injury hi in GetNonPermanentInjuries(p))
+            {
+                hi.Severity -= hp;
+            }
+        }
         public static void doMajorHeal(Pawn p, String label) //copy of TryHealRandomPermanentWound from HediffComp_HealPermanentWounds
         {
             if (p.health.hediffSet.hediffs.Where(HediffUtility.IsPermanent).TryRandomElement(out Hediff hediff))
@@ -52,10 +59,6 @@ namespace D9CTM
                     Messages.Message("MessagePermanentWoundHealed".Translate(label, p.LabelShort, hediff.Label, p.Named("PAWN")), p, MessageTypeDefOf.PositiveEvent, true);
                 }
             }
-        }
-        public static void restoreMissingLimb(Pawn p)
-        {
-        
         }
     }
 }
