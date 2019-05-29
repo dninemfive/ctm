@@ -10,7 +10,8 @@ namespace D9CTM
 {
     class CompNanoRepair : ThingComp
     {
-        private List<Thing> affectedBuildings = new List<Thing>(); //Actually affected things, but whatever
+        private List<Thing> allAffectedThings = new List<Thing>();
+        private List<Thing> affectedNonPawns = new List<Thing>();
         private List<Pawn> affectedPawns = new List<Pawn>();
         private Vector3 center => GenThing.TrueCenter(parent.Position, parent.Rotation, parent.def.Size, parent.def.Altitude);
         private CompProperties_NanoRepair Props => (CompProperties_NanoRepair)props;
@@ -19,6 +20,9 @@ namespace D9CTM
         private bool canRepair => repairRate > 0;
         private float healRate => Props.healHP10PerHour;
         private bool canHeal => healRate > 0;
+        private int ticks => Props.rareTicksBetweenPulses;
+        private int ticksTo;
+        private bool useTicks => ticks > 0;
 
         public bool CanBeActive
         {
@@ -32,21 +36,18 @@ namespace D9CTM
         //Look at WorkGiver_DoBill.TryFindBestBillIngredients to optimize
         private void getAffectedThings()
         {
-            affectedBuildings.Clear();
+            allAffectedThings.Clear();
             affectedPawns.Clear();
             foreach (Thing t in base.parent.Map.listerThings.AllThings)
             {
                 if (Vector3.Distance(GenThing.TrueCenter(t.Position, t.Rotation, t.def.Size, t.def.Altitude), center) <= radius)
                 {
                     Pawn p = t as Pawn;
-                    if (p == null && t.def.useHitPoints)
+                    if (t.def.useHitPoints || p != null)
                     {
-                        affectedBuildings.Add(t);
+                        allAffectedThings.Add(t);
                     }
-                    else if (p != null)
-                    {
-                        affectedPawns.Add(p);
-                    }
+                    else if (p != null) affectedPawns.Add(p);
                 }
             }
         }
@@ -55,17 +56,30 @@ namespace D9CTM
         {
             if (CanBeActive)
             {
-                getAffectedThings();
-                if (canRepair && affectedBuildings.Count > 0)
+                if (!useTicks || (useTicks && ticksTo <= 0))
                 {
-                    foreach (Thing t in affectedBuildings) if (t.HitPoints < t.MaxHitPoints) t.HitPoints++;
-                    foreach (Pawn p in affectedPawns) foreach (ThingWithComps t in p.equipment.AllEquipmentListForReading) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints) t.HitPoints++;
-                }
-                if (canHeal && affectedPawns.Count > 0)
-                {
-                    foreach (Pawn p in affectedPawns)
+                    getAffectedThings();
+                    if (canRepair && allAffectedThings.Count > 0)
                     {
-                        HealingUtility.PartiallyHealAllNonPermInjuries(p, healRate/100f);
+                        foreach (Thing t in allAffectedThings)
+                        {
+                            Pawn p = t as Pawn;
+                            ThingOwner o = t.TryGetInnerInteractableThingOwner();
+                            if (p == null && t.HitPoints < t.MaxHitPoints) t.HitPoints++;
+                            if(o != null && o.Owner != null)
+                            {
+                                Log.Message("ThingOwner: " + o + ", thing: " + t + ", pawn: " + p ?? "null" + ", owner: " + o.Owner ?? "null");
+                                //for (int i = 0; i < o.Count; i++) if (o[i].def.useHitPoints && o[i].HitPoints < o[i].MaxHitPoints) o[i].HitPoints++;
+                                foreach (Thing t2 in ThingOwnerUtility.GetAllThingsRecursively(o.Owner)) if (t2.def.useHitPoints && t2.HitPoints < t2.MaxHitPoints) t2.HitPoints++;
+                            }
+                        }
+                    }
+                    if (canHeal && affectedPawns.Count > 0)
+                    {
+                        foreach (Pawn p in affectedPawns)
+                        {
+                            HealingUtility.PartiallyHealAllNonPermInjuries(p, healRate / 100f);
+                        }
                     }
                 }
             }

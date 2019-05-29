@@ -12,6 +12,7 @@ namespace D9CTM
     {
         public float radius = 7f;
         public float repairHP10PerHour, healHP10PerHour;
+        public int rareTicksBetweenPulses;
 
         public CompProperties_NanoRepair()
         {
