@@ -340,7 +340,89 @@
       </li>
 	  <li Class="D9CTM.CompProperties_NanoRepair">
 		<repairHP10PerHour>1</repairHP10PerHour>
+		<rareTicksBetweenPulses>1</rareTicksBetweenPulses>
 	  </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.1</fuelConsumptionRate> <!-- This is per HP healed (or healing pulse on a pawn) -->
+        <fuelCapacity>500.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>D9Nanomaterial</li>
+          </thingDefs>
+        </fuelFilter>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+	<tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>24</Mass>
+      <WorkToBuild>2000</WorkToBuild>
+    </statBases>
+    <fillPercent>0.2</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>25</pathCost>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <specialDisplayRadius>7</specialDisplayRadius>
+    <tradeability>Sellable</tradeability>
+    <size>(1,1)</size>
+    <costList>
+      <Plasteel>160</Plasteel>
+	  <ComponentSpacer>2</ComponentSpacer>
+	  <Steel>200</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>D9CraftingAsst</li>
+    </researchPrerequisites>
+    <designationCategory>Misc</designationCategory>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+  </ThingDef>
+  <!-- nanite healing projector -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>D9NanoHealFieldProj</defName>
+    <label>nanite healing field projector</label>
+    <description>A power-hungry device which automatically heals any wounds suffered by nearby creatures.</description>
+    <graphicData>
+      <texPath>Things/Building/Special/PsychicEmanator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0.0, 0.0, -0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0,0.75,1.0,0.5)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+	  <li Class="D9CTM.CompProperties_NanoRepair">
+		<healHP10PerHour>1</healHP10PerHour>
+		<rareTicksBetweenPulses>1</rareTicksBetweenPulses>
+	  </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- This is per HP healed (or healing pulse on a pawn) -->
+        <fuelCapacity>500.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>D9Nanomaterial</li>
+          </thingDefs>
+        </fuelFilter>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
       <li Class="CompProperties_Breakdownable"/>
       <li Class="CompProperties_Flickable"/>
     </comps>
