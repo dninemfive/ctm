@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- QR Shield Belt -->
-  <ThingDef ParentName="ApparelBase">
+  <!--ThingDef ParentName="ApparelBase">
     <defName>Apparel_QRShieldBelt</defName>
 		<label>quick-recharge shield belt</label>
     <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It prevents the wearer from firing out, and shuts down instantly if hit by EMP.\n\nThis advanced version recharges more quickly at the cost of a reduced maximum charge.</description>
@@ -74,8 +74,8 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  <!-- Heavy Shield Belt -->
-  <ThingDef ParentName="ApparelBase">
+  <! Heavy Shield Belt -->
+  <!--ThingDef ParentName="ApparelBase">
     <defName>Apparel_HeavyShieldBelt</defName>
 		<label>heavy shield belt</label>
     <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It prevents the wearer from firing out, and shuts down instantly if hit by EMP.\n\nThis advanced version has a much higher maximum charge at the cost of a slower recharge rate.</description>
@@ -148,7 +148,7 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  <!-- Ranged Shield Belt -->
+  <! Ranged Shield Belt -->
   <ThingDef ParentName="ApparelBase">
     <defName>Apparel_RangedShieldBelt</defName>
 	<label>ranged shield belt</label>

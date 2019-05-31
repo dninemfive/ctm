@@ -53,7 +53,7 @@
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9OrbitalMechanics</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<uiIconScale>0.9</uiIconScale>
@@ -112,7 +112,7 @@
 		  </li>
 		</comps>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9AsteroidMining</li>
 		</researchPrerequisites>
 	</ThingDef>
 	<ThingDef ParentName="D9SatelliteBase">
@@ -137,7 +137,7 @@
 		  </li>
 		</comps>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9AsteroidMining</li>
 		</researchPrerequisites>
 	</ThingDef>
 	<ThingDef ParentName="D9SatelliteBase">
@@ -162,7 +162,7 @@
 		  </li>
 		</comps>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9AsteroidMiningII</li>
 		</researchPrerequisites>
 	</ThingDef>
 	<!-- Actual Satellites -->
@@ -183,7 +183,7 @@
 		  </li>
 		</comps>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9OrbitalMechanics</li>
 		</researchPrerequisites>
 	</ThingDef>
 	<ThingDef ParentName="D9SatelliteBase">
@@ -203,7 +203,7 @@
 		  </li>
 		</comps>
 		<researchPrerequisites>
-			<li>TransportPod</li>
+			<li>D9OrbitalPower</li>
 		</researchPrerequisites>
 	</ThingDef>
 	<!-- Orbital Power Receiver -->
@@ -285,7 +285,7 @@
 		<designationHotKey>Misc4</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
-		  <li>Electricity</li>
+		  <li>D9OrbitalPower</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 	</ThingDef>

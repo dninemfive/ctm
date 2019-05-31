@@ -379,7 +379,7 @@
 	  <Steel>200</Steel>
     </costList>
     <researchPrerequisites>
-      <li>D9CraftingAsst</li>
+      <li>D9NaniteRepair</li>
     </researchPrerequisites>
     <designationCategory>Misc</designationCategory>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
@@ -450,7 +450,7 @@
 	  <Steel>200</Steel>
     </costList>
     <researchPrerequisites>
-      <li>D9CraftingAsst</li>
+      <li>D9NaniteHealingField</li>
     </researchPrerequisites>
     <designationCategory>Misc</designationCategory>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>

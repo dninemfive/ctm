@@ -44,7 +44,6 @@
 		  </li>
 		  <li Class="CompProperties_Forbiddable"/>
 		  <li Class="CompProperties_Flickable"/>
-		  <li Class="CompProperties_Breakdownable"/>
 		</comps>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -75,7 +74,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-		  <li>GunTurrets</li>
+		  <li>D9ChargeTurret</li>
 		</researchPrerequisites>
 	</ThingDef>
   <ThingDef ParentName="BaseHumanGun">
@@ -164,7 +163,6 @@
 		  </li>
 		  <li Class="CompProperties_Forbiddable"/>
 		  <li Class="CompProperties_Flickable"/>
-		  <li Class="CompProperties_Breakdownable"/>
 		</comps>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -194,7 +192,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-		  <li>GunTurrets</li>
+		  <li>D9ChargeTurret</li>
 		</researchPrerequisites>
 	</ThingDef>
   <ThingDef ParentName="BaseHumanGun">

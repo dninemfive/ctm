@@ -33,6 +33,8 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9WoodSynthesis</defName>
@@ -43,6 +45,8 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<techLevel>Spacer</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Hyperweave</defName>
@@ -53,6 +57,8 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<techLevel>Spacer</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1.9</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase"> DEPRECATED with the removal of Nanochips. 
 		<defName>D9Nanoelectronics</defName>
@@ -77,6 +83,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>3</researchViewX>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Simpods</defName>
@@ -89,6 +97,8 @@
 		  <li>AdvancedFabrication</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>0</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9SimpodsU</defName>
@@ -102,6 +112,8 @@
 		<requiredResearchFacilities>
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
+		<researchViewX>5</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>	
 	<!--ResearchProjectDef ParentName="D9AATechIndustrialBase"> DEPRECATED with the removal of Kinetic Dynamos
 		<defName>D9KineticDynamo</defName>
@@ -124,6 +136,8 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9FleshPrinter</defName>
@@ -135,6 +149,8 @@
 		  <li>NutrientPaste</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PrintOrgans</defName>
@@ -145,6 +161,8 @@
 		  <li>D9FleshPrinter</li>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>	
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9ModularTradeBeacons</defName>
@@ -155,7 +173,7 @@
 		  <li>MicroelectronicsBasics</li>
 		</prerequisites>
 	</ResearchProjectDef-->	
-	<ResearchProjectDef ParentName="D9AATechBase">
+	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HeavyShields</defName>
 		<label>heavy shield belt</label>
 		<description>Advances in repulsion field generators allow the use of stronger capacitors, granting increased maximum charge.</description>
@@ -172,25 +190,29 @@
 		<prerequisites>
 		  <li>ShieldBelt</li>
 		</prerequisites>
-	</ResearchProjectDef>	
+	</ResearchProjectDef-->	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9RangedShieldBelt</defName>
 		<label>ranged shield belt</label>
 		<description>Usage of AI persona fragments allows shield belts to differentiate between incoming and outgoing projectiles.</description>
-		<baseCost>1800</baseCost>
+		<baseCost>4200</baseCost>
 		<prerequisites>
-		  <li>D9HeavyShields</li>
-		  <li>D9QRShields</li>
+		  <li>ShieldBelt</li>
+		  <li>D9MaterialScience</li>
 		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>3.3</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PsychicFoil</defName>
-		<label>psychic foil</label>
-		<description>Research psychic field theory to develop a material capable of diffusing psychic energy.</description>
+		<label>psychic field theory</label>
+		<description>Develop a comprehensive theory of psychic behavior and learn how to manipulate this energy with geometry and material science.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>D9MaterialScience</li>
 		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1.9</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PsychicEmanator</defName>
@@ -205,6 +227,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>5</researchViewX>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9RobotAsst</defName>
@@ -216,6 +240,8 @@
 		  <li>AdvancedFabrication</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>0</researchViewX>
+		<researchViewY>2.8</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HaulingBot</defName>
@@ -247,6 +273,8 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AIFrag</defName>
@@ -256,6 +284,8 @@
 		<prerequisites>
 		  <li>D9AIBasics</li>
 		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AIShackling</defName>
@@ -265,6 +295,8 @@
 		<prerequisites>
 		  <li>D9AIFrag</li>
 		</prerequisites>
+		<researchViewX>3.5</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AIMastery</defName>
@@ -273,9 +305,12 @@
 		<baseCost>12800</baseCost>
 		<prerequisites>
 		  <li>D9AIShackling</li>
+		  <li>D9AIResearch</li>
 		  <li>ShipComputerCore</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>5</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AIResearch</defName>
@@ -285,6 +320,8 @@
 		<prerequisites>
 		  <li>D9AIBasics</li>
 		</prerequisites>
+		<researchViewX>3.5</researchViewX>
+		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Vanometrics</defName>
@@ -293,12 +330,14 @@
 		<baseCost>8000</baseCost>
 		<prerequisites>
 			<li>D9NanoForge</li>
-			<li>D9AIResearch</li>
+			<li>D9AIMastery</li>
 		</prerequisites>
 		<requiredResearchFacilities>
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
+		<researchViewX>9</researchViewX>
+		<researchViewY>3.8</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9VanometricPower</defName>
@@ -313,6 +352,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
+		<researchViewX>10</researchViewX>
+		<researchViewY>3.8</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9EnergySword</defName>
@@ -323,16 +364,20 @@
 		  <li>D9MaterialScience</li>
 		  <li>LongBlades</li>
 		</prerequisites>		
+		<researchViewX>1</researchViewX>
+		<researchViewY>4.6</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9ChargeTurret</defName>
-		<label>charge turret</label>
+		<label>charge turrets</label>
 		<description>Utilize charge weaponry and vanometric cells to produce small, powerful turrets with no external power or maintenance requirements.</description>
 		<baseCost>6000</baseCost>
 		<prerequisites>
 		  <li>ChargedShot</li>
 		  <li>HeavyTurrets</li>
 		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>3.3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9OrbitalMechanics</defName>
@@ -343,6 +388,8 @@
 		  <li>TransportPod</li>
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AsteroidMining</defName>
@@ -353,6 +400,8 @@
 		  <li>D9OrbitalMechanics</li>
 		  <li>D9AIBasics</li>
 		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>4.3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AsteroidMiningII</defName>
@@ -362,6 +411,8 @@
 		<prerequisites>
 		  <li>D9AsteroidMining</li>
 		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>4.3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9OrbitalPower</defName>
@@ -372,6 +423,8 @@
 		  <li>D9OrbitalMechanics</li>
 		  <li>SolarPanels</li>
 		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>4.8</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9SpaceElevator</defName>
@@ -379,10 +432,11 @@
 		<description>Utilize the extreme tensile strength of nanoweave to construct a tether suspended by orbital forces, allowing cheap transport to and from space.</description>
 		<baseCost>8000</baseCost>
 		<prerequisites>
-		  <li>D9Nanoweave</li>
 		  <li>D9OrbitalMechanics</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>5</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Nanofab</defName>
@@ -394,6 +448,8 @@
 		  <li>AdvancedFabrication</li>
 		  <li>D9MaterialScience</li>
 		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1.4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Nanofield</defName>
@@ -405,15 +461,19 @@
 		  <li>Machining</li>
 		  <li>MicroelectronicsBasics</li>
 		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteRepair</defName>
 		<label>nanite repair field</label>
-		<description>Learn to construct larger nanite repair field projectors, which repair everything in their radius.</description>
+		<description>Learn to construct larger nanite repair field projectors which repair everything in their radius.</description>
 		<baseCost>2400</baseCost>
 		<prerequisites>
 		  <li>D9Nanofield</li>
 		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteHealing</defName>
@@ -425,6 +485,8 @@
 		  <li>AdvancedFabrication</li>
 		  <li>MedicineProduction</li>
 		</prerequisites>
+		<researchViewX>3.6</researchViewX>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteHealingField</defName>
@@ -435,6 +497,8 @@
 		  <li>D9NaniteRepair</li>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
+		<researchViewX>6.6</researchViewX>
+		<researchViewY>1.2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteInfusion</defName>
@@ -444,6 +508,8 @@
 		<prerequisites>
 		  <li>D9Nanofab</li>
 		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>4.2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9GlitterMed</defName>
@@ -454,6 +520,8 @@
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>8.3</researchViewX>
+		<researchViewY>1.9</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HealingMech</defName>
@@ -461,10 +529,11 @@
 		<description>Integrate glitterworld medicine into a nanite infusion which allows rapid healing of serious injury.</description>
 		<baseCost>6400</baseCost>
 		<prerequisites>
-		  <li>D9Nanofab</li>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>7</researchViewX>
+		<researchViewY>0.6</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NanoForge</defName>
@@ -476,6 +545,8 @@
 		  <li>D9CraftingAsst</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>10</researchViewX>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9CraftingAsst</defName>
@@ -485,6 +556,8 @@
 		<prerequisites>
 		  <li>D9Nanofab</li>
 		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>2.1</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Resurrection</defName>
@@ -494,11 +567,14 @@
 		<prerequisites>
 		  <li>D9HealingMech</li>
 		  <li>D9NanoForge</li>
+		  <li>D9AIMastery</li>
 		</prerequisites>
 		<requiredResearchFacilities>
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
+		<researchViewX>12</researchViewX>
+		<researchViewY>1.6</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NanoRifle</defName>
@@ -524,6 +600,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
+		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Luciferium</defName>
@@ -533,6 +611,8 @@
 		<prerequisites>
 		  <li>D9NaniteInfusion</li>
 		</prerequisites>
+		<researchViewX>7.3</researchViewX>
+		<researchViewY>3.9</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9InfiniteChemreactor</defName>
@@ -544,17 +624,21 @@
 		  <li>BiofuelRefining</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>10</researchViewX>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Vanoreactor</defName>
 		<label>silver vanoreactor</label>
-		<description>Modify the reaction path used by infinite chemreactors to convert energy from vanometric fluctuations into matter in the form of silver.</description>
+		<description>Modify the reaction path used by infinite chemreactors to convert energy from vanometric fluctuations into matter.</description>
 		<baseCost>6000</baseCost>
 		<prerequisites>
 		  <li>D9Vanometrics</li>
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>11.5</researchViewX>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9VanoreactorPlasteel</defName>
@@ -566,6 +650,8 @@
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>11.5</researchViewX>
+		<researchViewY>3.7</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Neurotrainer</defName>
@@ -580,6 +666,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Ultra</techLevel>
+		<researchViewX>7</researchViewX>
+		<researchViewY>4.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Megascreen</defName>
@@ -591,6 +679,8 @@
 		  <li>AdvancedFabrication</li>
 		  <li>D9MaterialScience</li>
 		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HealpodRes</defName>
@@ -601,5 +691,7 @@
 		  <li>D9HealingMech</li>
 		  <li>Cryptosleep</li>
 		</prerequisites>		
+		<researchViewX>8</researchViewX>
+		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 </Defs>
