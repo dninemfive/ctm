@@ -42,7 +42,7 @@
 	  <value>
 		<costList>
 		  <Vanadite>80</Vanadite>
-		  <D9VanometricCell>8</D9VanometricCell>
+		  <D9VanometricCell>4</D9VanometricCell>
 		  <ComponentSpacer>4</ComponentSpacer>
 		</costList>
 	  </value>

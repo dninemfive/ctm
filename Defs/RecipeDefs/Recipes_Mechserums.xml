@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!-- TODO: make this require level 20 in a skill + 16 intellectual and give the appropriate skill -->
 	<RecipeDef>
 		<defName>Make_Neurotrainer</defName>
 		<label>make neurotrainer</label>
@@ -141,4 +142,6 @@
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
     </RecipeDef>
+	<!-- Healing Foam -->
+	<!-- Auto-Immunizer -->
 </Defs>

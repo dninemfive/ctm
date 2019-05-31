@@ -6,7 +6,7 @@
 		<techLevel>Spacer</techLevel>
 	  </value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
+	<!--Operation Class="PatchOperationReplace">
 	  <xpath>*/ResearchProjectDef[defName = "ShieldBelt"]/prerequisites</xpath>
 	  <value>
 		<prerequisites>
@@ -15,7 +15,7 @@
 		  <li>MicroelectronicsBasics</li>
 		</prerequisites>
 	  </value>
-	</Operation>
+	</Operation-->
 	<Operation Class="PatchOperationAdd"> <!-- should probably make Powered Armor a bit cheaper, check for balance -->
 	  <xpath>*/ResearchProjectDef[defName = "PoweredArmor"]/prerequisites</xpath>
 	  <value>
@@ -25,7 +25,7 @@
 	<Operation Class="PatchOperationAdd">
 	  <xpath>*/ResearchProjectDef[defName = "ShipComputerCore"]/prerequisites</xpath>
 	  <value>
-		<li>D9AIMastery</li>
+		<li>D9AIBasics</li>
 	  </value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">

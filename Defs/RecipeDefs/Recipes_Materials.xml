@@ -596,9 +596,9 @@
 				<filter>
 					<thingDefs>
 						<li>Cloth</li>
-					</thingDefs>
-					<count>2</count>
+					</thingDefs>					
 				</filter>
+				<count>2</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -635,9 +635,9 @@
 				<filter>
 					<thingDefs>
 						<li>Cloth</li>
-					</thingDefs>
-					<count>20</count>
+					</thingDefs>					
 				</filter>
+				<count>20</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
