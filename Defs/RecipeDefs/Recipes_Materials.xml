@@ -573,4 +573,81 @@
 			<WoodLog>10</WoodLog>
 		</products>
 	</RecipeDef>
+	<RecipeDef>
+		<defName>Make_Insulene</defName>
+		<label>make insulene</label>
+		<description>Synthesize three insulene from chemfuel and cloth.</description>
+		<jobString>Making synthread.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>700</workAmount>
+		<workSpeedStat>TailoringSpeed</workSpeedStat>
+		<researchPrerequisite>D9Insulene</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+					<count>2</count>
+				</filter>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Insulene>3</Insulene>
+		</products>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>Make_Insulene_Bulk</defName>
+		<label>make insulene in bulk</label>
+		<description>Produce thirty insulene from chemfuel and cloth.</description>
+		<jobString>Making insulene.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>5600</workAmount>
+		<workSpeedStat>TailoringSpeed</workSpeedStat>
+		<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+		<researchPrerequisite>D9Insulene</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+					<count>20</count>
+				</filter>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Insulene>30</Insulene>
+		</products>
+	</RecipeDef>
 </Defs>
