@@ -47,9 +47,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Pods\CompPodSettings.cs" />
+    <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
     <Compile Include="Buildings\Satellite\OPR\CompOPRBeam.cs" />
     <Compile Include="Buildings\Satellite\OPR\CompOrbitalPowerPlant.cs" />
     <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeExcessFuel.cs" />
+    <Compile Include="Buildings\Pods\Heal\CompHealpod.cs" />
+    <Compile Include="Buildings\Pods\Heal\CompProperties_Healpod.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="Belts\Repair\CompProperties_RepairBelt.cs" />
@@ -66,7 +70,7 @@
     <Compile Include="DefsOf.cs" />
     <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
     <Compile Include="HealingUtility.cs" />
-    <Compile Include="Buildings\Pods\Heal\Healpod.cs" />
+    <Compile Include="Buildings\Pods\Building_Pod.cs" />
     <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />
     <Compile Include="IncidentInfo.cs" />
