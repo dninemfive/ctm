@@ -2,7 +2,7 @@
 <Defs>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>MeleeWeapon_D9EnergySword</defName>
-    <label>energy sword</label>
+    <label>charge sword</label>
     <description>An ancient design modernized to incorporate vanometric technology. When in contact with foreign material, the blade generates plasma which causes terrifying burns. Although somewhat hilt-heavy, the sword is exceptionally balanced.</description>
     <graphicData>
       <texPath>Things/Item/TechSword</texPath>

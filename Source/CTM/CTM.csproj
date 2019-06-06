@@ -73,6 +73,7 @@
     <Compile Include="Buildings\Pods\Building_Pod.cs" />
     <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />
+    <Compile Include="Hediff_BioAug.cs" />
     <Compile Include="IncidentInfo.cs" />
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="Buildings\Pods\Sim\JoyGiver_EnterBuilding.cs" />

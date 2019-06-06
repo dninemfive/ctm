@@ -178,7 +178,7 @@ namespace D9CTM
         {
             base.CompTick();
             CompRefuelable fuel = parent.TryGetComp<CompRefuelable>();
-            if (linkedBuildings.Count > 0 && fuel != null) if (linkedBuildings.Count > 0 && fuel != null) fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate);
+            if (linkedBuildings.Count > 0 && fuel != null) fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate);
         }
     }
 }

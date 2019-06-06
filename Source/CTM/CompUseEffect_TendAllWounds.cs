@@ -14,6 +14,9 @@ namespace D9CTM
             base.DoEffect(usedBy);
             IEnumerable<Hediff> toTend = HediffsToTend(usedBy);
             foreach (Hediff h in toTend) h.Tended(1.0f); //equivalent to Industrial medicine
+            //make foam filth
+            usedBy.filth.GainFilth(CTMDefOf.Filth_HealingFoam);
+            FilthMaker.MakeFilth(usedBy.Position, usedBy.Map, CTMDefOf.Filth_HealingFoam, new IntRange(1, 3).RandomInRange);
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)

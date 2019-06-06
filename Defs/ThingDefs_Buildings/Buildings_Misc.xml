@@ -127,13 +127,13 @@
 	<constructionSkillPrerequisite>14</constructionSkillPrerequisite>
   </ThingDef>
   <!-- Regeneration Pod -->
-  <ThingDef ParentName="BuildingBase">    
+  <!--ThingDef ParentName="BuildingBase">    
 	<defName>D9Healpod</defName>
     <label>regeneration pod</label>
     <description>A pod which utilizes healing mechanites to quickly heal wounds, as well as much more slowly repairing permanent damage.</description>
 	<thingClass>D9CTM.Healpod</thingClass>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <!-- TODO: make custom texture -->
+      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <! TODO: make custom texture >
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,2)</drawSize>
       <shadowData>
@@ -158,7 +158,7 @@
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(1,0,0)</interactionCellOffset>
     <comps>
-	  <!-- TODO: RePower compat -->
+	  <! TODO: RePower compat >
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
@@ -166,7 +166,7 @@
       </li>
 	  <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- 1 mechserum ~= 1 day of fuel when a pawn is present -->
+        <fuelConsumptionRate>1.0</fuelConsumptionRate> <! 1 mechserum ~= 1 day of fuel when a pawn is present >
         <fuelCapacity>2.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
@@ -187,7 +187,7 @@
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>14</constructionSkillPrerequisite>
-  </ThingDef>
+  </ThingDef>-->
   <!-- nanite assistant -->
   <ThingDef ParentName="BuildingBase">
     <defName>D9CTMToolCabinet</defName>
