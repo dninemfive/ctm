@@ -16,4 +16,6 @@
 		<minValue>0</minValue>
 		<alwaysHide>true</alwaysHide>
 	</StatDef>
+	<StatDef>
+		<defName>Psychic
 </Defs>

@@ -12,4 +12,8 @@
 	<!-- Orbital Power Receiver -->
 	<D9TakeOneOPR>Remove one {0}</D9TakeOneOPR>
 	<D9EmptyToTargetOPR>Empty to target fuel level</D9EmptyToTargetOPR>
+	<!-- Healpod -->
+	<EnterHealpod>Enter {0}</EnterHealpod>
+	<!-- CompFueledSpawner -->
+	<NotEnoughFuelForSpawner>Not enough material to produce {0}.</NotEnoughFuelForSpawner>
 </LanguageData>
