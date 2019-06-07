@@ -17,11 +17,13 @@
     <blockWind>true</blockWind>
     <fillPercent>0.5</fillPercent>
     <canOverlapZones>false</canOverlapZones>
+	<designatorDropdown>Floor_Carpet</designatorDropdown>
     <statBases>
       <WorkToBuild>6000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
       <Flammability>0</Flammability>
 	  <JoyGainFactor>1.5</JoyGainFactor>
+	  <Comfort>0.85</Comfort>
     </statBases>
     <tickerType>Normal</tickerType>
     <size>(1,2)</size>
@@ -34,8 +36,9 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>400</basePowerConsumption>
       </li>	  
-    </comps>
-    <!--defaultPlacingRot>South</defaultPlacingRot-->
+	  <li Class="D9CTM.CompProperties_PodSettings"/>
+      </comps>
+    <defaultPlacingRot>South</defaultPlacingRot>
     <building>
       <isPlayerEjectable>true</isPlayerEjectable>
 	  <joyKind>Gaming_Dexterity</joyKind>
@@ -135,9 +138,12 @@
     <label>universal simpod</label>
     <description>A highly advanced virtual-reality pod capable of generating incredibly convincing simulations.\n\nThis one uses a neural interface to directly interact with the user's consciousness, allowing unlimited simulation possibilities.</description>
 	<building>
-      <joyKind>Gaming_Cerebral</joyKind>
+      <joyKind>Simpod_Universal</joyKind>
     </building>
+	<designatorDropdown Inherit="False"/>
+	<researchPrerequisites Inherit="False"><li>D9SimpodsU</li></researchPrerequisites>
 	<comps Inherit="False">
+		<li Class="D9CTM.CompProperties_PodSettings"/>
 		<li Class="CompProperties_Power">
 			<compClass>CompPowerTrader</compClass>
 			<shortCircuitInRain>true</shortCircuitInRain>

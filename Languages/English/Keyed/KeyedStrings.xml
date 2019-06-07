@@ -12,8 +12,11 @@
 	<!-- Orbital Power Receiver -->
 	<D9TakeOneOPR>Remove one {0}</D9TakeOneOPR>
 	<D9EmptyToTargetOPR>Empty to target fuel level</D9EmptyToTargetOPR>
-	<!-- Healpod -->
-	<EnterHealpod>Enter {0}</EnterHealpod>
+	<!-- Pods -->
+	<EnterPod>Enter {0}</EnterPod>
+	<d9CommandPodEject>Eject occupant</d9CommandPodEject>
+	<d9CommandPodEjectDesc>Eject this pod's occupant.</d9CommandPodEjectDesc>
+	<d9CommandPodEjectFailEmpty>Pod is empty.</d9CommandPodEjectFailEmpty>
 	<!-- CompFueledSpawner -->
 	<NotEnoughFuelForSpawner>Not enough material to produce {0}.</NotEnoughFuelForSpawner>
 </LanguageData>

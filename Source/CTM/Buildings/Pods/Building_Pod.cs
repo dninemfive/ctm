@@ -16,84 +16,11 @@ namespace D9CTM
         ThingDef filth => settings.slimeDef;
         HediffDef hediff => settings.hediffOnExit;
 
-        //TODO: un-hardcode shit if I ever have an incentive to
-        /*
-        private readonly int ticksPerMinorHeal = GenDate.TicksPerHour / 10;
-        private int ticksUntilNextMajorHeal, ticksUntilNextMinorHeal;
-        */
-
-        /*
-        private bool Powered
+        public override void SpawnSetup(Map m, bool respawning)
         {
-            get
-            {
-                CompPowerTrader trader = this.TryGetComp<CompPowerTrader>();
-                CompRefuelable fuelable = this.TryGetComp<CompRefuelable>();
-                return ((trader == null) || (trader != null && trader.PowerOn)) && ((fuelable == null) || (fuelable != null && fuelable.HasFuel));
-            }
+            base.SpawnSetup(m, respawning);
+            settings = (this.GetComp<CompPodSettings>() ?? new CompPodSettings()).Props;
         }
-
-        public Healpod()
-        {
-            //ticksUntilNextMajorHeal = GenDate.TicksPerHour * 6;
-            //ticksUntilNextMinorHeal = GenDate.TicksPerHour;
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            //Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
-            //Scribe_Values.Look(ref ticksUntilNextMinorHeal, "ticksUntilNextMinorHeal", 0, false);
-        }
-
-        public override void Tick()
-        {
-            base.Tick();
-            if (Powered)
-            {
-                foreach (Thing item in innerContainer)
-                {
-                    Pawn pawn = item as Pawn;
-                    if (pawn != null)
-                    {
-                        CompRefuelable fuel = this.TryGetComp<CompRefuelable>();
-                        
-                       if(ticksUntilNextMinorHeal <= 0)
-                        {
-                            HealingUtility.doMinorHeal(pawn);
-                            ticksUntilNextMinorHeal = ticksPerMinorHeal; //heals minor wounds 10 times an hour
-                            if (fuel != null) fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate / 240);
-                        }
-                       else
-                        {
-                            ticksUntilNextMinorHeal--;
-                        }
-                       if(ticksUntilNextMajorHeal <= 0)
-                        {
-                            CompUseEffect_FixWorstHealthCondition ce = new CompUseEffect_FixWorstHealthCondition();
-                            ce.DoEffect(pawn);
-                            //HealingUtility.doMajorHeal(pawn, "Healing Pod");
-                            resetMajor(pawn);
-                            if (fuel != null) fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate / 24);
-                        }
-                        else
-                        {
-                            ticksUntilNextMajorHeal--;
-                        }
-                    }
-                }
-            }
-        }
-
-        public void resetMajor(Pawn p)
-        {
-            float permaScore = 0f;
-            List<Hediff> hediffs = p.health.hediffSet.hediffs.Where(HediffUtility.IsPermanent).ToList();
-            if (hediffs.Count == 0)if(PawnUtility.ShouldSendNotificationAbout(p)) Messages.Message("MessageAllPermanentWoundsHealed".Translate(p.Named("PAWN")), p, MessageTypeDefOf.PositiveEvent, true);
-                else foreach (Hediff h in p.health.hediffSet.hediffs.Where(HediffUtility.IsPermanent)) permaScore += h.Severity / h.def.maxSeverity;
-            permaScore = (int)permaScore <= 0 ? 1 : permaScore;
-            ticksUntilNextMajorHeal = Rand.Range(20, 120/(int)permaScore) * 2500; //between 20 hours and 5 days, max less the more old wounds the pawn has
-        }*/
 
         public override bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
         {
@@ -123,7 +50,7 @@ namespace D9CTM
                 }
                 else
                 {
-                    JobDef jobDef = JobDefOf.EnterCryptosleepCasket;
+                    JobDef jobDef = CTMDefOf.d9EnterPod;
                     string jobStr = "EnterPod".Translate(LabelShort);
                     Action jobAction = delegate
                     {
@@ -145,11 +72,11 @@ namespace D9CTM
             {
                 Command_Action eject = new Command_Action();
                 eject.action = new Action(this.EjectContents);
-                eject.defaultLabel = "CommandPodEject".Translate();
-                eject.defaultDesc = "CommandPodEjectDesc".Translate();
+                eject.defaultLabel = "d9CommandPodEject".Translate();
+                eject.defaultDesc = "d9CommandPodEjectDesc".Translate();
                 if (this.innerContainer.Count == 0)
                 {
-                    eject.Disable("CommandPodEjectFailEmpty".Translate());
+                    eject.Disable("d9CommandPodEjectFailEmpty".Translate());
                 }
                 eject.hotKey = KeyBindingDefOf.Misc1;
                 eject.icon = ContentFinder<Texture2D>.Get("UI/Commands/PodEject", true);
@@ -182,17 +109,17 @@ namespace D9CTM
             base.EjectContents();
         }
 
-        public static Building_CryptosleepCasket FindHealpodFor(Pawn p, Pawn traveler, bool ignoreOtherReservations = false)
+        public static Building_Pod FindHealpodFor(Pawn p, Pawn traveler, bool ignoreOtherReservations = false)
         {
             IEnumerable<ThingDef> enumerable = from def in DefDatabase<ThingDef>.AllDefs
-                                               where typeof(Building_CryptosleepCasket).IsAssignableFrom(def.thingClass)
+                                               where typeof(Building_Pod).IsAssignableFrom(def.thingClass) && def.HasComp(typeof(CompHealpod))
                                                select def;
             foreach (ThingDef current in enumerable)
             {
-                Building_CryptosleepCasket building_CryptosleepCasket = (Building_CryptosleepCasket)GenClosest.ClosestThingReachable(p.Position, p.Map, ThingRequest.ForDef(current), PathEndMode.InteractionCell, TraverseParms.For(traveler, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing x)
+                Building_Pod building_CryptosleepCasket = (Building_Pod)GenClosest.ClosestThingReachable(p.Position, p.Map, ThingRequest.ForDef(current), PathEndMode.InteractionCell, TraverseParms.For(traveler, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing x)
                 {
                     bool arg_33_0;
-                    if (!((Building_CryptosleepCasket)x).HasAnyContents)
+                    if (!((Building_Pod)x).HasAnyContents)
                     {
                         Pawn traveler2 = traveler;
                         LocalTargetInfo target = x;

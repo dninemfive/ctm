@@ -42,6 +42,10 @@ namespace D9CTM
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
             Toil prepare = Toils_General.Wait(500, TargetIndex.None);
             prepare.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
+            prepare.AddFailCondition(delegate
+            {
+                return ((Building_Pod)TargetA).HasAnyContents;
+            });
             prepare.WithProgressBarToilDelay(TargetIndex.A, false, -0.5f);
             yield return prepare;
             Toil enter = new Toil();

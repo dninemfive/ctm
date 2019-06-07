@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
     <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
+    <Compile Include="Buildings\Pods\JobDriver_EnterPod.cs" />
     <Compile Include="Buildings\Pods\Sim\CompProperties_Simpod.cs" />
     <Compile Include="Buildings\Pods\Sim\CompSimpod.cs" />
     <Compile Include="Buildings\Pods\Sim\JobDriver_EnterSimpod.cs" />
@@ -85,8 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
     <Compile Include="OutsideNeedPatch.cs" />
-    <Compile Include="Buildings\Pods\Sim\Simpod.cs" />
-    <Compile Include="Buildings\Pods\Sim\SimpodModExtension.cs" />
     <Compile Include="SpecialStuffProperties.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -8,5 +8,6 @@ namespace D9CTM
 {
     class CompPodSettings : ThingComp
     {
+        public CompProperties_PodSettings Props => (CompProperties_PodSettings)base.props;
     }
 }
