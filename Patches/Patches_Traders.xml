@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- add guaranteed nano forges to bulk goods traders -->
+	<Operation Class="PatchOperationAdd">
+	    <xpath>*/TraderKindDef[defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
+	    <value>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>D9NanoForge</thingDef>
+				<price>Expensive</price>
+				<countRange>
+				  <min>1</min>
+				  <max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>D9Nanomaterial</thingDef>
+				<countRange>
+				  <min>50</min>
+				  <max>150</max>
+				</countRange>
+			</li>
+	    </value>
+	</Operation>
+	<!-- ditto but for exotic traders -->
+	<Operation Class="PatchOperationAdd">
+	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators</xpath>
+	    <value>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>D9NanoForge</thingDef>
+				<countRange>
+				  <min>1</min>
+				  <max>3</max>
+				</countRange>
+			</li>
+	    </value>
+	</Operation>
+	<!-- prevent additional ones from being generated from the ExoticMisc tag -->
+	<Operation Class="PatchOperationAdd">
+	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/excludedThingDefs</xpath>
+	    <value>
+			<li>D9NanoForge</li>
+	    </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/customCountRanges</xpath>
+	    <value>
+			<Vanadite>50~125</Vanadite>
+			<AIPersonaFragment>3~5</AIPersonaFragment>
+			<D9Nanomaterial>75~200</D9Nanomaterial>
+			<D9VanometricCell>2~5</D9VanometricCell>
+			<Nanoweave>25~125</Nanoweave>
+			<Insulene>100~300</Insulene>
+			<PsychicFoil>75~150</PsychicFoil>
+	    </value>
+	</Operation>
+	<!-- generate more ExoticMisc goods so the new items don't crowd out old ones -->
+	<Operation Class="PatchOperationReplace">
+	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/thingDefCountRange</xpath>
+	    <value>
+			<thingDefCountRange>
+			  <min>5</min>
+			  <max>8</max>
+			</thingDefCountRange>
+	    </value>
+	</Operation>
+</Patch>

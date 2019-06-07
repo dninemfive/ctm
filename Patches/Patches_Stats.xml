@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		StatPart_ApparelOffset for psychic foil stuff
+		new StatPart for psychic sensitivity returning 0 when near a null field projector
+	-->
+</Patch>

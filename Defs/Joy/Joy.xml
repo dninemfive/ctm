@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- JoyKind -->
+	<JoyKindDef>
+		<defName>Simpod_Universal</defName>
+		<label>virtual reality</label>
+	</JoyKindDef>
+	<!-- JoyGivers -->
+	<JoyGiverDef>
+		<defName>Use_Simpod_Dex</defName>
+		<giverClass>D9CTM.JoyGiver_EnterPod</giverClass>
+		<baseChance>2</baseChance>
+		<thingDefs>
+		  <li>D9SimpodCombat</li>
+		  <li>D9SimpodFarming</li>
+		</thingDefs>
+		<jobDef>Use_Simpod_Dex</jobDef>
+		<joyKind>Gaming_Dexterity</joyKind>
+		<requiredCapacities>
+		  <li>Sight</li>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+	<JoyGiverDef>
+		<defName>Use_Simpod_Cer</defName>
+		<giverClass>D9CTM.JoyGiver_EnterPod</giverClass>
+		<baseChance>2</baseChance>
+		<thingDefs>
+		  <li>D9SimpodEngineering</li>
+		  <li>D9SimpodCooking</li>
+		  <li>D9SimpodMedical</li>
+		</thingDefs>
+		<jobDef>Use_Simpod_Cer</jobDef>
+		<joyKind>Gaming_Cerebral</joyKind>
+		<requiredCapacities>
+		  <li>Sight</li>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+	<JoyGiverDef>
+		<defName>Use_Simpod_Uni</defName>
+		<giverClass>D9CTM.JoyGiver_EnterPod</giverClass>
+		<baseChance>3</baseChance>
+		<thingDefs>
+		  <li>D9SimpodUniversal</li>
+		</thingDefs>
+		<jobDef>Use_Simpod_Uni</jobDef>
+		<joyKind>Simpod_Universal</joyKind>
+		<requiredCapacities><li>Consciousness</li></requiredCapacities> <!-- add something about using direct brain interface to the universal simpod description -->
+	</JoyGiverDef>
+	<!-- Jobs -->
+	<JobDef Name="Use_Simpod" Abstract="true">
+		<driverClass>D9CTM.JobDriver_EnterSimpod</driverClass>
+		<reportString>using simpod.</reportString>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<!--taleOnCompletion>PlayedGame</taleOnCompletion-->
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	<JobDef ParentName="Use_Simpod">
+		<defName>Use_Simpod_Dex</defName>		
+		<joyKind>Gaming_Dexterity</joyKind>		
+	</JobDef>
+	<JobDef ParentName="Use_Simpod">
+		<defName>Use_Simpod_Cer</defName>		
+		<joyKind>Gaming_Cerebral</joyKind>		
+	</JobDef>
+	<JobDef ParentName="Use_Simpod">
+		<defName>Use_Simpod_Uni</defName>		
+		<joyKind>Simpod_Universal</joyKind>		
+	</JobDef>
+</Defs>
