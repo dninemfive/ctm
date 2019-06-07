@@ -532,6 +532,9 @@
 			<HealsPerProc>1</HealsPerProc>
 			<HPPerHeal>1</HPPerHeal>
 			<IncreaseImmunity>false</IncreaseImmunity>
+			<TendWounds>true</TendWounds>
+			<TendQuality>1.2</TendQuality> <!-- better than industrial, worse than glitter -->
+			<MaxWoundsToTend>1</MaxWoundsToTend> <!-- per rare tick -->
 	    </li>
 	</comps>
   </ThingDef>
