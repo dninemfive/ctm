@@ -8,11 +8,11 @@ using Verse.AI;
 
 namespace D9CTM
 {
-    class JoyGiver_EnterBuilding : JoyGiver_InteractBuilding
+    class JoyGiver_EnterPod : JoyGiver_InteractBuilding
     {
         protected override Job TryGivePlayJob(Pawn pawn, Thing t)
         {
-            throw new NotImplementedException();
+            return new Job(base.def.jobDef, t);
         }
     }
 }

@@ -241,6 +241,9 @@
 		<D9Nanomaterial>10</D9Nanomaterial>
 		<ComponentSpacer>1</ComponentSpacer>
 	</costList>
+	<equippedStatOffsets>
+	  <ConstructionSpeed>0.35</ConstructionSpeed>	  
+    </equippedStatOffsets>
 	<recipeMaker>
 		<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
 		<researchPrerequisite>D9Nanofield</researchPrerequisite>
@@ -309,6 +312,10 @@
       <Mass>3</Mass>
 	  <WorkToMake>22000</WorkToMake>
     </statBases>
+	<equippedStatOffsets>
+      <MedicalTendSpeed>0.3</MedicalTendSpeed>
+	  <MedicalTendQuality>0.05</MedicalTendQuality>
+    </equippedStatOffsets>
 		<costList>
 			<ComponentIndustrial>3</ComponentIndustrial>
 			<Plasteel>45</Plasteel>
