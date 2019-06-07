@@ -82,7 +82,7 @@ namespace D9CTM
             enter.defaultDuration = this.job.def.joyDuration;
             enter.AddFinishAction(delegate
             {
-                Building_Pod a = TargetThingA as Building_Pod;
+                Building_Pod a = enter.actor.CurJob.targetA.Thing as Building_Pod;
                 a.EjectContents();
             });
             yield return enter;

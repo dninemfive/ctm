@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace D9CTM
 {
-    class Simpod : Building_Casket
+    class Simpod : Building_Pod
     {
         private List<SkillDef> skillsToTrain => base.def.GetModExtension<SimpodModExtension>().SkillsToTrain;
         private JoyKindDef joyKind => base.def.GetModExtension<SimpodModExtension>().JoyKind;
