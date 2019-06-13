@@ -99,7 +99,7 @@
 	  <li Class="D9CTM.CompProperties_PodSettings"/>
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>80.0</fuelConsumptionRate>
-        <fuelCapacity>120.0</fuelCapacity>
+        <fuelCapacity>800.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>D9Nanomaterial</li>
@@ -109,8 +109,8 @@
       </li>
 	  <li Class="D9CTM.CompProperties_Healpod">
 		<baseRareTicksPerMajorHeal>60</baseRareTicksPerMajorHeal> <!-- 6 hours per heal, scaling inversely with number of negative hediffs -->
-		<minorFuelUsagePercent>0.0375</minorFuelUsagePercent> <!-- percent of fuelConsumptionRate used when healing minor wounds -->
-		<woundSealFuelUsagePercent>0.0375</woundSealFuelUsagePercent> <!-- "" tending wounds -->
+		<minorFuelUsagePercent>0.02</minorFuelUsagePercent> <!-- percent of fuelConsumptionRate used when healing minor wounds -->
+		<woundSealFuelUsagePercent>0.02</woundSealFuelUsagePercent> <!-- "" tending wounds -->
 		<tendQuality>1.8</tendQuality> <!-- quality of tends. 1.0 is industrial, 1.6 is glitterworld -->
 		<hp>0.05</hp> <!-- amount of HP to heal each injury per rare tick. Min 0, max 1 (would remove immediately) -->
 	  </li>
