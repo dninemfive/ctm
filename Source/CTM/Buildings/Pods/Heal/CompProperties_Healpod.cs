@@ -8,7 +8,8 @@ namespace D9CTM
 {
     class CompProperties_Healpod : CompProperties
     {
-        public int baseRareTicksPerMajorHeal;
+        public int baseRareTicksPerMajorHeal = 60;
+        public float minorFuelUsagePercent = 0.1f, woundSealFuelUsagePercent = 0.5f, tendQuality = 1.8f, hp = 0.05f;
 
         public CompProperties_Healpod()
         {

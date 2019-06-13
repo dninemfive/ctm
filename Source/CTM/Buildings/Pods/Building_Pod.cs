@@ -15,6 +15,13 @@ namespace D9CTM
         CompProperties_PodSettings settings;
         ThingDef filth => settings.slimeDef;
         HediffDef hediff => settings.hediffOnExit;
+        public Pawn pawn
+        {
+            get
+            {
+                return base.ContainedThing as Pawn;
+            }
+        }
 
         public override void SpawnSetup(Map m, bool respawning)
         {
