@@ -58,13 +58,13 @@
     <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
   </ThingDef>
   <!-- Regeneration Pod -->
-  <!--ThingDef ParentName="BuildingBase">    
+  <ThingDef ParentName="BuildingBase">    
 	<defName>D9Healpod</defName>
     <label>regeneration pod</label>
-    <description>A pod which utilizes healing mechanites to quickly heal wounds, as well as much more slowly repairing permanent damage.</description>
-	<thingClass>D9CTM.Healpod</thingClass>
+    <description>A pod which utilizes healing mechanites to quickly heal wounds, as well as more slowly repairing permanent damage.</description>
+	<thingClass>D9CTM.Building_Pod</thingClass>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <! TODO: make custom texture >
+      <texPath>Things/Building/RegenPod/RegenPod</texPath> 
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,2)</drawSize>
       <shadowData>
@@ -77,6 +77,7 @@
     <pathCost>70</pathCost>
     <blockWind>true</blockWind>
     <fillPercent>0.5</fillPercent>
+	<defaultPlacingRot>South</defaultPlacingRot>
     <canOverlapZones>false</canOverlapZones>
     <statBases>
       <WorkToBuild>8000</WorkToBuild>
@@ -85,27 +86,34 @@
     </statBases>
     <tickerType>Normal</tickerType>
     <size>(1,2)</size>
-    <designationCategory>Joy</designationCategory>
+    <designationCategory>Misc</designationCategory>
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(1,0,0)</interactionCellOffset>
     <comps>
-	  <! TODO: RePower compat >
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>800</basePowerConsumption>
       </li>
 	  <li Class="CompProperties_Flickable" />
+	  <li Class="D9CTM.CompProperties_PodSettings"/>
       <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>1.0</fuelConsumptionRate> <! 1 mechserum ~= 1 day of fuel when a pawn is present >
-        <fuelCapacity>2.0</fuelCapacity>
+        <fuelConsumptionRate>80.0</fuelConsumptionRate>
+        <fuelCapacity>120.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
-            <li>MechSerumHealer</li>
+            <li>D9Nanomaterial</li>
           </thingDefs>
         </fuelFilter>
 		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
       </li>
+	  <li Class="D9CTM.CompProperties_Healpod">
+		<baseRareTicksPerMajorHeal>60</baseRareTicksPerMajorHeal> <!-- 6 hours per heal, scaling inversely with number of negative hediffs -->
+		<minorFuelUsagePercent>0.0375</minorFuelUsagePercent> <!-- percent of fuelConsumptionRate used when healing minor wounds -->
+		<woundSealFuelUsagePercent>0.0375</woundSealFuelUsagePercent> <!-- "" tending wounds -->
+		<tendQuality>1.8</tendQuality> <!-- quality of tends. 1.0 is industrial, 1.6 is glitterworld -->
+		<hp>0.05</hp> <!-- amount of HP to heal each injury per rare tick. Min 0, max 1 (would remove immediately) -->
+	  </li>
     </comps>
     <building>
       <isPlayerEjectable>true</isPlayerEjectable>
@@ -118,7 +126,7 @@
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>14</constructionSkillPrerequisite>
-  </ThingDef>-->
+  </ThingDef>
   <!-- nanite assistant -->
   <ThingDef ParentName="BuildingBase">
     <defName>D9CTMToolCabinet</defName>

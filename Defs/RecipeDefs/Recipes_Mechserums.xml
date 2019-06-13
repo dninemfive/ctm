@@ -62,7 +62,7 @@
 				<li>D9Nanomaterial</li>
 			  </thingDefs>
 			</filter>
-			<count>100</count>
+			<count>80</count>
 		  </li>
 		  <li>
 			<filter>
@@ -72,20 +72,11 @@
 			</filter>
 			<count>1</count>
 		  </li>
-		  <li>
-			<filter>
-			  <thingDefs>
-				<li>MedicineUltratech</li>
-			  </thingDefs>
-			</filter>
-			<count>5</count>
-		  </li>
 		</ingredients>
 		<fixedIngredientFilter>
 		  <thingDefs>
 			<li>D9Nanomaterial</li>
 			<li>AIPersonaFragment</li>
-			<li>MedicineUltratech</li>
 		  </thingDefs>
 		</fixedIngredientFilter>
 		<products>
@@ -143,5 +134,93 @@
 		<workSkill>Crafting</workSkill>
     </RecipeDef>
 	<!-- Healing Foam -->
+	<RecipeDef>
+		<defName>Make_HealingFoam</defName>
+		<label>make healing foam injector</label>
+		<description>Make a healing foam injector.</description>
+		<jobString>Making a healing foam injector.</jobString>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>15000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>D9Nanomaterial</li>
+			  </thingDefs>
+			</filter>
+			<count>30</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>2</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>D9Nanomaterial</li>
+			<li>ComponentSpacer</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <D9HealingFoam>1</D9HealingFoam>
+		</products>
+		<researchPrerequisite>D9NaniteHealing</researchPrerequisite>
+		<skillRequirements>
+		  <Crafting>6</Crafting>
+		  <Intellectual>4</Intellectual>
+		</skillRequirements>
+		<workSkill>Crafting</workSkill>
+    </RecipeDef>
 	<!-- Auto-Immunizer -->
+	<RecipeDef>
+		<defName>Make_AutoImmunizer</defName>
+		<label>make auto-immunizer</label>
+		<description>Make an auto-immunizer.</description>
+		<jobString>Making an auto-immunizer.</jobString>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>20000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>D9Nanomaterial</li>
+			  </thingDefs>
+			</filter>
+			<count>40</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>3</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>D9Nanomaterial</li>
+			<li>ComponentSpacer</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <D9AutoImmunizer>1</D9AutoImmunizer>
+		</products>
+		<researchPrerequisite>D9NaniteHealing</researchPrerequisite>
+		<skillRequirements>
+		  <Crafting>6</Crafting>
+		  <Intellectual>8</Intellectual>
+		</skillRequirements>
+		<workSkill>Crafting</workSkill>
+    </RecipeDef>
 </Defs>

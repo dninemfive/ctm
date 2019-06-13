@@ -123,25 +123,23 @@ namespace D9CTM
                                                select def;
             foreach (ThingDef current in enumerable)
             {
-                Building_Pod building_CryptosleepCasket = (Building_Pod)GenClosest.ClosestThingReachable(p.Position, p.Map, ThingRequest.ForDef(current), PathEndMode.InteractionCell, TraverseParms.For(traveler, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing x)
+                Building_Pod pod = (Building_Pod)GenClosest.ClosestThingReachable(p.Position, p.Map, ThingRequest.ForDef(current), PathEndMode.InteractionCell, TraverseParms.For(traveler, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing x)
                 {
-                    bool arg_33_0;
                     if (!((Building_Pod)x).HasAnyContents)
                     {
                         Pawn traveler2 = traveler;
                         LocalTargetInfo target = x;
                         bool ignoreOtherReservations2 = ignoreOtherReservations;
-                        arg_33_0 = traveler2.CanReserve(target, 1, -1, null, ignoreOtherReservations2);
+                        return traveler2.CanReserve(target, 1, -1, null, ignoreOtherReservations2);
                     }
                     else
                     {
-                        arg_33_0 = false;
+                        return false;
                     }
-                    return arg_33_0;
                 }, null, 0, -1, false, RegionType.Set_Passable, false);
-                if (building_CryptosleepCasket != null)
+                if (pod != null)
                 {
-                    return building_CryptosleepCasket;
+                    return pod;
                 }
             }
             return null;

@@ -134,6 +134,8 @@
     <recipes>
       <li>Make_Neurotrainer</li>
 	  <li>Make_Nanomaterial</li>
+	  <li>Make_HealingFoam</li>
+	  <li>Make_AutoImmunizer</li>
 	  <li>Make_HealerMechserum</li>
 	  <li>Make_D9VanometricCell</li>
 	  <li>Make_Nanomaterial_Bulk</li>

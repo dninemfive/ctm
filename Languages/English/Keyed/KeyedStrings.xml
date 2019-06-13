@@ -17,6 +17,8 @@
 	<d9CommandPodEject>Eject occupant</d9CommandPodEject>
 	<d9CommandPodEjectDesc>Eject this pod's occupant.</d9CommandPodEjectDesc>
 	<d9CommandPodEjectFailEmpty>Pod is empty.</d9CommandPodEjectFailEmpty>
+	<!-- Healpod -->
+	<TicksToMajorHeal>{0} until next major heal</TicksToMajorHeal>
 	<!-- CompFueledSpawner -->
 	<NotEnoughFuelForSpawner>Not enough material to produce {0}.</NotEnoughFuelForSpawner>
 </LanguageData>

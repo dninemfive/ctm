@@ -44,18 +44,25 @@ namespace D9CTM
             casket = base.parent as Building_Pod;
             if (casket == null) Log.Error("[Accessible Archotech] A thing with comp CompHealpod is not a Building_Pod.");
             fuel = base.parent.GetComp<CompRefuelable>();
+            ticksToMajor = Props.baseRareTicksPerMajorHeal;
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (Find.TickManager.TicksGame % 250 == 0) CompTickRare();
         }
 
         public override void CompTickRare()
         {
             base.CompTickRare();            
             if (pawn != null)
-            {
-                if(PawnIsFullyHealed()) casket.EjectContents();
+            {                
                 SealWounds();
                 DoMinorHeal();
                 if (ticksToMajor <= 0)DoMajorHeal();      
                 else ticksToMajor--;
+                if (PawnIsFullyHealed()) casket.EjectContents();
             }
         }
 
@@ -63,11 +70,7 @@ namespace D9CTM
         {
             if (pawn != null)
             {
-                foreach (Hediff_Injury hi in HealingUtility.GetNonPermanentInjuries(pawn)) if (!hi.IsTended())
-                    {
-                        hi.Tended(Props.tendQuality);
-                        ConsumeFuel(fuel.Props.fuelConsumptionRate * sealPct);
-                    }
+                foreach (Hediff_Injury hi in HealingUtility.GetNonPermanentInjuries(pawn)) if (!hi.IsTended() && ConsumeFuel(fuel.Props.fuelConsumptionRate * sealPct)) hi.Tended(Props.tendQuality);
             }
         }
 
@@ -75,15 +78,16 @@ namespace D9CTM
         {
             foreach (Hediff_Injury hi in HealingUtility.GetNonPermanentInjuries(pawn))
             {
-                hi.Severity -= hp;
-                ConsumeFuel(fuel.Props.fuelConsumptionRate * minorPct);
+                if (hi != null && ConsumeFuel(fuel.Props.fuelConsumptionRate * minorPct)) hi.Severity -= hp;
             }
         }
 
         public void DoMajorHeal()
         {
-            HealingUtility.FixWorstHealthCondition(pawn);
-            ConsumeFuel(fuel.Props.fuelConsumptionRate);
+            if (HealingUtility.HasWorstHealthCondition(pawn) && ConsumeFuel(fuel.Props.fuelConsumptionRate))
+            {
+                HealingUtility.FixWorstHealthCondition(pawn);
+            }
             ResetMajorTicks();
         }
 
@@ -91,7 +95,7 @@ namespace D9CTM
         {
             if (pawn != null) {
                 Pawn_HealthTracker tracker = pawn.health;
-                return !tracker.HasHediffsNeedingTendByPlayer(false) && !HealthAIUtility.ShouldSeekMedicalRest(pawn) && !tracker.hediffSet.HasTendedAndHealingInjury();
+                return !tracker.HasHediffsNeedingTendByPlayer(false) && !HealthAIUtility.ShouldSeekMedicalRest(pawn) && !tracker.hediffSet.HasTendedAndHealingInjury() && !HealingUtility.HasWorstHealthCondition(pawn);
             }
             return false;
         }
@@ -105,15 +109,31 @@ namespace D9CTM
             }
         }
 
-        public void ConsumeFuel(float amount)
+        public bool ConsumeFuel(float amount)
         {
-            if (fuel == null) return;
-            fuel.ConsumeFuel(amount);
+            if (fuel == null) return true;
+            if (amount <= fuel.Fuel)
+            {
+                fuel.ConsumeFuel(amount);
+                return true;
+            }
+            else return false;
         }
 
         private void ResetMajorTicks()
         {
             ticksToMajor = Props.baseRareTicksPerMajorHeal * (1/hediffCount);
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            return "TicksToMajorHeal".Translate((ticksToMajor * 250).ToStringTicksToPeriod());
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref ticksToMajor, "ticksToMajor", Props.baseRareTicksPerMajorHeal);
         }
     }
 }

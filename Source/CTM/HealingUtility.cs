@@ -17,8 +17,11 @@ namespace D9CTM
             IEnumerable<Hediff> hediffs = p.health.hediffSet.hediffs;
             foreach (Hediff h in hediffs)
             {
-                Hediff_Injury hi = h as Hediff_Injury;
-                if (hi != null && !h.IsPermanent()) yield return hi;
+                if (h != null)
+                {
+                    Hediff_Injury hi = h as Hediff_Injury;
+                    if (hi != null && !hi.IsPermanent()) yield return hi;
+                }
             }
         }
         public static IEnumerable<ImmunityRecord> GetImmunityRecords(Pawn p)
@@ -64,6 +67,113 @@ namespace D9CTM
             }
         }
 
+        public static bool HasWorstHealthCondition(Pawn usedBy)
+        {
+            Hediff hediff = FindLifeThreateningHediff(usedBy);
+            if (hediff != null)
+            {
+                return true;
+            }
+            else
+            {
+                if (HealthUtility.TicksUntilDeathDueToBloodLoss(usedBy) < 2500)
+                {
+                    Hediff hediff2 = FindMostBleedingHediff(usedBy);
+                    if (hediff2 != null)
+                    {
+                        return true;
+                    }
+                }
+                if (usedBy.health.hediffSet.GetBrain() != null)
+                {
+                    Hediff_Injury hediff_Injury = FindPermanentInjury(usedBy, Gen.YieldSingle(usedBy.health.hediffSet.GetBrain()));
+                    if (hediff_Injury != null)
+                    {
+                        return true;
+                    }
+                }
+                BodyPartRecord bodyPartRecord = FindBiggestMissingBodyPart(usedBy, HandCoverageAbsWithChildren);
+                if (bodyPartRecord != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    Hediff_Injury hediff_Injury2 = FindPermanentInjury(usedBy, from x in usedBy.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null)
+                                                                               where x.def == BodyPartDefOf.Eye
+                                                                               select x);
+                    if (hediff_Injury2 != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        Hediff hediff3 = FindImmunizableHediffWhichCanKill(usedBy);
+                        if (hediff3 != null)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            Hediff hediff4 = FindNonInjuryMiscBadHediff(usedBy, true);
+                            if (hediff4 != null)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                Hediff hediff5 = FindNonInjuryMiscBadHediff(usedBy, false);
+                                if (hediff5 != null)
+                                {
+                                    return true;
+                                }
+                                else
+                                {
+                                    if (usedBy.health.hediffSet.GetBrain() != null)
+                                    {
+                                        Hediff_Injury hediff_Injury3 = FindInjury(usedBy, Gen.YieldSingle(usedBy.health.hediffSet.GetBrain()));
+                                        if (hediff_Injury3 != null)
+                                        {
+                                            return true;
+                                        }
+                                    }
+                                    BodyPartRecord bodyPartRecord2 = FindBiggestMissingBodyPart(usedBy, 0f);
+                                    if (bodyPartRecord2 != null)
+                                    {
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        Hediff_Addiction hediff_Addiction = FindAddiction(usedBy);
+                                        if (hediff_Addiction != null)
+                                        {
+                                            return true;
+                                        }
+                                        else
+                                        {
+                                            Hediff_Injury hediff_Injury4 = FindPermanentInjury(usedBy, null);
+                                            if (hediff_Injury4 != null)
+                                            {
+                                                return true;
+                                            }
+                                            else
+                                            {
+                                                Hediff_Injury hediff_Injury5 = FindInjury(usedBy, null);
+                                                if (hediff_Injury5 != null)
+                                                {
+                                                    return true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
         //all next copied from CompUseEffect_FixWorstHealthCondition
         public static void FixWorstHealthCondition(Pawn usedBy)
         {
