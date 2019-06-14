@@ -153,38 +153,7 @@
     <tradeTags>
       <li>ExoticMisc</li>
     </tradeTags>
-  </ThingDef>
-  <ThingDef ParentName="OrganicProductBase">
-	<defName>D9Synthmeat</defName>
-	<label>synthmeat</label>
-	<description>Synthetic meat. Perfectly replicates the taste of chicken, but its texture is a bit off.</description>
-	<graphicData>
-      <texPath>Things/Item/Synthmeat</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-	<ingestible>
-      <foodType>Meat</foodType>
-      <ingestEffect>EatMeat</ingestEffect>
-      <ingestSound>RawMeat_Eat</ingestSound>
-      <tasteThought>AteRawFood</tasteThought>
-	  <preferability>RawBad</preferability>
-    </ingestible>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <statBases>
-      <Mass>0.03</Mass>
-	  <MaxHitPoints>60</MaxHitPoints>
-	  <DeteriorationRate>6</DeteriorationRate>
-      <Flammability>0.5</Flammability>
-      <Nutrition>0.05</Nutrition>
-	  <FoodPoisonChanceFixedHuman>0.01</FoodPoisonChanceFixedHuman> <!-- synthetic meat is less likely to be infected -->
-    </statBases>
-    <comps>
-      <li Class="CompProperties_Rottable">
-        <daysToRotStart>2</daysToRotStart>
-        <rotDestroys>true</rotDestroys>
-      </li>
-    </comps>
-  </ThingDef>
+  </ThingDef>  
   <ThingDef ParentName="ResourceBase">
     <defName>D9NanoForge</defName>
     <label>nano forge</label>

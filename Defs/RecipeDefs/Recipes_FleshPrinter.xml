@@ -72,4 +72,76 @@
 		<Cooking>8</Cooking>
 	</skillRequirements>
   </RecipeDef>
+  <RecipeDef>
+    <defName>Make_D9Synthmilk</defName>
+    <label>make synthmilk</label>
+    <description>Make synthetic milk from meat. Only a small percentage of nutrition is lost.</description>
+    <jobString>Making synthmilk.</jobString> 
+    <workAmount>500</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>0.55</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmilk>10</D9Synthmilk>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>10</Cooking>
+	</skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_D9Synthmilk_Bulk</defName>
+    <label>make synthmilk in bulk</label>
+    <description>Make synthetic milk from meat. At this scale, nutrition loss is negligible.</description>
+    <jobString>Making synthmilk.</jobString> 
+    <workAmount>4300</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>2.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmilk>50</D9Synthmilk>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>11</Cooking>
+	</skillRequirements>
+  </RecipeDef>
 </Defs>
