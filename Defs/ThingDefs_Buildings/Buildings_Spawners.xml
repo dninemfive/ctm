@@ -105,7 +105,7 @@
         <requiresPower>true</requiresPower>
         <thingToSpawn>Plasteel</thingToSpawn>
         <spawnCount>10</spawnCount>
-        <spawnIntervalRange><min>1000</min><max>1000</max></spawnIntervalRange> <!-- actually 60k, only 1k for testing -->
+        <spawnIntervalRange><min>60000</min><max>60000</max></spawnIntervalRange> <!-- actually 60k, only 1k for testing -->
         <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
         <showMessageIfOwned>false</showMessageIfOwned>
       </li>
@@ -146,5 +146,81 @@
     <canOverlapZones>false</canOverlapZones>
     <minifiedDef>MinifiedThing</minifiedDef>
     <tradeability>Sellable</tradeability>
+  </ThingDef>
+  <!-- Autoprof -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Neuroprof</defName>
+    <label>neuroprof</label>
+    <description>An AI construct in a small casing. Draws enormous power but programs neurotrainers to teach various skills.</description>
+    <graphicData>
+      <texPath>Things/Building/Neuroprof</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+	<designationCategory>Misc</designationCategory>
+	<researchPrerequisites><li>D9Neurotrainer</li></researchPrerequisites>
+    <costList>
+      <Plasteel>400</Plasteel>
+	  <ComponentSpacer>4</ComponentSpacer>
+      <AIPersonaCore>1</AIPersonaCore>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>3000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Spawner">
+		<compClass>D9CTM.CompFueledSpawner</compClass>
+        <requiresPower>true</requiresPower>
+        <thingToSpawn>MechSerumNeurotrainer</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange><min>160000</min><max>200000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>1.0</fuelConsumptionRate>
+        <fuelCapacity>4.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>UnprogrammedNeurotrainer</li>
+          </thingDefs>
+        </fuelFilter>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(59,197,231,0)</glowColor>
+      </li>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>3</Beauty>
+      <Mass>20</Mass>
+      <WorkToBuild>8000</WorkToBuild>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <tickerType>Normal</tickerType>
+    <size>(1, 1)</size>
+    <fillPercent>1.0</fillPercent>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <passability>Impassable</passability>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
   </ThingDef>
 </Defs>

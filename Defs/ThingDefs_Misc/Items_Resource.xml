@@ -214,4 +214,24 @@
       <li>ExoticMisc</li>
     </tradeTags>
   </ThingDef>
+  <ThingDef ParentName="D9ResourceBase">
+    <defName>UnprogrammedNeurotrainer</defName>
+    <label>unprogrammed neurotrainer</label>
+    <description>A shell of a neurotrainer which can be programmed by an autoprof.</description>
+    <graphicData>
+      <texPath>Things/Item/EmptyNeurotrainer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<stackLimit>4</stackLimit>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>0.629</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
 </Defs>

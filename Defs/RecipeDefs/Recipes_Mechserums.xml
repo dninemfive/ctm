@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- TODO: make this require level 20 in a skill + 16 intellectual and give the appropriate skill -->
 	<RecipeDef>
 		<defName>Make_Neurotrainer</defName>
-		<label>make neurotrainer</label>
-		<description>Make a neurotrainer mechserum.</description>
-		<jobString>Making neurotrainer.</jobString>
+		<label>make blank neurotrainer</label>
+		<description>Make a blank neurotrainer.</description>
+		<jobString>Making blank neurotrainer.</jobString>
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>28000</workAmount>
+		<workAmount>16000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
@@ -18,30 +17,39 @@
 				<li>D9Nanomaterial</li>
 			  </thingDefs>
 			</filter>
-			<count>150</count>
+			<count>80</count>
 		  </li>
 		  <li>
 			<filter>
 			  <thingDefs>
-				<li>AIPersonaFragment</li>
+				<li>ComponentSpacer</li>
 			  </thingDefs>
 			</filter>
-			<count>2</count>
+			<count>3</count>
 		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>40</count>
+		  </li>			
 		</ingredients>
 		<fixedIngredientFilter>
 		  <thingDefs>
 			<li>D9Nanomaterial</li>
-			<li>AIPersonaFragment</li>
+			<li>ComponentSpacer</li>
+			<li>Plasteel</li>
 		  </thingDefs>
 		</fixedIngredientFilter>
 		<products>
-		  <MechSerumNeurotrainer>1</MechSerumNeurotrainer>
+		  <UnprogrammedNeurotrainer>1</UnprogrammedNeurotrainer>
 		</products>
 		<researchPrerequisite>D9Neurotrainer</researchPrerequisite>
 		<skillRequirements>
 		  <Crafting>10</Crafting>
-		  <Intellectual>16</Intellectual>
+		  <Intellectual>8</Intellectual>
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
     </RecipeDef>
