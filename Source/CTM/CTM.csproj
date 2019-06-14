@@ -74,12 +74,14 @@
     <Compile Include="Buildings\Field Projectors\Repair\CompProperties_NanoRepair.cs" />
     <Compile Include="DefsOf.cs" />
     <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
+    <Compile Include="Harmony\VanaditeCompPatch.cs" />
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Buildings\Pods\Building_Pod.cs" />
     <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />
     <Compile Include="Hediff_BioAug.cs" />
     <Compile Include="IncidentInfo.cs" />
+    <Compile Include="IncidentWorker_AsteroidMinerReturns.cs" />
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="Buildings\Pods\Sim\JoyGiver_EnterPod.cs" />
     <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeOneFuel.cs" />

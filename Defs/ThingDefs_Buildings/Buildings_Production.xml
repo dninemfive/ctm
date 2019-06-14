@@ -219,6 +219,9 @@
     <recipes>
 		<li>Make_D9Synthmeat</li>
 	    <li>Make_D9Synthmeat_Bulk</li>
+		<li>Make_D9Synthmilk</li>
+		<li>Make_D9Synthmilk_Bulk</li>
+		<li>Make_Heart_D9</li>
     </recipes>
     <inspectorTabs>
       <li>ITab_Bills</li>
@@ -274,6 +277,8 @@
     </statBases>
     <size>(3,1)</size>
 	<recipes>
+	  <li>Make_Wood_D9</li>
+	  <li>Make_Wood_D9_Bulk</li>
 	  <li>Make_Vanadite</li>	  
 	  <li>Make_Nanoweave</li>
 	  <li>Make_Synthread</li>

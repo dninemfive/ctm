@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <RecipeDef>
     <defName>Make_D9Synthmeat</defName>
@@ -143,5 +143,135 @@
 	<skillRequirements>
 		<Cooking>11</Cooking>
 	</skillRequirements>
+  </RecipeDef>
+  <!-- organ recipes -->
+  <RecipeDef Name="D9PrintOrgansBase" Abstract="True">
+	<jobString>Printing organ.</jobString>
+	<workAmount>24000</workAmount>
+	<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+	<requiredGiverWorkType>Tailoring</requiredGiverWorkType>
+	<effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+	<allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>D9CTM.IngredientValueGetter_Mass</ingredientValueGetterClass>
+	<fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+	  <thingDefs>
+		<li>D9Nanomaterial</li>
+	  </thingDefs>
+    </fixedIngredientFilter>
+	<workSkill>Medicine</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Medicine>6</Medicine>
+		<Intellectual>4</Intellectual>
+		<Crafting>13</Crafting>
+	</skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="D9PrintOrgansBase">
+	<defName>Make_Heart_D9</defName>
+    <label>make heart</label>
+    <description>Print an organic heart using animal biomass and nanites.</description>
+	<ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>D9Nanomaterial</li>
+		  </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <Heart>1</Heart>
+    </products>
+  </RecipeDef>
+  <RecipeDef ParentName="D9PrintOrgansBase">
+	<defName>Make_Lung_D9</defName>
+    <label>make lung</label>
+    <description>Print an organic lung using animal biomass and nanites.</description>
+	<ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>D9Nanomaterial</li>
+		  </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Lung>1</Lung>
+    </products>
+  </RecipeDef>
+  <RecipeDef ParentName="D9PrintOrgansBase">
+	<defName>Make_Kidney_D9</defName>
+    <label>make kidney</label>
+    <description>Print an organic kidney using animal biomass and nanites.</description>
+	<ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>D9Nanomaterial</li>
+		  </thingDefs>
+        </filter>
+        <count>1.25</count>
+      </li>
+    </ingredients>
+    <products>
+      <Kidney>1</Kidney>
+    </products>
+  </RecipeDef>
+  <RecipeDef ParentName="D9PrintOrgansBase">
+	<defName>Make_Liver_D9</defName>
+    <label>make liver</label>
+    <description>Print an organic liver using animal biomass and nanites.</description>
+	<ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>D9Nanomaterial</li>
+		  </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <Liver>1</Liver>
+    </products>
   </RecipeDef>
 </Defs>

@@ -21,4 +21,6 @@
 	<TicksToMajorHeal>{0} until next major heal</TicksToMajorHeal>
 	<!-- CompFueledSpawner -->
 	<NotEnoughFuelForSpawner>Not enough material to produce {0}.</NotEnoughFuelForSpawner>
+	<!-- IngredientValueGetter_Mass -->
+	<BillRequiresMass>Requires {0} kg of {1}</BillRequiresMass>
 </LanguageData>

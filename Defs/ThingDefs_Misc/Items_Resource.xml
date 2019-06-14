@@ -117,7 +117,7 @@
     <useHitPoints>false</useHitPoints>
     <statBases>
       <MarketValue>3.1</MarketValue>
-      <Mass>0.1</Mass>
+      <Mass>0.05</Mass>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>

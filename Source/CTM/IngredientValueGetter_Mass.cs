@@ -15,18 +15,8 @@ namespace D9CTM
         
         public override string BillRequirementsDescription(RecipeDef r, IngredientCount ing)
         {
-            return "BillRequires".Translate(ing.GetBaseCount(), ing.filter.Summary); //TODO: check if this returns an accurate description
+            if (ing.IsFixedIngredient) return "BillRequires".Translate(ing.GetBaseCount() / ing.FixedIngredient.BaseMass, ing.filter.Summary);
+            return "BillRequiresMass".Translate(ing.GetBaseCount(), ing.filter.Summary);
         }
-        //should probably be implemented at some point
-        /*
-        public override string ExtraDescriptionLine(RecipeDef r)
-        {
-            if (r.ingredients.Any((IngredientCount ing) => ing.filter.AllowedThingDefs.Any((ThingDef td) => td.smallVolume && !r.GetPremultipliedSmallIngredients().Contains(td))))
-            {
-                return "BillRequiresMayVary".Translate(10.ToStringCached());
-            }
-            return null;
-        }
-        */
     }
 }
