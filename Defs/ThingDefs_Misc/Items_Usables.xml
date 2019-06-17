@@ -119,8 +119,8 @@
 		<label>skeletomuscular bioaug pill</label>
 		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves aspects of muscle cells, improving the function of related tissues.</description>
 		<graphicData>
-		  <texPath>Things/Item/AutoImmunizer</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/BioAugSkel</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>		
 		<comps>
 		  <li Class="CompProperties_Usable">
@@ -153,8 +153,8 @@
 		<label>cerebral bioaug pill</label>
 		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves the capabilities of nerve cells, allowing information to be transmitted and processed more quickly.</description>
 		<graphicData>
-		  <texPath>Things/Item/AutoImmunizer</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/BioAugCer</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>		
 		<comps>
 		  <li Class="CompProperties_Usable">
@@ -187,8 +187,8 @@
 		<label>metabolic bioaug pill</label>
 		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves the body's capacity to pump, filter, and provide nutrients to the circulatory system.</description>
 		<graphicData>
-		  <texPath>Things/Item/AutoImmunizer</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/BioAugMeta</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>		
 		<comps>
 		  <li Class="CompProperties_Usable">
