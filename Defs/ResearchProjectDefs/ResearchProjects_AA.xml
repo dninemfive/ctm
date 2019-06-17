@@ -489,6 +489,18 @@
 		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Bioaugmentation</defName>
+		<label>bioaugmentation</label>
+		<description>Combine nanites and genetic reprogramming technology to permanently enhance the user's body without mechanical bionics.</description>
+		<baseCost>6400</baseCost>
+		<prerequisites>
+		  <li>D9NaniteHealing</li>
+		  <li>D9PrintOrgans</li>
+		</prerequisites>
+		<researchViewX>3.6</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteHealingField</defName>
 		<label>nanite healing field</label>
 		<description>Advanced knowledge of physiology allows the projection of a nanite field which "repairs" damage to living tissue.</description>
@@ -601,6 +613,22 @@
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9ArchotechLimbs</defName>
+		<label>archotech prosthetics</label>
+		<description>Unlock the secret of amazingly advanced prosthetics almost indistinguishable from organic limbs except for their greatly enhanced abilities.</description>
+		<baseCost>10000</baseCost>
+		<prerequisites>
+		  <li>Bionics</li>
+		  <li>D9Bioaugmentation</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
+		<techLevel>Archotech</techLevel>
+		<researchViewX>15</researchViewX>
 		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">

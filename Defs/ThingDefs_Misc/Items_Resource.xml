@@ -70,7 +70,7 @@
     <thingCategories>
       <li>Items</li>
     </thingCategories>
-    <tradeability>Sellable</tradeability>
+    <tradeability>All</tradeability>
     <techLevel>Spacer</techLevel>
     <tradeTags>
       <li>ExoticMisc</li>

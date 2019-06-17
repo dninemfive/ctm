@@ -89,4 +89,135 @@
 		  <li>ExoticMisc</li>
 		</tradeTags>
   </ThingDef>
+  <!-- Bioaugmentations -->
+    <ThingDef Name="BioAugPillBase" ParentName="ResourceBase" Abstract="True">
+		<stackLimit>10</stackLimit>
+		<tradeability>All</tradeability>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+		<thingSetMakerTags>
+		  <li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<thingClass>ThingWithComps</thingClass>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>90</MaxHitPoints>
+		  <Mass>0.2</Mass>
+		  <DeteriorationRate>2.0</DeteriorationRate>
+		  <Flammability>0.2</Flammability>
+		  <MarketValue>5600</MarketValue>
+		</statBases>
+    </ThingDef>
+    <ThingDef ParentName="BioAugPillBase">
+		<defName>D9BioAugSkele</defName>
+		<label>skeletomuscular bioaug pill</label>
+		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves aspects of muscle cells, improving the function of related tissues.</description>
+		<graphicData>
+		  <texPath>Things/Item/AutoImmunizer</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>		
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Take skeletomuscular bioaug</useLabel>
+			<useDuration>30</useDuration>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugAdaptationSkel</hediffToAdd>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugArm</hediffToAdd>
+			<partsToAddTo><li>Arm</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugLeg</hediffToAdd>
+			<partsToAddTo><li>Leg</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugLung</hediffToAdd>
+			<partsToAddTo><li>Lung</li></partsToAddTo>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>				
+    </ThingDef>
+	<ThingDef ParentName="BioAugPillBase">
+		<defName>D9BioAugCer</defName>
+		<label>cerebral bioaug pill</label>
+		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves the capabilities of nerve cells, allowing information to be transmitted and processed more quickly.</description>
+		<graphicData>
+		  <texPath>Things/Item/AutoImmunizer</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>		
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Take cerebral bioaug</useLabel>
+			<useDuration>30</useDuration>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugAdaptationCer</hediffToAdd>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugBrain</hediffToAdd>
+			<partsToAddTo><li>Brain</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugEye</hediffToAdd>
+			<partsToAddTo><li>Eye</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugEar</hediffToAdd>
+			<partsToAddTo><li>Ear</li></partsToAddTo>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>				
+    </ThingDef>
+	<ThingDef ParentName="BioAugPillBase">
+		<defName>D9BioAugMeta</defName>
+		<label>metabolic bioaug pill</label>
+		<description>A pill containing nanites which modify existing genetic code, enhancing cells in various parts of the body.\n\nThis one improves the body's capacity to pump, filter, and provide nutrients to the circulatory system.</description>
+		<graphicData>
+		  <texPath>Things/Item/AutoImmunizer</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>		
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Take cerebral bioaug</useLabel>
+			<useDuration>30</useDuration>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugAdaptationMeta</hediffToAdd>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugHeart</hediffToAdd>
+			<partsToAddTo><li>Heart</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugLiver</hediffToAdd>
+			<partsToAddTo><li>Liver</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugKidney</hediffToAdd>
+			<partsToAddTo><li>Kidney</li></partsToAddTo>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffect_AddHediff">
+			<hediffToAdd>BioAugStomach</hediffToAdd>
+			<partsToAddTo><li>Stomach</li></partsToAddTo>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>				
+    </ThingDef>
 </Defs>

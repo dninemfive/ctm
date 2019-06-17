@@ -3,7 +3,7 @@
 	<HediffDef ParentName="DiseaseBase">
 		<defName>D9NanComa</defName>
 		<label>nanite-induced coma</label>
-		<isBad>false</isBad>
+		<isBad>false</isBad>		
 		<comps>
 		  <li Class="D9CTM.HediffCompProperties_TimePerImmunity">
 			<ticksPer>15000</ticksPer> <!-- 6 hours per immunity -->

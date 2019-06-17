@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Adaptation periods (TODO: add different stages to show progression)-->
+	<HediffDef ParentName="DiseaseBase" Name="BioAugAdaptationBase" Abstract="True">		
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+		  <li Class="HediffCompProperties_SeverityPerDay">
+			<severityPerDay>-0.67</severityPerDay>
+		  </li>
+		</comps>
+	</HediffDef>
+	<HediffDef ParentName="BioAugAdaptationBase">
+		<defName>BioAugAdaptationSkel</defName>
+		<label>skeletomuscular bio-aug adaptation period</label>		
+		<stages>
+		  <li>
+			<hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+			<vomitMtbDays>0.6</vomitMtbDays>
+			<painOffset>0.3</painOffset>
+			<capMods>
+			  <li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.8</postFactor>
+			  </li>
+			  <li>
+				<capacity>Moving</capacity>
+				<postFactor>0.8</postFactor>
+			  </li>
+			  <li>
+				<capacity>Breathing</capacity>
+				<postFactor>0.8</postFactor>
+			  </li>
+			</capMods>
+		  </li>
+	    </stages>
+	</HediffDef>
+	<HediffDef ParentName="BioAugAdaptationBase">
+		<defName>BioAugAdaptationCer</defName>
+		<label>cerebral bio-aug adaptation period</label>		
+		<stages>
+		  <li>
+			<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+			<vomitMtbDays>0.6</vomitMtbDays>
+			<painOffset>0.4</painOffset>
+			<capMods>
+			  <li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.65</postFactor>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	</HediffDef>
+	<HediffDef ParentName="BioAugAdaptationBase">
+		<defName>BioAugAdaptationMeta</defName>
+		<label>metabolic bio-aug adaptation period</label>		
+		<stages>
+		  <li>
+			<hungerRateFactorOffset>0.7</hungerRateFactorOffset>
+			<vomitMtbDays>0.6</vomitMtbDays>
+			<painOffset>0.3</painOffset>
+			<capMods>
+			  <li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.8</postFactor>
+			  </li>
+			  <li>
+				<capacity>BloodFiltration</capacity>
+				<postFactor>0.7</postFactor>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	</HediffDef>
+	<!-- bio-aug base -->
+	<HediffDef Name="BioAugBase" Abstract="True">
+		<hediffClass>D9CTM.Hediff_BioAug</hediffClass>
+		<defaultLabelColor>(0.25, 1.0, 0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<addedPartProps>
+		  <solid>false</solid>
+		  <partEfficiency>1.3</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	<!-- skeletomuscular -->
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugArm</defName>
+		<label>bio-augmented arm</label>
+		<labelNoun>a bio-augmented arm</labelNoun>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.8</cooldownTime>
+			  </li>
+			</tools>
+		  </li>
+		</comps>		
+    </HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugLeg</defName>
+		<label>bio-augmented leg</label>
+		<labelNoun>a bio-augmented leg</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugLung</defName>
+		<label>bio-augmented lung</label>
+		<labelNoun>a bio-augmented lung</labelNoun>
+	</HediffDef>
+	<!-- cerebral -->
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugBrain</defName>
+		<label>bio-augmented brain</label>
+		<labelNoun>a bio-augmented brain</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugEye</defName>
+		<label>bio-augmented eye</label>
+		<labelNoun>a bio-augmented eye</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugEar</defName>
+		<label>bio-augmented ear</label>
+		<labelNoun>a bio-augmented ear</labelNoun>
+	</HediffDef>
+	<!-- TODO: learning speed boost -->
+	<!-- metabolic -->
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugHeart</defName>
+		<label>bio-augmented heart</label>
+		<labelNoun>a bio-augmented heart</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugLiver</defName>
+		<label>bio-augmented liver</label>
+		<labelNoun>a bio-augmented liver</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugKidney</defName>
+		<label>bio-augmented kidney</label>
+		<labelNoun>a bio-augmented kidney</labelNoun>
+	</HediffDef>
+	<HediffDef ParentName="BioAugBase">
+		<defName>BioAugStomach</defName>
+		<label>bio-augmented stomach</label>
+		<labelNoun>a bio-augmented stomach</labelNoun>
+	</HediffDef>
+</Defs>
