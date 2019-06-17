@@ -182,6 +182,7 @@
     </skillRequirements>
     <workSkill>Crafting</workSkill>
   </RecipeDef>
+  <!-- TODO: require small amounts of meat, herbal medicine, and psychite "for organic material"; SeedsPlease compat: use herbs instead of herbal medicine -->
   <RecipeDef>
 		<defName>Make_Nanomaterial</defName>
 		<label>make nanomaterial</label>

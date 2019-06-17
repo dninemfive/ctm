@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ResearchProjectDef[defName = "SyntheticOrgans"]</xpath> <!-- TODO: change all compat to use PatchOperationFindMod -->
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
+				<value>
+					<prerequisites>
+						<li>AdvancedBionics</li>
+						<li>D9Bioaugmentation</li>
+						<li>SyntheticOrgans</li>
+						<li>BrainSurgery</li>
+					</prerequisites>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

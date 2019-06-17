@@ -5,6 +5,9 @@
 	  <value>
 		<li>D9AdminsterHealingFoam</li>
 		<li>D9AdminsterAutoImmunizer</li>
+		<li>D9AdministerBioAugSkel</li>
+		<li>D9AdministerBioAugCer</li>
+		<li>D9AdministerBioAugMeta</li>
 	  </value>
 	</Operation>
 </Patch>

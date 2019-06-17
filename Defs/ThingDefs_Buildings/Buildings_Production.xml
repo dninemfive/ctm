@@ -136,6 +136,9 @@
 	  <li>Make_Nanomaterial</li>
 	  <li>Make_HealingFoam</li>
 	  <li>Make_AutoImmunizer</li>
+	  <li>Make_BioAugSkel</li>
+	  <li>Make_BioAugCer</li>
+	  <li>Make_BioAugMeta</li>
 	  <li>Make_HealerMechserum</li>
 	  <li>Make_D9VanometricCell</li>
 	  <li>Make_Nanomaterial_Bulk</li>

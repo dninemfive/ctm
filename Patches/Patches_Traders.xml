@@ -19,6 +19,13 @@
 				  <max>150</max>
 				</countRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>AIPersonaFragment</thingDef>
+				<countRange>
+				  <min>2</min>
+				  <max>5</max>
+				</countRange>
+			</li>
 	    </value>
 	</Operation>
 	<!-- ditto but for exotic traders -->
@@ -32,6 +39,21 @@
 				  <max>3</max>
 				</countRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>AIPersonaFragment</thingDef>
+				<price>Cheap</price>
+				<countRange>
+				  <min>3</min>
+				  <max>6</max>
+				</countRange>
+			</li>
+	    </value>
+	</Operation>
+	<!-- allow AI Persona Cores to be sold by traders -->
+	<Operation Class="PatchOperationReplace">
+	    <xpath>*/ThingDef[defName = "AIPersonaCore"]/tradeability</xpath>
+	    <value>
+			<tradeability>All</tradeability>
 	    </value>
 	</Operation>
 	<!-- prevent additional ones from being generated from the ExoticMisc tag -->
@@ -39,13 +61,14 @@
 	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/excludedThingDefs</xpath>
 	    <value>
 			<li>D9NanoForge</li>
+			<li>AIPersonaFragment</li>
 	    </value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
 	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/customCountRanges</xpath>
 	    <value>
+			<AIPersonaCore>1~1</AIPersonaCore>
 			<Vanadite>50~125</Vanadite>
-			<AIPersonaFragment>3~5</AIPersonaFragment>
 			<D9Nanomaterial>75~200</D9Nanomaterial>
 			<D9VanometricCell>2~5</D9VanometricCell>
 			<Nanoweave>25~125</Nanoweave>

@@ -150,7 +150,7 @@
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>15000</workAmount>
+		<workAmount>12000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
@@ -195,7 +195,7 @@
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>20000</workAmount>
+		<workAmount>16000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
@@ -231,4 +231,67 @@
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
     </RecipeDef>
+	<!-- Bio-Augs -->
+	<RecipeDef Name="BioAugRecipeBase" Abstract="True">
+		<jobString>Making a bioaugmentation pill.</jobString>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>24000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>D9Nanomaterial</li>
+			  </thingDefs>
+			</filter>
+			<count>60</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>3</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>D9Nanomaterial</li>
+			<li>ComponentSpacer</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>D9Bioaugmentation</researchPrerequisite>
+		<skillRequirements>
+		  <Crafting>10</Crafting>
+		  <Intellectual>12</Intellectual>
+		</skillRequirements>
+		<workSkill>Crafting</workSkill>
+	</RecipeDef>
+	<RecipeDef ParentName="BioAugRecipeBase">
+		<defName>Make_BioAugSkel</defName>
+		<label>make skeletomuscular bioagumentation pill</label>
+		<description>Make a skeletomuscular bioagumentation pill.</description>
+		<products>
+		  <D9BioAugSkele>1</D9BioAugSkele>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="BioAugRecipeBase">
+		<defName>Make_BioAugCer</defName>
+		<label>make cerebral bioagumentation pill</label>
+		<description>Make a cerebral bioagumentation pill.</description>
+		<products>
+		  <D9BioAugCer>1</D9BioAugCer>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="BioAugRecipeBase">
+		<defName>Make_BioAugMeta</defName>
+		<label>make metabolic bioagumentation pill</label>
+		<description>Make a metabolic bioagumentation pill.</description>
+		<products>
+		  <D9BioAugMeta>1</D9BioAugMeta>
+		</products>
+	</RecipeDef>
 </Defs>
