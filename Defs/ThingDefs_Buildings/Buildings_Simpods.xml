@@ -17,7 +17,7 @@
     <blockWind>true</blockWind>
     <fillPercent>0.5</fillPercent>
     <canOverlapZones>false</canOverlapZones>
-	<designatorDropdown>Floor_Carpet</designatorDropdown>
+	<designatorDropdown>D9_Simpod</designatorDropdown>
     <statBases>
       <WorkToBuild>6000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>

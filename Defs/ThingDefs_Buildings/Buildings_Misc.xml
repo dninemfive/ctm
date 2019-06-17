@@ -272,6 +272,7 @@
         <rect>(0,0.75,1.0,0.5)</rect>
       </damageData>
     </graphicData>
+	<designatorDropdown>D9_NaniteProjector</designatorDropdown>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -343,6 +344,7 @@
         <rect>(0,0.75,1.0,0.5)</rect>
       </damageData>
     </graphicData>
+	<designatorDropdown>D9_NaniteProjector</designatorDropdown>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>

@@ -74,6 +74,7 @@
 		<fillPercent>0.5</fillPercent>
 		<designationCategory>Misc</designationCategory>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designatorDropdown>D9_Satellite</designatorDropdown>
 		<statBases>
 		  <MaxHitPoints>250</MaxHitPoints>
 		  <WorkToBuild>1600</WorkToBuild>
@@ -174,6 +175,7 @@
 		  <Steel>60</Steel>
 		  <ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
+		<designatorDropdown Inherit="False">D9_CombatSatellite</designatorDropdown>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
 			<fuelToLaunch>750.0</fuelToLaunch>
@@ -194,6 +196,7 @@
 		  <Steel>60</Steel>
 		  <ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
+		<designatorDropdown Inherit="False">D9_CombatSatellite</designatorDropdown>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
 			<fuelToLaunch>750.0</fuelToLaunch>

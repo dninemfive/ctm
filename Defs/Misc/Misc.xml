@@ -2,6 +2,15 @@
 <Defs>
 	<!-- groups normal simpods -->
 	<DesignatorDropdownGroupDef>
-		<defName>Floor_Carpet</defName>
+		<defName>D9_Simpod</defName>
+	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>D9_Satellite</defName>
+	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>D9_CombatSatellite</defName>
+	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>D9_NaniteProjector</defName>
 	</DesignatorDropdownGroupDef>
 </Defs>
