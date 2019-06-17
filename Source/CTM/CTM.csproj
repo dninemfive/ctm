@@ -59,6 +59,8 @@
     <Compile Include="Buildings\Pods\Heal\CompHealpod.cs" />
     <Compile Include="Buildings\Pods\Heal\CompProperties_Healpod.cs" />
     <Compile Include="CompFueledSpawner.cs" />
+    <Compile Include="CompProperties_UseEffect_AddHediff.cs" />
+    <Compile Include="CompUseEffect_AddHediff.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="Belts\Repair\CompProperties_RepairBelt.cs" />

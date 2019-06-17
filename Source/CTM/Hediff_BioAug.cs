@@ -7,14 +7,24 @@ using RimWorld;
 
 namespace D9CTM
 {
-    class Hediff_BioAug : HediffWithComps
+    class Hediff_BioAug : Hediff_AddedPart
     {
         public override bool ShouldRemove
         {
             get
             {
-                //if apparently body parts replaced with Hediff_AddedPart count as removed so no other checks needed
-                return !base.pawn.health.hediffSet.PartIsMissing(base.Part);
+                //apparently body parts replaced with Hediff_AddedPart count as removed so no other checks needed
+                return base.pawn.health.hediffSet.PartIsMissing(base.Part) || base.ShouldRemove;
+            }
+        }
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            if (comps != null)
+            {
+                for (int i = 0; i < comps.Count; i++)
+                {
+                    comps[i].CompPostPostAdd(dinfo);
+                }
             }
         }
     }
