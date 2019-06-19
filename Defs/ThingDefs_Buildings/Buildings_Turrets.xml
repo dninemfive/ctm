@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Charge Rifle turret -->
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" Name="Turret_D9_ChargeRifles">
 		<defName>Turret_D9_ChargeRifles</defName>
 		<label>charge rifle mini-turret</label>
 		<description>A short-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
@@ -120,7 +120,7 @@
     </verbs>
   </ThingDef>
 	<!-- Charge Lance turret -->
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" Name="Turret_D9_ChargeLance">
 		<defName>Turret_D9_ChargeLance</defName>
 		<label>charge lance mini-turret</label>
 		<description>A long-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>

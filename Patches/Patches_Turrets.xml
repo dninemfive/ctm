@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- make turrets require AI persona fragments -->
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ThingDef[defName = "Turret_MiniTurret" or defName = "Turret_Autocannon" or defName = "Turret_Sniper"]/costList</xpath>
+	  <value>
+		  <AIPersonaFragment>1</AIPersonaFragment>
+	  </value>
+	</Operation>
+	<!-- give the player a free fragment in Crashlanded and two in Rich Explorer -->
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ScenarioDef[defName = "Crashlanded"]/scenario/parts</xpath>
+	  <value>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>AIPersonaFragment</thingDef>
+          <count>1</count>
+		</li>
+	  </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>*/ScenarioDef[defName = "TheRichExplorer"]/scenario/parts</xpath>
+	  <value>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>AIPersonaFragment</thingDef>
+          <count>2</count>
+		</li>
+	  </value>
+	</Operation>
+</Patch>

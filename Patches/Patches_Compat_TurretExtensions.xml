@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>[XND] Turret Extensions</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- targetable mini-turret -->
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>*/ThingDef[defName = "Turret_MiniTurret"]</xpath>
+					<attribute>Name</attribute>
+					<value>Turret_MiniTurret</value>
+				</li>
+				<li Class="PatchOperationInsert">
+					<xpath>*/ThingDef[defName = "Turret_MiniTurret"]</xpath>
+					<value>
+						<ThingDef ParentName="Turret_MiniTurret">
+							<defName>Turret_MiniTurret_Targetable</defName>
+							<label>targetable mini-turret</label>
+							<description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Constructed with a shackled AI persona core, it can be remotely targeted.</description>
+							<comps Inherit="True">
+								<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+							</comps>
+							<costList Inherit="False">
+							  <Steel>40</Steel>
+							  <ComponentIndustrial>3</ComponentIndustrial>
+							  <ShackledAIPersona>1</ShackledAIPersona>
+							</costList>
+							<modExtensions>
+								<li Class="TurretExtensions.TurretFrameworkExtension">
+									<canForceAttack>true</canForceAttack>
+								</li>
+							</modExtensions>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- targeted autocannon -->
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>*/ThingDef[defName = "Turret_Autocannon"]</xpath>
+					<attribute>Name</attribute>
+					<value>Turret_Autocannon</value>
+				</li>
+				<li Class="PatchOperationInsert">
+					<xpath>*/ThingDef[defName = "Turret_Autocannon"]</xpath>
+					<value>
+						<ThingDef ParentName="Turret_Autocannon">
+							<defName>Turret_Autocannon_Targetable</defName>
+							<label>targetable autocannon turret</label>
+							<description>A heavy automatic turret. Its large-caliber shells do heavy damage over significant ranges, but its barrel must be refurbished after use. It cannot fire at close-up targets, and may explode when damaged.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
+							<comps Inherit="True">
+								<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+							</comps>
+							<costList Inherit="False">
+							  <Steel>350</Steel>
+							  <Plasteel>40</Plasteel>
+							  <ComponentIndustrial>6</ComponentIndustrial>
+							  <ShackledAIPersona>1</ShackledAIPersona>
+							</costList>
+							<modExtensions>
+								<li Class="TurretExtensions.TurretFrameworkExtension">
+									<canForceAttack>true</canForceAttack>
+								</li>
+							</modExtensions>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- targeted sniper turret -->
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>*/ThingDef[defName = "Turret_Sniper"]</xpath>
+					<attribute>Name</attribute>
+					<value>Turret_Sniper</value>
+				</li>
+				<li Class="PatchOperationInsert">
+					<xpath>*/ThingDef[defName = "Turret_Sniper"]</xpath>
+					<value>
+						<ThingDef ParentName="Turret_Sniper">
+							<defName>Turret_Sniper_Targetable</defName>
+							<label>targetable sniper turret</label>
+							<description>A long-ranged armor-piercing turret. Its ultra-dense uranium shells can punch through heavy armor at long ranges, but it requires new uranium slugs to be loaded after use. It's more accurate at longer ranges, and can't fire at all close up. May explode when damaged.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
+							<comps Inherit="True">
+								<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+							</comps>
+							<costList Inherit="False">
+							  <Steel>300</Steel>
+							  <Plasteel>30</Plasteel>
+							  <Uranium>60</Uranium>
+							  <ComponentIndustrial>6</ComponentIndustrial>
+							  <ShackledAIPersona>1</ShackledAIPersona>
+							</costList>
+							<modExtensions>
+								<li Class="TurretExtensions.TurretFrameworkExtension">
+									<canForceAttack>true</canForceAttack>
+								</li>
+							</modExtensions>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- targetable charge (lance) turrets -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/ThingDef[defName = "Turret_D9_ChargeRifles"]</xpath>
+					<value>
+						<ThingDef ParentName="Turret_D9_ChargeRifles">
+							<defName>Turret_D9_ChargeRifles_Targetable</defName>
+							<label>targetable charge rifle mini-turret</label>
+							<description>A short-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Constructed with a shackled AI persona core, it can be remotely targeted.</description>
+							<comps Inherit="True">
+								<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+							</comps>
+							<costList Inherit="False">
+							  <D9VanometricCell>4</D9VanometricCell>
+							  <ShackledAIPersona>1</ShackledAIPersona>
+							  <Plasteel>80</Plasteel>
+							  <ComponentSpacer>3</ComponentSpacer>
+							</costList>
+							<modExtensions>
+								<li Class="TurretExtensions.TurretFrameworkExtension">
+									<canForceAttack>true</canForceAttack>
+								</li>
+							</modExtensions>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationInsert">
+					<xpath>*/ThingDef[defName = "Turret_D9_ChargeLance"]</xpath>
+					<value>
+						<ThingDef ParentName="Turret_D9_ChargeLance">
+							<defName>Turret_D9_ChargeLance_Targetable</defName>
+							<label>targetable charge lance mini-turret</label>
+							<description>A long-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Constructed with a shackled AI persona core, it can be remotely targeted.</description>
+							<comps Inherit="True">
+								<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+							</comps>
+							<costList Inherit="False">
+							  <D9VanometricCell>2</D9VanometricCell>
+							  <ShackledAIPersona>1</ShackledAIPersona>
+							  <Gun_ChargeLance>1</Gun_ChargeLance>
+							</costList>
+							<modExtensions>
+								<li Class="TurretExtensions.TurretFrameworkExtension">
+									<canForceAttack>true</canForceAttack>
+								</li>
+							</modExtensions>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
