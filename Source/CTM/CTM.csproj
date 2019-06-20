@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Archotech\Archotech.cs" />
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
     <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
     <Compile Include="Buildings\Pods\JobDriver_EnterPod.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Buildings\Pods\Heal\CompHealpod.cs" />
     <Compile Include="Buildings\Pods\Heal\CompProperties_Healpod.cs" />
     <Compile Include="CompFueledSpawner.cs" />
+    <Compile Include="Buildings\Archotech\CompProperties_Archotech.cs" />
     <Compile Include="CompProperties_UseEffect_AddHediff.cs" />
     <Compile Include="CompUseEffect_AddHediff.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
