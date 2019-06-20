@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<RecipeDef>
-		<defName>Make_Neurotrainer</defName>
-		<label>make blank neurotrainer</label>
-		<description>Make a blank neurotrainer.</description>
-		<jobString>Making blank neurotrainer.</jobString>
+	<RecipeDef Name="MechaniteRecipeBase" Abstract="True">
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<workAmount>16000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<workSkill>Crafting</workSkill>
+	</RecipeDef>
+	<RecipeDef ParentName="MechaniteRecipeBase">
+		<defName>Make_Neurotrainer</defName>
+		<label>make blank neurotrainer</label>
+		<description>Make a blank neurotrainer.</description>
+		<jobString>Making blank neurotrainer.</jobString>		
+		<workAmount>16000</workAmount>		
 		<ingredients>
 		  <li>
 			<filter>
@@ -50,19 +53,14 @@
 		<skillRequirements>
 		  <Crafting>10</Crafting>
 		  <Intellectual>8</Intellectual>
-		</skillRequirements>
-		<workSkill>Crafting</workSkill>
+		</skillRequirements>		
     </RecipeDef>
-	<RecipeDef>
+	<RecipeDef ParentName="MechaniteRecipeBase">
 		<defName>Make_HealerMechserum</defName>
 		<label>make healer mechserum</label>
 		<description>Make a healer mechserum.</description>
 		<jobString>Making healer mechserum.</jobString>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>32000</workAmount>
-		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
 			<filter>
@@ -95,18 +93,13 @@
 		  <Crafting>10</Crafting>
 		  <Intellectual>12</Intellectual>
 		</skillRequirements>
-		<workSkill>Crafting</workSkill>
     </RecipeDef>
-	<RecipeDef>
+	<RecipeDef ParentName="MechaniteRecipeBase">
 		<defName>Make_ResurrectionMechserum</defName>
 		<label>make resurrection mechserum</label>
 		<description>Make a resurrection mechserum.</description>
 		<jobString>Making resurrection mechserum.</jobString>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>64000</workAmount>
-		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
 			<filter>
@@ -139,19 +132,14 @@
 		  <Crafting>20</Crafting>
 		  <Intellectual>20</Intellectual>
 		</skillRequirements>
-		<workSkill>Crafting</workSkill>
     </RecipeDef>
 	<!-- Healing Foam -->
-	<RecipeDef>
+	<RecipeDef ParentName="MechaniteRecipeBase">
 		<defName>Make_HealingFoam</defName>
 		<label>make healing foam injector</label>
 		<description>Make a healing foam injector.</description>
 		<jobString>Making a healing foam injector.</jobString>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>12000</workAmount>
-		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
 			<filter>
@@ -184,19 +172,14 @@
 		  <Crafting>6</Crafting>
 		  <Intellectual>4</Intellectual>
 		</skillRequirements>
-		<workSkill>Crafting</workSkill>
     </RecipeDef>
 	<!-- Auto-Immunizer -->
-	<RecipeDef>
+	<RecipeDef ParentName="MechaniteRecipeBase">
 		<defName>Make_AutoImmunizer</defName>
 		<label>make auto-immunizer</label>
 		<description>Make an auto-immunizer.</description>
 		<jobString>Making an auto-immunizer.</jobString>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>16000</workAmount>
-		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 		  <li>
 			<filter>
@@ -229,7 +212,6 @@
 		  <Crafting>6</Crafting>
 		  <Intellectual>8</Intellectual>
 		</skillRequirements>
-		<workSkill>Crafting</workSkill>
     </RecipeDef>
 	<!-- Bio-Augs -->
 	<RecipeDef Name="BioAugRecipeBase" Abstract="True">

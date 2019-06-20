@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- groups normal simpods -->
+	<!-- dropdown groups -->
 	<DesignatorDropdownGroupDef>
 		<defName>D9_Simpod</defName>
 	</DesignatorDropdownGroupDef>
@@ -13,4 +13,10 @@
 	<DesignatorDropdownGroupDef>
 		<defName>D9_NaniteProjector</defName>
 	</DesignatorDropdownGroupDef>
+	<!-- thing categories -->
+	<ThingCategoryDef>
+      <defName>D9_AICat</defName>
+      <label>artificial intelligences</label>
+      <parent>Items</parent>
+    </ThingCategoryDef>
 </Defs>

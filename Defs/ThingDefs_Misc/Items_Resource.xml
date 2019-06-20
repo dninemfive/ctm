@@ -68,7 +68,7 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <thingCategories>
-      <li>Items</li>
+      <li>D9_AICat</li>
     </thingCategories>
     <tradeability>All</tradeability>
     <techLevel>Spacer</techLevel>
@@ -96,7 +96,7 @@
       <Flammability>0.2</Flammability>
     </statBases>
     <thingCategories>
-      <li>Items</li>
+      <li>D9_AICat</li>
     </thingCategories>
     <tradeability>Sellable</tradeability>
     <techLevel>Spacer</techLevel>

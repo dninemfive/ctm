@@ -405,7 +405,7 @@
     <workSkill>Crafting</workSkill>
   </RecipeDef>
   <!-- AI persona core recipes -->
-  <RecipeDef>
+  <RecipeDef Name="MakeAIPersonaCore">
     <defName>Make_AIPersonaCore</defName>
     <label>make AI persona core</label>
     <description>Make an AI persona core.</description>
@@ -512,7 +512,7 @@
     <workAmount>1000</workAmount>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <ingredients>
-	  <li>
+	  <li Name="PersonaCore">
         <filter>
           <thingDefs>
             <li>AIPersonaCore</li>
@@ -547,7 +547,7 @@
     <workAmount>16000</workAmount>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <ingredients>
-      <li>
+      <li Name="PersonaCore">
         <filter>
           <thingDefs>
             <li>AIPersonaCore</li>
@@ -582,7 +582,7 @@
     <workAmount>8000</workAmount>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <ingredients>
-      <li>
+      <li Name="PersonaCore">
         <filter>
           <thingDefs>
             <li>AIPersonaCore</li>

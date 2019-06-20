@@ -55,4 +55,13 @@
 		<basePowerConsumption>2900</basePowerConsumption>
 	  </value>
 	</Operation>
+	<!-- move the AI persona core to the new category for AI items -->
+	<Operation Class="PatchOperationReplace">
+	  <xpath>*/ThingDef[defName = "AIPersonaCore"]/thingCategories</xpath>
+	  <value>
+		<thingCategories>
+		  <li>D9_AICat</li>
+		</thingCategories>
+	  </value>
+	</Operation>
 </Patch>
