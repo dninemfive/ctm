@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- No, I won't add compatibility for the full mod. There's too much overlap with this one for it to be worthwhile. -->
+	<!-- reprogram/shackle/fragment malicious AI cores
+		 craft cherub mech injectors -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods><li>Sparkling Worlds Addon - More Events [1.0] - Standalone Addon</li></mods>
+			</li>
+			<!-- Shackle, Fragment, Wipe -->
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/ingredients/li[@Name="PersonaCore"]/filter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/fixedIngredientFilter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li>
+			<!-- Fragment >
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Split_AIPersonaFragment"]/ingredients/li[@Name="PersonaCore"]/filter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Split_AIPersonaFragment"]/fixedIngredientFilter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li>
+			<! Wipe >
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Wipe_AIPersonaCore"]/ingredients/li[@Name="PersonaCore"]/filter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/RecipeDef[defName="Wipe_AIPersonaCore"]/fixedIngredientFilter/thingDefs</xpath>
+				<value><li>MalAIPersonaCoreSW</li></value>
+			</li-->
+			<!-- Reprogram -->
+			<li Class="PatchOperationInsert">
+				<xpath>*/RecipeDef[defName="Make_AIPersonaCore"]</xpath>
+				<value>
+					<RecipeDef ParentName="MakeAIPersonaCore">
+						<defName>Reprogram_MalAICore</defName>
+						<label>reprogram AI persona core</label>
+						<description>Reprogram a malicious AI persona core. Almost as much work as making one from scratch.</description>
+						<jobString>Reprogramming AI persona core.</jobString>
+						<workAmount>72000</workAmount>
+						<ingredients Inherit="False">
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MalAIPersonaCoreSW</li>
+							  </thingDefs>
+							</filter>
+							<count>1</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter Inherit="False">
+						  <thingDefs>
+							<li>MalAIPersonaCoreSW</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+					</RecipeDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName="TableAIProgramming"]/recipes</xpath>
+				<value><li>Reprogram_MalAICore</li></value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName="MalAIPersonaCoreSW"]/thingCategories</xpath>
+				<value><thingCategories><li>D9_AICat</li></thingCategories></value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
