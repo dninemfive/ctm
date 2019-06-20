@@ -35,15 +35,10 @@
 					</value>
 				</li>
 				<!-- targeted autocannon -->
-				<li Class="PatchOperationAttributeAdd">
-					<xpath>*/ThingDef[defName = "Turret_Autocannon"]</xpath>
-					<attribute>Name</attribute>
-					<value>Turret_Autocannon</value>
-				</li>
 				<li Class="PatchOperationInsert">
 					<xpath>*/ThingDef[defName = "Turret_Autocannon"]</xpath>
 					<value>
-						<ThingDef ParentName="Turret_Autocannon">
+						<ThingDef ParentName="AutocannonTurret">
 							<defName>Turret_Autocannon_Targetable</defName>
 							<label>targetable autocannon turret</label>
 							<description>A heavy automatic turret. Its large-caliber shells do heavy damage over significant ranges, but its barrel must be refurbished after use. It cannot fire at close-up targets, and may explode when damaged.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
