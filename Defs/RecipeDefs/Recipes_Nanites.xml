@@ -7,6 +7,48 @@
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>
+	<!-- Luciferium -->
+	<RecipeDef ParentName="MechaniteRecipeBase">
+		<defName>Make_LuciferiumD9</defName>
+		<label>make luciferium</label>
+		<description>Make one dose of luciferium.</description>
+		<jobString>Making luciferium.</jobString>
+		<workAmount>20000</workAmount>
+		<unfinishedThingDef Inherit="False"/>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>D9Nanomaterial</li>
+			  </thingDefs>
+			</filter>
+			<count>60</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>2</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>D9Nanomaterial</li>
+			<li>ComponentSpacer</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Luciferium>1</Luciferium>
+		</products>
+		<researchPrerequisite>D9Luciferium</researchPrerequisite>
+		<skillRequirements>
+		  <Crafting>8</Crafting>
+		  <Intellectual>12</Intellectual>
+		</skillRequirements>
+    </RecipeDef>
+	<!-- usables -->
 	<RecipeDef ParentName="MechaniteRecipeBase">
 		<defName>Make_Neurotrainer</defName>
 		<label>make blank neurotrainer</label>

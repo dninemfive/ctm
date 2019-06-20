@@ -64,4 +64,32 @@
 		</thingCategories>
 	  </value>
 	</Operation>
+	<!-- make the Psychic Foil Helmet craftable -->
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<attribute>ParentName</attribute>
+		<value>ArmorHelmetMakeableBase</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<value>
+			<recipeMaker>
+			  <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			  <skillRequirements>
+				<Crafting>7</Crafting>
+			  </skillRequirements>
+			  <researchPrerequisite>D9PsychicFoil</researchPrerequisite>
+			</recipeMaker>
+			<costList>
+			    <PsychicFoil>30</PsychicFoil>
+				<Plasteel>10</Plasteel>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]/statBases</xpath>
+		<value>
+			<WorkToMake>2000</WorkToMake>
+		</value>
+	</Operation>
 </Patch>

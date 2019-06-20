@@ -28,12 +28,12 @@
 		<li>D9AIBasics</li>
 	  </value>
 	</Operation>
-	<Operation Class="PatchOperationAdd">
+	<!--Operation Class="PatchOperationAdd">
 	  <xpath>*/ResearchProjectDef[defName = "GunTurrets"]/prerequisites</xpath>
 	  <value>
 		<li>D9AIBasics</li>
 	  </value>
-	</Operation>
+	</Operation-->
 	<Operation Class="PatchOperationAdd">
 	  <xpath>*/ResearchProjectDef[defName = "ChargedShot"]/prerequisites</xpath>
 	  <value>
