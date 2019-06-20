@@ -1,33 +1,351 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "MedTimes_Ranged_ChargeMG_Art"]</xpath><!-- checks if MT is installed -->
-			</li>
-			<!-- make the Eternity Forge constructible with the Nano Forge tech -->
-			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "MedTimes_EternityForge"]</xpath>
-				<value>
-					<designationCategory>Production</designationCategory>
-					<researchPrerequisites><li>D9NanoForge</li></researchPrerequisites>
-					<constructionSkillPrerequisite>16</constructionSkillPrerequisite>
-					<costList>
-						<D9NanoForge>1</D9NanoForge>
-						<ShackledAIPersona>1</ShackledAIPersona>
-						<Plasteel>250</Plasteel>
-						<ComponentSpacer>8</ComponentSpacer>
-					</costList>
-				</value>
-			</li>
-			<!-- TODO:
-				 - craft the Techno Sword with the Energy Sword research, a vanometric cell, 50 plasteel, and a spacer component
-				 - craft the C10MG with Charged Shot, two vanometric cells &c
-				 - make nanite vials from a shitton of nanomaterial and some plasteel(+ spacer components?) 
-				 - add a Techno Clothing research (or piggyback an Apparello one if present), requiring Materials Science, Hyperweave, and Complex Clothing
-				 - craft Combat Armor, Combat Boots, Combat Gloves, Combat Helmet from Hyperweave (and Plasteel for the helmet/armor)
-				 - Techno Boots/Socks/Gauntlets from synthread and spacer components -->
-		</operations>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Medieval Times</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- make the Eternity Forge constructible with the Nano Forge tech -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName = "MedTimes_EternityForge"]</xpath>
+					<value>
+						<designationCategory>Production</designationCategory>
+						<researchPrerequisites><li>D9NanoForge</li></researchPrerequisites>
+						<constructionSkillPrerequisite>16</constructionSkillPrerequisite>
+						<costList>
+							<D9NanoForge>1</D9NanoForge>
+							<ShackledAIPersona>1</ShackledAIPersona>
+							<Plasteel>250</Plasteel>
+							<ComponentSpacer>8</ComponentSpacer>
+						</costList>
+					</value>
+				</li>
+				<!-- Techno Sword craftable -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Melee_SwordTechno_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>SmithingSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Smith</effectWorking>
+						  <soundWorking>Recipe_Smith</soundWorking>
+						  <recipeUsers>
+							<li>FabricationBench</li>
+						  </recipeUsers>
+						  <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+						  <researchPrerequisite>D9EnergySword</researchPrerequisite>
+						  <skillRequirements>
+							<Crafting>10</Crafting>
+						  </skillRequirements>
+						</recipeMaker>
+						<costList>
+						  <D9VanometricCell>1</D9VanometricCell>
+						  <ComponentSpacer>1</ComponentSpacer>
+						  <Plasteel>80</Plasteel>
+						</costList>
+					</value>					
+				</li>
+				<!-- C10MG craftable -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Ranged_ChargeMG_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>SmithingSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Smith</effectWorking>
+						  <soundWorking>Recipe_Smith</soundWorking>
+						  <researchPrerequisite>ChargedShot</researchPrerequisite>
+						  <skillRequirements>
+							<Crafting>10</Crafting>
+						  </skillRequirements>
+						  <recipeUsers>
+							<li>FabricationBench</li>
+						  </recipeUsers>
+						  <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+						</recipeMaker>
+						<costList>
+						  <D9VanometricCell>2</D9VanometricCell>
+						  <ComponentSpacer>2</ComponentSpacer>
+						  <Plasteel>80</Plasteel>
+						</costList>
+					</value>					
+				</li>
+				<!-- craft nanite vials -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Nanomaterial_Bulk"]</xpath>
+					<value>
+						<RecipeDef>
+							<defName>Make_MT_NaniteVial</defName>
+							<label>make nanite vial</label>
+							<description>Produce a vial of activated nanites.</description>
+							<jobString>Making nanite vial.</jobString>
+							<effectWorking>Smelt</effectWorking>
+							<soundWorking>Recipe_Smelt</soundWorking>
+							<workAmount>10000</workAmount>
+							<workSpeedStat>SmithingSpeed</workSpeedStat>
+							<researchPrerequisite>D9NaniteRepair</researchPrerequisite>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>D9Nanomaterial</li>
+										</thingDefs>
+									</filter>
+									<count>80</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Plasteel</li>
+										</thingDefs>
+									</filter>
+									<count>20</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>ComponentSpacer</li>
+										</thingDefs>
+									</filter>
+									<count>1</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Vanadite</li>
+									<li>Plasteel</li>
+									<li>ComponentSpacer</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<MedTimes_NaniteVial>1</MedTimes_NaniteVial>
+							</products>
+						</RecipeDef>
+					</value>
+				</li>
+				<!-- Techno Socks -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Socks_Techno_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <ComponentSpacer>1</ComponentSpacer>
+						  <Hyperweave>35</Hyperweave>
+						</costList>
+					</value>					
+				</li>
+				<!-- Techno Boots -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Boots_Techno_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <ComponentSpacer>2</ComponentSpacer>
+						  <Hyperweave>45</Hyperweave>
+						  <Plasteel>10</Plasteel>
+						</costList>
+					</value>					
+				</li>
+				<!-- Techno Gauntlets -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Gauntlets_Techno_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <ComponentSpacer>2</ComponentSpacer>
+						  <Hyperweave>30</Hyperweave>
+						  <Plasteel>50</Plasteel>
+						</costList>
+					</value>					
+				</li>
+				<!-- Combat Helmet -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Helm_Combat_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <ComponentSpacer>2</ComponentSpacer>
+						  <Hyperweave>40</Hyperweave>
+						  <Plasteel>70</Plasteel>
+						</costList>
+					</value>					
+				</li>
+				<!-- Combat Armor -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_BodyArmour_Combat_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <Hyperweave>60</Hyperweave>
+						  <Plasteel>120</Plasteel>
+						</costList>
+					</value>
+				</li>
+				<!-- Combat Gloves -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Gloves_Combat_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <Hyperweave>30</Hyperweave>
+						  <Plasteel>25</Plasteel>
+						</costList>
+					</value>
+				</li>
+				<!-- Combat Boots -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="MedTimes_Boots_Combat_Art"]</xpath>
+					<value>
+						<recipeMaker>
+						  <workSpeedStat>TailoringSpeed</workSpeedStat>
+						  <workSkill>Crafting</workSkill>
+						  <effectWorking>Tailor</effectWorking>
+						  <soundWorking>Recipe_Tailor</soundWorking>
+						  <recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						  </recipeUsers>
+						  <skillRequirements>
+							<Crafting>12</Crafting>
+						  </skillRequirements>
+						  <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+						  <researchPrerequisite>ComplexClothing</researchPrerequisite>
+						</recipeMaker>
+						<costList>
+						  <Hyperweave>25</Hyperweave>
+						  <Plasteel>35</Plasteel>
+						</costList>
+					</value>
+				</li>
+				<!-- apply proper research -->
+				<li Class="PatchOperationFindMod">
+					<mods><li>Apparello 2</li></mods>
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>*/ThingDef[defName="MedTimes_Socks_Techno_Art" or defName="MedTimes_Boots_Techno_Art"]/recipeMaker/researchPrerequisite</xpath>
+								<value><researchPrerequisite>ApparelloResearchSF</researchPrerequisite></value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>*/ThingDef[defName="MedTimes_Helm_Combat_Art" or defName="MedTimes_Gloves_Combat_Art" or defName="MedTimes_Boots_Combat_Art" or defName="MedTimes_Gauntlets_Techno_Art" or defName="MedTimes_BodyArmour_Combat_Art"]/recipeMaker/researchPrerequisite</xpath>
+								<value><researchPrerequisite>ApparelloResearchLPOW</researchPrerequisite></value>
+							</li>
+						</operations>
+					</match>
+					<nomatch Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationInsert">
+								<xpath>*/ResearchProjectDef[defName="D9Hyperweave"]</xpath>
+								<value>
+									<ResearchProjectDef ParentName="D9AATechBase">
+										<defName>D9SpacerClothing</defName>
+										<label>advanced apparel design</label>
+										<description>Learn how to utilize advanced materials to produce highly effective armor and clothing.</description>
+										<baseCost>1500</baseCost>
+										<prerequisites>
+										  <li>ComplexClothing</li>
+										  <li>D9MaterialScience</li>
+										</prerequisites>
+										<techLevel>Spacer</techLevel>
+										<researchViewX>1</researchViewX>
+										<researchViewY>1.9</researchViewY>
+									</ResearchProjectDef>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>*/ThingDef[defName="MedTimes_Socks_Techno_Art" or defName="MedTimes_Boots_Techno_Art" or defName="MedTimes_Helm_Combat_Art" or defName="MedTimes_Gloves_Combat_Art" or defName="MedTimes_Boots_Combat_Art" or defName="MedTimes_Gauntlets_Techno_Art" or defName="MedTimes_BodyArmour_Combat_Art"]/recipeMaker/researchPrerequisite</xpath>
+								<value><researchPrerequisite>D9SpacerClothing</researchPrerequisite></value>
+							</li>
+						</operations>
+					</nomatch>
+				</li>
+			</operations>
+		</match>
 	</Operation>
 </Patch>

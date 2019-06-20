@@ -163,7 +163,7 @@
 	  </thingDefs>
     </fixedIngredientFilter>
 	<workSkill>Medicine</workSkill>
-    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+    <researchPrerequisite>D9PrintOrgans</researchPrerequisite>
 	<skillRequirements>
 		<Medicine>6</Medicine>
 		<Intellectual>4</Intellectual>
