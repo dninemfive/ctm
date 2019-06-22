@@ -174,14 +174,23 @@
     </thingCategories>
     <comps>
       <li Class="CompProperties_Facility">
-		<compClass>D9CTM.CompFacilityRequireFuel</compClass>
+		<!--compClass>D9CTM.CompFacilityRequireFuel</compClass-->
         <statOffsets>
-          <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+          <WorkTableWorkSpeedFactor>0.2</WorkTableWorkSpeedFactor>
         </statOffsets>
         <maxSimultaneous>2</maxSimultaneous>
       </li>
-	  <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>90.0</fuelConsumptionRate> <!-- a full fueling lasts five days -->
+	  <li Class="CompProperties_Power"> <!-- previously forgot this. oops -->
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+	  <li Class="CompProperties_Glower">
+		<glowRadius>2</glowRadius>
+		<glowColor>(172,91,11,0)</glowColor>
+	  </li>
+	  <!--li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>90.0</fuelConsumptionRate> <! a full fueling lasts five days >
         <fuelCapacity>450.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
@@ -189,7 +198,7 @@
           </thingDefs>
         </fuelFilter>
 		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-      </li>
+      </li-->
     </comps>
 	<placeWorkers>
 		<li>PlaceWorker_ShowFacilitiesConnections</li>

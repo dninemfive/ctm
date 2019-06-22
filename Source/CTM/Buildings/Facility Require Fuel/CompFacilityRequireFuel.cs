@@ -8,7 +8,10 @@ using UnityEngine;
 
 namespace D9CTM
 {
-    //identical to CompFacility but checks for fuel as well as power; boolean code (hopefully) optimized
+    //identical to CompFacility but checks for fuel as well as power
+    //leaving it for now bc there's a tradeoff where either I just use CompFacility and it doesn't require fuel (but it also doesn't stack with toolboxes, which I like) or otherwise I make a 
+    //CompAffectedByFacilityRequiresFuel, making it stack with toolboxes but letting me use this class and require fuel. Having both requires more work in the form of a Harmony patch which could end up needlessly 
+    //complicated. I'm saving time now changing the Nanite Crafting Assistant to a CompFacility but will probably take the proper approach in a post-launch patch.
     class CompFacilityRequireFuel : ThingComp
     {
         private List<Thing> linkedBuildings = new List<Thing>();

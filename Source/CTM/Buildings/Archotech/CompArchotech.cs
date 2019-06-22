@@ -119,6 +119,7 @@ namespace D9CTM
             switch (sel.RandomInRange)
             {
                 default:
+                    //psychic drone
                 case 0: didThreat = TryDoBrainChipThreat();
                     break;
                 case 1: didThreat = TryBreakdownRandomBuilding();
