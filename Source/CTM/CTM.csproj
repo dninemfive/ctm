@@ -47,7 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildings\Archotech\Archotech.cs" />
+    <Compile Include="Buildings\Archotech\CompArchotech.cs" />
+    <Compile Include="Buildings\Archotech\ModExtension_BrainChip.cs" />
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
     <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
     <Compile Include="Buildings\Pods\JobDriver_EnterPod.cs" />

@@ -12,6 +12,7 @@ namespace D9CTM
         public IntRange TicksPerHostilePulse;
         public IntRange HostilityAgeRange;
         public IntRange HostilityEndRange;
+        public IntRange RaidDelay;
 
         public CompProperties_Archotech()
         {
