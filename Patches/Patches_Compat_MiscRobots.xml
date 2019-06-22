@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 	<!-- if Misc. Robots is installed, allow placing the robots with the specified research -->
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler"]</xpath><!-- or defName = "AIRobot_RechargeStation_Cleaner"]</xpath>-->
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]</xpath>
-				<value>
-					<designationCategory>Misc</designationCategory>
-					<researchPrerequisites><li>D9RobotAsst</li></researchPrerequisites>
-					<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-				</value>
-			</li>
-			<li Class="PatchOperationReplace">
-			  <xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]/costList</xpath>
-			  <value>
-				<costList>
-					<Steel>60</Steel>
-					<Plasteel>10</Plasteel>
-					<ComponentSpacer>2</ComponentSpacer>
-				</costList>
-			  </value>
-			  </li>			
-		</operations>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Misc. Robots</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationInsert">
+					<xpath>*/ResearchProjectDef[defName="MicroelectronicsBasics"]</xpath>
+					<value>
+						<ResearchProjectDef ParentName="D9AATechBase">
+							<defName>D9RobotAsst</defName>
+							<label>robotic assistants</label>
+							<description>Construct robotic assistants capable of simple tasks like cleaning and hauling.</description>
+							<baseCost>2500</baseCost>
+							<prerequisites>
+							  <li>MicroelectronicsBasics</li>
+							  <li>AdvancedFabrication</li>
+							</prerequisites>
+							<techLevel>Industrial</techLevel>
+							<researchViewX>0</researchViewX>
+							<researchViewY>2.8</researchViewY>
+						</ResearchProjectDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]</xpath>
+					<value>
+						<designationCategory>Misc</designationCategory>
+						<researchPrerequisites><li>D9RobotAsst</li></researchPrerequisites>
+						<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+				  <xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]/costList</xpath>
+				  <value>
+					<costList>
+						<Steel>60</Steel>
+						<Plasteel>10</Plasteel>
+						<ComponentSpacer>2</ComponentSpacer>
+					</costList>
+				  </value>
+				</li>			
+			</operations>
+		</match>
 	</Operation>
 </Patch>

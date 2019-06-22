@@ -230,7 +230,7 @@
 		<researchViewX>5</researchViewX>
 		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
-	<ResearchProjectDef ParentName="D9AATechBase">
+	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9RobotAsst</defName>
 		<label>robotic assistants</label>
 		<description>Construct robotic assistants capable of simple tasks like cleaning and hauling.</description>
@@ -242,7 +242,7 @@
 		<techLevel>Industrial</techLevel>
 		<researchViewX>0</researchViewX>
 		<researchViewY>2.8</researchViewY>
-	</ResearchProjectDef>
+	</ResearchProjectDef-->
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HaulingBot</defName>
 		<label>hauling bot</label>
@@ -512,7 +512,7 @@
 		<researchViewX>6.6</researchViewX>
 		<researchViewY>1.2</researchViewY>
 	</ResearchProjectDef>
-	<ResearchProjectDef ParentName="D9AATechBase">
+	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteInfusion</defName>
 		<label>nanite infusions</label>
 		<description>Produce nanite infusions which drastically improve the users' abilities at the cost of a lengthy but relatively mild withdrawal period.</description>
@@ -522,7 +522,7 @@
 		</prerequisites>
 		<researchViewX>5</researchViewX>
 		<researchViewY>4.2</researchViewY>
-	</ResearchProjectDef>
+	</ResearchProjectDef-->
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9GlitterMed</defName>
 		<label>glitterworld medicine</label>
@@ -637,7 +637,7 @@
 		<description>Research the enhancements of Nanite Infusions further to develop the infamous Luciferium, a drug which improves every aspect of a user's life but which has lethal withdrawal symptoms.</description>
 		<baseCost>4000</baseCost>
 		<prerequisites>
-		  <li>D9NaniteInfusion</li>
+		  <li>D9NaniteHealing</li>
 		</prerequisites>
 		<researchViewX>7.3</researchViewX>
 		<researchViewY>3.9</researchViewY>
@@ -684,10 +684,11 @@
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Neurotrainer</defName>
 		<label>neurotrainers</label>
-		<description>Utilize the principles of nanite infusions and research on simulated behavior to develop neurotrainers, nanite infusions which instantly teach skills to their users.</description>
+		<description>Analyze psychic imprintation, neural structure, and simulated behavior to develop neurotrainers, nanite infusions which instantly teach skills to their users.</description>
 		<baseCost>8400</baseCost>
 		<prerequisites>
-		  <li>D9NaniteInfusion</li>
+		  <li>D9AIBasics</li>
+		  <li>D9PsychicFoil</li>
 		  <li>D9Simpods</li>
 		</prerequisites>
 		<requiredResearchFacilities>

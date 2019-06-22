@@ -50,11 +50,20 @@
 	    </value>
 	</Operation>
 	<!-- allow AI Persona Cores to be sold by traders -->
-	<Operation Class="PatchOperationReplace">
-	    <xpath>*/ThingDef[defName = "AIPersonaCore"]/tradeability</xpath>
-	    <value>
-			<tradeability>All</tradeability>
-	    </value>
+	<Operation Class="PatchOperationSequence"> <!-- for Misc. Robots compat (they do the same thing but remove tradeability instead) -->
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName="AIPersonaCore"]/tradeability</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "AIPersonaCore"]/tradeability</xpath>
+				<value>
+					<tradeability>All</tradeability>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 	<!-- prevent additional ones from being generated from the ExoticMisc tag -->
 	<Operation Class="PatchOperationAdd">

@@ -92,7 +92,7 @@
     <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeOneFuel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
-    <Compile Include="OutsideNeedPatch.cs" />
+    <Compile Include="Harmony\OutsideNeedPatch.cs" />
     <Compile Include="SpecialStuffProperties.cs" />
   </ItemGroup>
   <ItemGroup />

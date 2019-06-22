@@ -78,16 +78,37 @@
 		<hediffClass>D9CTM.Hediff_BioAug</hediffClass>
 		<defaultLabelColor>(0.25, 1.0, 0)</defaultLabelColor>
 		<isBad>false</isBad>
-		<addedPartProps>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+		  <li Class="HediffCompProperties_SeverityPerDay">
+			<severityPerDay>-0.02</severityPerDay> <!-- lasts 50 days -->
+		  </li>
+		</comps>
+		<stages>
+			<li>
+				<label>waning</label>
+				<partEfficiencyOffset>0.15</partEfficiencyOffset>
+			</li>
+			<li>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<minSeverity>0.1</minSeverity> <!-- ends with 5 days left -->
+			</li>
+			<li>
+				<label>adapting</label>
+				<partEfficiencyOffset>0.2</partEfficiencyOffset>
+				<minSeverity>0.97</minSeverity> <!-- ends 1.5 days after, coinciding with adaptation period ending -->
+			</li>
+		</stages>
+		<!--addedPartProps>
 		  <solid>false</solid>
 		  <partEfficiency>1.3</partEfficiency>
-		</addedPartProps>
+		</addedPartProps-->
 	</HediffDef>
 	<!-- skeletomuscular -->
 	<HediffDef ParentName="BioAugBase">
 		<defName>BioAugArm</defName>
 		<label>bio-augmented arm</label>
-		<labelNoun>a bio-augmented arm</labelNoun>
+		<labelNoun>a bio-augmented arm</labelNoun>		
 		<comps>
 		  <li Class="HediffCompProperties_VerbGiver">
 			<tools>
@@ -118,6 +139,28 @@
 		<defName>BioAugBrain</defName>
 		<label>bio-augmented brain</label>
 		<labelNoun>a bio-augmented brain</labelNoun>
+		<stages Inherit="False">
+			<li>
+				<label>waning</label>
+				<partEfficiencyOffset>0.15</partEfficiencyOffset>
+				<statOffsets>
+                    <GlobalLearningFactor>0.1</GlobalLearningFactor>
+                </statOffsets>
+			</li>
+			<li>
+				<restFallFactor>0.9</restFallFactor>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<minSeverity>0.1</minSeverity> <!-- ends with 5 days left -->
+				<statOffsets>
+                    <GlobalLearningFactor>0.2</GlobalLearningFactor>
+                </statOffsets>
+			</li>
+			<li>
+				<label>adapting</label>
+				<partEfficiencyOffset>0.2</partEfficiencyOffset>
+				<minSeverity>0.97</minSeverity> <!-- ends 1.5 days after, coinciding with adaptation period ending -->
+			</li>
+		</stages>
 	</HediffDef>
 	<HediffDef ParentName="BioAugBase">
 		<defName>BioAugEye</defName>
@@ -150,5 +193,21 @@
 		<defName>BioAugStomach</defName>
 		<label>bio-augmented stomach</label>
 		<labelNoun>a bio-augmented stomach</labelNoun>
+		<stages Inherit="False">
+			<li>
+				<label>waning</label>
+				<partEfficiencyOffset>0.15</partEfficiencyOffset>
+			</li>
+			<li>
+				<hungerRateFactor>0.9</hungerRateFactor>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<minSeverity>0.1</minSeverity> <!-- ends with 5 days left -->
+			</li>
+			<li>
+				<label>adapting</label>
+				<partEfficiencyOffset>0.2</partEfficiencyOffset>
+				<minSeverity>0.97</minSeverity> <!-- ends 1.5 days after, coinciding with adaptation period ending -->
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>

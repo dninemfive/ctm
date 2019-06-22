@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace D9CTM
 {
-    class Hediff_BioAug : Hediff_AddedPart
+    class Hediff_BioAug : HediffWithComps
     {
         public override bool ShouldRemove
         {
@@ -17,6 +17,7 @@ namespace D9CTM
                 return base.pawn.health.hediffSet.PartIsMissing(base.Part) || base.ShouldRemove;
             }
         }
+        /*
         public override void PostAdd(DamageInfo? dinfo)
         {
             if (comps != null)
@@ -26,6 +27,6 @@ namespace D9CTM
                     comps[i].CompPostPostAdd(dinfo);
                 }
             }
-        }
+        }*/
     }
 }
