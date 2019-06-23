@@ -92,4 +92,58 @@
 			<WorkToMake>2000</WorkToMake>
 		</value>
 	</Operation>
+	<!-- make Archotech limbs craftable -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[@Name="BodyPartArchotechBase"]</xpath>
+		<value>
+			<recipeMaker>
+			  <workSpeedStat>SmithingSpeed</workSpeedStat>
+			  <workSkill>Crafting</workSkill>
+			  <effectWorking>Smith</effectWorking>
+			  <soundWorking>Recipe_Smith</soundWorking>
+			  <recipeUsers>
+				<li>TableNanoforge</li>
+			  </recipeUsers>
+			  <skillRequirements>
+				<Crafting>18</Crafting>
+			  </skillRequirements>
+			  <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+			  <researchPrerequisite>D9ArchotechLimbs</researchPrerequisite>
+			</recipeMaker>
+		</value>
+	</Operation>
+	<!-- Eye -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="ArchotechEye"]</xpath>
+		<value>
+			<costList>
+				<D9Nanomaterial>120</D9Nanomaterial>
+				<AIPersonaFragment>1</AIPersonaFragment>
+				<D9VanometricCell>1</D9VanometricCell>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="ArchotechEye"]/statBases</xpath>
+		<value>
+			<WorkToMake>55000</WorkToMake>
+		</value>
+	</Operation>
+	<!-- Arm and a Leg -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]</xpath>
+		<value>
+			<costList>
+				<D9Nanomaterial>160</D9Nanomaterial>
+				<ComponentSpacer>4</ComponentSpacer>
+				<D9VanometricCell>1</D9VanometricCell>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]/statBases</xpath>
+		<value>
+			<WorkToMake>38000</WorkToMake>
+		</value>
+	</Operation>
 </Patch>
