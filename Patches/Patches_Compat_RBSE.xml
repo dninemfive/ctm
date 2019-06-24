@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Rah's Bionics and Surgery Expansion</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>*/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>AdvancedBionics</li>
+							<li>D9Bioaugmentation</li>
+							<li>SyntheticOrgans</li>
+							<li>Neuroscience</li>
+						</prerequisites>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>*/ResearchProjectDef[defName = "D9PrintOrgans"]/prerequisites</xpath>
+					<value>
+						<li>OrganTransplantation</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
