@@ -138,6 +138,103 @@
 						</ThingDef>
 					</value>
 				</li>
+				<!-- More Vanilla Turrets compat -->
+				<li Class="PatchOperationFindMod">
+					<mods><li>More Vanilla Turrets 1.0</li></mods>
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<!-- ShredderTurretGun/BlastTurretGun not done to avoid bloat; their shorter range means targeting is less important, and these turrets have stuff costs so I can't stack them in dropdowns -->
+							<!-- MilitaryTurretGun -->									
+							<li Class="PatchOperationAttributeAdd">
+								<xpath>*/ThingDef[defName = "MilitaryTurretGun"]</xpath>
+								<attribute>Name</attribute>
+								<value>MilitaryTurretGun</value>
+							</li>
+							<li Class="PatchOperationInsert">
+								<xpath>*/ThingDef[defName = "MilitaryTurretGun"]</xpath>
+								<value>
+									<ThingDef ParentName="MilitaryTurretGun">
+										<defName>MilitaryTurretGun_Targetable</defName>
+										<label>targetable military-grade turret</label>
+										<description>A more powerful variant of an automated turret. Longer dual barrels provide increased range, and greater burst. Has higher chance to explode in a radius of 4.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
+										<comps Inherit="True">
+											<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+										</comps>
+										<costList Inherit="False">
+										  <Steel>150</Steel>
+										  <ComponentIndustrial>4</ComponentIndustrial>
+										  <ShackledAIPersona>1</ShackledAIPersona>
+										</costList>
+										<modExtensions>
+											<li Class="TurretExtensions.TurretFrameworkExtension">
+												<canForceAttack>true</canForceAttack>
+											</li>
+										</modExtensions>
+									</ThingDef>
+								</value>
+							</li>
+							<!-- PrecisionTurretGun -->
+							<li Class="PatchOperationAttributeAdd">
+								<xpath>*/ThingDef[defName = "PrecisionTurretGun"]</xpath>
+								<attribute>Name</attribute>
+								<value>PrecisionTurretGun</value>
+							</li>
+							<li Class="PatchOperationInsert">
+								<xpath>*/ThingDef[defName = "PrecisionTurretGun"]</xpath>
+								<value>
+									<ThingDef ParentName="PrecisionTurretGun">
+										<defName>PrecisionTurretGun_Targetable</defName>
+										<label>targetable precision turret</label>
+										<description>A highly calibrated gun turret. Advanced optics allows it to deliver a single but precise shot at fairly long distances. Explodes rarely in a radius of 2.5.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
+										<comps Inherit="True">
+											<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+										</comps>
+										<costList Inherit="False">
+										  <Steel>225</Steel>
+										  <ComponentIndustrial>5</ComponentIndustrial>
+										  <ShackledAIPersona>1</ShackledAIPersona>
+										</costList>
+										<modExtensions>
+											<li Class="TurretExtensions.TurretFrameworkExtension">
+												<canForceAttack>true</canForceAttack>
+											</li>
+										</modExtensions>
+									</ThingDef>
+								</value>
+							</li>
+							<!-- VulcanCannon -->
+							<li Class="PatchOperationAttributeAdd">
+								<xpath>*/ThingDef[defName = "VulcanCannon"]</xpath>
+								<attribute>Name</attribute>
+								<value>VulcanCannon</value>
+							</li>
+							<li Class="PatchOperationInsert">
+								<xpath>*/ThingDef[defName = "VulcanCannon"]</xpath>
+								<value>
+									<ThingDef ParentName="VulcanCannon">
+										<defName>VulcanCannon_Targetable</defName>
+										<label>targetable vulcan cannon</label>
+										<description>Fortified minigun tower that fires continuously, very durable but power hungry. Its tall and has long range, but due to that it can't aim under itself and can't be placed indoors. Explodes in a radius of 5.1 when destroyed.\n\nConstructed with a shackled AI persona core, it can be remotely targeted.</description>
+										<comps Inherit="True">
+											<li Class="TurretExtensions.CompProperties_SmartForcedTarget"/>
+										</comps>
+										<costList Inherit="False">
+										  <Steel>500</Steel>
+										  <ComponentIndustrial>15</ComponentIndustrial>
+										  <ShackledAIPersona>1</ShackledAIPersona>
+										</costList>
+										<modExtensions>
+											<li Class="TurretExtensions.TurretFrameworkExtension">
+												<canForceAttack>true</canForceAttack>
+											</li>
+										</modExtensions>
+									</ThingDef>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
 			</operations>
 		</match>
 	</Operation>
