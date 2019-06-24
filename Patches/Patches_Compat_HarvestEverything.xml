@@ -295,8 +295,43 @@
 				</li>
 				<!-- change PrintOrgans desc -->
 				<li Class="PatchOperationReplace">
-					<xpath>*/ResearchProjectDefs[defName="D9PrintOrgans"]/description</xpath>
+					<xpath>*/ResearchProjectDef[defName="D9PrintOrgans"]/description</xpath>
 					<value><description>Learn the secrets of manipulating animal tissue, allowing the printing of limbs and organs.</description></value>
+				</li>
+				<!-- Harvest Everybees compat -->
+				<li Class="PatchOperationFindMod">
+					<mods><li>Harvest Everybees!</li></mods>
+					<match Class="PatchOperationInsert">
+						<xpath>*/RecipeDef[defName="Make_Foot_D9"]</xpath>
+						<value>
+							<RecipeDef ParentName="D9PrintOrgansBase">
+								<defName>Make_Repro_D9</defName>
+								<label>make reproductive organs</label>
+								<description>Print organic reproductive organs using animal biomass and nanites.</description>
+								<ingredients>
+								  <li>
+									<filter>
+									  <categories>
+										<li>MeatRaw</li>
+									  </categories>
+									</filter>
+									<count>0.4</count>
+								  </li>
+								  <li>
+									<filter>
+									  <thingDefs>
+										<li>D9Nanomaterial</li>
+									  </thingDefs>
+									</filter>
+									<count>0.15</count>
+								  </li>
+								</ingredients>
+								<products>
+								  <ReproductiveOrgans>1</ReproductiveOrgans>
+								</products>
+							</RecipeDef>
+						</value>
+					</match>
 				</li>
 			</operations>
 		</match>
