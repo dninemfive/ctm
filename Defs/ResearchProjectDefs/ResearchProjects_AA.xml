@@ -92,7 +92,7 @@
 		<description>Design Simpods, virtual reality simulators which allow learning from any number of situations.</description>
 		<baseCost>1000</baseCost>
 		<prerequisites>
-		  <li>Cryptosleep</li>
+		  <!--li>Cryptosleep</li-->
 		  <li>MicroelectronicsBasics</li>
 		  <li>AdvancedFabrication</li>
 		</prerequisites>
@@ -426,7 +426,7 @@
 		<researchViewX>4</researchViewX>
 		<researchViewY>4.8</researchViewY>
 	</ResearchProjectDef>
-	<ResearchProjectDef ParentName="D9AATechBase">
+	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9SpaceElevator</defName>
 		<label>space elevator</label>
 		<description>Utilize the extreme tensile strength of nanoweave to construct a tether suspended by orbital forces, allowing cheap transport to and from space.</description>
@@ -437,7 +437,7 @@
 		<techLevel>Ultra</techLevel>
 		<researchViewX>5</researchViewX>
 		<researchViewY>5</researchViewY>
-	</ResearchProjectDef>
+	</ResearchProjectDef-->
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Nanofab</defName>
 		<label>nanite fabrication</label>
@@ -661,7 +661,7 @@
 		<description>Modify the reaction path used by infinite chemreactors to convert energy from vanometric fluctuations into matter.</description>
 		<baseCost>6000</baseCost>
 		<prerequisites>
-		  <li>D9Vanometrics</li>
+		  <!--li>D9Vanometrics</li-->
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
@@ -674,7 +674,7 @@
 		<description>Utilize vanometric manipulations of molecules to convert steel into superior plasteel.</description>
 		<baseCost>6000</baseCost>
 		<prerequisites>
-		  <li>D9Vanometrics</li>
+		  <!--li>D9Vanometrics</li-->
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
@@ -714,12 +714,13 @@
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HealpodRes</defName>
 		<label>regeneration pod</label>
-		<description>Construct a framework which organizes nanite healing to more efficiently make use of mechanites.</description>
+		<description>Construct a framework which more efficiently allocates healing nanites, reducing nanomaterial consumption while improving healing quality.</description>
 		<baseCost>3000</baseCost>
 		<prerequisites>
 		  <li>D9HealingMech</li>
 		  <li>Cryptosleep</li>
 		</prerequisites>		
+		<techLevel>Ultra</techLevel>
 		<researchViewX>8</researchViewX>
 		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
