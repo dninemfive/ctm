@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Nano Repair Tech</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- make Nano Repair Tech research require Nano Repair Field -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ResearchProjectDef[defName="Ogre_NanoTech"]/prerequisites</xpath>
+					<value><li>D9Nanofield</li></value>
+				</li>
+				<!-- make nanomaterial/nano tech fuel interchangeable -->
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="D9Healpod" or defName="D9NanoRepairFieldProj" or defName="D9NanoHealFieldProj"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+					<value><li>Ogre_NanoTechFuel</li></value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>*/ThingDef[defName="Ogre_NanoTech_Bed" or defName="Ogre_NanoTech_DoubleBed" or defName="Ogre_NanoTech_RoyalBed" or defName="Ogre_NanoTech_HospitalBed" or defName="Ogre_NanoTech_2x1_Shelf" or defName="Ogre_NanoTech_1x1_Shelf" or defName="Ogre_NanoTech_AnimalSleepingBox" or defName="Ogre_NanoTech_AnimalBed"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+					<value><li>D9Nanomaterial</li></value>
+				</li>				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
