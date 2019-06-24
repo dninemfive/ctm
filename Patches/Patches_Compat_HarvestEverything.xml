@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Harvest Everything!</li></mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Stomach -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Liver_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Stomach_D9</defName>
+							<label>make stomach</label>
+							<description>Print an organic stomach using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>2.5</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>1.5</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Stomach>1</Stomach>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Eye -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Stomach_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Eye_D9</defName>
+							<label>make eye</label>
+							<description>Print an organic eye using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>0.3</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>1</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Eye>1</Eye>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Ear -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Eye_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Ear_D9</defName>
+							<label>make ear</label>
+							<description>Print an organic ear using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>0.3</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>0.25</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Ear>1</Ear>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Nose -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Ear_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Nose_D9</defName>
+							<label>make nose</label>
+							<description>Print an organic nose using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>0.2</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>0.2</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Nose>1</Nose>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Jaw -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Nose_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Jaw_D9</defName>
+							<label>make jaw</label>
+							<description>Print an organic jaw using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>0.75</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>1.25</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Jaw>1</Jaw>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Arm -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Jaw_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Arm_D9</defName>
+							<label>make arm</label>
+							<description>Print an organic arm using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>5</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>1</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Arm>1</Arm>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Hand -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Arm_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Hand_D9</defName>
+							<label>make hand</label>
+							<description>Print an organic hand using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>2</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>0.75</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Hand>1</Hand>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Leg -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Hand_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Leg_D9</defName>
+							<label>make leg</label>
+							<description>Print an organic leg using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>8</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>0.75</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Leg>1</Leg>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- Foot -->
+				<li Class="PatchOperationInsert">
+					<xpath>*/RecipeDef[defName="Make_Leg_D9"]</xpath>
+					<value>
+						<RecipeDef ParentName="D9PrintOrgansBase">
+							<defName>Make_Foot_D9</defName>
+							<label>make foot</label>
+							<description>Print an organic foot using animal biomass and nanites.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <categories>
+									<li>MeatRaw</li>
+								  </categories>
+								</filter>
+								<count>2</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>D9Nanomaterial</li>
+								  </thingDefs>
+								</filter>
+								<count>0.35</count>
+							  </li>
+							</ingredients>
+							<products>
+							  <Foot>1</Foot>
+							</products>
+					    </RecipeDef>
+					</value>
+				</li>
+				<!-- change PrintOrgans desc -->
+				<li Class="PatchOperationReplace">
+					<xpath>*/ResearchProjectDefs[defName="D9PrintOrgans"]/description</xpath>
+					<value><description>Learn the secrets of manipulating animal tissue, allowing the printing of limbs and organs.</description></value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

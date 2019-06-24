@@ -154,6 +154,7 @@
     <soundWorking>Recipe_Tailor</soundWorking>
 	<allowMixingIngredients>true</allowMixingIngredients>
     <ingredientValueGetterClass>D9CTM.IngredientValueGetter_Mass</ingredientValueGetterClass>
+	<recipeUsers><li>D9FleshPrinter</li></recipeUsers>
 	<fixedIngredientFilter>
       <categories>
         <li>MeatRaw</li>

@@ -155,7 +155,7 @@
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PrintOrgans</defName>
 		<label>organ assembly</label>
-		<description>Learn the secrets of manipulating animal tissue, allowing the printing of limbs and organs.</description>
+		<description>Learn the secrets of manipulating animal tissue, allowing the printing of organs.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>D9FleshPrinter</li>
