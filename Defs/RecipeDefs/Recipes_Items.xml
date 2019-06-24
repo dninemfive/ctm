@@ -11,6 +11,7 @@
 		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
 		<researchPrerequisite>D9GlitterMed</researchPrerequisite>
 		<workSkill>Intellectual</workSkill>
+		<recipeUsers><li>DrugLab</li></recipeUsers>
 		<ingredients>
 			<li>
 				<filter>
@@ -72,6 +73,7 @@
 		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
 		<researchPrerequisite>D9GlitterMed</researchPrerequisite>
 		<workSkill>Intellectual</workSkill>
+		<recipeUsers><li>DrugLab</li></recipeUsers>
 		<ingredients>
 			<li>
 				<filter>
@@ -132,6 +134,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>72000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<recipeUsers><li>FabricationBench</li></recipeUsers>
 		<ingredients>
 		  <li>
 			<filter>

@@ -11,6 +11,7 @@
 		<workAmount>600</workAmount>
 		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
 		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<recipeUsers><li>Human</li></recipeUsers>
 		<ingredients>
 		  <li>
 			<filter>
@@ -38,6 +39,7 @@
 		<workAmount>600</workAmount>
 		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
 		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<recipeUsers><li>Human</li></recipeUsers>
 		<ingredients>
 		  <li>
 			<filter>
@@ -62,6 +64,7 @@
 		<workAmount>30</workAmount>
 		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
 		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<recipeUsers><li>Human</li></recipeUsers>
 	</RecipeDef>
 	<RecipeDef ParentName="AdministerBioAug">
 		<defName>D9AdministerBioAugSkel</defName>
