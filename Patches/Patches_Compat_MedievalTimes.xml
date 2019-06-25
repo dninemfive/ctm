@@ -334,7 +334,8 @@
 										</prerequisites>
 										<techLevel>Spacer</techLevel>
 										<researchViewX>1</researchViewX>
-										<researchViewY>1.9</researchViewY>
+										<researchViewY>4.5</researchViewY>
+										<tab>Main</tab>
 									</ResearchProjectDef>
 								</value>
 							</li>

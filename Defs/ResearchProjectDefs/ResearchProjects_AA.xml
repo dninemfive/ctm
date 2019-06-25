@@ -6,9 +6,6 @@
 		<requiredResearchFacilities>
 		  <li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
-		<!-- I'm too lazy to manually place everything, so I'm just going to leave it and recommend an automatic tech-sorting mod -->
-		<researchViewX>13</researchViewX>
-		<researchViewY>1.5</researchViewY>
 		<tab>D9CTM</tab>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -58,7 +55,7 @@
 		</prerequisites>
 		<techLevel>Spacer</techLevel>
 		<researchViewX>1</researchViewX>
-		<researchViewY>1.9</researchViewY>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase"> DEPRECATED with the removal of Nanochips. 
 		<defName>D9Nanoelectronics</defName>
@@ -150,7 +147,7 @@
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
 		<researchViewX>1</researchViewX>
-		<researchViewY>1.5</researchViewY>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PrintOrgans</defName>
@@ -161,7 +158,7 @@
 		  <li>D9FleshPrinter</li>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>	
 	<!--ResearchProjectDef ParentName="D9AATechBase">
@@ -200,8 +197,8 @@
 		  <li>ShieldBelt</li>
 		  <li>D9MaterialScience</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
-		<researchViewY>3.3</researchViewY>
+		<researchViewX>1</researchViewX>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PsychicFoil</defName>
@@ -212,7 +209,7 @@
 		  <li>D9MaterialScience</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>1.9</researchViewY>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9PsychicEmanator</defName>
@@ -295,7 +292,7 @@
 		<prerequisites>
 		  <li>D9AIFrag</li>
 		</prerequisites>
-		<researchViewX>3.5</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -320,7 +317,7 @@
 		<prerequisites>
 		  <li>D9AIBasics</li>
 		</prerequisites>
-		<researchViewX>3.5</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -337,7 +334,7 @@
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>9</researchViewX>
-		<researchViewY>3.8</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9VanometricPower</defName>
@@ -353,7 +350,7 @@
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>10</researchViewX>
-		<researchViewY>3.8</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9EnergySword</defName>
@@ -365,7 +362,7 @@
 		  <li>LongBlades</li>
 		</prerequisites>		
 		<researchViewX>1</researchViewX>
-		<researchViewY>4.6</researchViewY>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9ChargeTurret</defName>
@@ -376,8 +373,9 @@
 		  <li>ChargedShot</li>
 		  <li>HeavyTurrets</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>3.3</researchViewY>
+		<researchViewX>14</researchViewX>
+		<researchViewY>4</researchViewY>
+		<tab>Main</tab>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9OrbitalMechanics</defName>
@@ -389,7 +387,7 @@
 		</prerequisites>
 		<techLevel>Industrial</techLevel>
 		<researchViewX>2</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AsteroidMining</defName>
@@ -401,7 +399,7 @@
 		  <li>D9AIBasics</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>4.3</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AsteroidMiningII</defName>
@@ -412,7 +410,7 @@
 		  <li>D9AsteroidMining</li>
 		</prerequisites>
 		<researchViewX>4</researchViewX>
-		<researchViewY>4.3</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9OrbitalPower</defName>
@@ -424,7 +422,7 @@
 		  <li>SolarPanels</li>
 		</prerequisites>
 		<researchViewX>4</researchViewX>
-		<researchViewY>4.8</researchViewY>
+		<researchViewY>4.5</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9SpaceElevator</defName>
@@ -448,8 +446,8 @@
 		  <li>AdvancedFabrication</li>
 		  <li>D9MaterialScience</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>1.4</researchViewY>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Nanofield</defName>
@@ -485,7 +483,7 @@
 		  <li>AdvancedFabrication</li>
 		  <li>MedicineProduction</li>
 		</prerequisites>
-		<researchViewX>3.6</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -497,8 +495,8 @@
 		  <li>D9NaniteHealing</li>
 		  <li>D9PrintOrgans</li>
 		</prerequisites>
-		<researchViewX>3.6</researchViewX>
-		<researchViewY>1.5</researchViewY>
+		<researchViewX>5</researchViewX>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteHealingField</defName>
@@ -509,8 +507,8 @@
 		  <li>D9NaniteRepair</li>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
-		<researchViewX>6.6</researchViewX>
-		<researchViewY>1.2</researchViewY>
+		<researchViewX>6</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NaniteInfusion</defName>
@@ -532,8 +530,8 @@
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>8.3</researchViewX>
-		<researchViewY>1.9</researchViewY>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9HealingMech</defName>
@@ -544,8 +542,8 @@
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>7</researchViewX>
-		<researchViewY>0.6</researchViewY>
+		<researchViewX>6</researchViewX>
+		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NanoForge</defName>
@@ -557,7 +555,7 @@
 		  <li>D9CraftingAsst</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>10</researchViewX>
+		<researchViewX>8</researchViewX>
 		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -568,8 +566,8 @@
 		<prerequisites>
 		  <li>D9Nanofab</li>
 		</prerequisites>
-		<researchViewX>4</researchViewX>
-		<researchViewY>2.1</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Resurrection</defName>
@@ -585,8 +583,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
-		<researchViewX>12</researchViewX>
-		<researchViewY>1.6</researchViewY>
+		<researchViewX>10</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9NanoRifle</defName>
@@ -628,8 +626,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
-		<researchViewX>15</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>9</researchViewX>
+		<researchViewY>4.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Luciferium</defName>
@@ -639,8 +637,8 @@
 		<prerequisites>
 		  <li>D9NaniteHealing</li>
 		</prerequisites>
-		<researchViewX>7.3</researchViewX>
-		<researchViewY>3.9</researchViewY>
+		<researchViewX>4</researchViewX>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9InfiniteChemreactor</defName>
@@ -652,7 +650,7 @@
 		  <li>BiofuelRefining</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>10</researchViewX>
+		<researchViewX>7</researchViewX>
 		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
@@ -665,8 +663,8 @@
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>11.5</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>8</researchViewX>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9VanoreactorPlasteel</defName>
@@ -678,8 +676,8 @@
 		  <li>D9InfiniteChemreactor</li>
 		</prerequisites>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>11.5</researchViewX>
-		<researchViewY>3.7</researchViewY>
+		<researchViewX>8</researchViewX>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Neurotrainer</defName>
@@ -695,8 +693,8 @@
 		  <li>D9ResearchAssistant</li>
 		</requiredResearchFacilities>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>7</researchViewX>
-		<researchViewY>4.5</researchViewY>
+		<researchViewX>6</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Megascreen</defName>
@@ -721,7 +719,7 @@
 		  <li>Cryptosleep</li>
 		</prerequisites>		
 		<techLevel>Ultra</techLevel>
-		<researchViewX>8</researchViewX>
+		<researchViewX>7</researchViewX>
 		<researchViewY>0.5</researchViewY>
 	</ResearchProjectDef>
 </Defs>

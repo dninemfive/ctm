@@ -7,7 +7,7 @@
 			<success>Always</success>
 			<operations>
 				<li Class="PatchOperationInsert">
-					<xpath>*/ResearchProjectDef[defName="MicroelectronicsBasics"]</xpath>
+					<xpath>*/ResearchProjectDef[defName="AdvancedFabrication"]</xpath>
 					<value>
 						<ResearchProjectDef ParentName="D9AATechBase">
 							<defName>D9RobotAsst</defName>
@@ -15,12 +15,12 @@
 							<description>Construct robotic assistants capable of simple tasks like cleaning and hauling.</description>
 							<baseCost>2500</baseCost>
 							<prerequisites>
-							  <li>MicroelectronicsBasics</li>
 							  <li>AdvancedFabrication</li>
 							</prerequisites>
 							<techLevel>Industrial</techLevel>
-							<researchViewX>0</researchViewX>
-							<researchViewY>2.8</researchViewY>
+							<researchViewX>14</researchViewX>
+							<researchViewY>3.4</researchViewY>
+							<tab>Main</tab>
 						</ResearchProjectDef>
 					</value>
 				</li>
