@@ -16,9 +16,10 @@
 	  <DeteriorationRate>0.8</DeteriorationRate>
       <StuffPower_Armor_Sharp>3.0</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>1.08</StuffPower_Armor_Blunt>
-      <StuffPower_Armor_Heat>3.0</StuffPower_Armor_Heat>
+      <StuffPower_Armor_Heat>3.1</StuffPower_Armor_Heat>
       <StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>33</StuffPower_Insulation_Heat>
+	  <StuffPower_PsychicSensivity>-0.1</StuffPower_PsychicSensivity>
 		</statBases>
     <stuffProps>
       <categories>
@@ -54,7 +55,7 @@
 	  <DeteriorationRate>4</DeteriorationRate>
       <StuffPower_Armor_Sharp>0.05</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>0.1</StuffPower_Armor_Blunt>
-      <StuffPower_Armor_Heat>10.0</StuffPower_Armor_Heat>
+      <StuffPower_Armor_Heat>1.6</StuffPower_Armor_Heat>
       <StuffPower_Insulation_Cold>66</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>66</StuffPower_Insulation_Heat>
 		</statBases>
@@ -87,9 +88,10 @@
     <statBases>
       <StuffPower_Armor_Sharp>0.24</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>0</StuffPower_Armor_Blunt>
-      <StuffPower_Armor_Heat>0.68</StuffPower_Armor_Heat>
+      <StuffPower_Armor_Heat>2</StuffPower_Armor_Heat>
       <StuffPower_Insulation_Cold>0</StuffPower_Insulation_Cold>
-      <StuffPower_Insulation_Heat>9</StuffPower_Insulation_Heat>
+      <StuffPower_Insulation_Heat>0.1</StuffPower_Insulation_Heat>
+	  <StuffPower_PsychicSensivity>-0.4</StuffPower_PsychicSensivity>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>2</MarketValue>
       <Mass>0.5</Mass>
@@ -106,7 +108,6 @@
       <statFactors>
         <Flammability>0.6</Flammability>
         <MaxHitPoints>0.75</MaxHitPoints>
-		<PsychicSensitivity>2</PsychicSensitivity>
       </statFactors>
 	  <statOffsets>
         <PsychicSensitivity>-0.1</PsychicSensitivity>

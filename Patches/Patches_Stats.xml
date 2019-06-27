@@ -4,4 +4,14 @@
 		StatPart_ApparelOffset for psychic foil stuff
 		new StatPart for psychic sensitivity returning 0 when near a null field projector
 	-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/StatDef[defName="PsychicSensitivity"]</xpath>
+		<value>
+			<parts>
+			  <li Class="StatPart_ApparelStatOffset">
+				<apparelStat>Apparel_PsychicSensitivity</apparelStat>
+			  </li>
+			</parts>
+		</value>
+	</Operation>
 </Patch>

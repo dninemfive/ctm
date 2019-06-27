@@ -94,7 +94,7 @@ namespace D9CTM
                                 {
                                     foreach (Thing t2 in ThingOwnerUtility.GetAllThingsRecursively(o.Owner)) if (t2.def.useHitPoints && t2.HitPoints < t2.MaxHitPoints)
                                         {
-                                            if(ConsumeFuel())t2.HitPoints++;
+                                            if(ConsumeFuel()) t2.HitPoints++;
                                         }
                                 }
                                 else if (p != null) TryHealPawnThings(p);
