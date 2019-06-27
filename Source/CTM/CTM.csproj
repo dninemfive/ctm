@@ -94,6 +94,7 @@
     <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
     <Compile Include="Harmony\OutsideNeedPatch.cs" />
     <Compile Include="SpecialStuffProperties.cs" />
+    <Compile Include="StatPart_ApparelStatFactor.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

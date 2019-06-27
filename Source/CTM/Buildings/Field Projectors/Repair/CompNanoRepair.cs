@@ -11,8 +11,6 @@ namespace D9CTM
     /*
      * TODO:
      *  - make repairHP actually matter
-     *  - scale fuel consumption on heal with number of injuries healed (make TryHeal return a float)
-     *  - prevent healing once fuel is exhausted (make TryConsumeFuel return a bool)
      */
     class CompNanoRepair : ThingComp
     {
@@ -80,6 +78,7 @@ namespace D9CTM
                     if (!useTicks || (useTicks && ticksTo <= 0))
                     {
                         getAffectedThings();
+                        allAffectedThings.Shuffle();
                         if (canRepair && allAffectedThings.Count > 0)
                         {
                             foreach (Thing t in allAffectedThings)
@@ -88,17 +87,13 @@ namespace D9CTM
                                 ThingOwner o = t.TryGetInnerInteractableThingOwner();
                                 if (p == null && t.HitPoints < t.MaxHitPoints)
                                 {
-                                    t.HitPoints++;
-                                    TryConsumeFuel(); //note: will continue to heal within a pulse even when out of fuel, but will not function thereafter. TODO: make TryConsumeFuel return whether fuel is empty and use if-statements
+                                    if(ConsumeFuel()) t.HitPoints++;
                                 }
                                 if (o != null && p == null && o.Owner != null)
                                 {
-                                    //foreach (Thing t2 in ThingOwnerUtility.GetAllThingsRecursively(o.Owner)) Log.Message("" + t);
-                                    //for (int i = 0; i < o.Count; i++) if (o[i].def.useHitPoints && o[i].HitPoints < o[i].MaxHitPoints) o[i].HitPoints++;
                                     foreach (Thing t2 in ThingOwnerUtility.GetAllThingsRecursively(o.Owner)) if (t2.def.useHitPoints && t2.HitPoints < t2.MaxHitPoints)
                                         {
-                                            t2.HitPoints++;
-                                            TryConsumeFuel();
+                                            if(ConsumeFuel())t2.HitPoints++;
                                         }
                                 }
                                 else if (p != null) TryHealPawnThings(p);
@@ -106,11 +101,7 @@ namespace D9CTM
                         }
                         if (canHeal && affectedPawns.Count > 0)
                         {
-                            foreach (Pawn p in affectedPawns)
-                            {
-                                HealingUtility.PartiallyHealAllNonPermInjuries(p, healRate / 100f);
-                                TryConsumeFuel();
-                            }
+                            foreach (Pawn p in affectedPawns) DoMinorHeal(p);
                         }
                     }
                 }
@@ -121,35 +112,51 @@ namespace D9CTM
 
         private void TryHealPawnThings(Pawn p)
         {
-            Pawn_InventoryTracker inventory = p.inventory;
-            if (inventory != null) foreach (Thing t in inventory.innerContainer) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
+            Pawn_ApparelTracker apparel = p.apparel;
+            if (apparel != null) foreach (Thing t in apparel.WornApparel) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
                     {
-                        t.HitPoints++;
-                        TryConsumeFuel();
-                    }
-            Pawn_CarryTracker carry = p.carryTracker;
-            if (carry != null) foreach (Thing t in carry.innerContainer) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
-                    {
-                        t.HitPoints++;
-                        TryConsumeFuel();
+                        if (ConsumeFuel()) t.HitPoints++;
                     }
             Pawn_EquipmentTracker equipment = p.equipment;
             if (equipment != null) foreach (Thing t in equipment.AllEquipmentListForReading) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
                     {
-                        t.HitPoints++;
-                        TryConsumeFuel();
+                        if (ConsumeFuel()) t.HitPoints++;
                     }
-            Pawn_ApparelTracker apparel = p.apparel;
-            if (apparel != null) foreach (Thing t in apparel.WornApparel) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
+            Pawn_InventoryTracker inventory = p.inventory;
+            if (inventory != null) foreach (Thing t in inventory.innerContainer) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
                     {
-                        t.HitPoints++;
-                        TryConsumeFuel();
+                        if (ConsumeFuel()) t.HitPoints++;
                     }
+            Pawn_CarryTracker carry = p.carryTracker;
+            if (carry != null) foreach (Thing t in carry.innerContainer) if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
+                    {
+                        if (ConsumeFuel()) t.HitPoints++;
+                    }      
         }
 
         private void TryConsumeFuel()
         {
             if (fuel != null) fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate);
+        }
+
+        private bool ConsumeFuel()
+        {
+            if (fuel == null) return true;
+            if (fuel.Fuel < fuel.Props.fuelConsumptionRate) return false;
+            fuel.ConsumeFuel(fuel.Props.fuelConsumptionRate);
+            return true;
+        }
+
+        public void DoMinorHeal(Pawn p)
+        {
+            foreach (Hediff_Injury hi in HealingUtility.GetNonPermanentInjuries(p))
+            {
+                if (hi != null && ConsumeFuel())
+                {
+                    hi.Severity -= healRate;
+                    Log.Message("healed " + p.LabelShort);
+                }
+            }
         }
     }
 }
