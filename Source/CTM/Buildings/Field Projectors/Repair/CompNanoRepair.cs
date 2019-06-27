@@ -64,7 +64,7 @@ namespace D9CTM
                     {
                         allAffectedThings.Add(t);
                     }
-                    else if (p != null) affectedPawns.Add(p);
+                    if (p != null) affectedPawns.Add(p);
                 }
             }
         }
@@ -79,6 +79,7 @@ namespace D9CTM
                     {
                         getAffectedThings();
                         allAffectedThings.Shuffle();
+                        affectedPawns.Shuffle();
                         if (canRepair && allAffectedThings.Count > 0)
                         {
                             foreach (Thing t in allAffectedThings)
@@ -100,7 +101,7 @@ namespace D9CTM
                             }
                         }
                         if (canHeal && affectedPawns.Count > 0)
-                        {
+                        {                            
                             foreach (Pawn p in affectedPawns) DoMinorHeal(p);
                         }
                     }

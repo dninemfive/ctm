@@ -292,7 +292,7 @@
 		<rareTicksBetweenPulses>1</rareTicksBetweenPulses>
 	  </li>
 	  <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>0.1</fuelConsumptionRate> <!-- This is per HP healed (or healing pulse on a pawn) -->
+        <fuelConsumptionRate>0.1</fuelConsumptionRate> <!-- This is per HP healed -->
         <fuelCapacity>500.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
@@ -360,11 +360,11 @@
         <basePowerConsumption>500</basePowerConsumption>
       </li>
 	  <li Class="D9CTM.CompProperties_NanoRepair">
-		<healHP10PerHour>1</healHP10PerHour>
+		<healHP10PerHour>0.15</healHP10PerHour>
 		<rareTicksBetweenPulses>1</rareTicksBetweenPulses>
 	  </li>
 	  <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- This is per HP healed (or healing pulse on a pawn) -->
+        <fuelConsumptionRate>1.0</fuelConsumptionRate> <!-- This is per injury healed -->
         <fuelCapacity>500.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
