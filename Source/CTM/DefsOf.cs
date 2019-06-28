@@ -13,6 +13,7 @@ namespace D9CTM
 #pragma warning disable CS0649        
         public static ThingDef SatelliteLeaving;
         public static ThingDef Filth_HealingFoam;
+        public static ThingDef D9Archotech;
         public static HediffDef D9NanComa;
         public static JobDef d9TakeOneFuel;
         public static JobDef d9UnloadExcessFuel;

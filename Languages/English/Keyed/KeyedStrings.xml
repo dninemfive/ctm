@@ -28,4 +28,7 @@
 	<D9NotHead>not being worn on the head</D9NotHead> <!-- should never display (hidden at zero) -->
 	<D9Eyes>covering part of the head</D9Eyes>
 	<D9Head>covering the head</D9Head>
+	<!-- Archotech -->
+	<D9RequiresArchotech>Can only be placed with an active archotech.</D9RequiresArchotech>
+	<D9OnlyOne>Only one {0} can be placed at a time.</D9OnlyOne>
 </LanguageData>

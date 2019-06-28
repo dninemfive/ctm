@@ -312,13 +312,24 @@
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9AIResearch</defName>
 		<label>AI research assistant</label>
-		<description>Learn to construct AI research rssistants which utilize an AI Persona Core to research topics human minds struggle to comprehend.</description>
+		<description>Learn to construct AI research assistants which utilize an AI Persona Core to research topics human minds struggle to comprehend.</description>
 		<baseCost>4800</baseCost>
 		<prerequisites>
 		  <li>D9AIBasics</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
 		<researchViewY>0.5</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9AATechBase">
+		<defName>D9Archotech</defName>
+		<label>archotech</label>
+		<description>Build the fabled archotech, a construct which produces a hyperintelligence of terrifying power.</description>
+		<baseCost>20000</baseCost>
+		<prerequisites>
+		  <li>D9AIMastery</li>
+		</prerequisites>
+		<researchViewX>6</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9Vanometrics</defName>
