@@ -109,9 +109,6 @@
         <Flammability>0.6</Flammability>
         <MaxHitPoints>0.75</MaxHitPoints>
       </statFactors>
-	  <statOffsets>
-        <PsychicSensitivity>-0.1</PsychicSensitivity>
-      </statOffsets>
     </stuffProps>
     <thingCategories>
       <li>Textiles</li>

@@ -6,6 +6,8 @@
 		<category>Apparel</category>
 		<defaultBaseValue>1</defaultBaseValue>
 		<alwaysHide>true</alwaysHide>
+		<parts>
+		</parts>
 	</StatDef>
 	<StatDef>
 		<defName>StuffPower_PsychicSensivity</defName>
@@ -28,15 +30,12 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<showOnPawns>false</showOnPawns>
 		<parts>
-		  <!-- li Class="StatPart_GetBaseStatFromOffset" -->
 		  <li Class="StatPart_Stuff">
 			<priority>100</priority>
 			<stuffPowerStat>StuffPower_PsychicSensivity</stuffPowerStat>
 			<multiplierStat>StuffEffectMultiplierPsychicSensitivity</multiplierStat>
 		  </li>
-		  <!-- li Class="StatPart_BodyPartFactors">
-		  </li-->
-		  <!-- li Class="StatPart_GetBaseStatFromOffset" -->
+		  <li Class="D9CTM.StatPart_ZeroIfNotHead"/>
 		  <li Class="StatPart_Quality">
 			<factorAwful>-0.26</factorAwful>
 			<factorPoor>0.5</factorPoor>

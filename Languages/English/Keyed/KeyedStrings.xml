@@ -23,4 +23,9 @@
 	<NotEnoughFuelForSpawner>Not enough material to produce {0}.</NotEnoughFuelForSpawner>
 	<!-- IngredientValueGetter_Mass -->
 	<BillRequiresMass>Requires {0} kg of {1}</BillRequiresMass>
+	<!-- StatPart_ZeroIfNotHead -->
+	<StatPart_HeadFactor>Factor from {0}</StatPart_HeadFactor>
+	<D9NotHead>not being worn on the head</D9NotHead> <!-- should never display (hidden at zero) -->
+	<D9Eyes>covering part of the head</D9Eyes>
+	<D9Head>covering the head</D9Head>
 </LanguageData>

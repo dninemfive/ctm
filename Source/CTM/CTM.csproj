@@ -60,7 +60,7 @@
     <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeExcessFuel.cs" />
     <Compile Include="Buildings\Pods\Heal\CompHealpod.cs" />
     <Compile Include="Buildings\Pods\Heal\CompProperties_Healpod.cs" />
-    <Compile Include="CompFueledSpawner.cs" />
+    <Compile Include="Buildings\CompFueledSpawner.cs" />
     <Compile Include="Buildings\Archotech\CompProperties_Archotech.cs" />
     <Compile Include="CompProperties_UseEffect_AddHediff.cs" />
     <Compile Include="CompUseEffect_AddHediff.cs" />
@@ -93,8 +93,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
     <Compile Include="Harmony\OutsideNeedPatch.cs" />
-    <Compile Include="SpecialStuffProperties.cs" />
     <Compile Include="StatPart_ApparelStatFactor.cs" />
+    <Compile Include="StatPart_ZeroIfNotHead.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
