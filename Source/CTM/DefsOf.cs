@@ -10,8 +10,7 @@ namespace D9CTM
     [DefOf]
     class CTMDefOf
     {
-        //public static StatDef D9NaniteRepairRate;
-        //public static StatDef D9NaniteHealRate;
+#pragma warning disable CS0649        
         public static ThingDef SatelliteLeaving;
         public static ThingDef Filth_HealingFoam;
         public static HediffDef D9NanComa;
@@ -20,6 +19,8 @@ namespace D9CTM
         public static JobDef d9EnterPod;
         //public static StatDef D9NaniteRepairRateBuilding;
         //public static StatDef D9NaniteHealRateBuilding;
+        //public static StatDef D9NaniteRepairRate;
+        //public static StatDef D9NaniteHealRate;
 
         static CTMDefOf()
         {
