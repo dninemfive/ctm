@@ -10,8 +10,29 @@ namespace D9CTM
     class ArchotechUtility
     {
         public static List<Map> maps => Find.Maps;
+        public const int ticksPerThoughtStageUpgrade = GenDate.TicksPerDay * 5, nullThoughtStageIndex = -9999;
+        public static CompArchotech Archotech
+        {
+            get
+            {
+                foreach (Map map in maps)
+                {
+                    IEnumerable<Building> archotechThings = map.listerBuildings.allBuildingsColonist.Where(x => x.def.HasComp(typeof(CompArchotech)));
+                    if (archotechThings.Count() > 0) return archotechThings.ElementAt(0).TryGetComp<CompArchotech>();
+                }
+                return null;
+            }
+        }
+        public static int ThoughtStage
+        {
+            get
+            {
+                if (Archotech == null) return nullThoughtStageIndex;
+                return Archotech.ageTicks / ticksPerThoughtStageUpgrade;
+            }            
+        }
 
-        public static bool ArchotechIsActive()
+    public static bool ArchotechIsActive()
         {
             //foreach existing map, if an archotech exists, is colonist-owned, and is powered, return true; else return false
             foreach (Map map in maps) if (map.listerBuildings.ColonistsHaveBuilding(delegate (Thing t)
@@ -28,6 +49,6 @@ namespace D9CTM
         public static bool ArchotechOrAnyBlueprintsExist()
         {
             //foreach existing map, if an archotech or a blueprint thereof exists and is colonist-owned, return true; else return false
-        }
+        }        
     }
 }

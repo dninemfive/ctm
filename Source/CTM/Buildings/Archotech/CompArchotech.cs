@@ -10,7 +10,7 @@ namespace D9CTM
 {
     class CompArchotech : ThingComp
     {
-        public int ticksToRes, ticksToMech, ageTicks, hostileAge, endHostileAge;
+        public int ticksToRes, ticksToMech, ageTicks, hostileAge, endHostileAge, nextInstaMechTicks;
         public CompProperties_Archotech Props => (CompProperties_Archotech)base.props;
         public IntRange researchTicks => Props.TicksPerResearchPulse;
         public IntRange hostileTicks => Props.TicksPerHostilePulse;
@@ -22,7 +22,7 @@ namespace D9CTM
         {
             get
             {
-                if (DesignatedToDeconstruct) return true;
+                if (DesignatedToDeconstruct || ToBeFlicked) return true;
                 //check if targeted by any pawns or turrets
                 return ageTicks > hostileAge && ageTicks < endHostileAge;
             }
@@ -37,6 +37,14 @@ namespace D9CTM
                     if (d.def.Equals(DesignationDefOf.Deconstruct)) return true;
                 }
                 return false;
+            }
+        }
+        public bool ToBeFlicked
+        {
+            get
+            {
+                CompFlickable flickable = base.parent.TryGetComp<CompFlickable>();
+                return (flickable == null || (flickable != null &&  flickable.SwitchIsOn && flickable.WantsFlick()));
             }
         }
 
@@ -64,7 +72,8 @@ namespace D9CTM
             Scribe_Values.Look(ref ticksToMech, "ticksToMech", hostileTicks.RandomInRange);
             Scribe_Values.Look(ref ageTicks, "ageTicks", 0);
             Scribe_Values.Look(ref hostileAge, "hostileAge", Props.HostilityAgeRange.RandomInRange);
-            Scribe_Values.Look(ref endHostileAge, "endHostileAge", Props.HostilityEndRange.RandomInRange);
+            Scribe_Values.Look(ref endHostileAge, "endHostileAge", hostileAge + Props.HostilityEndRange.RandomInRange);
+            Scribe_Values.Look(ref nextInstaMechTicks, "nextInstaMechTicks", 0);
             Scribe_Collections.Look(ref progress, "progress", LookMode.Def, LookMode.Value);
         }
 
@@ -73,7 +82,7 @@ namespace D9CTM
             base.CompTick();
             ticksToRes--;
             ticksToMech--;
-            CheckDoEvent();
+            if (base.parent.IsHashIntervalTick(250)) CheckDoEvent();
         }
         public override void CompTickRare()
         {
@@ -85,16 +94,17 @@ namespace D9CTM
         #endregion ticking, save/load
         public void CheckDoEvent()
         {
-            if (DesignatedToDeconstruct)
+            ResearchPulse();
+            if (DesignatedToDeconstruct || ToBeFlicked)
             {
-                InstantMechanoidRaid();
+                if (nextInstaMechTicks <= 0)
+                {
+                    InstantMechanoidRaid();
+                    nextInstaMechTicks = GenDate.TicksPerHour * 6;
+                }
+                else nextInstaMechTicks--;
                 TryDoThreat(0);
                 return;
-            }
-            if(ticksToRes <= 0)
-            {
-                InstantlyResearchCheapestArchotechResearch();
-                ticksToRes = researchTicks.RandomInRange;
             }
             if(ticksToMech <= 0)
             {
@@ -230,6 +240,19 @@ namespace D9CTM
         {
             foreach (ResearchProjectDef rpd in DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech)) progress.Add(rpd, 0);
         }
+        public void ResearchPulse()
+        {
+            foreach (KeyValuePair<ResearchProjectDef, int> kvp in progress)
+            {
+                progress[kvp.Key]++;
+            }
+            if (ticksToRes <= 0)
+            {
+                InstantlyFinishRandomGrantableResearch();
+                ticksToRes = researchTicks.RandomInRange;
+            }
+            else ticksToRes--;
+        }
         public List<ResearchProjectDef> AllGrantableResearch
         {
             get
@@ -238,7 +261,7 @@ namespace D9CTM
                 return defs.ToList();
             }
         }
-        public void InstantlyFinishRandomGrantableResearch()
+        public void InstantlyFinishRandomGrantableResearch() //... if possible
         {
             List<ResearchProjectDef> grantable = AllGrantableResearch;
             if(grantable.Count > 0) Find.ResearchManager.FinishProject(grantable.RandomElement());
