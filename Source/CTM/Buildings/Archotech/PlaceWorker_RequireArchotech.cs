@@ -10,7 +10,8 @@ namespace D9CTM
     {
         public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null)
         {
-            if(map.listerBuildings.ColonistsHaveBuilding(CTMDefOf.D9Archotech)) return true;
+            //if(map.listerBuildings.ColonistsHaveBuilding(CTMDefOf.D9Archotech)) return true;
+            if (ArchotechUtility.ArchotechIsActive()) return true;
             return "D9RequiresArchotech".Translate();
         }
     }

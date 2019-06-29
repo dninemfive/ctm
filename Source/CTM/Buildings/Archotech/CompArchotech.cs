@@ -15,6 +15,7 @@ namespace D9CTM
         public IntRange researchTicks => Props.TicksPerResearchPulse;
         public IntRange hostileTicks => Props.TicksPerHostilePulse;
         public IntRange raidDelay => Props.RaidDelay;
+        public Dictionary<ResearchProjectDef, int> progress;
         #region hostility        
 
         public bool Hostile
@@ -51,13 +52,8 @@ namespace D9CTM
                 ticksToMech = 0;
                 ageTicks = 0;
                 hostileAge = Props.HostilityAgeRange.RandomInRange;
-                endHostileAge = Props.HostilityEndRange.RandomInRange;
-                if(hostileAge >= endHostileAge)
-                {
-                    int x = hostileAge;
-                    hostileAge = endHostileAge;
-                    endHostileAge = x;
-                }
+                endHostileAge = hostileAge + Props.HostilityEndRange.RandomInRange;
+                InitResearch();
             }
         }
 
@@ -69,6 +65,7 @@ namespace D9CTM
             Scribe_Values.Look(ref ageTicks, "ageTicks", 0);
             Scribe_Values.Look(ref hostileAge, "hostileAge", Props.HostilityAgeRange.RandomInRange);
             Scribe_Values.Look(ref endHostileAge, "endHostileAge", Props.HostilityEndRange.RandomInRange);
+            Scribe_Collections.Look(ref progress, "progress", LookMode.Def, LookMode.Value);
         }
 
         public override void CompTick()
@@ -229,28 +226,22 @@ namespace D9CTM
         }
         #endregion raidshit
         #region research
-        public ResearchProjectDef CheapestArchotechResearch
+        public void InitResearch()
+        {
+            foreach (ResearchProjectDef rpd in DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech)) progress.Add(rpd, 0);
+        }
+        public List<ResearchProjectDef> AllGrantableResearch
         {
             get
             {
-                IEnumerable<ResearchProjectDef> defs = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech);
-                ResearchProjectDef ret = null;
-                float cost = 99999999f;
-                foreach (ResearchProjectDef rpd in defs)
-                {
-                    float temp = Find.ResearchManager.GetProgress(rpd);
-                    if (temp < cost)
-                    {
-                        ret = rpd;
-                        cost = temp;
-                    }
-                }
-                return ret;
+                IEnumerable<ResearchProjectDef> defs = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech && progress.TryGetValue(x) >= x.baseCost);
+                return defs.ToList();
             }
         }
-        public void InstantlyResearchCheapestArchotechResearch()
+        public void InstantlyFinishRandomGrantableResearch()
         {
-            Find.ResearchManager.FinishProject(CheapestArchotechResearch);
+            List<ResearchProjectDef> grantable = AllGrantableResearch;
+            if(grantable.Count > 0) Find.ResearchManager.FinishProject(grantable.RandomElement());
         }
         #endregion research
     }
