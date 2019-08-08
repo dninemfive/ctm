@@ -140,7 +140,8 @@ namespace D9CTM
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                if (h.def.HasModExtension<ModExtension_BrainChip>()) return true;
+                //if (h.def.HasModExtension<ModExtension_BrainChip>()) return true;
+                if (h.def.HasComp(typeof(HediffComp_BrainChip))) return true;
             }
             return false;
         }
