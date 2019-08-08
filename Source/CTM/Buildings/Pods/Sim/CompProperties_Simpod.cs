@@ -9,6 +9,7 @@ namespace D9CTM
 {
     class CompProperties_Simpod : CompProperties
     {
+#pragma warning disable CS0649
         public List<SkillDef> SkillsToTrain;
         public JoyKindDef JoyKind = null;
         public bool SatisfiesOutdoors = false;

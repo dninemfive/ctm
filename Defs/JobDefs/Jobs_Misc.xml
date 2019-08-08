@@ -18,4 +18,34 @@
 		<reportString>entering TargetA.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
+	<JobDef>
+		<defName>d9EnterSimpodDex</defName>
+		<driverClass>D9CTM.JobDriver_EnterSimpod</driverClass>
+		<reportString>entering TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joyKind>Gaming_Cerebral</joyKind>
+		<taleOnCompletion>PlayedGame</taleOnCompletion>
+	</JobDef>
+	<JobDef>
+		<defName>d9EnterSimpodCer</defName>
+		<driverClass>D9CTM.JobDriver_EnterSimpod</driverClass>
+		<reportString>entering TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joyKind>Gaming_Cerebral</joyKind>
+		<taleOnCompletion>PlayedGame</taleOnCompletion>
+	</JobDef>
+	<JobDef>
+		<defName>d9EnterSimpodUni</defName>
+		<driverClass>D9CTM.JobDriver_EnterSimpod</driverClass>
+		<reportString>entering TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joyKind>Gaming_Cerebral</joyKind>
+		<taleOnCompletion>PlayedGame</taleOnCompletion>
+	</JobDef>
 </Defs>
