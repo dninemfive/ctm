@@ -8,6 +8,7 @@ namespace D9CTM
 {
     class CompProperties_Archotech : CompProperties
     {
+#pragma warning disable CS0649
         public IntRange TicksPerResearchPulse;
         public IntRange TicksPerHostilePulse;
         public IntRange HostilityAgeRange;

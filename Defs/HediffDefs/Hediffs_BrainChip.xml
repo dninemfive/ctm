@@ -324,4 +324,17 @@
 		  </li>
 		</comps>
 	</HediffDef>
+	<!-- disabled bionic -->
+	<HediffDef ParentName="AddedBodyPartBase">
+    <defName>D9DisabledPart</defName>
+    <label>bionic part disabled</label>
+    <labelNoun>a disabled bionic part</labelNoun>
+	<defaultLabelColor>(0.53, 0, 0.8)</defaultLabelColor>
+    <isBad>true</isBad>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0</partEfficiency>
+      <betterThanNatural>false</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
 </Defs>

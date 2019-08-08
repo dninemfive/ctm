@@ -187,7 +187,7 @@ namespace D9CTM
         }
         public void DoBionicShutdown(Pawn p)
         {
-            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart select x;
+            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart && x.def.addedPartProps.betterThanNatural select x;
             List<BodyPartRecord> bionicParts = new List<BodyPartRecord>();
             foreach(Hediff bionic in bionics)
             {
@@ -197,7 +197,7 @@ namespace D9CTM
         }
         public bool PawnHasBionics(Pawn p)
         {
-            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart select x;
+            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart && x.def.addedPartProps.betterThanNatural select x;
             return bionics.Any();
         }
         //power draw
