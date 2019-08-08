@@ -50,6 +50,7 @@
     <Compile Include="Buildings\Archotech\ArchotechUtility.cs" />
     <Compile Include="Buildings\Archotech\CompArchotech.cs" />
     <Compile Include="Buildings\Archotech\ModExtension_BrainChip.cs" />
+    <Compile Include="Buildings\Archotech\PlaceWorker_AllowOnlyOneArchotech.cs" />
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
     <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
     <Compile Include="Buildings\Pods\JobDriver_EnterPod.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Harmony\VanaditeCompPatch.cs" />
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Buildings\Pods\Building_Pod.cs" />
+    <Compile Include="HediffCompProperties_BrainChip.cs" />
     <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
     <Compile Include="HediffComp_BrainChip.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />

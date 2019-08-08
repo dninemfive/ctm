@@ -15,6 +15,7 @@ namespace D9CTM
         public static ThingDef Filth_HealingFoam;
         public static ThingDef D9Archotech;
         public static HediffDef D9NanComa;
+        public static HediffDef D9DisabledPart;
         public static JobDef d9TakeOneFuel;
         public static JobDef d9UnloadExcessFuel;
         public static JobDef d9EnterPod;

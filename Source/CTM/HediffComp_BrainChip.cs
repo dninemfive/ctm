@@ -9,15 +9,25 @@ namespace D9CTM
 {
     class HediffComp_BrainChip : HediffComp
     {
+        HediffCompProperties_BrainChip Props => (HediffCompProperties_BrainChip)base.props;
+        const int severityChangeInterval = GenDate.TicksPerDay; //severity without archotech
+
         int ticksToSeverityChange;
+
         float baseSeverity {
             get
             {
                 return parent.def.initialSeverity; 
             }            
         }
-        const float severityChange = 0.05f;
-        const int severityChangeInterval = GenDate.TicksPerDay; //severity without archotech
+        float severityChange
+        {
+            get
+            {
+                return Props.severityDelta;
+            }
+        }
+        
 
         public override void CompPostTick(ref float severityAdjustment)
         {

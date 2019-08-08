@@ -34,7 +34,7 @@ namespace D9CTM
             {
                 foreach (Designation d in base.parent.Map.designationManager.AllDesignationsOn(base.parent))
                 {
-                    if (d.def.Equals(DesignationDefOf.Deconstruct)) return true;
+                    if (d.def.Equals(DesignationDefOf.Deconstruct)) return true;                 
                 }
                 return false;
             }
@@ -97,6 +97,7 @@ namespace D9CTM
             ResearchPulse();
             if (DesignatedToDeconstruct || ToBeFlicked)
             {
+                //TODO: instantly cause catatonia/berserk/bionic shutdown on deconstructor/flicker if possible
                 if (nextInstaMechTicks <= 0)
                 {
                     InstantMechanoidRaid();
@@ -119,7 +120,7 @@ namespace D9CTM
             bool didThreat = false;
             IntRange sel = new IntRange(0, 1);
                 //if any pawn has brain chip, make them go berserk or catatonic
-            //shut down random pawn's bionics
+                //shut down random pawn's bionics
             //draw excessive power, generating heat, for an hour or so
                 //break random building down
             //(once automated production and combat bots) produce a hostile combat bot
@@ -131,6 +132,8 @@ namespace D9CTM
                     break;
                 case 1: didThreat = TryBreakdownRandomBuilding();
                     break;
+                case 2: didThreat = TryDoBionicShutdown();
+                    break;
             }
             if (!didThreat) TryDoThreat(tries + 1);
               
@@ -140,8 +143,7 @@ namespace D9CTM
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                //if (h.def.HasModExtension<ModExtension_BrainChip>()) return true;
-                if (h.def.HasComp(typeof(HediffComp_BrainChip))) return true;
+                if (h.def.HasComp(typeof(HediffComp_BrainChip)) || h.def.HasModExtension<ModExtension_BrainChip>()) return true;
             }
             return false;
         }
@@ -176,6 +178,28 @@ namespace D9CTM
             Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NegativeEvent, p, null, null);
         }
         //bionic shutdown
+        public bool TryDoBionicShutdown()
+        {
+            IEnumerable<Pawn> pawnsWithBionics = from Pawn p in base.parent.Map.mapPawns.AllPawnsSpawned where PawnHasBionics(p) select p;
+            if (!pawnsWithBionics.Any()) return false;
+            DoBionicShutdown(pawnsWithBionics.RandomElement());
+            return true;
+        }
+        public void DoBionicShutdown(Pawn p)
+        {
+            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart select x;
+            List<BodyPartRecord> bionicParts = new List<BodyPartRecord>();
+            foreach(Hediff bionic in bionics)
+            {
+                bionicParts.Add(bionic.Part);
+            }
+            foreach (BodyPartRecord part in bionicParts.Distinct()) p.health.AddHediff(CTMDefOf.D9DisabledPart, part);
+        }
+        public bool PawnHasBionics(Pawn p)
+        {
+            IEnumerable<Hediff> bionics = from x in p.health.hediffSet.hediffs where x is Hediff_AddedPart select x;
+            return bionics.Any();
+        }
         //power draw
         //building breakdown
         private bool TryBreakdownRandomBuilding()
