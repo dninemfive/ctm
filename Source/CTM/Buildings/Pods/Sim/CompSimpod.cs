@@ -14,7 +14,7 @@ namespace D9CTM
         public float xp => Props.XpPerTick;
         public bool outdoors => Props.SatisfiesOutdoors;
         public Building_Pod par;
-        public List<Pawn> pawns
+        public List<Pawn> pawns //should only ever have one pawn, this is just in case
         {
             get
             {
@@ -39,17 +39,35 @@ namespace D9CTM
         {
             base.CompTick();
             LearnSkills(1);
+            GainJoy(1);
+            if (ShouldEject) par.EjectContents();
         }
 
         public override void CompTickRare()
         {
             base.CompTick();
             LearnSkills(250);
+            GainJoy(250);
+            if (ShouldEject) par.EjectContents();
         }
 
         public void LearnSkills(int ticks)
         {
             foreach (Pawn p in pawns) foreach (SkillDef sd in skills) p.skills.Learn(sd, xp * ticks, false);
+        }
+
+        public void GainJoy(int ticks)
+        {
+            foreach(Pawn p in pawns) p.needs.joy.GainJoy((parent.def.GetStatValueAbstract(StatDefOf.JoyGainFactor) * 0.36f) / (2500f/ticks), parent.def.building.joyKind);
+        }
+
+        public bool ShouldEject
+        {
+            get
+            {
+                IEnumerable<Pawn> pawnsNeedingEjection = from x in pawns where (!par.Forced && x.needs.joy.CurLevel > 0.9999f) || x.needs.food.CurCategory != HungerCategory.Fed || x.needs.rest.CurCategory == RestCategory.Exhausted || !x.GetTimeAssignment().allowJoy select x;
+                return pawnsNeedingEjection.Any();
+            }
         }
     }
 }

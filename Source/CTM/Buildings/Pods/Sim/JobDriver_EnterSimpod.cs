@@ -44,18 +44,19 @@ namespace D9CTM
                 };
                 action();
             };
+            enter.defaultCompleteMode = ToilCompleteMode.Delay;
+            enter.defaultDuration = this.job.def.joyDuration;
+            /* // Doesn't work since the pawn despawns - thanks to erdelf and Jamaican Castle for pointing that out
             enter.tickAction = delegate
             {
                 this.pawn.GainComfortFromCellIfPossible(); //TODO: add comfort to simpod def
                 JoyUtility.JoyTickCheckEnd(this.pawn, JoyTickFullJoyAction.EndJob, 1f, (Building)this.TargetThingA);
-            };
-            enter.defaultCompleteMode = ToilCompleteMode.Delay;
-            enter.defaultDuration = this.job.def.joyDuration;
+            };            
             enter.AddFinishAction(delegate
             {
                 Building_Pod a = enter.actor.CurJob.targetA.Thing as Building_Pod;
                 a.EjectContents();
-            });
+            });*/
             yield return enter;
         }
     }

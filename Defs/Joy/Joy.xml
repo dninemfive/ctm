@@ -25,7 +25,7 @@
 		  <li>D9SimpodMedical</li>
 		</thingDefs>
 		<jobDef>d9EnterSimpodDex</jobDef>
-		<joyKind>Gaming_Dexterity</joyKind>
+		<joyKind>Gaming_Cerebral</joyKind>
 		<requiredCapacities>
 		  <li>Sight</li>
 		  <li>Manipulation</li>

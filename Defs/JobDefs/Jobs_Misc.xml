@@ -25,7 +25,7 @@
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 		<joyDuration>4000</joyDuration>
 		<joyMaxParticipants>1</joyMaxParticipants>
-		<joyKind>Gaming_Cerebral</joyKind>
+		<joyKind>Gaming_Dexterity</joyKind>
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
 	</JobDef>
 	<JobDef>
@@ -45,7 +45,7 @@
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 		<joyDuration>4000</joyDuration>
 		<joyMaxParticipants>1</joyMaxParticipants>
-		<joyKind>Gaming_Cerebral</joyKind>
+		<joyKind>Simpod_Universal</joyKind>
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
 	</JobDef>
 </Defs>

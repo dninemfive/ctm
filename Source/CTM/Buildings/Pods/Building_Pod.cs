@@ -15,6 +15,8 @@ namespace D9CTM
         CompProperties_PodSettings settings;
         ThingDef filth => settings.slimeDef;
         HediffDef hediff => settings.hediffOnExit;
+        public bool Forced = false;
+
         public Pawn pawn
         {
             get
@@ -63,6 +65,7 @@ namespace D9CTM
                     {
                         Job job = new Job(jobDef, this);
                         myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        Forced = true;
                     };
                     yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(jobStr, jobAction, MenuOptionPriority.Default, null, null, 0f, null, null), myPawn, this, "ReservedBy");
                 }
@@ -113,6 +116,7 @@ namespace D9CTM
             {
                 SoundDefOf.CryptosleepCasket_Eject.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None));
             }
+            Forced = false;
             base.EjectContents();
         }
 

@@ -428,9 +428,6 @@
     <designationCategory>Misc</designationCategory>
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
     <statBases>
       <MaxHitPoints>1000</MaxHitPoints>
       <WorkToBuild>50000</WorkToBuild>
