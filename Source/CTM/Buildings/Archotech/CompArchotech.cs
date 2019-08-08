@@ -253,11 +253,11 @@ namespace D9CTM
             }
             else ticksToRes--;
         }
-        public List<ResearchProjectDef> AllGrantableResearch
+        public List<ResearchProjectDef> AllGrantableResearch //TODO: check that prerequisites have been researched
         {
             get
             {
-                IEnumerable<ResearchProjectDef> defs = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech && progress.TryGetValue(x) >= x.baseCost);
+                IEnumerable<ResearchProjectDef> defs = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech && progress.TryGetValue(x) >= x.baseCost && x.PrerequisitesCompleted);
                 return defs.ToList();
             }
         }

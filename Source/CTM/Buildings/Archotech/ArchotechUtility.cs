@@ -48,7 +48,43 @@ namespace D9CTM
         }
         public static bool ArchotechOrAnyBlueprintsExist()
         {
+            return BuildingWithCompOrAnyBlueprintsExist(typeof(CompArchotech));
+        }
+        public static bool BuildingOrAnyBlueprintsExist(ThingDef td)
+        {
             //foreach existing map, if an archotech or a blueprint thereof exists and is colonist-owned, return true; else return false
-        }        
+            foreach (Map map in maps)
+            {
+                if (map.listerBuildings.ColonistsHaveBuilding(td)) return true;
+                foreach (List<Blueprint> blueprints in map.blueprintGrid.InnerArray)
+                {
+                    foreach(Blueprint bp in blueprints)
+                    {
+                        if (bp.Faction.IsPlayer && bp.def == td) return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public static bool BuildingWithCompOrAnyBlueprintsExist(Type comp)
+        {
+            //foreach existing map, if an archotech or a blueprint thereof exists and is colonist-owned, return true; else return false
+            foreach (Map map in maps)
+            {
+                if (map.listerBuildings.ColonistsHaveBuilding(delegate (Thing t)
+                {
+                    if (t.def.HasComp(comp)) return true;
+                    return false;
+                })) return true;
+                foreach (List<Blueprint> blueprints in map.blueprintGrid.InnerArray)
+                {
+                    foreach (Blueprint bp in blueprints)
+                    {
+                        if (bp.Faction.IsPlayer && bp.def.HasComp(comp)) return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

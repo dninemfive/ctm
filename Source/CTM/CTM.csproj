@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Archotech\ArchotechUtility.cs" />
     <Compile Include="Buildings\Archotech\CompArchotech.cs" />
     <Compile Include="Buildings\Archotech\ModExtension_BrainChip.cs" />
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Buildings\Pods\Building_Pod.cs" />
     <Compile Include="HediffCompProperties_TimePerImmunity.cs" />
+    <Compile Include="HediffComp_BrainChip.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />
     <Compile Include="Hediff_BioAug.cs" />
     <Compile Include="IncidentInfo.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Harmony\OutsideNeedPatch.cs" />
     <Compile Include="StatPart_ApparelStatFactor.cs" />
     <Compile Include="StatPart_ZeroIfNotHead.cs" />
+    <Compile Include="ThoughtWorker_BrainChipHappiness.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

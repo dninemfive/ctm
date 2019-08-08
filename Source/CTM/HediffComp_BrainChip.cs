@@ -13,8 +13,8 @@ namespace D9CTM
         {
             base.CompPostTick(ref severityAdjustment);
         }
-        public void GoBerserk();
-        public void DeactivateAllBionics();
-        public int HappinessFromArchotechStage();
+        //public void GoBerserk();
+        //public void DeactivateAllBionics();
+        //public int HappinessFromArchotechStage();
     }
 }
