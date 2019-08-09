@@ -137,6 +137,10 @@
 	<defName>D9SimpodUniversal</defName>
     <label>universal simpod</label>
     <description>A highly advanced virtual-reality pod capable of generating incredibly convincing simulations.\n\nThis one uses a neural interface to directly interact with the user's consciousness, allowing unlimited simulation possibilities.</description>
+	<statBases>
+	  <JoyGainFactor>2.5</JoyGainFactor>
+	  <Comfort>1</Comfort>
+    </statBases>
 	<building>
       <joyKind>Simpod_Universal</joyKind>
     </building>
