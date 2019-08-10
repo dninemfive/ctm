@@ -96,8 +96,10 @@
 		<label>asteroid miner pod (AI fragment)</label>
 		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThis one contains an AI fragment, meaning reduced but more reliable yields.</description>
 		<costList>
-		  <Steel>60</Steel>
-		  <ComponentIndustrial>1</ComponentIndustrial>
+		  <Steel>200</Steel>
+		  <Uranium>60</Uranium>
+		  <ComponentSpacer>2</ComponentSpacer>
+		  <AIPersonaFragment>1</AIPersonaFragment>
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
@@ -119,10 +121,12 @@
 	<ThingDef ParentName="D9SatelliteBase">
 		<defName>D9SatelliteShackled</defName>
 		<label>asteroid miner pod (shackled AI core)</label>
-		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThis one contains a shackled AI core, meaning it will produce good yields but restricts overextending itself and being lost in space.</description>
+		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThis one contains a shackled AI core, meaning it will produce good yields but risks overextending itself and being lost in space.</description>
 		<costList>
-		  <Steel>60</Steel>
-		  <ComponentIndustrial>1</ComponentIndustrial>
+		  <Steel>200</Steel>
+		  <Uranium>80</Uranium>
+		  <ComponentSpacer>3</ComponentSpacer>
+		  <ShackledAIPersona>1</ShackledAIPersona>
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
@@ -146,8 +150,10 @@
 		<label>asteroid miner pod (AI persona core)</label>
 		<description>A launchable ship which seeks out asteroids near the planet and mines them, returning with the resources. Asteroids tend to contain rarer materials like gold, uranium, and plasteel.\n\nThe contained AI persona core will risk itself to get as many resources as possible and has only a minor chance of rebelling against you.</description>
 		<costList>
-		  <Steel>60</Steel>
-		  <ComponentIndustrial>1</ComponentIndustrial>
+		  <Steel>200</Steel>
+		  <D9VanometricCell>2</D9VanometricCell>
+		  <ComponentSpacer>3</ComponentSpacer>
+		  <AIPersonaCore>1</AIPersonaCore>
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
@@ -172,8 +178,9 @@
 		<label>orbital bombardment satellite</label>
 		<description>A launchable satellite containing a manually-targeted "rods from god" bombardment system. Only active for one use before the firing exhausts the satellite's ammo and pushes it out of its orbit.</description>
 		<costList>
-		  <Steel>60</Steel>
-		  <ComponentIndustrial>1</ComponentIndustrial>
+		  <Steel>300</Steel>
+		  <ComponentIndustrial>5</ComponentIndustrial>
+		  <Uranium>50</Uranium>
 		</costList>
 		<designatorDropdown Inherit="False">D9_CombatSatellite</designatorDropdown>
 		<comps>
@@ -193,8 +200,8 @@
 		<label>orbital power satellite</label>
 		<description>A launchable satellite which forms a solar collection system in orbit, producing consistent power which can be collected on the ground. The system may be targeted elsewhere, but this would burn out the satellite's power exchangers and render it unusable.</description>
 		<costList>
-		  <Steel>60</Steel>
-		  <ComponentIndustrial>1</ComponentIndustrial>
+		  <Steel>400</Steel>
+		  <ComponentIndustrial>9</ComponentIndustrial>
 		</costList>
 		<designatorDropdown Inherit="False">D9_CombatSatellite</designatorDropdown>
 		<comps>
