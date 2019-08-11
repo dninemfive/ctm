@@ -61,6 +61,7 @@ namespace D9CTM
                 ageTicks = 0;
                 hostileAge = Props.HostilityAgeRange.RandomInRange;
                 endHostileAge = hostileAge + Props.HostilityEndRange.RandomInRange;
+                progress = new Dictionary<ResearchProjectDef, int>();
                 InitResearch();
             }
         }
@@ -263,7 +264,7 @@ namespace D9CTM
         #region research
         public void InitResearch()
         {
-            foreach (ResearchProjectDef rpd in DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech)) progress.Add(rpd, 0);
+            foreach (ResearchProjectDef rpd in DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x != null && x.techLevel == TechLevel.Archotech)) progress.Add(rpd, 0);
         }
         public void ResearchPulse()
         {

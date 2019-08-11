@@ -50,29 +50,11 @@ namespace D9CTM
         {
             return BuildingWithCompOrAnyBlueprintsExist(typeof(CompArchotech));
         }
-        /* DEPRECATED - doesn't work and I don't need it
-        public static bool BuildingOrAnyBlueprintsExist(ThingDef td)
-        {
-            //foreach existing map, if an archotech or a blueprint thereof exists and is colonist-owned, return true; else return false
-            foreach (Map map in maps)
-            {
-                if (map.listerBuildings.ColonistsHaveBuilding(td)) return true;
-                foreach (List<Blueprint> blueprints in map.blueprintGrid.InnerArray)
-                {
-                    foreach(Blueprint bp in blueprints)
-                    {
-                        if (bp.Faction.IsPlayer && bp.def == td) return true;
-                    }
-                }
-            }
-            return false;
-        } */
         //foreach existing map, if an archotech or a blueprint thereof exists and is colonist-owned, return true; else return false
         public static bool BuildingWithCompOrAnyBlueprintsExist(Type comp)
         {            
             foreach (Map map in maps)
             {
-                Log.Message("Map " + map + ":");
                 if (map.listerBuildings.ColonistsHaveBuilding(delegate (Thing t)
                 {
                     if (t.def.HasComp(comp)) return true;
@@ -82,10 +64,8 @@ namespace D9CTM
                 {
                     if (blueprints != null)
                     {
-                        Log.Message("  List<Blueprint> " + blueprints + ": ");
                         foreach (Blueprint bp in blueprints)
                         {
-                            Log.Message("    Blueprint " + bp);
                             if ((bp != null && (bp.Faction != null && bp.Faction.IsPlayer) && (bp.def != null && bp.def.HasComp(comp)))) return true;
                         }
                     }
