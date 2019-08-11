@@ -449,7 +449,7 @@
       <li Class="CompProperties_Flickable"/>
     </comps>
 		<placeWorkers>
-			<li>D9CTM.PlaceWorker_AllowOnlyOne</li>
+			<li>D9CTM.PlaceWorker_AllowOnlyOneArchotech</li>
 		</placeWorkers>
     <constructionSkillPrerequisite>20</constructionSkillPrerequisite>
   </ThingDef>

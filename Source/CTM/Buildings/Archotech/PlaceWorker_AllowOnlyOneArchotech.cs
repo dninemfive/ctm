@@ -11,7 +11,7 @@ namespace D9CTM
     {
         public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null)
         {
-            if (ArchotechUtility.BuildingWithCompOrAnyBlueprintsExist(typeof(CompArchotech))) return "D9OnlyOne".Translate(checkingDef.label);
+            if (ArchotechUtility.ArchotechOrAnyBlueprintsExist()) return "D9OnlyOne".Translate(checkingDef.label);
             return true;
         }
     }
