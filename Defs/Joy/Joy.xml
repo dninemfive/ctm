@@ -24,7 +24,7 @@
 		  <li>D9SimpodCooking</li>
 		  <li>D9SimpodMedical</li>
 		</thingDefs>
-		<jobDef>d9EnterSimpodDex</jobDef>
+		<jobDef>d9EnterSimpodCer</jobDef>
 		<joyKind>Gaming_Cerebral</joyKind>
 		<requiredCapacities>
 		  <li>Sight</li>
