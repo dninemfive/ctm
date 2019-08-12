@@ -73,6 +73,96 @@
 	</skillRequirements>
   </RecipeDef>
   <RecipeDef>
+    <defName>Make_D9Synthmeat</defName>
+    <label>make synthmeat from meat</label>
+    <description>Make synthetic meat from meat. This is a much more efficient process and converts 90% of available nutrition.</description>
+    <jobString>Making synthmeat.</jobString> 
+    <workAmount>500</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmeat>9</D9Synthmeat>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+	<defaultIngredientFilter>
+		<thingDefs>
+			<li>Meat_Human</li>
+			<li>Meat_Megaspider</li>
+		</thingDefs>
+		<disallowedCategories>
+			<li>MeatRaw</li>
+		</disallowedCategories>
+	</defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>5</Cooking>
+	</skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_D9Synthmeat_Bulk</defName>
+    <label>make synthmeat from meat in bulk</label>
+    <description>Make synthetic meat from meat. Nutrition loss is entirely eliminated at this volume.</description>
+    <jobString>Making synthmeat.</jobString> 
+    <workAmount>4300</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <D9Synthmeat>100</D9Synthmeat>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+	<defaultIngredientFilter>
+		<thingDefs>
+			<li>Meat_Human</li>
+			<li>Meat_Megaspider</li>
+		</thingDefs>
+		<disallowedCategories>
+			<li>MeatRaw</li>
+		</disallowedCategories>
+	</defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>D9FleshPrinter</researchPrerequisite>
+	<skillRequirements>
+		<Cooking>6</Cooking>
+	</skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
     <defName>Make_D9Synthmilk</defName>
     <label>make synthmilk</label>
     <description>Make synthetic milk from meat. Only a small percentage of nutrition is lost.</description>
