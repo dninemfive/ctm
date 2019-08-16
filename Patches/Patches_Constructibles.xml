@@ -5,11 +5,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/designationCategory</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/designationCategory</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]</xpath>
 				<value><designationCategory>Joy</designationCategory></value>
 			</li>
 		</operations>
@@ -18,11 +18,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/researchPrerequisites</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/researchPrerequisites</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]</xpath>
 				<value><researchPrerequisites><li>D9Megascreen</li></researchPrerequisites></value>
 			</li>
 		</operations>
@@ -31,18 +31,18 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]/constructionSkillPrerequisite</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/constructionSkillPrerequisite</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "MegascreenTelevision"]</xpath>
+				<xpath>Defs/ThingDef[defName = "MegascreenTelevision"]</xpath>
 				<value><constructionSkillPrerequisite>10</constructionSkillPrerequisite></value>
 			</li>
 		</operations>
 	</Operation>
 	<!-- change the megascreen's materials to be more interesting -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "MegascreenTelevision"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/costList</xpath>
 	  <value>
 		<costList>
 			<Steel>200</Steel>
@@ -57,11 +57,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/designationCategory</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/designationCategory</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]</xpath>
 				<value><designationCategory>Power</designationCategory></value>
 			</li>
 		</operations>
@@ -70,11 +70,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/researchPrerequisites</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/researchPrerequisites</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]</xpath>
 				<value><researchPrerequisites><li>D9Vanometrics</li></researchPrerequisites></value>
 			</li>
 		</operations>
@@ -83,11 +83,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]/constructionSkillPrerequisite</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/constructionSkillPrerequisite</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "VanometricPowerCell"]</xpath>
+				<xpath>Defs/ThingDef[defName = "VanometricPowerCell"]</xpath>
 				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
 			</li>
 		</operations>
@@ -97,11 +97,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/designationCategory</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/designationCategory</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]</xpath>
 				<value><designationCategory>Production</designationCategory></value>
 			</li>
 		</operations>
@@ -110,11 +110,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/researchPrerequisites</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/researchPrerequisites</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]</xpath>
 				<value><researchPrerequisites><li>D9InfiniteChemreactor</li></researchPrerequisites></value>
 			</li>
 		</operations>
@@ -123,17 +123,17 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]/constructionSkillPrerequisite</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/constructionSkillPrerequisite</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "InfiniteChemreactor"]</xpath>
+				<xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]</xpath>
 				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
 			</li>
 		</operations>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/costList</xpath>
 	  <value>
 	    <D9VanometricCell>4</D9VanometricCell>
 	  </value>
@@ -143,11 +143,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]/designationCategory</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]/designationCategory</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]</xpath>
 				<value><designationCategory>Joy</designationCategory></value>
 			</li>
 		</operations>
@@ -156,11 +156,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]/researchPrerequisites</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]/researchPrerequisites</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]</xpath>
 				<value><researchPrerequisites><li>D9PsychicEmanator</li></researchPrerequisites></value>
 			</li>
 		</operations>
@@ -169,18 +169,18 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]/constructionSkillPrerequisite</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]/constructionSkillPrerequisite</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName = "PsychicEmanator"]</xpath>
+				<xpath>Defs/ThingDef[defName = "PsychicEmanator"]</xpath>
 				<value><constructionSkillPrerequisite>14</constructionSkillPrerequisite></value>
 			</li>
 		</operations>
 	</Operation>
 	<!-- change the megascreen's materials to be more interesting -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "PsychicEmanator"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "PsychicEmanator"]/costList</xpath>
 	  <value>
 		<costList>
 			<AIPersonaFragment>1</AIPersonaFragment>

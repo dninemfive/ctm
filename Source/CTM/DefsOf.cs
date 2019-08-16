@@ -19,7 +19,9 @@ namespace D9CTM
         public static JobDef d9TakeOneFuel;
         public static JobDef d9UnloadExcessFuel;
         public static JobDef d9EnterPod;
-        public static ThingSetMakerDef AsteroidMinerReturns;
+        public static ThingSetMakerDef D9AsteroidMiner_Frag;
+        public static ThingSetMakerDef D9AsteroidMiner_Shaq;
+        public static ThingSetMakerDef D9AsteroidMiner_Core;
         //public static StatDef D9NaniteRepairRateBuilding;
         //public static StatDef D9NaniteHealRateBuilding;
         //public static StatDef D9NaniteRepairRate;

@@ -7,7 +7,7 @@
 			<success>Always</success>
 			<operations>
 				<li Class="PatchOperationInsert">
-					<xpath>*/ResearchProjectDef[defName="AdvancedFabrication"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AdvancedFabrication"]</xpath>
 					<value>
 						<ResearchProjectDef ParentName="D9AATechBase">
 							<defName>D9RobotAsst</defName>
@@ -25,7 +25,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]</xpath>
+					<xpath>Defs/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]</xpath>
 					<value>
 						<designationCategory>Misc</designationCategory>
 						<researchPrerequisites><li>D9RobotAsst</li></researchPrerequisites>
@@ -33,7 +33,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-				  <xpath>*/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]/costList</xpath>
+				  <xpath>Defs/ThingDef[defName = "AIRobot_RechargeStation_Hauler" or defName = "AIRobot_RechargeStation_Cleaner"]/costList</xpath>
 				  <value>
 					<costList>
 						<Steel>60</Steel>

@@ -3,7 +3,7 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>Expanded Prosthetics and Organ Engineering</li></mods>
 		<match Class="PatchOperationReplace">
-			<xpath>*/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
+			<xpath>Defs/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
 			<value>
 				<prerequisites>
 					<li>AdvancedBionics</li>

@@ -3,7 +3,7 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>More Vanilla Turrets 1.0</li></mods>
 		<match Class="PatchOperationAdd">
-		  <xpath>*/ThingDef[defName = "MilitaryTurretGun" or defName = "ShredderTurretGun" or defName = "PrecisionTurretGun" or defName = "BlastTurretGun" or defName = "VulcanCannon"]/costList</xpath>
+		  <xpath>Defs/ThingDef[defName = "MilitaryTurretGun" or defName = "ShredderTurretGun" or defName = "PrecisionTurretGun" or defName = "BlastTurretGun" or defName = "VulcanCannon"]/costList</xpath>
 		  <value>
 			  <AIPersonaFragment>1</AIPersonaFragment>
 		  </value>

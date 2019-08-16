@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingSetMakerDef>
+		<defName>D9AsteroidMiner_Frag</defName>
+		<root Class="D9CTM.ThingSetMaker_AsteroidMining">
+			<amount>1000</amount>
+			<guaranteedItems>
+				<Steel>200</Steel>
+				<Uranium>60</Uranium>
+				<ComponentSpacer>2</ComponentSpacer>
+				<AIPersonaFragment>1</AIPersonaFragment>
+			</guaranteedItems>
+		</root>
+	</ThingSetMakerDef>
+	<ThingSetMakerDef>
+		<defName>D9AsteroidMiner_Shaq</defName>
+		<root Class="D9CTM.ThingSetMaker_AsteroidMining">
+			<amount>2000</amount>
+			<guaranteedItems>
+				<Steel>200</Steel>
+			    <Uranium>80</Uranium>
+			    <ComponentSpacer>3</ComponentSpacer>
+			    <ShackledAIPersona>1</ShackledAIPersona>
+			</guaranteedItems>
+		</root>
+	</ThingSetMakerDef>
+	<ThingSetMakerDef>
+		<defName>D9AsteroidMiner_Core</defName>
+		<root Class="D9CTM.ThingSetMaker_AsteroidMining">
+			<amount>4000</amount>
+			<guaranteedItems>
+				<Steel>200</Steel>
+				<D9VanometricCell>2</D9VanometricCell>
+				<ComponentSpacer>3</ComponentSpacer>
+				<AIPersonaCore>1</AIPersonaCore>
+			</guaranteedItems>
+		</root>
+	</ThingSetMakerDef>
+</Defs>

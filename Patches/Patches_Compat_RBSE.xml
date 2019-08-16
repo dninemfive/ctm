@@ -6,7 +6,7 @@
 			<success>Always</success>
 			<operations>
 				<li Class="PatchOperationReplace">
-					<xpath>*/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
+					<xpath>Defs/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
 					<value>
 						<prerequisites>
 							<li>AdvancedBionics</li>
@@ -17,7 +17,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>*/ResearchProjectDef[defName = "D9PrintOrgans"]/prerequisites</xpath>
+					<xpath>Defs/ResearchProjectDef[defName = "D9PrintOrgans"]/prerequisites</xpath>
 					<value>
 						<li>OrganTransplantation</li>
 					</value>

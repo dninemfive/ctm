@@ -5,7 +5,7 @@
 		new StatPart for psychic sensitivity returning 0 when near a null field projector
 	-->
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/StatDef[defName="PsychicSensitivity"]</xpath>
+		<xpath>Defs/StatDef[defName="PsychicSensitivity"]</xpath>
 		<value>
 			<parts>
 			  <li Class="StatPart_ApparelStatOffset">

@@ -3,7 +3,7 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>[RH] Faction: Militaires Sans Frontieres (1.0)</li></mods>
 		<match Class="PatchOperationAdd">
-			<xpath>*/ThingDef[defName="CP_MaxiCola"]</xpath>
+			<xpath>Defs/ThingDef[defName="CP_MaxiCola"]</xpath>
 			<value>
 				<recipeMaker>
 				  <researchPrerequisite>D9NaniteHealing</researchPrerequisite>

@@ -2,7 +2,7 @@
 <Patch>
 	<!-- add guaranteed nano forges to bulk goods traders -->
 	<Operation Class="PatchOperationAdd">
-	    <xpath>*/TraderKindDef[defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
+	    <xpath>Defs/TraderKindDef[defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
 	    <value>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>D9NanoForge</thingDef>
@@ -30,7 +30,7 @@
 	</Operation>
 	<!-- ditto but for exotic traders -->
 	<Operation Class="PatchOperationAdd">
-	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators</xpath>
+	    <xpath>Defs/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators</xpath>
 	    <value>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>D9NanoForge</thingDef>
@@ -54,11 +54,11 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName="AIPersonaCore"]/tradeability</xpath>
+				<xpath>Defs/ThingDef[defName="AIPersonaCore"]/tradeability</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>*/ThingDef[defName = "AIPersonaCore"]/tradeability</xpath>
+				<xpath>Defs/ThingDef[defName = "AIPersonaCore"]/tradeability</xpath>
 				<value>
 					<tradeability>All</tradeability>
 				</value>
@@ -67,14 +67,14 @@
 	</Operation>
 	<!-- prevent additional ones from being generated from the ExoticMisc tag -->
 	<Operation Class="PatchOperationAdd">
-	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/excludedThingDefs</xpath>
+	    <xpath>Defs/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/excludedThingDefs</xpath>
 	    <value>
 			<li>D9NanoForge</li>
 			<li>AIPersonaFragment</li>
 	    </value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/customCountRanges</xpath>
+	    <xpath>Defs/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/customCountRanges</xpath>
 	    <value>
 			<AIPersonaCore>1~1</AIPersonaCore>
 			<Vanadite>50~125</Vanadite>
@@ -87,7 +87,7 @@
 	</Operation>
 	<!-- generate more ExoticMisc goods so the new items don't crowd out old ones -->
 	<Operation Class="PatchOperationReplace">
-	    <xpath>*/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/thingDefCountRange</xpath>
+	    <xpath>Defs/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators/li[tradeTag="ExoticMisc"]/thingDefCountRange</xpath>
 	    <value>
 			<thingDefCountRange>
 			  <min>5</min>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "Gun_ChargeRifle" or defName="Gun_ChargeLance"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "Gun_ChargeRifle" or defName="Gun_ChargeLance"]/costList</xpath>
 	  <value>
 		  <D9VanometricCell>1</D9VanometricCell>
 	  </value>

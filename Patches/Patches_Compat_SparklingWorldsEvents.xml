@@ -10,16 +10,16 @@
 			<operations>
 				<!-- Shackle, Fragment, Wipe -->
 				<li Class="PatchOperationAdd">
-					<xpath>*/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/ingredients/li[@Name="PersonaCore"]/filter/thingDefs</xpath>
+					<xpath>Defs/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/ingredients/li[@Name="PersonaCore"]/filter/thingDefs</xpath>
 					<value><li>MalAIPersonaCoreSW</li></value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>*/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/fixedIngredientFilter/thingDefs</xpath>
+					<xpath>Defs/RecipeDef[defName="Split_AIPersonaShackle" or defName="Split_AIPersonaFragment" or defName="Wipe_AIPersonaCore"]/fixedIngredientFilter/thingDefs</xpath>
 					<value><li>MalAIPersonaCoreSW</li></value>
 				</li>
 				<!-- Reprogram -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_AIPersonaCore"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_AIPersonaCore"]</xpath>
 					<value>
 						<RecipeDef ParentName="MakeAIPersonaCore">
 							<defName>Reprogram_MalAICore</defName>
@@ -46,16 +46,16 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>*/ThingDef[defName="TableAIProgramming"]/recipes</xpath>
+					<xpath>Defs/ThingDef[defName="TableAIProgramming"]/recipes</xpath>
 					<value><li>Reprogram_MalAICore</li></value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>*/ThingDef[defName="MalAIPersonaCoreSW"]/thingCategories</xpath>
+					<xpath>Defs/ThingDef[defName="MalAIPersonaCoreSW"]/thingCategories</xpath>
 					<value><thingCategories><li>D9_AICat</li></thingCategories></value>
 				</li>
 				<!-- craft cherub mech injector -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_ResurrectionMechserum"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_ResurrectionMechserum"]</xpath>
 					<value>
 						<RecipeDef ParentName="MechaniteRecipeBase">
 							<defName>Make_CherubMechserumD9</defName>
@@ -99,7 +99,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>*/ThingDef[defName="TableNanoforge"]/recipes</xpath>
+					<xpath>Defs/ThingDef[defName="TableNanoforge"]/recipes</xpath>
 					<value><li>Make_CherubMechserumD9</li></value>
 				</li>
 			</operations>

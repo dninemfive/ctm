@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "Apparel_ShieldBelt"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "Apparel_ShieldBelt"]/costList</xpath>
 	  <value>
 		<costList>
 			<ComponentIndustrial>3</ComponentIndustrial>

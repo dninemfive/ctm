@@ -3,33 +3,33 @@
 	<!-- make the infinite chemreactor produce a dripfeed of chemfuel instead of lumps of 75 
 		 balanced so that output is the same -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnCount</xpath>
+	  <xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnCount</xpath>
 	  <value>
 		<spawnCount>1</spawnCount>
 	  </value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnIntervalRange</xpath>
+	  <xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnIntervalRange</xpath>
 	  <value>
 		<spawnIntervalRange><min>8000</min><max>8000</max></spawnIntervalRange>
 	  </value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/showMessageIfOwned</xpath>
+	  <xpath>Defs/ThingDef[defName = "InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/showMessageIfOwned</xpath>
 	  <value>
 		<showMessageIfOwned>false</showMessageIfOwned>
 	  </value>
 	</Operation>
 	<!-- buff the Vanometric Cell, but not too much -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+	  <xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
 	  <value>
 		<basePowerConsumption>-2400</basePowerConsumption>
 	  </value>
 	</Operation>
 	<!-- corrects the Vanometric Cell's name, given that it actually is a battery of power-generating cells -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/label</xpath>
+	  <xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/label</xpath>
 	  <value>
 		<label>vanometric battery</label>
 	  </value>
@@ -38,7 +38,7 @@
 		 Much more expensive given how much power it now generates, and the fact that it's free
 		 However, its cost is reduced to prevent gaining too many resources from deconstructing these -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "VanometricPowerCell"]/costList</xpath>
+	  <xpath>Defs/ThingDef[defName = "VanometricPowerCell"]/costList</xpath>
 	  <value>
 		<costList>
 		  <Vanadite>80</Vanadite>
@@ -50,14 +50,14 @@
 	<!-- restores sun lamp power consumption if another mod (e.g. Medieval Times) changes it 
 		 this is a really important power sink given how much powergen you can get with this mod -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "SunLamp"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
+	  <xpath>Defs/ThingDef[defName = "SunLamp"]/comps/li[@Class="CompProperties_Power"]/basePowerConsumption</xpath>
 	  <value>
 		<basePowerConsumption>2900</basePowerConsumption>
 	  </value>
 	</Operation>
 	<!-- move the AI persona core to the new category for AI items -->
 	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "AIPersonaCore"]/thingCategories</xpath>
+	  <xpath>Defs/ThingDef[defName = "AIPersonaCore"]/thingCategories</xpath>
 	  <value>
 		<thingCategories>
 		  <li>D9_AICat</li>
@@ -66,12 +66,12 @@
 	</Operation>
 	<!-- make the Psychic Foil Helmet craftable -->
 	<Operation Class="PatchOperationAttributeSet">
-		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
 		<attribute>ParentName</attribute>
 		<value>ArmorHelmetMakeableBase</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
 		<value>
 			<recipeMaker>
 			  <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
@@ -87,14 +87,14 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="Apparel_PsychicFoilHelmet"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/statBases</xpath>
 		<value>
 			<WorkToMake>2000</WorkToMake>
 		</value>
 	</Operation>
 	<!-- make Archotech limbs craftable -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[@Name="BodyPartArchotechBase"]</xpath>
+		<xpath>Defs/ThingDef[@Name="BodyPartArchotechBase"]</xpath>
 		<value>
 			<recipeMaker>
 			  <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -114,7 +114,7 @@
 	</Operation>
 	<!-- Eye -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="ArchotechEye"]</xpath>
+		<xpath>Defs/ThingDef[defName="ArchotechEye"]</xpath>
 		<value>
 			<costList>
 				<D9Nanomaterial>120</D9Nanomaterial>
@@ -124,14 +124,14 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="ArchotechEye"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="ArchotechEye"]/statBases</xpath>
 		<value>
 			<WorkToMake>55000</WorkToMake>
 		</value>
 	</Operation>
 	<!-- Arm and a Leg -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]</xpath>
+		<xpath>Defs/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]</xpath>
 		<value>
 			<costList>
 				<D9Nanomaterial>160</D9Nanomaterial>
@@ -141,7 +141,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="ArchotechArm" or defName="ArchotechLeg"]/statBases</xpath>
 		<value>
 			<WorkToMake>38000</WorkToMake>
 		</value>

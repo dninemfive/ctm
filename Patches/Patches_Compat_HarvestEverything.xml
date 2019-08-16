@@ -7,7 +7,7 @@
 			<operations>
 				<!-- Stomach -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Liver_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Liver_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Stomach_D9</defName>
@@ -39,7 +39,7 @@
 				</li>
 				<!-- Eye -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Stomach_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Stomach_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Eye_D9</defName>
@@ -71,7 +71,7 @@
 				</li>
 				<!-- Ear -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Eye_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Eye_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Ear_D9</defName>
@@ -103,7 +103,7 @@
 				</li>
 				<!-- Nose -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Ear_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Ear_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Nose_D9</defName>
@@ -135,7 +135,7 @@
 				</li>
 				<!-- Jaw -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Nose_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Nose_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Jaw_D9</defName>
@@ -167,7 +167,7 @@
 				</li>
 				<!-- Arm -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Jaw_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Jaw_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Arm_D9</defName>
@@ -199,7 +199,7 @@
 				</li>
 				<!-- Hand -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Arm_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Arm_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Hand_D9</defName>
@@ -231,7 +231,7 @@
 				</li>
 				<!-- Leg -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Hand_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Hand_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Leg_D9</defName>
@@ -263,7 +263,7 @@
 				</li>
 				<!-- Foot -->
 				<li Class="PatchOperationInsert">
-					<xpath>*/RecipeDef[defName="Make_Leg_D9"]</xpath>
+					<xpath>Defs/RecipeDef[defName="Make_Leg_D9"]</xpath>
 					<value>
 						<RecipeDef ParentName="D9PrintOrgansBase">
 							<defName>Make_Foot_D9</defName>
@@ -295,14 +295,14 @@
 				</li>
 				<!-- change PrintOrgans desc -->
 				<li Class="PatchOperationReplace">
-					<xpath>*/ResearchProjectDef[defName="D9PrintOrgans"]/description</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="D9PrintOrgans"]/description</xpath>
 					<value><description>Learn the secrets of manipulating animal tissue, allowing the printing of limbs and organs.</description></value>
 				</li>
 				<!-- Harvest Everybees compat -->
 				<li Class="PatchOperationFindMod">
 					<mods><li>Harvest Everybees!</li></mods>
 					<match Class="PatchOperationInsert">
-						<xpath>*/RecipeDef[defName="Make_Foot_D9"]</xpath>
+						<xpath>Defs/RecipeDef[defName="Make_Foot_D9"]</xpath>
 						<value>
 							<RecipeDef ParentName="D9PrintOrgansBase">
 								<defName>Make_Repro_D9</defName>

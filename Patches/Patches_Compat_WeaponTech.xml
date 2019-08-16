@@ -3,7 +3,7 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>Weapon Tech</li></mods>
 		<match Class="PatchOperationAdd">
-			<xpath>*/ThingDef[defName = "Gun_GaussPistol" or defName="Gun_GaussMachineGun" or defName="Gun_GaussSniper"]/costList</xpath>
+			<xpath>Defs/ThingDef[defName = "Gun_GaussPistol" or defName="Gun_GaussMachineGun" or defName="Gun_GaussSniper"]/costList</xpath>
 			<value>
 				<D9VanometricCell>1</D9VanometricCell>
 			</value>
