@@ -26,8 +26,17 @@ namespace D9CTM
                 while (count > 0)
                 {
                     Thing nextThing = ThingMaker.MakeThing(thing.thingDef);
-                    if (count > thing.thingDef.stackLimit) nextThing.stackCount = thing.thingDef.stackLimit;
-                    else nextThing.stackCount = count;
+                    int limit = thing.thingDef.stackLimit;
+                    if (count > limit)
+                    {
+                        nextThing.stackCount = limit;
+                        count -= limit;
+                    }
+                    else
+                    {
+                        nextThing.stackCount = count;
+                        count = 0;
+                    }
                     outThings.Add(nextThing);
                 }
             }
@@ -38,8 +47,17 @@ namespace D9CTM
                 while(count > 0)
                 {
                     Thing nextThing = ThingMaker.MakeThing(td);
-                    if (count > td.stackLimit) nextThing.stackCount = td.stackLimit;
-                    else nextThing.stackCount = count;
+                    int limit = td.stackLimit;
+                    if (count > limit)
+                    {
+                        nextThing.stackCount = limit;
+                        count -= limit;
+                    }
+                    else
+                    {
+                        nextThing.stackCount = count;
+                        count = 0;
+                    }
                     outThings.Add(nextThing);
                 }
             }

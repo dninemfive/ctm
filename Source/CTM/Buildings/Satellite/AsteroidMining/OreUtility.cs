@@ -27,11 +27,11 @@ namespace D9CTM
 
         private static void GetOres()
         {
-            ores.AddRange(from x in DefDatabase<ThingDef>.AllDefsListForReading where (x.deepCommonality > 0f || HasMineable(x)) && x != ThingDefOf.Chemfuel select x);
+            ores.AddRange(from x in DefDatabase<ThingDef>.AllDefsListForReading where (x.deepCommonality > 0f || HasMineable(x)) && x != ThingDefOf.Chemfuel && x != ThingDefOf.ComponentIndustrial select x);
             foreach (ThingDef td in ores)
             {
                 float weight = td.deepCommonality; //TODO: see if deepCommonality is approximately proportional to mineableScatterCommonality and weight accordingly, incorporate lump sizes for both
-                if (mineable.ContainsKey(td)) weight += td.building.mineableScatterCommonality;
+                if (mineable.ContainsKey(td)) weight += mineable.TryGetValue(td).building.mineableScatterCommonality;
                 weightedMineables.Add(td, Mathf.Sqrt(weight)); //sqrt is to emphasize commonality of rare resources
             }
         }

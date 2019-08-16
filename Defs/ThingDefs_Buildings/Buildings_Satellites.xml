@@ -165,7 +165,7 @@
 			<Incidents>
 				<li>
 					<def>D9IncidentAsteroidMinerReturnsCore</def>
-					<weight>0.55</weight>
+					<weight>0.50</weight>
 					<minDelayDays>15</minDelayDays>
 					<maxDelayDays>20</maxDelayDays>
 				</li>
