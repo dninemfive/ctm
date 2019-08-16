@@ -108,8 +108,8 @@
 				<li>
 					<def>D9IncidentAsteroidMinerReturnsFrag</def>
 					<weight>1.0</weight>
-					<minDelayDays>0</minDelayDays> <!-- for debug. Should be 5-6 -->
-					<maxDelayDays>1</maxDelayDays>
+					<minDelayDays>5</minDelayDays>
+					<maxDelayDays>6</maxDelayDays>
 				</li>				
 			</Incidents>
 		  </li>
