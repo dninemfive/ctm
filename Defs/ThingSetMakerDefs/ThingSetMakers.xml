@@ -15,7 +15,7 @@
 	<ThingSetMakerDef>
 		<defName>D9AsteroidMiner_Shaq</defName>
 		<root Class="D9CTM.ThingSetMaker_AsteroidMining">
-			<amount>2000</amount>
+			<amount>1200</amount> <!-- = ceil (1/.85) -->
 			<guaranteedItems>
 				<Steel>200</Steel>
 			    <Uranium>80</Uranium>

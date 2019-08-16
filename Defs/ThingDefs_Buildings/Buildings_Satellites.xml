@@ -106,11 +106,11 @@
 			<fuelToLaunch>1000.0</fuelToLaunch>
 			<Incidents>
 				<li>
-					<def>ResourcePodCrash</def>
+					<def>D9IncidentAsteroidMinerReturnsFrag</def>
 					<weight>1.0</weight>
-					<minDelayDays>5</minDelayDays>
-					<maxDelayDays>6</maxDelayDays>
-				</li>
+					<minDelayDays>0</minDelayDays> <!-- for debug. Should be 5-6 -->
+					<maxDelayDays>1</maxDelayDays>
+				</li>				
 			</Incidents>
 		  </li>
 		</comps>
@@ -133,10 +133,14 @@
 			<fuelToLaunch>1000.0</fuelToLaunch>
 			<Incidents>
 				<li>
-					<def>ResourcePodCrash</def>
-					<weight>1.0</weight>
-					<minDelayDays>5</minDelayDays>
-					<maxDelayDays>6</maxDelayDays>
+					<def>D9IncidentAsteroidMinerReturnsShac</def>
+					<weight>0.85</weight>
+					<minDelayDays>7</minDelayDays>
+					<maxDelayDays>11</maxDelayDays>
+				</li>
+				<li>
+					<def/> <!-- nothing happens -->
+					<weight>0.15</weight>
 				</li>
 			</Incidents>
 		  </li>
@@ -160,10 +164,22 @@
 			<fuelToLaunch>1000.0</fuelToLaunch>
 			<Incidents>
 				<li>
-					<def>ResourcePodCrash</def>
-					<weight>1.0</weight>
-					<minDelayDays>5</minDelayDays>
-					<maxDelayDays>6</maxDelayDays>
+					<def>D9IncidentAsteroidMinerReturnsCore</def>
+					<weight>0.55</weight>
+					<minDelayDays>15</minDelayDays>
+					<maxDelayDays>20</maxDelayDays>
+				</li>
+				<!--li>
+					TODO: Custom event. Big mechanoid raid lands by drop pods outside your base, led by a centipede with a mortar-like weapon. This drops an AI Persona Core when killed.
+					<def>RaidEnemy</def>
+					<faction>Mechanoid</faction>
+					<weight>0.35</weight>
+					<minDelayDays>10</minDelayDays>
+					<maxDelayDays>15</maxDelayDays>
+				</li-->
+				<li>
+					<def/> <!-- nothing happens -->
+					<weight>0.1</weight>
 				</li>
 			</Incidents>
 		  </li>

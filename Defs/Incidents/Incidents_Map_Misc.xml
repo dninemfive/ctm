@@ -1,14 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!--
 	<IncidentDef>
-		<defName>ResourcePodCrash</defName>
-		<label>resource pod crash</label>
+		<defName>D9IncidentAsteroidMinerReturnsFrag</defName>
+		<label>asteroid miner returns</label>
 		<category>Misc</category>
-    <targetTags>
-      <li>Map_PlayerHome</li>
-    </targetTags>
-		<workerClass>IncidentWorker_ResourcePodCrash</workerClass>
-		<baseChance>2.6</baseChance>
-	</IncidentDef>-->
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>D9CTM.IncidentWorker_AsteroidMinerReturnsFrag</workerClass>
+		<baseChance>-1</baseChance>
+	</IncidentDef>
+	<IncidentDef>
+		<defName>D9IncidentAsteroidMinerReturnsShac</defName>
+		<label>asteroid miner returns</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>D9CTM.IncidentWorker_AsteroidMinerReturnsShac</workerClass>
+		<baseChance>-1</baseChance>
+	</IncidentDef>
+	<IncidentDef>
+		<defName>D9IncidentAsteroidMinerReturnsCore</defName>
+		<label>asteroid miner returns</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>D9CTM.IncidentWorker_AsteroidMinerReturnsCore</workerClass>
+		<baseChance>-1</baseChance>
+	</IncidentDef>
 </Defs>

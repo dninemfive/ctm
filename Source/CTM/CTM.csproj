@@ -58,6 +58,7 @@
     <Compile Include="Buildings\Pods\Sim\CompSimpod.cs" />
     <Compile Include="Buildings\Pods\Sim\JobDriver_EnterSimpod.cs" />
     <Compile Include="Buildings\Satellite\AsteroidMining\IncidentWorker_AsteroidMinerReturns.cs" />
+    <Compile Include="Buildings\Satellite\AsteroidMining\OreUtility.cs" />
     <Compile Include="Buildings\Satellite\AsteroidMining\ThingSetMaker_AsteroidMining.cs" />
     <Compile Include="Buildings\Satellite\OPR\CompOPRBeam.cs" />
     <Compile Include="Buildings\Satellite\OPR\CompOrbitalPowerPlant.cs" />

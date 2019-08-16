@@ -93,10 +93,13 @@ namespace D9CTM
                 if (incidents != null)
                 {
                     IncidentInfo info = incidents.RandomElementByWeight(x => x.weight);
-                    IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, map);
-                    int day = GenDate.TicksPerDay;
-                    IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
-                    Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
+                    if (info.def != null)
+                    {
+                        IncidentParms parms = StorytellerUtility.DefaultParmsNow(info.def.category, map);
+                        int day = GenDate.TicksPerDay;
+                        IntRange delay = new IntRange((int)(day * info.minDelayDays), (int)(day * info.maxDelayDays));
+                        Find.Storyteller.incidentQueue.Add(new QueuedIncident(new FiringIncident(info.def, null, parms), Find.TickManager.TicksGame + delay.RandomInRange, 0));
+                    }
                 }
             }
             finally
