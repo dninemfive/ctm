@@ -31,4 +31,9 @@
 	<!-- Archotech -->
 	<D9RequiresArchotech>Can only be placed with an active archotech.</D9RequiresArchotech>
 	<D9OnlyOne>Only one {0} can be placed at a time.</D9OnlyOne>
+	<!-- Asteroid Miners -->
+	<D9AsteroidMinerLabel>Asteroid Miner Pod Returns</D9AsteroidMinerLabel>
+	<D9AsteroidMinerDescFrag>Your asteroid miner pod has successfully returned. The resources are landing nearby, and the AI persona fragment is intact.</D9AsteroidMinerDescFrag>
+	<D9AsteroidMinerDescShaq>Your asteroid miner pod has successfully returned. The resources are landing nearby, and the shackled AI persona is intact.</D9AsteroidMinerDescShaq>
+	<D9AsteroidMinerDescCore>Your asteroid miner pod has successfully returned. The resources are landing nearby, and the AI persona core is intact.</D9AsteroidMinerDescCore>
 </LanguageData>
