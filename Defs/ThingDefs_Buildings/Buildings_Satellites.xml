@@ -61,7 +61,7 @@
 	<!-- satellite base -->
 	<ThingDef ParentName="BuildingBase" Name="D9SatelliteBase" Abstract="True">
 		<graphicData>
-		  <texPath>Things/Special/DropPod</texPath>
+		  <texPath>Things/Building/Spacecraft/Asteroid</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -193,6 +193,11 @@
 		<defName>D9SatelliteBombardment</defName>
 		<label>orbital bombardment satellite</label>
 		<description>A launchable satellite containing a manually-targeted "rods from god" bombardment system. Only active for one use before the firing exhausts the satellite's ammo and pushes it out of its orbit.</description>
+		<graphicData>
+		  <texPath>Things/Building/Spacecraft/Satellite_Bombardment</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
 		<costList>
 		  <Steel>300</Steel>
 		  <ComponentIndustrial>5</ComponentIndustrial>
@@ -215,6 +220,11 @@
 		<defName>D9SatellitePower</defName>
 		<label>orbital power satellite</label>
 		<description>A launchable satellite which forms a solar collection system in orbit, producing consistent power which can be collected on the ground. The system may be targeted elsewhere, but this would burn out the satellite's power exchangers and render it unusable.</description>
+		<graphicData>
+		  <texPath>Things/Building/Spacecraft/Satellite_Power</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
 		<costList>
 		  <Steel>400</Steel>
 		  <ComponentIndustrial>9</ComponentIndustrial>
