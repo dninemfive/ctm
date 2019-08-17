@@ -2,16 +2,28 @@
 <Patch>
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>Expanded Prosthetics and Organ Engineering</li></mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
-			<value>
-				<prerequisites>
-					<li>AdvancedBionics</li>
-					<li>D9Bioaugmentation</li>
-					<li>SyntheticOrgans</li>
-					<li>BrainSurgery</li>
-				</prerequisites>
-			</value>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- change bases because EPOE is poorly written -->
+				<li Class="PatchOperationAttributeSet">
+					<xpath>Defs/ThingDef[defName="D9BrainChip"]</xpath>
+					<attribute>ParentName</attribute>
+					<value>Synthetic</value>
+				</li>
+				<!-- make tech trees compatible -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName = "D9ArchotechLimbs"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>AdvancedBionics</li>
+							<li>D9Bioaugmentation</li>
+							<li>SyntheticOrgans</li>
+							<li>BrainSurgery</li>
+						</prerequisites>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 </Patch>

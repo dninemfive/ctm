@@ -9,9 +9,9 @@
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.80</drawSize>
 		</graphicData>
-		<thingSetMakerTags>
+		<!--thingSetMakerTags>
 		  <li>RewardSpecial</li>
-		</thingSetMakerTags>
+		</thingSetMakerTags-->
 		<statBases>
 		  <MarketValue>1100</MarketValue>
 		  <Mass>0.2</Mass>
