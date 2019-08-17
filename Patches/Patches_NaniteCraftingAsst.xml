@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
+	<!--Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName = "CraftingSpot" or defName = "ButcherSpot" or defName = "TableSculpting" or defName = "TableButcher" or defName = "HandTailoringBench" or defName = "ElectricTailoringBench" or defName = "FueledSmithy" or defName = "ElectricSmithy" or defName = "TableMachining" or defName = "TableStonecutter" or defName = "DrugLab" or defName = "FabricationBench"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+		<value>
+			<li>D9CTMToolCabinet</li>
+		</value>
+	</Operation-->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities/li[text()="ToolCabinet"]</xpath>
 		<value>
 			<li>D9CTMToolCabinet</li>
 		</value>
