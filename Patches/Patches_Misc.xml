@@ -146,4 +146,11 @@
 			<WorkToMake>38000</WorkToMake>
 		</value>
 	</Operation>
+	<!-- Add the vanilla Pod Launcher to the PodLauncher DropDownGroup -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="PodLauncher"]</xpath>
+		<value>
+			<designatorDropdown>D9_PodLauncher</designatorDropdown>
+		</value>
+	</Operation>
 </Patch>

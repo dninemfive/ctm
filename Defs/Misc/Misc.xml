@@ -13,6 +13,9 @@
 	<DesignatorDropdownGroupDef>
 		<defName>D9_NaniteProjector</defName>
 	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>D9_PodLauncher</defName>
+	</DesignatorDropdownGroupDef>
 	<!-- thing categories -->
 	<ThingCategoryDef>
       <defName>D9_AICat</defName>

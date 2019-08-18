@@ -30,6 +30,7 @@
 		  <Steel>50</Steel>
 		  <ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
+		<designatorDropdown>D9_PodLauncher</designatorDropdown>
 		<comps>
 		  <li Class="CompProperties_Refuelable">
 			<fuelCapacity>1500.0</fuelCapacity>
