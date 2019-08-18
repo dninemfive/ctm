@@ -3,7 +3,7 @@
   <ThingDef ParentName="BuildingBase" Name="SimpodBase" Abstract="True">
     <thingClass>D9CTM.Building_Pod</thingClass>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath> <!-- TODO: make custom texture -->
+      <texPath>Things/Building/Simpod/Simpod</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,2)</drawSize>
       <shadowData>
@@ -141,6 +141,9 @@
 	  <JoyGainFactor>2.5</JoyGainFactor>
 	  <Comfort>1</Comfort>
     </statBases>
+	<graphicData>
+      <texPath>Things/Building/Simpod/SimpodUniversal</texPath>
+    </graphicData>
 	<building>
       <joyKind>Simpod_Universal</joyKind>
     </building>
