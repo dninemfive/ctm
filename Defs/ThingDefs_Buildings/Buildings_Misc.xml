@@ -413,9 +413,9 @@
     <label>archotech</label>
     <description>A framework containing an AI core provided with all the resources it needs to achieve superintelligence. Its presence allows wondrous things to be constructed in your colony, but will it let you just shut it down?</description>
     <graphicData>
-      <texPath>Things/Building/ResearchAssistant</texPath>
+      <texPath>Things/Building/Archotech</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>2.46875</drawSize>
+      <drawSize>(4,4)</drawSize>
     </graphicData>
     <uiIconScale>0.85</uiIconScale>
     <researchPrerequisites><li>D9Archotech</li></researchPrerequisites>
