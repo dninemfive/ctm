@@ -5,7 +5,7 @@
 		<label>orbital pod launcher</label>
 		<description>A fueling port for launching one transport pod. Pod launchers can launch as a group - but the launchers must be placed adjacent to each other.\n\nThis one has a vastly increased fuel capacity and can therefore launch spacecraft into orbit.</description>
 		<graphicData>
-		  <texPath>Things/Building/Misc/PodLauncher</texPath>
+		  <texPath>Things/Building/OrbitalPodLauncher/OrbitalPodLauncher</texPath>
 		  <graphicClass>Graphic_Multi</graphicClass>
 		  <drawSize>(2,3)</drawSize>
 		</graphicData>
