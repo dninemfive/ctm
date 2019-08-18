@@ -269,7 +269,7 @@
     <label>nanite repair field projector</label>
     <description>A power-hungry device which automatically repairs nearby nonliving objects, even through (and including) walls.</description>
     <graphicData>
-      <texPath>Things/Building/Special/PsychicEmanator</texPath>
+      <texPath>Things/Building/NaniteProjector</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2, 2)</drawSize>
       <shadowData>
@@ -341,7 +341,7 @@
     <label>nanite healing field projector</label>
     <description>A power-hungry device which automatically heals any wounds suffered by nearby creatures.</description>
     <graphicData>
-      <texPath>Things/Building/Special/PsychicEmanator</texPath>
+      <texPath>Things/Building/NaniteProjectorHealing</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2, 2)</drawSize>
       <shadowData>
