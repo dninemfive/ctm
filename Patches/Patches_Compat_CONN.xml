@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Cybernetic Organism and Neural Network</li></mods>
+		<match Class="PatchOperationSequence">
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="Trunken_hediff_BerserkerChip" or defName="Trunken_hediff_Mindtwist" or defName="Trunken_hediff_MuseChip" or defName="Trunken_hediff_NeuroEnhancer" or defName="Trunken_hediff_CombatAI"]</xpath>
+				<value><li Class="D9CTM.ModExtension_BrainChip"/></value>
+			</li>
+		</match>
+	</Operation>	
+</Patch>
