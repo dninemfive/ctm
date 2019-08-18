@@ -23,6 +23,11 @@
 						</prerequisites>
 					</value>
 				</li>
+				<!-- add Brain Chip compat -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="BrainStimulator"]</xpath>
+					<value><li Class="D9CTM.ModExtension_BrainChip"/></value>
+				</li>
 			</operations>
 		</match>
 	</Operation>
