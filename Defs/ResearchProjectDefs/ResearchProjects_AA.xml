@@ -341,8 +341,8 @@
 			<li>D9AIMastery</li>
 		</prerequisites>
 		<requiredResearchFacilities>
-		  <li>D9ResearchAssistant</li>
-		</requiredResearchFacilities>
+		  <li>D9Archotech</li>
+		</requiredResearchFacilities>		
 		<techLevel>Archotech</techLevel>
 		<researchViewX>9</researchViewX>
 		<researchViewY>4</researchViewY>
@@ -357,7 +357,7 @@
 			<li>ShipReactor</li>
 		</prerequisites>
 		<requiredResearchFacilities>
-		  <li>D9ResearchAssistant</li>
+		  <li>D9Archotech</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>10</researchViewX>
@@ -591,7 +591,7 @@
 		  <li>D9AIMastery</li>
 		</prerequisites>
 		<requiredResearchFacilities>
-		  <li>D9ResearchAssistant</li>
+		  <li>D9Archotech</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>10</researchViewX>
@@ -634,7 +634,7 @@
 		  <li>D9Bioaugmentation</li>
 		</prerequisites>
 		<requiredResearchFacilities>
-		  <li>D9ResearchAssistant</li>
+		  <li>D9Archotech</li>
 		</requiredResearchFacilities>
 		<techLevel>Archotech</techLevel>
 		<researchViewX>9</researchViewX>
