@@ -565,6 +565,9 @@
 		  <li>D9HealingMech</li>
 		  <li>D9CraftingAsst</li>
 		</prerequisites>
+		<requiredResearchFacilities>
+		  <li>D9ResearchAssistant</li>
+		</requiredResearchFacilities>
 		<techLevel>Ultra</techLevel>
 		<researchViewX>8</researchViewX>
 		<researchViewY>2</researchViewY>

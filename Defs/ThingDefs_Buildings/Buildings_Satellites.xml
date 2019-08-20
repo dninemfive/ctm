@@ -104,7 +104,7 @@
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
-			<fuelToLaunch>1000.0</fuelToLaunch>
+			<fuelToLaunch>1500.0</fuelToLaunch>
 			<Incidents>
 				<li>
 					<def>D9IncidentAsteroidMinerReturnsFrag</def>
@@ -131,7 +131,7 @@
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
-			<fuelToLaunch>1000.0</fuelToLaunch>
+			<fuelToLaunch>1500.0</fuelToLaunch>
 			<Incidents>
 				<li>
 					<def>D9IncidentAsteroidMinerReturnsShac</def>
@@ -162,7 +162,7 @@
 		</costList>
 		<comps>
 		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
-			<fuelToLaunch>1000.0</fuelToLaunch>
+			<fuelToLaunch>1500.0</fuelToLaunch>
 			<Incidents>
 				<li>
 					<def>D9IncidentAsteroidMinerReturnsCore</def>
