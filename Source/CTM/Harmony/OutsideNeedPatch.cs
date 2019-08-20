@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,14 @@ using System.Reflection;
 namespace D9CTM
 {
     [StaticConstructorOnStartup]
-    static class OutsideNeedPatch
+    static class HarmonyPatches
     {
-        static OutsideNeedPatch()
+        private const float Delta_InSimpod = 6.5f; //average of Delta_IndoorsNoRoof and Delta_OutdoorsNoRoof
+        static HarmonyPatches()
         {
             var harmony = HarmonyInstance.Create("com.dninemfive.combinedtechmod");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Log.Message("Loaded CTM outdoors need patch");
+            Log.Message("[Accessible Archotech] Harmony loaded.");
         }
 
         [HarmonyPatch(typeof(Need_Outdoors), "NeedInterval", new Type[] { })]
@@ -24,22 +25,26 @@ namespace D9CTM
         {
             public static void OutsidePostfix(Need_Outdoors __instance, ref Pawn ___pawn, ref bool ___Disabled, ref bool ___IsFrozen, ref float ___lastEffectiveDelta)
             {
-                IThingHolder holder = ___pawn.ParentHolder;
-                if(holder != null && !___Disabled && !___IsFrozen)
+                Log.Message("Need_Outdoors.NeedInterval()");
+                if (!___Disabled && !___IsFrozen)
                 {
-                    Thing holderThing = ThingOwnerUtility.SpawnedParentOrMe(holder);
-                    if(holderThing != null && holderThing is Simpod)
+                    IThingHolder holder = ___pawn.ParentHolder;
+                    if (holder != null)
                     {
-                        SimpodModExtension sme = holderThing.def.GetModExtension<SimpodModExtension>();
-                        if(sme != null && sme.SatisfiesOutdoors)
+                        Thing holderThing = ThingOwnerUtility.SpawnedParentOrMe(holder);
+                        if (holderThing != null && holderThing is Building_Pod)
                         {
-                            float cl = __instance.CurLevel;
-                            __instance.CurLevel = 3f;
-                            ___lastEffectiveDelta = __instance.CurLevel - cl;
+                            CompSimpod cs = holderThing.TryGetComp<CompSimpod>();
+                            if (cs != null && cs.Props.SatisfiesOutdoors)
+                            {
+                                float cl = __instance.CurLevel;
+                                __instance.CurLevel = Delta_InSimpod;
+                                ___lastEffectiveDelta = __instance.CurLevel - cl;
+                            }
                         }
                     }
                 }
             }
         }
     }
-}*/
+}
