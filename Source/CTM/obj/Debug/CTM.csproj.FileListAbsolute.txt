@@ -15,3 +15,4 @@ C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\Accessible Archotech\Source\CTM
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\Accessible Archotech\Source\CTM\obj\Debug\CTM.csproj.CopyComplete
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\Accessible Archotech\Source\CTM\obj\Debug\CTM.dll
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\Accessible Archotech\Source\CTM\obj\Debug\CTM.pdb
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\Accessible Archotech\Source\CTM\bin\Debug\0Harmony.dll

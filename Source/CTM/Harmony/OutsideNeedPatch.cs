@@ -26,7 +26,6 @@ namespace D9CTM
         {
             public static void OutsidePostfix(Need_Outdoors __instance, ref Pawn ___pawn, ref bool ___Disabled, ref bool ___IsFrozen, ref float ___lastEffectiveDelta)
             {
-                Log.Message("Need_Outdoors.NeedInterval()");
                 if (!___Disabled && !___IsFrozen)
                 {
                     IThingHolder holder = ___pawn.ParentHolder;
