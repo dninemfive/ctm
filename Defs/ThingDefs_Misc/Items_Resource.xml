@@ -137,7 +137,7 @@
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
-    <stackLimit>4</stackLimit>
+    <stackLimit>8</stackLimit>
     <useHitPoints>true</useHitPoints>
     <statBases>
       <MarketValue>1400</MarketValue>
