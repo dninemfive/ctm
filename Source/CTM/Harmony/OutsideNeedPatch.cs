@@ -19,8 +19,9 @@ namespace D9CTM
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             Log.Message("[Accessible Archotech] Harmony loaded.");
         }
-
-        [HarmonyPatch(typeof(Need_Outdoors), "NeedInterval", new Type[] { })]
+        
+        [HarmonyPatch(typeof(Need_Outdoors))]
+        [HarmonyPatch("NeedInterval")]
         class OutsidePatch
         {
             public static void OutsidePostfix(Need_Outdoors __instance, ref Pawn ___pawn, ref bool ___Disabled, ref bool ___IsFrozen, ref float ___lastEffectiveDelta)
