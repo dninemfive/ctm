@@ -173,7 +173,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <D9VanometricCell>1</D9VanometricCell>
+      <D9VanometricCell>4</D9VanometricCell>
     </products>
     <researchPrerequisite>D9Vanometrics</researchPrerequisite>
     <skillRequirements>
