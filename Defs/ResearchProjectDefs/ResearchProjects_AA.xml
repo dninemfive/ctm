@@ -77,9 +77,9 @@
 		  <li>D9Nanofab</li>
 		</prerequisites>
 		<requiredResearchFacilities>
-		  <li>D9ResearchAssistant</li>
+		  <li>D9Archotech</li>
 		</requiredResearchFacilities>
-		<techLevel>Ultra</techLevel>
+		<techLevel>Archotech</techLevel>
 		<researchViewX>3</researchViewX>
 		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
@@ -347,7 +347,7 @@
 		<researchViewX>9</researchViewX>
 		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
-	<ResearchProjectDef ParentName="D9AATechBase">
+	<!--ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9VanometricPower</defName>
 		<label>vanometric heat exchange</label>
 		<description>The AI assistant develops a device which converts ambient energy to and from usable power.</description>
@@ -362,7 +362,7 @@
 		<techLevel>Archotech</techLevel>
 		<researchViewX>10</researchViewX>
 		<researchViewY>4</researchViewY>
-	</ResearchProjectDef>
+	</ResearchProjectDef-->
 	<ResearchProjectDef ParentName="D9AATechBase">
 		<defName>D9EnergySword</defName>
 		<label>energy sword</label>
