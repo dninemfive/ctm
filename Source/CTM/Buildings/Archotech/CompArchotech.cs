@@ -51,7 +51,7 @@ namespace D9CTM
 
         #endregion hostility       
         #region ticking, save/load
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public override void PostSpawnSetup(bool respawningAfterLoad) 
         {
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad)
