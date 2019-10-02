@@ -11,15 +11,7 @@ namespace D9CTM
     {
         public static List<Map> maps => Find.Maps;
         public const int ticksPerThoughtStageUpgrade = GenDate.TicksPerDay * 5, nullThoughtStageIndex = -9999;
-        
-        public static int ThoughtStage
-        {
-            get
-            {
-                if (Archotech == null) return nullThoughtStageIndex;
-                return Archotech.ageTicks / ticksPerThoughtStageUpgrade;
-            }            
-        }
+
         public List<ResearchProjectDef> AllGrantableResearch //TODO: check that prerequisites have been researched
         {
             get

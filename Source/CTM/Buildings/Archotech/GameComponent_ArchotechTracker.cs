@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using RimWorld;
 using RimWorld.Planet;
 
 namespace D9CTM
@@ -25,5 +26,10 @@ namespace D9CTM
                 }
             }
         }
+        public void EndGame()
+        {
+            GenGameEnd.EndGameDialogMessage("GameOverArchotechTakeover".Translate(), false, new UnityEngine.Color(0,0,0));
+        }
+
     }
 }
