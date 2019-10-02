@@ -9,5 +9,6 @@ namespace D9CTM
 {
     class ModExtension_BrainChip : DefModExtension
     {
+        float bonusModifier;
     }
 }

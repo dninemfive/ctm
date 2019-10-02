@@ -11,18 +11,7 @@ namespace D9CTM
     {
         public static List<Map> maps => Find.Maps;
         public const int ticksPerThoughtStageUpgrade = GenDate.TicksPerDay * 5, nullThoughtStageIndex = -9999;
-        public static CompArchotech Archotech
-        {
-            get
-            {
-                foreach (Map map in maps)
-                {
-                    IEnumerable<Building> archotechThings = map.listerBuildings.allBuildingsColonist.Where(x => x.def.HasComp(typeof(CompArchotech)));
-                    if (archotechThings.Count() > 0) return archotechThings.ElementAt(0).TryGetComp<CompArchotech>();
-                }
-                return null;
-            }
-        }
+        
         public static int ThoughtStage
         {
             get
@@ -31,8 +20,15 @@ namespace D9CTM
                 return Archotech.ageTicks / ticksPerThoughtStageUpgrade;
             }            
         }
-
-    public static bool ArchotechIsActive()
+        public List<ResearchProjectDef> AllGrantableResearch //TODO: check that prerequisites have been researched
+        {
+            get
+            {
+                IEnumerable<ResearchProjectDef> defs = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.techLevel == TechLevel.Archotech && progress.TryGetValue(x) >= x.baseCost && x.PrerequisitesCompleted);
+                return defs.ToList();
+            }
+        }
+        public static bool ArchotechIsActive()
         {
             //foreach existing map, if an archotech exists, is colonist-owned, and is powered, return true; else return false
             foreach (Map map in maps) if (map.listerBuildings.ColonistsHaveBuilding(delegate (Thing t)
