@@ -108,7 +108,7 @@
   <ThingDef ParentName="D9LootBeltBase">
     <defName>Apparel_SniperBelt</defName>
 	<label>sniper's shield belt</label>
-	<thingClass>D9CTM.RangedShieldBelt</thingClass>
+	<thingClass>D9Framework.RangedShieldBelt</thingClass>
     <description>A customized shield belt which allows ranged attacks and recharges quickly but has a low max charge.\n\nExoskeleton arms stabilize the wearer's aim but restrict their movement, increasing aim time.</description>
 	<equippedStatOffsets>
 	  <MoveSpeed>0.2</MoveSpeed>

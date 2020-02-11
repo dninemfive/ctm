@@ -153,7 +153,7 @@
     <defName>Apparel_RangedShieldBelt</defName>
 	<label>ranged shield belt</label>
     <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It shuts down instantly if hit by EMP.\n\nThis advanced version allows the wearer to fire outward, but the increased energy expenditure makes it weaker and slower to recharge.</description>
-	<thingClass>D9CTM.RangedShieldBelt</thingClass>
+	<thingClass>D9Framework.RangedShieldBelt</thingClass>
 	<graphicData>
     <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
     <graphicClass>Graphic_Single</graphicClass>
@@ -456,7 +456,7 @@
     <defName>Apparel_GlitterBelt</defName>
 		<label>archotech belt</label>
     <description>A highly advanced apparatus combining a ranged shield, nanite repair, and a personal exoskeleton, enhancing the wearer's abilities in many aspects.\n\nUnfortunately, it is prohibitively expensive for all but the richest glitterworlds.</description>
-		<thingClass>D9CTM.RangedShieldBelt</thingClass>
+		<thingClass>D9Framework.RangedShieldBelt</thingClass>
 		<graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
       <graphicClass>Graphic_Single</graphicClass>

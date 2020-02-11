@@ -30,6 +30,5 @@ namespace D9CTM
         {
             GenGameEnd.EndGameDialogMessage("GameOverArchotechTakeover".Translate(), false, new UnityEngine.Color(0,0,0));
         }
-
     }
 }

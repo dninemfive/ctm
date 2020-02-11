@@ -50,8 +50,8 @@
   <ItemGroup>
     <Compile Include="Buildings\Archotech\ArchotechUtility.cs" />
     <Compile Include="Buildings\Archotech\CompArchotech.cs" />
+    <Compile Include="Buildings\Archotech\GameComponent_ArchotechTracker.cs" />
     <Compile Include="Buildings\Archotech\ModExtension_BrainChip.cs" />
-    <Compile Include="Buildings\Archotech\PlaceWorker_AllowOnlyOneArchotech.cs" />
     <Compile Include="Buildings\Pods\CompPodSettings.cs" />
     <Compile Include="Buildings\Pods\CompProperties_PodSettings.cs" />
     <Compile Include="Buildings\Pods\JobDriver_EnterPod.cs" />
@@ -74,7 +74,6 @@
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="Belts\Repair\CompProperties_RepairBelt.cs" />
     <Compile Include="Belts\Repair\CompRepairBelt.cs" />
-    <Compile Include="Buildings\Facility Require Fuel\CompFacilityRequireFuel.cs" />
     <Compile Include="Belts\Heal\CompHealBelt.cs" />
     <Compile Include="Buildings\Satellite\CompLaunchableSatellite.cs" />
     <Compile Include="Buildings\Field Projectors\Repair\CompNanoRepair.cs" />
@@ -84,8 +83,6 @@
     <Compile Include="Buildings\Satellite\CompProperties_LaunchableSatellite.cs" />
     <Compile Include="Buildings\Field Projectors\Repair\CompProperties_NanoRepair.cs" />
     <Compile Include="DefsOf.cs" />
-    <Compile Include="Belts\Ranged Shield\Gizmo_RangedShieldStatus.cs" />
-    <Compile Include="Harmony\VanaditeCompPatch.cs" />
     <Compile Include="HealingUtility.cs" />
     <Compile Include="Buildings\Pods\Building_Pod.cs" />
     <Compile Include="HediffCompProperties_BrainChip.cs" />
@@ -98,10 +95,8 @@
     <Compile Include="IngredientValueGetter_Mass.cs" />
     <Compile Include="Buildings\Pods\Sim\JoyGiver_EnterPod.cs" />
     <Compile Include="Buildings\Satellite\OPR\JobDriver_TakeOneFuel.cs" />
-    <Compile Include="Buildings\Archotech\PlaceWorker_AllowOnlyOne.cs" />
     <Compile Include="Buildings\Archotech\PlaceWorker_RequireArchotech.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Belts\Ranged Shield\RangedShieldBelt.cs" />
     <Compile Include="Harmony\OutsideNeedPatch.cs" />
     <Compile Include="StatPart_ApparelStatFactor.cs" />
     <Compile Include="StatPart_ZeroIfNotHead.cs" />
