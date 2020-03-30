@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
-    <identifier>D9AccessibleArchotech</identifier>
-    <version>0.0.0</version>
+    <identifier>dninemfive.ctm.glittertechnology</identifier> <!-- Same as packageId, because why not -->
+    <version>1.0.0</version>
     <dependencies/>
     <loadAfter/>
-    <suggests>
-		<li>946390822</li>  <!-- ResearchPal -->
-		<li>1543064443</li> <!-- Deconstruct Return Fix -->
-		<li>724602224</li>  <!-- Misc.Robots -->
-		<li>1496122245</li> <!-- Turret Extensions -->
-		<li>1500981707</li> <!-- Harvest Everything! -->
-		<li>1503118650</li> <!-- RePower -->
-		<li>1767214408</li> <!-- CONN -->		
-		<li>1611200179</li> <!-- MSF -->		
-	</suggests>
+    <suggests/>
     <showCrossPromotions>true</showCrossPromotions>
     <manifestUri>https://raw.githubusercontent.com/dninemfive/ctm/master/About/Manifest.xml</manifestUri>
     <downloadUri>https://github.com/dninemfive/ctm/releases/latest</downloadUri>

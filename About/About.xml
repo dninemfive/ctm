@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Accessible Archotech</name>
+  <name>CTM - Glittertechnology</name>
   <author>dninemfive</author>
-  <supportedVersions><li>1.0</li></supportedVersions>
-  <description>Allows the player to construct a number of highly advanced items.</description>
+  <packageId>dninemfive.ctm.glittertech</packageId>
+  <supportedVersions><li>1.1</li></supportedVersions>
+  <description>Combined Tech Mod, Glittertechnology module. Adds a large amount of roughly spacer-tier content, designed with game balance and interesting mechanics in mind.</description>
+  <loadBefore/> <!-- CTM - Archotechnology -->
+  <loadAfter/> <!-- D9 Framework -->
+  <incompatibleWith/> <!-- Sparkling Worlds - Full Mod, Sparkling Worlds - Core Mod, Glitter Tech -->
 </ModMetaData>
