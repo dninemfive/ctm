@@ -100,7 +100,7 @@
 	    <StuffPower_PsychicSensivity>-0.1</StuffPower_PsychicSensivity>
 	</statBases>
 	<burnableByRecipe>false</burnableByRecipe>
-    <healthAffectsPrice>false</healthAffectsPrice
+    <healthAffectsPrice>false</healthAffectsPrice>
     <stuffProps>
       <categories>
         <li>Fabric</li>
@@ -122,7 +122,11 @@
 	<thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
 	<modExtensions>
 		<li Class="D9Framework.CompsToAddWhenStuff">
-			<tickInterval>2500</tickInterval> <!-- repairs 1 hp per hour -->
+			<comps>
+				<li Class="D9Framework.CompProperties_SelfRepair">
+					<tickInterval>2500</tickInterval> <!-- repairs 1 hp per hour -->
+				</li>
+			</comps>
 		</li>
 	</modExtensions>
   </ThingDef>

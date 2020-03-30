@@ -6,6 +6,9 @@
   <supportedVersions><li>1.1</li></supportedVersions>
   <description>Combined Tech Mod, Glittertechnology module. Adds a large amount of roughly spacer-tier content, designed with game balance and interesting mechanics in mind.</description>
   <loadBefore/> <!-- CTM - Archotechnology -->
+  <loadAfter>
+	<li>dninemfive.d9framework</li> <!-- just aesthetic tbh -->
+  </loadAfter>
   <modDependencies>
 	<li>
 		<displayName>D9 Framework</displayName>
@@ -14,5 +17,10 @@
 		<steamWorkshopUrl>steam://url/CommunityFilePage/2037445541</steamWorkshopUrl>
 	</li>
   </modDependencies>
-  <incompatibleWith/> <!-- Sparkling Worlds - Full Mod, Sparkling Worlds - Core Mod, Glitter Tech -->
+  <incompatibleWith>
+	<li>Albion.SparklingWorlds.Core</li> 	<!-- Sparkling Worlds Core -->
+	<li>Albion.SparklingWorlds.Full</li> 	<!-- Sparkling Worlds Full -->
+	<li>GT.Sam.GlitterTech</li> 			<!-- Glitter Tech -->
+	<li>GT.Sam.GlitterTechNS</li> 			<!-- Glitter Tech No Surgery -->
+  </incompatibleWith>
 </ModMetaData>
