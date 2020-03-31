@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>D9HealingFoam</defName>
+		<label>healing foam injector</label>
+		<description>A single-use injector of nanite-infused foam which immediately stops all bleeding and lets wounds begin healing immediately.</description>
+		<graphicData>
+		  <texPath>Things/Item/HealingFoam</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>10</stackLimit>
+		<tradeability>Sellable</tradeability>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use healing foam injector</useLabel>
+			<useDuration>600</useDuration>
+		  </li>
+		  <li Class="D9CTM.CompProperties_UseEffectTendAllWounds">
+			<filthDef>Filth_HealingFoam</filthDef>
+			<filthAmount>1~3</filthAmount>
+			<tendQuality>1.0</tendQuality>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>
+		<thingSetMakerTags>
+		  <li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<thingClass>ThingWithComps</thingClass>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>90</MaxHitPoints>
+		  <Mass>0.2</Mass>
+		  <DeteriorationRate>2.0</DeteriorationRate>
+		  <Flammability>0.2</Flammability>
+		  <MarketValue>900</MarketValue>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+		<defName>D9AutoImmunizer</defName>
+		<label>auto-immunizer</label>
+		<description>A single-use injector which floods the body with nanites programmed to kill any known disease. Cures all infectious diseases but leaves the person who used it in a deep sleep for many hours or even days.</description>
+		<graphicData>
+		  <texPath>Things/Item/AutoImmunizer</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>10</stackLimit>
+		<tradeability>Sellable</tradeability>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use auto-immunizer</useLabel>
+			<useDuration>600</useDuration>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>D9CTM.CompUseEffect_ImmunizeAll</compClass>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>
+		<thingSetMakerTags>
+		  <li>RewardSpecial</li>
+		</thingSetMakerTags>
+		<thingClass>ThingWithComps</thingClass>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>90</MaxHitPoints>
+		  <Mass>0.2</Mass>
+		  <DeteriorationRate>2.0</DeteriorationRate>
+		  <Flammability>0.2</Flammability>
+		  <MarketValue>900</MarketValue>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+  </ThingDef>
+</Defs>
