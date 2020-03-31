@@ -138,7 +138,6 @@ namespace D9CTM
             return "D9MultiplierForBodyPartGroup".Translate(GetBestMultiplier(req.Thing.def));
         }
 
-        // not actually going to return config errors, just taking the opportunity to make a dict for performance
         public override IEnumerable<string> ConfigErrors()
         {
             multDict = new Dictionary<BodyPartGroupDef, float>();
