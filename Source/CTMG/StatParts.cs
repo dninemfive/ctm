@@ -142,8 +142,8 @@ namespace D9CTM
         {
             multDict = new Dictionary<BodyPartGroupDef, float>();
             foreach (BodyPartGroupMultiplier bpgm in multipliers) multDict.Add(bpgm.bpgd, bpgm.multiplier);
-            foreach (BodyPartGroupDef bpgd in DefDatabase<BodyPartGroupDef>.AllDefsListForReading) if (!multDict.ContainsKey(bpgd)) multDict.Add(bpgd, @default);
             if (multipliers.Count > multDict.Count) yield return "D9SP_BPGM_HashCollision".Translate();
+            foreach (BodyPartGroupDef bpgd in DefDatabase<BodyPartGroupDef>.AllDefsListForReading) if (!multDict.ContainsKey(bpgd)) multDict.Add(bpgd, @default);            
         }
     }
 }
