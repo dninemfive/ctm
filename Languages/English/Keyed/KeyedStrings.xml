@@ -2,4 +2,6 @@
 <LanguageData>
 	<!-- StatParts -->
 	<D9StatPart_BaseValue>Base value: {0}</D9StatPart_BaseValue>
+	<D9MultiplierForBodyPartGroup>Multiplier for body part: {0}</D9MultiplierForBodyPartGroup>
+	<D9SP_BPGM_HashCollision>Duplicate entries for the same body part.</D9SP_BPGM_HashCollision>
 </LanguageData>
