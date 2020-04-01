@@ -4,4 +4,7 @@
 	<D9StatPart_BaseValue>Base value: {0}</D9StatPart_BaseValue>
 	<D9MultiplierForBodyPartGroup>Multiplier for body part: {0}</D9MultiplierForBodyPartGroup>
 	<D9SP_BPGM_HashCollision>Duplicate entries for the same body part.</D9SP_BPGM_HashCollision>
+	<!-- CompUsables -->
+	<D9NoTendableWounds>{0} has no wounds that need tending</D9NoTendableWounds>
+	<D9NoDiseases>{0} has no diseases needing immunization</D9NoDiseases>
 </LanguageData>

@@ -52,6 +52,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompUseEffect_ImmunizeAll.cs" />
+    <Compile Include="CompUseEffect_TendAllWounds.cs" />
+    <Compile Include="HediffComp_TimePerImmunity.cs" />
     <Compile Include="StatParts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace D9CTM
 {
-    class CompProperties_UseEffectTendAllWounds : CompProperties
+    class CompProperties_UseEffectTendAllWounds : CompProperties_UseEffect
     {
 # pragma warning disable CS0649
         public ThingDef filthDef;
