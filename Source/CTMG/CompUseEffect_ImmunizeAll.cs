@@ -25,8 +25,8 @@ namespace D9CTM
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
-            foreach (ImmunityRecord ir in ImmunitiesToSet(usedBy)) ir.immunity = 1f;
             CauseComa(usedBy);
+            foreach (ImmunityRecord ir in ImmunitiesToSet(usedBy)) ir.immunity = 1f;            
         }
 
         public void CauseComa(Pawn p)

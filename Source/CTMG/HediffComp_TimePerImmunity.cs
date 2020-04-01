@@ -28,11 +28,12 @@ namespace D9CTM
 
         public override void CompPostMake()
         {
-            TicksLeft = (int)(GenDate.TicksPerHour * Props.hoursPerImmunityCurve.Evaluate(ImmunityRecoveryTime()));
+            int ticks = (int)(GenDate.TicksPerHour * Props.hoursPerImmunityCurve.Evaluate(ImmunityRecoveryTime()));
+            TicksLeft = ticks;
         }
 
         public float ImmunityRecoveryTime()
-        {
+        {            
             float ret = 0f;
             foreach(Hediff h in base.parent.pawn.health.hediffSet.hediffs.Where(x => Utils.Immunizable(x as HediffWithComps)))
             {
