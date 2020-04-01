@@ -12,8 +12,13 @@ namespace D9CTM
     class HediffCompProperties_TimePerImmunity : HediffCompProperties
     {
 # pragma warning disable CS0649
-        public SimpleCurve curve;
+        public SimpleCurve hoursPerImmunityCurve;
 # pragma warning restore CS0649
+
+        public HediffCompProperties_TimePerImmunity()
+        {
+            base.compClass = typeof(HediffComp_TimePerImmunity);
+        }
     }
     class HediffComp_TimePerImmunity : HediffComp
     {
@@ -23,7 +28,7 @@ namespace D9CTM
 
         public override void CompPostMake()
         {
-            TicksLeft = (int)(GenDate.TicksPerHour * Props.curve.Evaluate(ImmunityRecoveryTime()));
+            TicksLeft = (int)(GenDate.TicksPerHour * Props.hoursPerImmunityCurve.Evaluate(ImmunityRecoveryTime()));
         }
 
         public float ImmunityRecoveryTime()

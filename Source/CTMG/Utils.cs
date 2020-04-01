@@ -9,10 +9,10 @@ namespace D9CTM
 {
     public static class Utils
     {
-        public static bool Immunizable(HediffWithComps h)
+        // Formerly a for-statement, but this is more concise. Kept for readability's sake.
+        public static bool Immunizable(Hediff h)
         {
-            foreach (HediffComp c in h.comps) if (c is HediffComp_Immunizable) return true;
-            return false;
+            return h.TryGetComp<HediffComp_Immunizable>() != null;
         }
     }
 }

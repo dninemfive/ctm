@@ -3,10 +3,27 @@
 	<HediffDef ParentName="DiseaseBase">
 		<defName>D9NanComa</defName>
 		<label>nanite-induced coma</label>
+		<description>A coma induced by the use of medical nanites, giving the body time to heal from extensive injury or disease.</description>
 		<isBad>false</isBad>		
 		<comps>
 		  <li Class="D9CTM.HediffCompProperties_TimePerImmunity">
-			<ticksPer>15000</ticksPer> <!-- 6 hours per immunity -->
+			<hoursPerImmunityCurve>
+			  <!-- Linear at first, then approaches 24 hours as the number of immunities increase.
+				   Prorated based on immunity progress, so a pawn which is 20% immune to their only disease is unconscious for curve(0.8) = 4.8 hours 
+				   Curve formula is f(x) = sum_n=0 (6 * .75^(x-.51)), stumbled upon essentially by accident while looking for an asymptotically increasing function -->
+			  <points>
+				<li>0,       0</li>
+				<li>1,       6</li>
+				<li>2,    10.5</li>
+				<li>3,  13.875</li>
+				<li>4,  16.406</li>
+				<li>5,  18.305</li>
+				<li>6,  19.729</li>
+				<li>10, 22.648</li>
+				<li>20, 23.924</li>
+				<li>100,    24</li>
+			  </points>
+			</hoursPerImmunityCurve>
 		  </li>
 		</comps>
 		<stages>

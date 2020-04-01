@@ -50,11 +50,7 @@ namespace D9CTM
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                if (h.TendableNow())
-                {
-                    HediffWithComps com = (HediffWithComps)h;
-                    if (com == null || (com != null && !Utils.Immunizable(com))) yield return h;
-                }
+                if (h.TendableNow()) if (!Utils.Immunizable(h)) yield return h;
             }
         }        
     }
