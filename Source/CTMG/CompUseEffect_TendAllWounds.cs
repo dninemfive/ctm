@@ -53,18 +53,9 @@ namespace D9CTM
                 if (h.TendableNow())
                 {
                     HediffWithComps com = (HediffWithComps)h;
-                    if (com == null || (com != null && !Immunizable(com))) yield return h;
+                    if (com == null || (com != null && !Utils.Immunizable(com))) yield return h;
                 }
             }
-        }
-
-        private bool Immunizable(HediffWithComps h)
-        {
-            foreach (HediffComp c in h.comps)
-            {
-                if (c is HediffComp_Immunizable) return true;
-            }
-            return false;
-        }
+        }        
     }
 }
