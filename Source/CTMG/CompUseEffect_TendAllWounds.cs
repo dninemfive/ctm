@@ -12,7 +12,7 @@ namespace D9CTM
 # pragma warning disable CS0649
         public ThingDef filthDef;
         public IntRange filthAmount;
-        public float tendQuality;
+        public FloatRange tendQuality;
 # pragma warning restore CS0649
 
         public CompProperties_UseEffectTendAllWounds()
@@ -28,7 +28,7 @@ namespace D9CTM
         {
             base.DoEffect(usedBy);
             IEnumerable<Hediff> toTend = HediffsToTend(usedBy);
-            foreach (Hediff h in toTend) h.Tended(Props.tendQuality); //equivalent to Industrial medicine
+            foreach (Hediff h in toTend) h.Tended(Props.tendQuality.RandomInRange);
             //make foam filth
             if (Props.filthDef != null)
             {

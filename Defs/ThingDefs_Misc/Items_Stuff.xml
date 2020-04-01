@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="ResourceBase">
-    <defName>Insulene</defName>
+    <defName>D9Insulene</defName>
     <label>insulene</label>
     <description>Spacer-tech fabric designed especially for insulation from both heat and cold. Contains many tiny vacuum "bubbles" which block nearly all transmission of heat. This causes it to provide little physical protection.</description>
     <graphicData>
@@ -39,7 +39,7 @@
     </tradeTags>
   </ThingDef>
   <ThingDef ParentName="ResourceBase">
-    <defName>PsychicFoil</defName>
+    <defName>D9PsychicFoil</defName>
     <label>psychic foil</label>
     <description>Densely-interwoven steel and plasteel strands allow this material to diffract and absorb psychic energy. It's also good at reflecting thermal radiation, though it's susceptible to tearing and provides little insulation in the long term.</description>
     <graphicData>
@@ -80,7 +80,7 @@
     </tradeTags>
   </ThingDef>
   <ThingDef ParentName="ResourceBase">
-    <defName>Nanoweave</defName>
+    <defName>D9Nanoweave</defName>
     <label>nanoweave</label>
     <description>Glitter-tech cloth made of nanofibers with interwoven nanite cells which absorb and diffuse incoming energy. The nanites absorb psychic energy and use it to slowly repair any broken strands.</description>
     <graphicData>

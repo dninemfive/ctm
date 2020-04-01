@@ -32,7 +32,7 @@ namespace D9CTM
         public void CauseComa(Pawn p)
         {
             p.health.forceIncap = true;
-            p.health.AddHediff(Props.comaHediff, null, null, null);
+            p.health.AddHediff(Props.comaHediff);
             p.health.forceIncap = false;
         }
 
