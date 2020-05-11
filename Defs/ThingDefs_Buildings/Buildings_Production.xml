@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BenchBase">
+		<defName>D9CTM_TableAIProgramming</defName>
+		<label>programming station</label>
+		<description>A workbench equipped with a computer and a nanochip printer, allowing the user to duplicate and modify advanced technology, including AI personae.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AIBench/TableAIBench</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>50</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>3600</WorkToBuild>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0.8</Flammability>
+			<Cleanliness>0</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<recipes>
+		  <li>Make_AIFragment</li>
+		  <li>Copy_AIFragment</li>
+		  <li>Make_AIPersonaCore</li>
+		  <li>Copy_AIPersonaCore</li>
+		  <li>Wipe_AIPersonaCore</li>
+		  <li>Combine_2AIFragment</li>
+		  <li>Combine_4AIFragment</li>
+		  <li>Make_ShackledAIPersona</li>
+		  <li>Copy_ShackledAIPersona</li>
+		  <li>Wipe_ShackledAIPersona</li>
+		  <li>Wipe_AIPersonaFragment</li>
+		  <li>Split_AIPersonaShackle</li>
+		  <li>Split_ShackledAIPersona</li>
+		  <li>Split_AIPersonaFragment</li>
+		  <li>Combine_ShackledAIPersona</li>
+		</recipes>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>450</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			  <!--li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(73,123,138,0)</glowColor>
+			  </li-->
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+				  <li>D9CTMToolCabinet</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+		  <li>D9AIBasics</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc7</designationHotKey>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	  </ThingDef>
+</Defs>
