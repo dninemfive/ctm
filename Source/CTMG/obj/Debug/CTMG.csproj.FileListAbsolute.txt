@@ -7,7 +7,7 @@ C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\bin\Debug\UnityEngine.SharedInternalsModule.dll
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTMG.csprojResolveAssemblyReference.cache
 C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTMG.csproj.CoreCompileInputs.cache
-C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTMG.dll
-C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTMG.pdb
-C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTMG.dll
-C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTMG.pdb
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTM.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTM.pdb
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTM.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Source\CTMG\obj\Debug\CTM.pdb

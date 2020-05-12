@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>D9CTM</RootNamespace>
-    <AssemblyName>CTMG</AssemblyName>
+    <AssemblyName>CTM</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,7 +61,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del "C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTMG.pdb"
-copy "C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTMG.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\CTM - Glittertechnology\Assemblies"</PostBuildEvent>
+    <PostBuildEvent>del "C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTM.pdb"
+copy "C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\CTM - Glittertechnology\Assemblies\CTM.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\CTM - Glittertechnology\Assemblies"</PostBuildEvent>
   </PropertyGroup>
 </Project>
