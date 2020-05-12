@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- check if Royalty is installed -->
+	<Operation Class="D9Framework.PatchOperationFindPackage">
+		<packageId>Ludeon.RimWorld.Royalty</packageId>
+		<match Class="PatchOperationSequence">
+			<!--==== Add Royalty-specific techs ====-->
+			<Operation Class="PatchOperationAdd">
+				<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+					<defName>D9CTM_ChargedMelee</defName>
+					<label>charged melee weapons</label>
+					<description>Develop technology to make use of vanometric cells to energize melee weapons.</description>
+					<baseCost>1200</baseCost>
+					<techprintCount>1</techprintCount>
+					<techprintCommonality>1</techprintCommonality>
+					<techprintMarketValue>1000</techprintMarketValue>
+					<heldByFactionCategoryTags><li>Glittertechprints</li></heldByFactionCategoryTags> 
+					<prerequisites>
+					  <li>LongBlades</li>
+					  <li>ChargedShot</li>
+					</prerequisites>
+				</ResearchProjectDef>
+			</Operation>
+			<!-- TODO: add recipes for Zeushammer, Plasma Sword, Monoblade here -->
+			<!--==== Give appropriate techs techprints ====-->
+			<Operation Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName="D9CTM_ChargeTurrets"]</xpath>
+				<value>
+					<techprintCount>1</techprintCount>
+					<techprintCommonality>1</techprintCommonality>
+					<techprintMarketValue>1000</techprintMarketValue>
+					<!-- TODO: add this tag to specific factions: 
+						If Royalty and no other mods: Empire
+						Otherwise, various modded factions (incl. my spacer faction once that's done) -->
+					<!-- Also, patch the relevant methods to allow appropriate orbital traders to hold techprints -->
+					<heldByFactionCategoryTags><li>Glittertechprints</li></heldByFactionCategoryTags> 
+				</value>
+			</Operation>
+		</match>
+</Patch>

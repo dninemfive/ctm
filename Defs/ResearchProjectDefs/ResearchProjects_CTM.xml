@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- I have no desire to re-sort the main tab -->
+	<ResearchTabDef>
+		<defName>D9CTM_ResearchTab_Glittertech</defName>
+		<label>Glittertechnology</label>
+	</ResearchTabDef>
+	<!-- base research projects to avoid copying + pasting -->
+	<ResearchProjectDef Name="D9CTM_BaseTech_Ind" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind" Name="D9CTM_BaseTech_Spcr" Abstract="True">
+		<techLevel Inherit="False">Spacer</techLevel>
+		<requiredResearchFacilities>
+		  <li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+	</ResearchProjectDef>
+	<!-- Techs which require only vanilla techs -->	
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_ChargeTurrets</defName>
+		<label>charge turrets</label>
+		<description>Utilize charge weaponry and vanometric cells to produce small, powerful turrets with no external power or maintenance requirements.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>GunTurrets</li>
+		  <li>ChargedShot</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_MaterialsScience</defName>
+		<label>materials science</label>
+		<description>Discover advanced matter-manipulation techniques allowing the construction of a Matterweaver and basic matter-woven materials, such as Synthread.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>Fabrication</li>
+		  <li>BiofuelRefining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
+		<defName>D9CTM_ExoskeletonBelts</defName>
+		<label>exoskeleton belt</label>
+		<description>Learn to assemble exoskeleton belts, which can be worn to improve various abilities depending on the type.</description>
+		<baseCost>1800</baseCost>
+		<prerequisites>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_RangedShieldBelts</defName>
+		<label>ranged shield belt</label>
+		<description>Develop advanced algorithms which allow the construction of personal shields which can differentiate betwee incoming and outgoing fire..</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>ShieldBelt</li>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!-- orbital mechanics and techs requiring it -->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
+		<defName>D9CTM_OrbitalMechanics</defName>
+		<label>orbital mechanics</label>
+		<description>Develop advanced launchers capable of putting pods in orbit, and develop advanced physical theories capable of placing communication and orbital bombardment satellites in position.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+		  <li>TransportPod</li>
+		  <li>Fabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
+		<defName>D9CTM_AsteroidMining</defName>
+		<label>asteroid mining</label>
+		<description>Optimize pod designs to allow launches beyond the planet's orbit, into interplanetary space, and develop guidance systems so basic personas can navigate to and mine asteroids.</description>
+		<baseCost>1600</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+		  <li>TransportPod</li>
+		  <li>Fabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+</Defs>
