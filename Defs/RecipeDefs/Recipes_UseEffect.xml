@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RecipeDef>
-    <defName>D9AdministerHealingFoam</defName>
+    <defName>D9CTM_AdministerHealingFoam</defName>
     <label>administer healing foam</label>
     <description>Administer a healing foam injector.</description>
     <workerClass>Recipe_AdministerUsableItem</workerClass>
@@ -15,7 +15,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>D9HealingFoam</li>
+            <li>D9CTM_HealingFoam</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -23,12 +23,12 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>D9HealingFoam</li>
+        <li>D9CTM_HealingFoam</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>
   <RecipeDef>
-    <defName>D9AdministerAutoImmunizer</defName>
+    <defName>D9CTM_AdministerAutoImmunizer</defName>
     <label>administer auto-immunizer</label>
     <description>Administer an auto-immunizer.</description>
     <workerClass>Recipe_AdministerUsableItem</workerClass>
@@ -42,7 +42,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>D9AutoImmunizer</li>
+            <li>D9CTM_AutoImmunizer</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -50,7 +50,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>D9AutoImmunizer</li>
+        <li>D9CTM_AutoImmunizer</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<HediffDef ParentName="DiseaseBase">
-		<defName>D9NaniteComa</defName>
+		<defName>D9CTM_NaniteComa</defName>
 		<label>nanite-induced coma</label>
 		<description>A coma induced by the use of medical nanites, giving the body time to heal from extensive injury or disease.</description>
 		<isBad>false</isBad>		

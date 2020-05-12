@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<StatDef>
-		<defName>StuffEffectMultiplierPsychicSensitivity</defName>
+		<defName>D9CTM_StuffEffectMultiplierPsychicSensitivity</defName>
 		<label>Psychic Sensitivity - Material effect multiplier</label>
 		<category>Apparel</category>
 		<defaultBaseValue>1</defaultBaseValue>
@@ -9,7 +9,7 @@
 		<parts/>
 	</StatDef>
 	<StatDef>
-		<defName>StuffPower_PsychicSensivity</defName>
+		<defName>StuffPower_D9CTM_PsychicSensivity</defName>
 		<label>Psychic Sensitivity</label>
 		<description>How much an apparel made of this material changes a wearer's psychic sensitivity when worn.</description>
 		<category>StuffStatFactors</category>
@@ -18,7 +18,7 @@
 		<toStringStyle>PercentZero</toStringStyle>
     </StatDef>
 	<StatDef>
-		<defName>Apparel_PsychicSensitivity</defName>
+		<defName>Apparel_D9CTM_PsychicSensitivity</defName>
 		<label>psychic sensitivity modifier</label>
 		<description>How much this apparel changes the wearer's psychic sensitivity.</description>
 		<category>Apparel</category>
@@ -31,8 +31,8 @@
 		<parts>		  
 		  <li Class="StatPart_Stuff">
 			<priority>100</priority>
-			<stuffPowerStat>StuffPower_PsychicSensivity</stuffPowerStat>
-			<multiplierStat>StuffEffectMultiplierPsychicSensitivity</multiplierStat>
+			<stuffPowerStat>StuffPower_D9CTM_PsychicSensivity</stuffPowerStat>
+			<multiplierStat>D9CTM_StuffEffectMultiplierPsychicSensitivity</multiplierStat>
 		  </li>
 		  <li Class="D9CTM.StatPart_MultiplyByOffset">
 			<stat>PsychicSensitivity</stat>

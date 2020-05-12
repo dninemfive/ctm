@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="BaseFilth">
-		<defName>Filth_D9_HealingFoam</defName>
+		<defName>Filth_D9CTM_HealingFoam</defName>
 		<label>healing foam</label>
 		<statBases>
 		  <Beauty>-25</Beauty>
