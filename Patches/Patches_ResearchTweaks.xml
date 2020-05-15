@@ -15,18 +15,6 @@
 		<xpath>/Defs/ResearchProjectDef[defName="MedicineProduction"]/label</xpath>
 		<value><label>medical science</label></value>
 	</Operation>
-	<!-- Make Bionic Replacements require Prosthetics but only be Industrial -->
-	<!-- TODO: ensure compatibility with medical mods -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ResearchProjectDef[defName="BionicReplacements"]</xpath>
-		<value>
-			<hiddenPrerequisites><li>Prosthetics</li></hiddenPrerequisites>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ResearchProjectDef[defName="BionicReplacements"]/techLevel</xpath>
-		<value><techLevel>Industrial</techLevel></value>
-	</Operation>
 	<!-- Recon Armor requires Exoskeleton -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ResearchProjectDef[defName="BionicReplacements"]</xpath>
@@ -34,8 +22,4 @@
 			<hiddenPrerequisites><li>D9CTM_ExoskeletonBelts</li></hiddenPrerequisites>
 		</value>
 	</Operation>
-	<!--==== With Royalty: ====-->
-	<!-- Johnson-Tanaka Drive: require techprint -->
-	<!-- Specialized Limbs: require Bionic Replacements -->
-	<!-- Compact Weaponry, Poison Synthesis: require Specialized Limbs -->
 </Patch>
