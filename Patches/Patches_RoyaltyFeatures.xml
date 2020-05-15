@@ -5,7 +5,7 @@
 		<packageId>Ludeon.RimWorld.Royalty</packageId>
 		<match Class="PatchOperationSequence">
 			<!--==== Add Royalty-specific techs ====-->
-			<Operation Class="PatchOperationAdd">
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
 				<value>
 					<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
@@ -60,10 +60,10 @@
 						  <li>D9CTM_PsychicTheory</li>
 						</prerequisites>
 					</ResearchProjectDef>
-			</Operation>
+			</li>
 			<!-- TODO: add recipes for Zeushammer, Plasma Sword, Monoblade here -->
 			<!--==== Give appropriate techs techprints ====-->
-			<Operation Class="PatchOperationAdd">
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ResearchProjectDef[defName="D9CTM_ChargeTurrets" or defName="D9CTM_Simpods" or defName="D9CTM_Hyperweave" or defName="D9CTM_VanometricBattery" or defName="D9CTM_NaniteBiomanipulation"]</xpath>
 				<value>
 					<techprintCount>1</techprintCount>
@@ -76,8 +76,8 @@
 						<li>Exiled_Dawn</li>
 					</heldByFactionCategoryTags> 
 				</value>
-			</Operation>
-			<Operation Class="PatchOperationAdd">
+			</li>
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ResearchProjectDef[defName="D9CTM_Luciferium"]</xpath>
 				<value>
 					<techprintCount>3</techprintCount>
@@ -90,6 +90,7 @@
 						<li>Exiled_Dawn</li>
 					</heldByFactionCategoryTags> 
 				</value>
-			</Operation>
+			</li>
 		</match>
+	</Operation>
 </Patch>
