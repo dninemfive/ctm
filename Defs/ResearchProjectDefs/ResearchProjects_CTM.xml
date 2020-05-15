@@ -18,7 +18,7 @@
 		  <li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
 	</ResearchProjectDef>
-	<!-- Techs which require only vanilla techs -->	
+	<!--==== Techs which require only vanilla techs ====-->	
 	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
 		<defName>D9CTM_ChargeTurrets</defName>
 		<label>charge turrets</label>
@@ -28,17 +28,7 @@
 		  <li>GunTurrets</li>
 		  <li>ChargedShot</li>
 		</prerequisites>
-	</ResearchProjectDef>
-	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
-		<defName>D9CTM_MaterialsScience</defName>
-		<label>materials science</label>
-		<description>Discover advanced matter-manipulation techniques allowing the construction of a Matterweaver and basic matter-woven materials, such as Synthread.</description>
-		<baseCost>2000</baseCost>
-		<prerequisites>
-		  <li>Fabrication</li>
-		  <li>BiofuelRefining</li>
-		</prerequisites>
-	</ResearchProjectDef>
+	</ResearchProjectDef>	
 	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
 		<defName>D9CTM_ExoskeletonBelts</defName>
 		<label>exoskeleton belt</label>
@@ -58,7 +48,16 @@
 		  <li>AdvancedFabrication</li>
 		</prerequisites>
 	</ResearchProjectDef>
-	<!-- orbital mechanics and techs requiring it -->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
+		<defName>D9CTM_BasicRobotics</defName>
+		<label>basic robotics</label>
+		<description>Design robotic chassis capable of simple navigation tasks, such as cleaning.</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--==== orbital mechanics and techs requiring it ====-->
 	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
 		<defName>D9CTM_OrbitalMechanics</defName>
 		<label>orbital mechanics</label>
@@ -76,8 +75,264 @@
 		<baseCost>1600</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
-		  <li>TransportPod</li>
+		  <li>D9CTM_OrbitalMechanics</li>
+		  <li>LongRangeMineralScanner</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_OrbitalPowerTransfer</defName>
+		<label>orbital power transfer</label>
+		<description>Develop optimized solar panel designs and refine energy weapon schematics in order to efficiently transfer energy from geostationary satellites - or call down their power upon your enemies.</description>
+		<baseCost>1800</baseCost>
+		<prerequisites>
+		  <li>D9CTM_OrbitalMechanics</li>
+		  <li>SolarPanels</li>
+		  <li>ChargedShot</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!-- Deep-Space Mining goes here -->
+	<!--==== Materials Science and techs requiring it ====-->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_MaterialsScience</defName>
+		<label>materials science</label>
+		<description>Discover advanced matter-manipulation techniques allowing the construction of a Matterweaver and basic matter-woven materials, such as Synthread.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
 		  <li>Fabrication</li>
+		  <li>BiofuelRefining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
+		<defName>D9CTM_Simpods</defName>
+		<label>full-immersion displays</label>
+		<description>Develop techniques for hyperresolution screens which cause the user to feel immersed in depicted scenes.</description>
+		<baseCost>2500</baseCost>
+		<prerequisites>
+		  <li>AdvancedFabrication</li>
+		  <li>D9CTM_MaterialsScience</li>
+		  <li>FlatscreenTelevision</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_HealingFoam</defName>
+		<label>healing foam</label>
+		<description>Adapt expanding foam technology and basic material science to rapidly seal and disinfect wounds.</description>
+		<baseCost>800</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		  <li>Firefoam</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_Insulene</defName>
+		<label>insulene</label>
+		<description>Discover advanced material fabrication techniques allowing you to produce Insulene, a weak but incredibly insulative fabric.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_Hyperweave</defName>
+		<label>hyperweave</label>
+		<description>Research the creation of Hyperweave, a highly durable fabric, by matterweaving devilstrand and plasteel.</description>
+		<baseCost>2500</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_WoodWeaving</defName>
+		<label>wood synthesis</label>
+		<description>Learn to use matterweaving techniques to sculpt wood from raw cellulose.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		  <li>Hydroponics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--==== Flesh Printing and techs requiring it ====-->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_FleshPrinting</defName>
+		<label>fleshprinting</label>
+		<description>Learn how to construct the Flesh Printer, a device capable of printing meat from biomass, and some basic use cases like meat and leather production.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		  <li>Hydroponics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_AdvancedBioproduction</defName>
+		<label>advanced bioproduction</label>
+		<description>Develop advanced techniques to manipulate biological structures by suspending particles in liquids, allowing the production of milk and the automation of meat growth.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>D9CTM_FleshPrinting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_OrganAssembly</defName>
+		<label>organ assembly</label>
+		<description>Learn the secrets of manipulating animal tissue, allowing the printing of organs.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_FleshPrinting</li>
+		  <li>MedicineProduction</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--==== Nanofabricator and techs requiring it ====-->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NanoFabricator</defName>
+		<label>nanofabrication</label>
+		<description>Use a purchased Nano Forge to construct the Nanofabricator, a bench which produces and programs nanites.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		  <li>AdvancedFabrication</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_VanometricBattery</defName>
+		<label>vanometric battery</label>
+		<description>Use nanite-based power regulators to make use of the energy from purchased vanometric cells in a compact package.</description>
+		<baseCost>1400</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NanoFabricator</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_Aerocrete</defName>
+		<label>aerocrete</label>
+		<description>Develop techniques to nanofabricate microorganisms and disperse them within liquid composite building materials, allowing the creation of a material which can repair itself over time.</description>
+		<baseCost>800</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NanoFabricator</li>
+		  <li>D9CTM_AdvancedBioproduction</li>
+		</prerequisites>
+	</ResearchProjectDef>	
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NaniteProjector</defName>
+		<label>on-demand nanofabrication</label>
+		<description>Optimize nanite production regimes and develop a basic nanite field theory to construct devices which can rapidly assemble or repair things.</description>
+		<baseCost>1400</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NanoFabricator</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NanoRifle</defName>
+		<label>nano rifle</label>
+		<description>Miniaturize nanite programmers into a usable package capable of melting its targets.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteProjector</li>
+		  <li>ChargedShot</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NaniteBiorepair</defName>
+		<label>nanite biorepair</label>
+		<description>Modify nanite repair projectors to operate on living tissue.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteProjector</li>
+		  <li>D9CTM_OrganAssembly</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_GlitterworldMedicine</defName>
+		<label>glitterworld medicine</label>
+		<description>Combine medicine, synthread, and nanomaterial to produce highly potent medicine.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteBiorepair</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NaniteBiomanipulation</defName>
+		<label>nanite biomanipulation</label>
+		<description>Develop nanite treatment systems which can be dispersed in the blood to fight infections or addiction.</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteBiorepair</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_Luciferium</defName>
+		<label>luciferium production</label>
+		<description>Leverage advanced knowledge of nanites to program Luciferium, albeit at a high cost...</description>
+		<baseCost>6400</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteBiomanipulation</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_IntensiveNaniteHealing</defName>
+		<label>intensive nanite healing</label>
+		<description>Optimize nanite biorepair mechanisms to allow their safe use in high concentrations and at long range.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteBiorepair</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_BioAugmentation</defName>
+		<label>bioaugmentation</label>
+		<description>Utilize regeneration pods to stabilize individuals undergoing CRIPSR treatment, allowing agressive modifications to their genome.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NaniteBiorepair</li>
+		  <li>D9CTM_AdvancedBioproduction</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--==== Nanofabricator and techs requiring it ====-->
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_NeuralNetwork</defName>
+		<label>neural network basics</label>
+		<description>Learn basic inorganic psychology and intelligence design and use it to manipulate basic persona constructs for purposes such as biocoding and research.</description>
+		<baseCost>3200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NanoFabricator</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_DeepSpaceMining</defName>
+		<label>deep-space mining</label>
+		<description>Utilize feedback circuits to incentivize AI persona cores to pilot asteroid mining pods which can navigate further and operate with more autonomy.</description>
+		<baseCost>1800</baseCost>
+		<techLevel>Ultra</techLevel>
+		<prerequisites>
+		  <li>D9CTM_NeuralNetwork</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_CombatDrones</defName>
+		<label>military robotics</label>
+		<description>Improve the durability and reliability of robotic control, allowing designs based on personas which can handle more complex tasks like hauling and weapon targeting.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NeuralNetwork</li>
+		  <li>GunTurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_PsychicTheory</defName>
+		<label>psychic theory</label>
+		<description>Develop a basic theoretical understanding of psychic processes, enough to produce psychic foil and construct psychic helmets from it.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>D9CTM_NeuralNetwork</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+		<defName>D9CTM_UniversalSimpod</defName>
+		<label>universal simulation</label>
+		<description>Learn to construct mechanisms for AI personas to construct believable universes, and develop psychic interfaces which can produce a completely immersive experience for users.</description>
+		<baseCost>1600</baseCost>
+		<techLevel>Ultra</techLevel>
+		<prerequisites>
+		  <li>D9CTM_PsychicTheory</li>
 		</prerequisites>
 	</ResearchProjectDef>
 </Defs>
