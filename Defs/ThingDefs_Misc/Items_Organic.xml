@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>D9CTM_Synthmeat</defName>
+		<label>synthmeat</label>
+		<description>Synthetic meat. Perfectly replicates the taste of chicken, but its texture is a bit off.</description>
+		<graphicData>
+		  <texPath>Things/Item/Synthmeat</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ingestible>
+		  <foodType>Meat</foodType>
+		  <ingestEffect>EatMeat</ingestEffect>
+		  <ingestSound>RawMeat_Eat</ingestSound>
+		  <tasteThought>AteRawFood</tasteThought>
+		  <preferability>RawBad</preferability>
+		</ingestible>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+		  <Mass>0.03</Mass>
+		  <MaxHitPoints>60</MaxHitPoints>
+		  <DeteriorationRate>6</DeteriorationRate>
+		  <Flammability>0.5</Flammability>
+		  <Nutrition>0.05</Nutrition>
+		  <FoodPoisonChanceFixedHuman>0.01</FoodPoisonChanceFixedHuman> <!-- synthetic meat is less likely to be infected -->
+		</statBases>
+		<thingCategories>
+		  <li>MeatRaw</li>
+		</thingCategories>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>2</daysToRotStart>
+			<rotDestroys>true</rotDestroys>
+		  </li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>D9Synthmilk</defName>
+		<label>synthmilk</label>
+		<description>Artificial milk. Nearly as tasty and fortified with vitamins.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/Milk</texPath>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+		  <MarketValue>2.9</MarketValue>
+		  <Mass>0.045</Mass>
+		  <MaxHitPoints>60</MaxHitPoints>
+		  <Flammability>0.2</Flammability>
+		  <Nutrition>0.05</Nutrition>
+		  <FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>15</daysToRotStart>
+			<rotDestroys>true</rotDestroys>
+		  </li>
+		</comps>
+		<ingestible>
+		  <preferability>RawTasty</preferability>
+		  <foodType>AnimalProduct, Fluid</foodType>
+		</ingestible>
+		<thingCategories>
+		  <li>AnimalProductRaw</li>
+		</thingCategories>
+	</ThingDef>
+</Defs>

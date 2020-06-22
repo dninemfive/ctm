@@ -99,4 +99,8 @@
 		  <D9CTM_Synthleather>15</D9CTM_Synthleather>
 		</products>
 	</RecipeDef>
+	<!-- Synthmeat -->
+	<RecipeDef Name="D9CTM_Synthmeat" ParentName="D9CTM_FleshPrinterRecipeBase">
+	</RecipeDef>
+	<!-- Synthmilk -->
 </Defs>
