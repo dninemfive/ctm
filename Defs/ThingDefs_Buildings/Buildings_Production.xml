@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="BenchBase">
+		<defName>D9CTM_TableMatterweaver</defName>
+		<label>matterweaver</label>
+		<description>A workstation equipped with facilities for nano-scale production, allowing the creation of spacer-tech materials.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Matterweaver/TableMatterweaver</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(3.5,1.5)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+		  <Steel>150</Steel>
+		  <ComponentSpacer>2</ComponentSpacer>
+		  <Plasteel>25</Plasteel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>2700</WorkToBuild>
+		  <MaxHitPoints>200</MaxHitPoints>
+		  <Flammability>0.9</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<!--recipes>
+		  <li>Make_Wood_D9</li>
+		  <li>Make_Wood_D9_Bulk</li>
+		  <li>Make_Vanadite</li>	  
+		  <li>Make_Nanoweave</li>
+		  <li>Make_Synthread</li>
+		  <li>Make_Hyperweave</li>
+		  <li>Make_PsychicFoil</li>
+		  <li>Make_Vanadite_Bulk</li>
+		  <li>Make_Nanoweave_Bulk</li>
+		  <li>Make_Synthread_Bulk</li>
+		  <li>Make_Hyperweave_Bulk</li>
+		</recipes-->
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>375</basePowerConsumption>
+		  </li>
+		  <li Class="CompProperties_Flickable"/>
+		  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+			  <li>ToolCabinet</li>
+			  <li>D9CTMToolCabinet</li>
+			</linkableFacilities>
+		  </li>
+		  <li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<researchPrerequisites>
+		  <li>D9CTM_MaterialsScience</li>
+		</researchPrerequisites>
+    </ThingDef>
+	<ThingDef ParentName="BenchBase">
 		<defName>D9CTM_TableAIProgramming</defName>
 		<label>programming station</label>
 		<description>A workbench equipped with a computer and a nanochip printer, allowing the user to duplicate and modify advanced technology, including AI personae.</description>
@@ -40,7 +120,7 @@
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-		<recipes>
+		<!--recipes>
 		  <li>Make_AIFragment</li>
 		  <li>Copy_AIFragment</li>
 		  <li>Make_AIPersonaCore</li>
@@ -56,7 +136,7 @@
 		  <li>Split_ShackledAIPersona</li>
 		  <li>Split_AIPersonaFragment</li>
 		  <li>Combine_ShackledAIPersona</li>
-		</recipes>
+		</recipes-->
 		<inspectorTabs>
 		  <li>ITab_Bills</li>
 		</inspectorTabs>
@@ -83,11 +163,166 @@
 		</building>
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
-		  <li>D9AIBasics</li>
+		  <li>D9CTM_NeuralNetwork</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc7</designationHotKey>
 		<placeWorkers>
 		  <li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
-	  </ThingDef>
+	</ThingDef>
+	<ThingDef ParentName="BenchBase">
+		<defName>D9CTM_TableNanofabricator</defName>
+		<label>Nanofabricator</label>
+		<description>A work station equipped with a nano forge and other equipment used to design and produce nanotechnology.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Nanofabricator/TableNanofab</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(3.5,1.5)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+		  <Plasteel>150</Plasteel>
+		  <D9NanoForge>1</D9NanoForge>
+		  <ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>3200</WorkToBuild>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <Flammability>0.8</Flammability>
+		  <Cleanliness>-2</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<!--recipes>
+		  <li>Make_Neurotrainer</li>
+		  <li>Make_Nanomaterial</li>
+		  <li>Make_HealingFoam</li>
+		  <li>Make_AutoImmunizer</li>
+		  <li>Make_BioAugSkel</li>
+		  <li>Make_BioAugCer</li>
+		  <li>Make_BioAugMeta</li>
+		  <li>Make_HealerMechserum</li>
+		  <li>Make_D9VanometricCell</li>
+		  <li>Make_Nanomaterial_Bulk</li>
+		  <li>Make_D9VanometricCellBulk</li>
+		  <li>Make_ResurrectionMechserum</li>
+		</recipes-->
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>450</basePowerConsumption>
+		  </li>
+		  <li Class="CompProperties_Flickable"/>
+		  <li Class="CompProperties_Glower">
+			<glowRadius>5</glowRadius>
+			<glowColor>(210,89,0,0)</glowColor>
+		  </li>
+		  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+			  <li>ToolCabinet</li>
+			  <li>D9CTMToolCabinet</li>
+			</linkableFacilities>
+		  </li>
+		  <li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		  <heatPerTickWhileWorking>0.15</heatPerTickWhileWorking>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+		  <li>D9CTM_NanoFabricator</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc7</designationHotKey>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+    </ThingDef>
+	<ThingDef ParentName="BenchBase">
+    <defName>D9FleshPrinter</defName>
+		<label>flesh printer</label>
+		<description>A workstation featuring a growth vat and bioprinter capable of producing any organic chemical from biomass and printing them into biological structures.</description>
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/FleshPrinter/TableFleshPrinter</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(3.5,1.5)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+		  <Steel>200</Steel>
+		  <ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>2000</WorkToBuild>
+		  <MaxHitPoints>180</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<!--recipes>
+			<li>Make_D9Synthmeat</li>
+			<li>Make_D9Synthmeat_Bulk</li>
+			<li>Make_D9Synthmilk</li>
+			<li>Make_D9Synthmilk_Bulk</li>
+		</recipes-->
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>350</basePowerConsumption>
+		  </li>
+		  <li Class="CompProperties_Flickable"/>
+		  <li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		  <heatPerTickWhileWorking>0.05</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc8</designationHotKey>
+		<researchPrerequisites>
+		  <li>D9CTM_FleshPrinting</li>
+		</researchPrerequisites>
+    </ThingDef>
 </Defs>
