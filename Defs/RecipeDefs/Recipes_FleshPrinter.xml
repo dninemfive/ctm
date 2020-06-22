@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef Name="D9CTM_FleshPrinterRecipeBase" Abstract="True">
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<requiredGiverWorkType>Crafting</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>D9CTM.IngredientValueGetter_NutritionOrOne</ingredientValueGetterClass> <!-- Allows the use of non-nutrition items, e.g. the neutroamine in the synthleather recipe -->
+		<workSkill>Cooking</workSkill>
+		<defaultIngredientFilter>
+		  <disallowedCategories>
+			<li>EggsFertilized</li>
+		  </disallowedCategories>
+		  <disallowedThingDefs>
+			<li>InsectJelly</li>
+		  </disallowedThingDefs>
+		</defaultIngredientFilter>
+	</RecipeDef>
+	<!-- Synthleather -->
+	<RecipeDef Name="D9CTM_PrintSynthleather" ParentName="D9CTM_FleshPrinterRecipeBase">
+		<label>grow synthleather</label>
+		<description>Grow flesh in a semitoxic nutrient bath, producing a toughened yet pliable leather.</description>
+		<jobString>Making synthleather.</jobString> 
+		<workAmount>250</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>PlantFoodRaw</li>
+			  </categories>
+			</filter>
+			<count>0.9</count>
+		  </li>
+		  <li>
+			<filter>
+			  <categories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			  </categories>
+			</filter>
+			<count>0.1</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Neutroamine</li>
+			  </thingDefs>	
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthleather>3</D9CTM_Synthleather>
+		</products>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>PlantFoodRaw</li>
+			<li>MeatRaw</li>
+			<li>AnimalProductRaw</li>
+		  </categories>
+		  <thingDefs>
+		    <li>Neutroamine</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_PrintSynthleather">
+		<label>grow synthleather in bulk</label>
+		<description>Grow flesh in a semitoxic nutrient bath, producing a toughened yet pliable leather.\n\nProducing in bulk allows the use of less meat to seed the reaction.</description>
+		<workAmount>1125</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>PlantFoodRaw</li>
+			  </categories>
+			</filter>
+			<count>4.75</count>
+		  </li>
+		  <li>
+			<filter>
+			  <categories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			  </categories>
+			</filter>
+			<count>0.25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Neutroamine</li>
+			  </thingDefs>	
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthleather>15</D9CTM_Synthleather>
+		</products>
+	</RecipeDef>
+</Defs>

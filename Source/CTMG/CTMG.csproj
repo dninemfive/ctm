@@ -55,6 +55,7 @@
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />
+    <Compile Include="IngredientValueGetter_NutritionOrOne.cs" />
     <Compile Include="StatParts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />

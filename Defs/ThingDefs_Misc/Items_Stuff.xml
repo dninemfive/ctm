@@ -92,8 +92,8 @@
         <MarketValue>22</MarketValue>
         <Mass>0.1</Mass>
         <Flammability>0</Flammability>
-	    <DeteriorationRate>0.8</DeteriorationRate>
-        <StuffPower_Armor_Sharp>1.8</StuffPower_Armor_Sharp>
+	    <DeteriorationRate>0.1</DeteriorationRate>
+        <StuffPower_Armor_Sharp>1.85</StuffPower_Armor_Sharp>
         <StuffPower_Armor_Blunt>0.68</StuffPower_Armor_Blunt>
         <StuffPower_Armor_Heat>3.1</StuffPower_Armor_Heat>
         <StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
@@ -130,5 +130,25 @@
 			</comps>
 		</li>
 	</modExtensions>
+  </ThingDef>
+  <!--==== Synthleather, produced at the flesh printer ====-->
+  <ThingDef ParentName="LeatherBase">
+    <defName>D9CTM_Synthleather</defName>
+    <label>synthleather</label>
+	<description>Synthetic skin, grown directly into a tanning environment. Somewhat more pliable and durable than most leather, at the cost of below-average insulation.</description>
+    <graphicData>
+      <color>(204,202,117)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(204,202,117)</color>
+      <commonality>0.005</commonality>
+    </stuffProps>
+	<statBases>
+      <MarketValue>2.6</MarketValue>
+      <StuffPower_Armor_Sharp>1.08</StuffPower_Armor_Sharp> <!-- A little less than elephant leather -->
+      <StuffPower_Armor_Blunt>0.28</StuffPower_Armor_Blunt> <!-- A little higher than lizardskin -->
+	  <StuffPower_Insulation_Cold>15</StuffPower_Insulation_Cold> <!-- Slightly below the default 16 -->
+      <StuffPower_Insulation_Heat>15</StuffPower_Insulation_Heat>
+    </statBases>
   </ThingDef>
 </Defs>
