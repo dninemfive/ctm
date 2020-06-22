@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<WorkGiverDef>
+		<defName>D9CTM_DoBillsMatterweaver</defName>
+		<label>produce materials at matterweaver</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>96</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>D9CTM_TableMatterweaver</li>
+		</fixedBillGiverDefs>
+		<verb>produce materials</verb>
+		<gerund>producing materials at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>D9CTM_DoBillsProgramming</defName>
+		<label>code at programming station</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>95</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>D9CTM_TableProgramming</li>
+		</fixedBillGiverDefs>
+		<verb>code</verb>
+		<gerund>coding at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>D9CTM_DoBillsNanofabricator</defName>
+		<label>produce nanites at nanofabricator</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>94</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>D9CTM_TableNanofabricator</li>
+		</fixedBillGiverDefs>
+		<verb>produce nanites</verb>
+		<gerund>producing nanites at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>D9CTM_DoBillsFleshPrinter</defName>
+		<label>grow organics at flesh printer</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>93</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>D9CTM_TableFleshPrinter</li>
+		</fixedBillGiverDefs>
+		<verb>grow organics</verb>
+		<gerund>growing organics at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+</Defs>
