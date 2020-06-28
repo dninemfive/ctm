@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingCategoryDef>
+      <defName>D9CTM_ThingCat_AI</defName>
+      <label>artificial intelligences</label>
+      <parent>Items</parent>
+    </ThingCategoryDef>
+</Defs>
