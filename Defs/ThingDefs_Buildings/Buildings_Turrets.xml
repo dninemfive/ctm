@@ -2,7 +2,7 @@
 <Defs>
 	<!-- Charge Rifle turret -->
 	<ThingDef ParentName="BuildingBase" Name="Turret_D9_ChargeRifles">
-		<defName>Turret_D9_ChargeRifles</defName>
+		<defName>Turret_D9CTM_ChargeRifles</defName>
 		<label>charge rifle mini-turret</label>
 		<description>A short-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
 		<thingClass>Building_TurretGun</thingClass>
@@ -74,11 +74,11 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-		  <li>D9ChargeTurret</li>
+		  <li>D9CTM_ChargeTurrets</li>
 		</researchPrerequisites>
 	</ThingDef>
   <ThingDef ParentName="BaseHumanGun">
-    <defName>Gun_ChargeRifles_Mounted</defName>
+    <defName>Gun_D9CTM_ChargeRifles_Mounted</defName>
     <label>twin-linked charge rifles (mounted)</label>
     <description>two twin-linked charge rifles, optimized for a high rate of fire. Unfortunately, the overcharged barrels produce less coherent plasma, reducing range.</description>
 	<techLevel>Spacer</techLevel>
@@ -121,7 +121,7 @@
   </ThingDef>
 	<!-- Charge Lance turret -->
 	<ThingDef ParentName="BuildingBase" Name="Turret_D9_ChargeLance">
-		<defName>Turret_D9_ChargeLance</defName>
+		<defName>Turret_D9CTM_ChargeLance</defName>
 		<label>charge lance mini-turret</label>
 		<description>A long-range portable automatic turret. Self-powered and needs no repair once placed. May rarely explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
 		<thingClass>Building_TurretGun</thingClass>
@@ -192,11 +192,11 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-		  <li>D9ChargeTurret</li>
+		  <li>D9CTM_ChargeTurrets</li>
 		</researchPrerequisites>
 	</ThingDef>
   <ThingDef ParentName="BaseHumanGun">
-    <defName>Gun_ChargeLance_Mounted</defName>
+    <defName>Gun_D9CTM_ChargeLance_Mounted</defName>
     <label>charge lance (mounted)</label>
     <description>A pulse-charged rail-assisted lance weapon. It fires a single shot at high velocity, charging it with unstable energy as it leaves the acceleration rail.\n\nBecause it's mounted, it fires more accurately and somewhat more quickly.</description>
 	<techLevel>Spacer</techLevel>
