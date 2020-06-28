@@ -35,7 +35,7 @@
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="OrganicProductBase">
-		<defName>D9Synthmilk</defName>
+		<defName>D9CTM_Synthmilk</defName>
 		<label>synthmilk</label>
 		<description>Artificial milk. Nearly as tasty and fortified with vitamins.</description>
 		<graphicData>

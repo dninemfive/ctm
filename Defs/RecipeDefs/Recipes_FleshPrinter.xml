@@ -16,13 +16,105 @@
 			<li>InsectJelly</li>
 		  </disallowedThingDefs>
 		</defaultIngredientFilter>
+		<recipeUsers>
+			<li>D9CTM_TableFleshPrinter</li>
+		</recipeUsers>
+	</RecipeDef>
+	<!-- Synthmeat -->
+	<RecipeDef Name="D9CTM_GrowSynthmeat" ParentName="D9CTM_FleshPrinterRecipeBase">
+		<label>grow synthmeat</label>
+		<description>Grow flesh on an organic framework in a nutrient bath, producing edible meat.\n\nThe process is highly inefficient, yielding only ten percent of the nutrition of the inputs.</description>
+		<jobString>Making synthmeat.</jobString> 
+		<workAmount>300</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>PlantFoodRaw</li>
+			  </categories>
+			</filter>
+			<count>1.0</count>
+		  </li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthmeat>2</D9CTM_Synthmeat>
+		</products>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>PlantFoodRaw</li>
+		  </categories>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_GrowSynthmeat">
+		<label>grow synthmeat in bulk</label>
+		<description>Grow flesh on an organic framework in a nutrient bath, producing edible meat.\n\nWhen done in bulk, the process is slightly more efficient, producing a 12% yield.</description>
+		<workAmount>1350</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>5.0</count>
+			</li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthmeat>12</D9CTM_Synthmeat>
+		</products>
+	</RecipeDef>
+	<!-- Synthmilk -->
+	<RecipeDef Name="D9CTM_MakeSynthmilk" ParentName="D9CTM_FleshPrinterRecipeBase">
+		<label>grow synthmilk</label>
+		<description>Grow protein particles suspended in a liquid medium, producing milk. Quite efficient, but takes a long time to properly mix.</description>
+		<jobString>Making synthmilk.</jobString> 
+		<workAmount>700</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			  </categories>
+			</filter>
+			<count>0.5</count>
+		  </li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthmilk>9</D9CTM_Synthmilk>
+		</products>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>MeatRaw</li>
+			<li>AnimalProductRaw</li>
+		  </categories>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_MakeSynthmilk">
+		<label>grow synthmilk in bulk</label>
+		<description>Grow protein particles suspended in a liquid medium, producing milk. Quite efficient, but takes a long time to properly mix.</description>
+		<workAmount>3150</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+						<li>AnimalProductRaw</li>
+					</categories>
+				</filter>
+				<count>2.5</count>
+			</li>
+		</ingredients>
+		<products>
+		  <D9CTM_Synthmeat>48</D9CTM_Synthmeat>
+		</products>
 	</RecipeDef>
 	<!-- Synthleather -->
 	<RecipeDef Name="D9CTM_PrintSynthleather" ParentName="D9CTM_FleshPrinterRecipeBase">
 		<label>grow synthleather</label>
 		<description>Grow flesh in a semitoxic nutrient bath, producing a toughened yet pliable leather.</description>
 		<jobString>Making synthleather.</jobString> 
-		<workAmount>250</workAmount>
+		<workAmount>500</workAmount>
 		<ingredients>
 		  <li>
 			<filter>
@@ -67,7 +159,7 @@
 	<RecipeDef ParentName="D9CTM_PrintSynthleather">
 		<label>grow synthleather in bulk</label>
 		<description>Grow flesh in a semitoxic nutrient bath, producing a toughened yet pliable leather.\n\nProducing in bulk allows the use of less meat to seed the reaction.</description>
-		<workAmount>1125</workAmount>
+		<workAmount>2250</workAmount>
 		<ingredients>
 		  <li>
 			<filter>
@@ -99,8 +191,5 @@
 		  <D9CTM_Synthleather>15</D9CTM_Synthleather>
 		</products>
 	</RecipeDef>
-	<!-- Synthmeat -->
-	<RecipeDef Name="D9CTM_Synthmeat" ParentName="D9CTM_FleshPrinterRecipeBase">
-	</RecipeDef>
-	<!-- Synthmilk -->
+	
 </Defs>
