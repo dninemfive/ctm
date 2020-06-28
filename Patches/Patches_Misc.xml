@@ -5,4 +5,19 @@
 		<xpath>/Defs/RecipeDef//filter/thingDefs/li[text()="Milk"]/..</xpath>
 		<value><li>D9CTM_Synthmilk</li></value>
 	</Operation>
+	<!-- Make the vanilla AI Persona more consistent with the ones this mod adds -->
+	<!-- put in AI category -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="AIPersonaCore"]/thingCategories</xpath>
+		<value>
+			<thingCategories>
+			  <li>D9CTM_ThingCat_AI</li>
+			</thingCategories>
+		</value>
+	</Operation>
+	<!-- rename -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="AIPersonaCore"]/label</xpath>
+		<value><label>AI persona core</label></value>
+	</Operation>
 </Patch>
