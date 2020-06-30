@@ -120,50 +120,67 @@
 		</products>
 	</RecipeDef>
 	<!-- Psychic Foil -->
-	<RecipeDef Name="D9CTM_InsuleneRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
-		<defName>D9CTM_MakeInsulene</defName>
-		<label>make insulene</label>
-		<description>Synthesize insulene by matterweaving chemfuel.</description>
-		<jobString>Making insulene.</jobString>
-		<workAmount>700</workAmount>
-		<researchPrerequisite>D9CTM_Insulene</researchPrerequisite>
+	<RecipeDef Name="D9CTM_PsychicFoilRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
+		<defName>D9CTM_MakePsychicFoil</defName>
+		<label>make psychic foil</label>
+		<description>Weave nanostrands of vanadite into a steel-based foil capable of focusing or reflecting psychic energy as needed.</description>
+		<jobString>Making psychic foil.</jobString>
+		<workAmount>1600</workAmount>
+		<researchPrerequisite>D9CTM_PsychicTheory</researchPrerequisite>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Chemfuel</li>
+						<li>D9CTM_Vanadite</li>
 					</thingDefs>
 				</filter>
-				<count>10</count>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>45</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Chemfuel</li>
+				<li>D9CTM_Vanadite</li>
+				<li>Steel</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<D9CTM_Insulene>3</D9CTM_Insulene>
+			<D9CTM_PsychicFoil>15</D9CTM_PsychicFoil>
 		</products>
 	</RecipeDef>
-	<RecipeDef ParentName="D9CTM_InsuleneRecipe">
-		<defName>D9CTM_MakeInsulene_Bulk</defName>
-		<label>make insulene in bulk</label>
-		<description>Synthesize insulene by matterweaving chemfuel.</description>
-		<jobString>Making insulene in bulk.</jobString>
-		<workAmount>3150</workAmount>
+	<RecipeDef ParentName="D9CTM_PsychicFoilRecipe">
+		<defName>D9CTM_MakePsychicFoil_Bulk</defName>
+		<label>make psychic foil in bulk</label>
+		<description>Weave nanostrands of vanadite into a steel-based foil capable of focusing or reflecting psychic energy as needed.</description>
+		<jobString>Making psychic foil in bulk.</jobString>
+		<workAmount>7200</workAmount>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Chemfuel</li>
+						<li>D9CTM_Vanadite</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>225</count>
 			</li>
 		</ingredients>
 		<products>
-			<D9CTM_Insulene>15</D9CTM_Insulene>
+			<D9CTM_PsychicFoil>75</D9CTM_PsychicFoil>
 		</products>
 	</RecipeDef>
 </Defs>

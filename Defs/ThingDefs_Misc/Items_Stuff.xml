@@ -79,6 +79,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
   </ThingDef>
+  <!--===== Uncraftable (without Archotech), self-repairing Stuff. Slightly stronger than their vanilla equivalents, but not strictly so. =====-->
   <ThingDef ParentName="ResourceBase">
     <defName>D9CTM_Nanoweave</defName>
     <label>nanoweave</label>

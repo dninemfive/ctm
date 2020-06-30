@@ -319,7 +319,7 @@
 	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
 		<defName>D9CTM_PsychicTheory</defName>
 		<label>psychic theory</label>
-		<description>Develop a basic theoretical understanding of psychic processes, enough to produce psychic foil and construct psychic helmets from it.</description>
+		<description>Develop a basic theoretical understanding of psychic processes, enough to produce psychic foil and construct psychic helmets therefrom.</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>D9CTM_NeuralNetwork</li>
