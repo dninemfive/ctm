@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>D9CTM_Insulene</defName>
     <label>insulene</label>
     <description>Spacer-tech fabric designed especially for insulation from both heat and cold. Contains many tiny vacuum "bubbles" which block nearly all transmission of heat. This causes it to provide little physical protection.</description>
