@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- AI Personae -->
   <ThingDef ParentName="ResourceBase">
     <defName>D9CTM_AIFragment</defName>
     <label>AI persona fragment</label>
@@ -56,4 +57,34 @@
       <li>ExoticMisc</li>
     </tradeTags>
   </ThingDef>
+  <!-- Only purchasable (without Archotech) components -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>D9CTM_VanometricCell</defName>
+    <label>vanometric cell</label>
+    <description>A highly advanced cell of unknown contents designed by an archotech. It somehow converts subatomic fluctuations into usable energy.</description>
+    <graphicData>
+      <texPath>Things/Item/VanometricCell</texPath>
+      <graphicClass>Graphic_Single</graphicClass> <!-- TODO: stack graphics? -->
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>8</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>1.0</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	<!-- idea: EMP explosion when destroyed? ideally, somehow EMP + antigrain -->
+  </ThingDef>  
 </Defs>
