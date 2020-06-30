@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelBase">
+    <defName>Apparel_D9CTM_RangedShieldBelt</defName>
+	<label>ranged shield belt</label>
+    <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It shuts down instantly if hit by EMP.\n\nThis advanced version allows the wearer to fire outward, but the increased energy expenditure makes it weaker and slower to recharge.</description>
+	<thingClass>D9Framework.RangedShieldBelt</thingClass>
+	<graphicData>
+		<texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>3</Mass>
+      <EnergyShieldRechargeRate>0.117</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.99</EnergyShieldEnergyMax>
+      <WorkToMake>28000</WorkToMake>
+	  <Flammability>0.4</Flammability>
+	  <EquipDelay>2</EquipDelay>
+    </statBases>
+	<thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+	<costList>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<Plasteel>30</Plasteel>
+		<Steel>50</Steel>
+		<AIPersonaFragment>1</AIPersonaFragment>
+	</costList>
+	<recipeMaker>
+		<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+		<researchPrerequisite>D9CTM_RangedShieldBelts</researchPrerequisite>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>BeltDefenseRanged</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33,1)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65,1)</only>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.3,0.3,0.3,1)</min>
+          <max>(0.5,0.5,0.5,1)</max>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.9,0.9,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+</Defs>
