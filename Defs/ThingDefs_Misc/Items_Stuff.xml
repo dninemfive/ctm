@@ -82,7 +82,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>D9CTM_Nanoweave</defName>
     <label>nanoweave</label>
-    <description>Glitter-tech cloth made of nanofibers with interwoven nanite cells which absorb and diffuse incoming energy. The nanites absorb psychic energy and use it to slowly repair any broken strands.</description>
+    <description>Glitter-tech cloth made of nanofibers with interwoven nanite cells which absorb and diffuse incoming energy.\n\nThe nanites absorb ambient psychic energy and use it to slowly repair any broken strands.</description>
     <graphicData>
       <texPath>Things/Item/Nanoweave</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -121,6 +121,67 @@
       <li>ExoticMisc</li>
     </tradeTags>
 	<thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+	<modExtensions>
+		<li Class="D9Framework.CompsToAddWhenStuff">
+			<comps>
+				<li Class="D9Framework.CompProperties_SelfRepair">
+					<tickInterval>2500</tickInterval> <!-- repairs 1 hp per hour -->
+				</li>
+			</comps>
+		</li>
+	</modExtensions>
+  </ThingDef> 
+  <ThingDef ParentName="ResourceBase">
+    <defName>D9CTM_Vanadite</defName>
+    <label>vanadite</label>
+    <description>Ultratech nanomaterial designed for extreme conditions including zero point plasma containment and quantum airgapping. Expensive but incredibly durable.\n\nVanadite slowly repairs itself using ambient psychic energy.</description>
+    <graphicData>
+      <texPath>Things/Item/Vanadite</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MarketValue>31</MarketValue>
+      <Mass>0.629</Mass>
+      <StuffPower_Armor_Sharp>1.3</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.69</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.8</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>1</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>2</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>1.15</SharpDamageMultiplier>
+      <BluntDamageMultiplier>1.0</BluntDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>true</smeltable>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <commonality>0.01</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(135,142,108)</color>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>3.5</MaxHitPoints>
+        <Beauty>1.05</Beauty>
+        <Flammability>0</Flammability>
+        <WorkToMake>2.4</WorkToMake>
+        <WorkToBuild>2.4</WorkToBuild>
+        <MeleeWeapon_CooldownMultiplier>1.1</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 	<modExtensions>
 		<li Class="D9Framework.CompsToAddWhenStuff">
 			<comps>

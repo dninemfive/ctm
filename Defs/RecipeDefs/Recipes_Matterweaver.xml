@@ -120,4 +120,50 @@
 		</products>
 	</RecipeDef>
 	<!-- Psychic Foil -->
+	<RecipeDef Name="D9CTM_InsuleneRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
+		<defName>D9CTM_MakeInsulene</defName>
+		<label>make insulene</label>
+		<description>Synthesize insulene by matterweaving chemfuel.</description>
+		<jobString>Making insulene.</jobString>
+		<workAmount>700</workAmount>
+		<researchPrerequisite>D9CTM_Insulene</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<D9CTM_Insulene>3</D9CTM_Insulene>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_InsuleneRecipe">
+		<defName>D9CTM_MakeInsulene_Bulk</defName>
+		<label>make insulene in bulk</label>
+		<description>Synthesize insulene by matterweaving chemfuel.</description>
+		<jobString>Making insulene in bulk.</jobString>
+		<workAmount>3150</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<products>
+			<D9CTM_Insulene>15</D9CTM_Insulene>
+		</products>
+	</RecipeDef>
 </Defs>
