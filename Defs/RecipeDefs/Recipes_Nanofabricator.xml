@@ -14,7 +14,7 @@
 		<label>make nanomaterial</label>
 		<description>Produce fifteen nanomaterial from vanadite.</description>
 		<jobString>Making nanomaterial.</jobString>
-		<workAmount>4200</workAmount>
+		<workAmount>700</workAmount>
 		<researchPrerequisite>D9CTM_NanoFabricator</researchPrerequisite>
 		<ingredients>
 			<li>
@@ -40,8 +40,7 @@
 		<label>make nanomaterial in bulk</label>
 		<description>Produce 150 nanomaterial from vanadite.</description>
 		<jobString>Making nanomaterial in bulk.</jobString>
-		<workAmount>33600</workAmount>
-		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<workAmount>5600</workAmount>
 		<ingredients>
 			<li>
 				<filter>
@@ -62,7 +61,7 @@
 		<label>make biomaterial</label>
 		<description>Produce biomaterial from organic components.</description>
 		<jobString>Making biomaterial.</jobString>
-		<workAmount>4000</workAmount>
+		<workAmount>650</workAmount>
 		<researchPrerequisite>D9CTM_NanoFabricator</researchPrerequisite>
 		<ingredientValueGetterClass>D9Framework.IngredientValueGetter_Mass</ingredientValueGetterClass>
 		<ingredients>
@@ -109,7 +108,7 @@
 		<defName>Make_D9CTM_Biomaterial_Bulk</defName>
 		<label>make biomaterial in bulk</label>
 		<description>Produce biomaterial from organic components.</description>
-		<workAmount>18000</workAmount>
+		<workAmount>5850</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 			<li>
