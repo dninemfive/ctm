@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>D9CTM_Nanomaterial</defName>
+		<label>nanomaterial</label>
+		<description>Complex molecular nanostructures capable of being programmed into usable nanites.</description>
+		<graphicData>
+		  <texPath>Things/Item/Nanomaterial</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Standard_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+		  <MarketValue>3.1</MarketValue>
+		  <Mass>0.05</Mass>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+	<ThingDef ParentName="ResourceBase">
+		<defName>D9CTM_Biomaterial</defName>
+		<label>biomaterial</label>
+		<description>A blend of organic compounds with highly even dispersion for use in nanotechnology.</description>
+		<graphicData>
+		  <texPath>Things/Item/Nanomaterial</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Standard_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+		  <MarketValue>3.1</MarketValue>
+		  <Mass>0.05</Mass>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+</Defs>
