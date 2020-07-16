@@ -4,7 +4,11 @@
 		<effectWorking>Smelt</effectWorking>
 		<soundWorking>Recipe_Smelt</soundWorking>		
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<recipeUsers>
+			<li>D9CTM_TableNanofabricator</li>
+		</recipeUsers>
 	</RecipeDef>
+	<!-- Nanomaterial -->
 	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_NanomaterialRecipeBase">
 		<defName>Make_D9CTM_Nanomaterial</defName>
 		<label>make nanomaterial</label>
@@ -50,6 +54,84 @@
 		</ingredients>
 		<products>
 			<D9CTM_Nanomaterial>150</D9CTM_Nanomaterial>
+		</products>
+	</RecipeDef>
+	<!-- Biomaterial -->
+	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_BiomaterialRecipeBase">
+		<defName>Make_D9CTM_Biomaterial</defName>
+		<label>make biomaterial</label>
+		<description>Produce biomaterial from organic components.</description>
+		<jobString>Making biomaterial.</jobString>
+		<workAmount>4000</workAmount>
+		<researchPrerequisite>D9CTM_NanoFabricator</researchPrerequisite>
+		<ingredientValueGetterClass>D9Framework.IngredientValueGetter_Mass</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+				  <categories>
+					<li>MeatRaw</li>
+					<li>AnimalProductRaw</li>
+				  </categories>
+				</filter>
+				<count>0.65</count>
+			</li>
+			<li>
+				<filter>
+				  <thingDefs>
+					<li>PsychoidLeaves</li>
+				  </thingDefs>
+				</filter>
+				<count>0.65</count>
+			</li>
+		</ingredients>
+		<defaultIngredientFilter>
+		  <disallowedCategories>
+			<li>EggsFertilized</li>
+		  </disallowedCategories>
+		  <disallowedThingDefs>
+			<li>InsectJelly</li>
+		  </disallowedThingDefs>
+		</defaultIngredientFilter>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>MeatRaw</li>
+			<li>AnimalProductRaw</li>
+		  </categories>
+		  <thingDefs>
+			<li>PsychoidLeaves</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<D9CTM_Biomaterial>15</D9CTM_Biomaterial>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_BiomaterialRecipeBase">
+		<defName>Make_D9CTM_Biomaterial_Bulk</defName>
+		<label>make biomaterial in bulk</label>
+		<description>Produce biomaterial from organic components.</description>
+		<workAmount>18000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+				  <categories>
+					<li>MeatRaw</li>
+					<li>AnimalProductRaw</li>
+				  </categories>
+				</filter>
+				<count>3.25</count>
+			</li>
+			<li>
+				<filter>
+				  <thingDefs>
+					<li>PsychoidLeaves</li>
+				  </thingDefs>
+				</filter>
+				<count>3.25</count>
+			</li>
+		</ingredients>
+		<products>
+			<D9CTM_Biomaterial>75</D9CTM_Biomaterial>
 		</products>
 	</RecipeDef>
 </Defs>

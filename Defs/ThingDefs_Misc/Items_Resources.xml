@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!--===== Nano/Biomaterial =====-->
 	<ThingDef ParentName="ResourceBase">
 		<defName>D9CTM_Nanomaterial</defName>
 		<label>nanomaterial</label>
@@ -13,7 +14,7 @@
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 		  <MarketValue>3.1</MarketValue>
-		  <Mass>0.05</Mass>
+		  <Mass>0.08</Mass>
 		</statBases>
 		<thingCategories>
 		  <li>Manufactured</li>
@@ -34,8 +35,8 @@
 		<soundDrop>Standard_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
-		  <MarketValue>3.1</MarketValue>
-		  <Mass>0.05</Mass>
+		  <MarketValue>3.3</MarketValue>
+		  <Mass>0.08</Mass>
 		</statBases>
 		<thingCategories>
 		  <li>Manufactured</li>
@@ -43,5 +44,11 @@
 		<tradeTags>
 		  <li>ExoticMisc</li>
 		</tradeTags>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>60</daysToRotStart>
+			<rotDestroys>false</rotDestroys>
+		  </li>
+		</comps>
 	</ThingDef>
 </Defs>
