@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef Name="D9CTM_NanofabricatorRecipeBase" Abstract="True">
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>		
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_NanomaterialRecipeBase">
+		<defName>Make_D9CTM_Nanomaterial</defName>
+		<label>make nanomaterial</label>
+		<description>Produce fifteen nanomaterial from vanadite.</description>
+		<jobString>Making nanomaterial.</jobString>
+		<workAmount>4200</workAmount>
+		<researchPrerequisite>D9CTM_NanoFabricator</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Vanadite</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Vanadite</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<D9CTM_Nanomaterial>15</D9CTM_Nanomaterial>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_NanomaterialRecipeBase">
+		<defName>Make_D9CTM_Nanomaterial_Bulk</defName>
+		<label>make nanomaterial in bulk</label>
+		<description>Produce 150 nanomaterial from vanadite.</description>
+		<jobString>Making nanomaterial in bulk.</jobString>
+		<workAmount>33600</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Vanadite</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<D9CTM_Nanomaterial>150</D9CTM_Nanomaterial>
+		</products>
+	</RecipeDef>
+</Defs>
