@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef Name="D9CTM_MachiningTableRecipeBase" Abstract="True">
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>		
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<recipeUsers><li>TableMachining</li></recipeUsers>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_MachiningTableRecipeBase">
+		<defName>Make_D9CTM_HealingFoamInjector</defName>
+		<label>make healing foam injector</label>
+		<description>Assemble a healing foam injector.</description>
+		<jobString>Making healing foam injector.</jobString>
+		<workAmount>8400</workAmount>
+		<researchPrerequisite>D9CTM_HealingFoam</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Neutroamine</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<D9CTM_HealingFoamInjector>1</D9CTM_HealingFoamInjector>
+		</products>
+	</RecipeDef>
+</Defs>

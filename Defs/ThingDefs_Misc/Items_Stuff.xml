@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!--===== Basic, fairly cheap, spacer-tech materials for specialized purposes. =====-->
   <ThingDef ParentName="ResourceBase">
     <defName>D9CTM_Insulene</defName>
     <label>insulene</label>
@@ -192,6 +193,11 @@
 			</comps>
 		</li>
 	</modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase"> <!-- Not based on stone blocks for various reasons, but some values copied from and all balanced around those defs -->
+	<defName>D9CTM_BlocksAerocrete</defName>
+	<description>Blocks formed from a rocky material composed of pseudoliving calciferous nanostructures. They arrange themselves into a light, airy, and not particularly strong, but quite long-lasting material.\n\nAny damage to the structure is self-repaired over time.</description>
+	
   </ThingDef>
   <!--==== Synthleather, produced at the flesh printer ====-->
   <ThingDef ParentName="LeatherBase">

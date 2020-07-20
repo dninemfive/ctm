@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="ResourceBase">
-		<defName>D9HealingFoam</defName>
+		<defName>D9CTM_HealingFoamInjector</defName>
 		<label>healing foam injector</label>
 		<description>A single-use injector of nanite-infused foam which immediately stops all bleeding and lets wounds begin healing immediately.</description>
 		<graphicData>
