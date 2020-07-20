@@ -10,7 +10,7 @@
 	</RecipeDef>
 	<!-- Synthread -->
 	<RecipeDef Name="D9CTM_SynthreadRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
-		<defName>D9CTM_MakeSynthread</defName>
+		<defName>Make_D9CTM_Synthread</defName>
 		<label>make synthread</label>
 		<description>Treat cotton fibers with chemfuel to produce a softer semi-synthetic blend.</description>
 		<jobString>Making synthread.</jobString>
@@ -45,7 +45,7 @@
 		</products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_SynthreadRecipe">
-		<defName>D9CTM_MakeSynthread_Bulk</defName>
+		<defName>Make_D9CTM_Synthread_Bulk</defName>
 		<label>make synthread in bulk</label>
 		<description>Treat cotton fibers with chemfuel to produce a softer semi-synthetic blend.</description>
 		<jobString>Making synthread in bulk.</jobString>
@@ -74,7 +74,7 @@
 	</RecipeDef>
 	<!-- Insulene -->
 	<RecipeDef Name="D9CTM_InsuleneRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
-		<defName>D9CTM_MakeInsulene</defName>
+		<defName>Make_D9CTM_Insulene</defName>
 		<label>make insulene</label>
 		<description>Synthesize insulene by matterweaving chemfuel.</description>
 		<jobString>Making insulene.</jobString>
@@ -100,7 +100,7 @@
 		</products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_InsuleneRecipe">
-		<defName>D9CTM_MakeInsulene_Bulk</defName>
+		<defName>Make_D9CTM_Insulene_Bulk</defName>
 		<label>make insulene in bulk</label>
 		<description>Synthesize insulene by matterweaving chemfuel.</description>
 		<jobString>Making insulene in bulk.</jobString>
@@ -121,7 +121,7 @@
 	</RecipeDef>
 	<!-- Psychic Foil -->
 	<RecipeDef Name="D9CTM_PsychicFoilRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
-		<defName>D9CTM_MakePsychicFoil</defName>
+		<defName>Make_D9CTM_PsychicFoil</defName>
 		<label>make psychic foil</label>
 		<description>Weave nanostrands of vanadite into a steel-based foil capable of focusing or reflecting psychic energy as needed.</description>
 		<jobString>Making psychic foil.</jobString>
@@ -156,7 +156,7 @@
 		</products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_PsychicFoilRecipe">
-		<defName>D9CTM_MakePsychicFoil_Bulk</defName>
+		<defName>Make_D9CTM_PsychicFoil_Bulk</defName>
 		<label>make psychic foil in bulk</label>
 		<description>Weave nanostrands of vanadite into a steel-based foil capable of focusing or reflecting psychic energy as needed.</description>
 		<jobString>Making psychic foil in bulk.</jobString>
