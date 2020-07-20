@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	For testing purposes at the moment. Will have a mod setting on release. Currently, patches apparel and weapon bases to have a Normal TickerType so they can self-repair when made out of self-healing stuff.
+	Might expand it to all ThingWithComps with TickerType Never (perhaps only with CompEquippable) in the future.
+-->
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="BaseWeapon" or @Name="ApparelBase"]/tickerType</xpath>
+		<value><tickerType>Normal</tickerType></value>
+	</Operation>
+</Patch>
