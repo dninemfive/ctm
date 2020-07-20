@@ -135,4 +135,57 @@
 		</products>
 	</RecipeDef>
 	<!--===== Usables =====-->
+	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_NanomaterialRecipeBase">
+		<defName>Make_D9CTM_AutoImmunizer</defName>
+		<label>make auto-immunizer</label>
+		<description>Pre-program nanites and assemble an injector to create an auto-immunizer.</description>
+		<jobString>Making nanomaterial.</jobString>
+		<workAmount>9400</workAmount>
+		<researchPrerequisite>D9CTM_NaniteBiomanipulation</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>D9CTM_Nanomaterial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>D9CTM_Biomaterial</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>			
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>ComponentSpacer</li>
+				<li>D9CTM_Nanomaterial</li>
+				<li>D9CTM_Biomaterial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<D9CTM_AutoImmunizer>1</D9CTM_AutoImmunizer>
+		</products>
+	</RecipeDef>
 </Defs>
