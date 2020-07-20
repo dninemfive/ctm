@@ -144,4 +144,51 @@
 			<Hyperweave>30</Hyperweave>
 		</products>
 	</RecipeDef>
+	<!-- Wood -->
+	<RecipeDef Name="D9CTM_WoodRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
+		<defName>Make_D9CTM_Wood</defName>
+		<label>synthesize wood</label>
+		<description>Weave raw cellulose from plant materials into wood.</description>
+		<jobString>Making wood.</jobString>
+		<workAmount>350</workAmount>
+		<researchPrerequisite>D9CTM_WoodWeaving</researchPrerequisite>
+		<ingredientValueGetterClass>D9Framework.IngredientValueGetter_Mass</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+				  <categories>
+					<li>PlantFoodRaw</li>
+				  </categories>
+				</filter>
+				<count>1.5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<WoodLog>3</WoodLog>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_WoodRecipe">
+		<defName>Make_D9CTM_Wood_Bulk</defName>
+		<label>make wood in bulk</label>
+		<jobString>Making wood in bulk.</jobString>
+		<workAmount>1700</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+				  <categories>
+					<li>PlantFoodRaw</li>
+				  </categories>
+				</filter>
+				<count>7.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<WoodLog>15</WoodLog>
+		</products>
+	</RecipeDef>
 </Defs>
