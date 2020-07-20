@@ -39,7 +39,6 @@
 	<RecipeDef ParentName="D9CTM_SynthreadRecipe">
 		<defName>Make_D9CTM_Synthread_Bulk</defName>
 		<label>make synthread in bulk</label>
-		<description>Treat cotton fibers with chemfuel to produce a softer semi-synthetic blend.</description>
 		<jobString>Making synthread in bulk.</jobString>
 		<workAmount>5400</workAmount>
 		<ingredients>
@@ -65,18 +64,18 @@
 		</products>
 	</RecipeDef>
 	<!-- Hyperweave -->
-	<RecipeDef Name="D9CTM_SynthreadRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
-		<defName>Make_D9CTM_Synthread</defName>
-		<label>make synthread</label>
-		<description>Treat cotton fibers with chemfuel to produce a softer semi-synthetic blend.</description>
-		<jobString>Making synthread.</jobString>
-		<workAmount>1200</workAmount>
-		<researchPrerequisite>D9CTM_MaterialsScience</researchPrerequisite>
+	<RecipeDef Name="D9CTM_HyperweaveRecipe" ParentName="D9CTM_MatterweaverRecipeBase">
+		<defName>Make_D9CTM_Hyperweave</defName>
+		<label>make hyperweave</label>
+		<description>Weave devilstrand, synthread, and plasteel fibers together to produce a strong and durable yet pliant fabric.</description>
+		<jobString>Making hyperweave.</jobString>
+		<workAmount>1400</workAmount>
+		<researchPrerequisite>D9CTM_Hyperweave</researchPrerequisite>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Chemfuel</li>
+						<li>DevilstrandCloth</li>
 					</thingDefs>
 				</filter>
 				<count>5</count>
@@ -84,48 +83,65 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Cloth</li>
+						<li>Synthread</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Chemfuel</li>
-				<li>Cloth</li>
+				<li>DevilstrandCloth</li>
+				<li>Synthread</li>
+				<li>Plasteel</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Synthread>2</Synthread>
+			<Hyperweave>3</Hyperweave>
 		</products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_SynthreadRecipe">
-		<defName>Make_D9CTM_Synthread_Bulk</defName>
-		<label>make synthread in bulk</label>
-		<description>Treat cotton fibers with chemfuel to produce a softer semi-synthetic blend.</description>
-		<jobString>Making synthread in bulk.</jobString>
-		<workAmount>5400</workAmount>
+		<defName>Make_D9CTM_Hyperweave_Bulk</defName>
+		<label>make hyperweave in bulk</label>
+		<jobString>Making hyperweave in bulk.</jobString>
+		<workAmount>12880</workAmount>
+		<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Chemfuel</li>
+						<li>DevilstrandCloth</li>
 					</thingDefs>
 				</filter>
-				<count>25</count>
+				<count>50</count>
 			</li>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Cloth</li>
+						<li>Synthread</li>
 					</thingDefs>
 				</filter>
-				<count>15</count>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
 			</li>
 		</ingredients>
 		<products>
-			<Synthread>10</Synthread>
+			<Hyperweave>30</Hyperweave>
 		</products>
 	</RecipeDef>
 </Defs>
