@@ -26,7 +26,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>D9CTM_Biomaterial</defName>
 		<label>biomaterial</label>
-		<description>A blend of organic compounds with highly even dispersion for use in nanotechnology.</description>
+		<description>A blend of organic compounds with highly even dispersion for use in nanotechnology.\n\nDespite being stored in a relatively stable state, biomaterial tends to self-react and become unusable over long periods of time.</description>
 		<graphicData>
 		  <texPath>Things/Item/Nanomaterial</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
