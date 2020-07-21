@@ -142,6 +142,7 @@
 		<jobString>Making nanomaterial.</jobString>
 		<workAmount>9400</workAmount>
 		<researchPrerequisite>D9CTM_NaniteBiomanipulation</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 			<li>
 				<filter>
@@ -200,14 +201,6 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Plasteel</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
 						<li>ComponentSpacer</li>
 					</thingDefs>
 				</filter>
@@ -219,27 +212,17 @@
 						<li>D9CTM_Nanomaterial</li>
 					</thingDefs>
 				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>D9CTM_Biomaterial</li>
-					</thingDefs>
-				</filter>
-				<count>20</count>
-			</li>			
+				<count>25</count>
+			</li>	
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Plasteel</li>
 				<li>ComponentSpacer</li>
 				<li>D9CTM_Nanomaterial</li>
-				<li>D9CTM_Biomaterial</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<D9CTM_AutoImmunizer>1</D9CTM_AutoImmunizer>
+			<Luciferium>1</Luciferium>
 		</products>
 	</RecipeDef>
 </Defs>
