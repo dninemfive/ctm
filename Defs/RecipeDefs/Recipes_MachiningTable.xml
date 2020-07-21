@@ -6,6 +6,7 @@
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
 		<recipeUsers><li>TableMachining</li></recipeUsers>
 	</RecipeDef>
+	<!-- Healing Foam Injector -->
 	<RecipeDef ParentName="D9CTM_MachiningTableRecipeBase">
 		<defName>Make_D9CTM_HealingFoamInjector</defName>
 		<label>make healing foam injector</label>
@@ -49,6 +50,44 @@
 		</fixedIngredientFilter>
 		<products>
 			<D9CTM_HealingFoamInjector>1</D9CTM_HealingFoamInjector>
+		</products>
+	</RecipeDef>
+	<!--===== Vanilla =====-->
+	<!-- Psychic Foil Helmet -->
+	<RecipeDef ParentName="D9CTM_MachiningTableRecipeBase">
+		<defName>Make_D9CTM_PsychicFoilHelmet</defName>
+		<label>make psychic foil helmet</label>
+		<description>Attach psychic foil to a steel framework.</description>
+		<jobString>Making psychic foil helmet.</jobString>
+		<workAmount>3400</workAmount>
+		<researchPrerequisite>D9CTM_PsychicTheory</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>D9CTM_PsychicFoil</li>
+					</thingDefs>
+				</filter>
+				<count>24</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>D9CTM_PsychicFoil</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Apparel_PsychicFoilHelmet>1</Apparel_PsychicFoilHelmet>
 		</products>
 	</RecipeDef>
 </Defs>

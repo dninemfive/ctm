@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef Name="D9CTM_DrugLabRecipeBase" Abstract="True">
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<requiredGiverWorkType>Crafting</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+	</RecipeDef>
+	<!-- Glitterworld Medicine -->
+	<RecipeDef Name="D9CTM_GlitterMedRecipe" ParentName="D9CTM_DrugLabRecipeBase">
+		<defName>Make_D9CTM_GlitterworldMedicine</defName>
+		<label>make glitterworld medicine</label>
+		<workAmount>1080</workAmount>
+		<jobString>Making glitterworld medicine.</jobString>
+		<researchPrerequisites><li>D9CTM_GlitterworldMedicine</li></researchPrerequisites>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MedicineIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>D9CTM_Nanomaterial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MedicineIndustrial</li>
+				<li>D9CTM_Nanomaterial</li>
+				<li>Synthread</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>8</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_GlitterMedRecipe">
+		<defName>Make_D9CTM_GlitterworldMedicine_Bulk</defName>
+		<label>make glitterworld medicine in bulk</label>
+		<workAmount>4860</workAmount>
+		<jobString>Making glitterworld medicine in bulk.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MedicineIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>D9CTM_Nanomaterial</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+		</ingredients>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+			<Intellectual>8</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+</Defs>
