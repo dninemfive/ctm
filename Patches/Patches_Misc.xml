@@ -20,4 +20,9 @@
 		<xpath>/Defs/ThingDef[defName="AIPersonaCore"]/label</xpath>
 		<value><label>AI persona core</label></value>
 	</Operation>
+	<!-- Rename "Vanometric Cell" to "Vanometric Battery" -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/label</xpath>
+		<value><label>vanometric battery</label></value>
+	</Operation>
 </Patch>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--===== Vanometric Battery =====-->
+	<!-- Requires vanometric cells to build -->
+	<!-- Allow building -->
+	<!--===== Megascreen TV =====-->
+	<!-- Tweak costList -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MegascreenTelevision"]/costList</xpath>
+		<value>
+			<costList>
+			  <Steel>200</Steel>
+			  <Plasteel>60</Plasteel>
+			  <ComponentSpacer>6</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	<!-- Add various tags to make it buildable -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MegascreenTelevision"]</xpath>
+		<value>
+			<constructEffect>ConstructMetal</constructEffect>
+			<designationCategory>Joy</designationCategory>
+			<researchPrerequisites><li>D9CTM_Simpods</li></researchPrerequisites>
+			<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		</value>
+	</Operation>
+</Patch>
