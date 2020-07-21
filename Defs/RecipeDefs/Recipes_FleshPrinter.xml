@@ -197,4 +197,84 @@
 		  <D9CTM_Synthleather>15</D9CTM_Synthleather>
 		</products>
 	</RecipeDef>	
+	<!--===== Organs =====-->
+	<RecipeDef Name="D9CTM_FleshPrinter_OrganRecipeBase" ParentName="D9CTM_FleshPrinterRecipeBase" Abstract="True">		
+		<unfinishedThingDef>UnfinishedHealthItemProsthetic</unfinishedThingDef>
+		<workAmount>18000</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			  </categories>
+			</filter>
+			<count>1.0</count>
+		  </li>
+		  <li>
+			<filter>
+				<thingDefs>
+					<li>D9CTM_Biomaterial</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>	
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>MeatRaw</li>
+			<li>AnimalProductRaw</li>
+		  </categories>
+		  <thingDefs>
+			<li>D9CTM_Biomaterial</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
+		<defName>Make_D9CTM_Lung</defName>
+		<label>print lung</label>
+		<description>Print a human lung from flesh and biomaterial.</description>
+		<jobString>Printing lung.</jobString>
+		<products><li>Lung</li></products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
+		<defName>Make_D9CTM_Kidney</defName>
+		<label>print kidney</label>
+		<description>Print a human kidney from flesh and biomaterial.</description>
+		<jobString>Printing kidney.</jobString>
+		<products><li>Kidney</li></products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
+		<defName>Make_D9CTM_Liver</defName>
+		<label>print liver</label>
+		<description>Print a human liver from flesh and biomaterial.</description>
+		<jobString>Printing liver.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>MeatRaw</li>
+				<li>AnimalProductRaw</li>
+			  </categories>
+			</filter>
+			<count>2.0</count>
+		  </li>
+		  <li>
+			<filter>
+				<thingDefs>
+					<li>D9CTM_Biomaterial</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		  </li>	
+		</ingredients>
+		<products><li>Liver</li></products>
+	</RecipeDef>
+	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
+		<defName>Make_D9CTM_Heart</defName>
+		<label>print heart</label>
+		<description>Print a human heart from flesh and biomaterial.</description>
+		<jobString>Printing heart.</jobString>
+		<products><li>Heart</li></products>
+	</RecipeDef>
 </Defs>
