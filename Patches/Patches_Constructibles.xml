@@ -2,7 +2,30 @@
 <Patch>
 	<!--===== Vanometric Battery =====-->
 	<!-- Requires vanometric cells to build -->
-	<!-- Allow building -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/costList</xpath>
+		<value>
+			<D9CTM_VanometricCell>4</D9CTM_VanometricCell>
+		</value>
+	</Operation>
+	<!-- Patch in construction cost -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/statBases</xpath>
+		<value>
+			<WorkToBuild>40000</WorkToBuild>
+		</value>
+	</Operation>	
+	<!-- Add various tags to make it buildable -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VanometricPowerCell"]</xpath>
+		<value>
+			<constructEffect>ConstructMetal</constructEffect>
+			<designationCategory>Power</designationCategory>
+			<researchPrerequisites><li>D9CTM_VanometricBattery</li></researchPrerequisites>
+			<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		</value>
+	</Operation>
+	<!-- Might want to buff power gen/make vanometric batteries more expensive in the future, but I don't think it's worth rn -->
 	<!--===== Megascreen TV =====-->
 	<!-- Tweak costList -->
 	<Operation Class="PatchOperationReplace">
