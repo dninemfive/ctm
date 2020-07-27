@@ -10,6 +10,8 @@ namespace D9CTM
 {
     /// <summary>
     /// Comp class for pods which, when launched, create items.
+    /// 
+    /// Previously overscoped to include event creation, but asteroid miners will get their own comp in the future.
     /// </summary>
     [StaticConstructorOnStartup]
     class CompLaunchableSatellite : ThingComp
@@ -82,7 +84,7 @@ namespace D9CTM
                 Messages.Message("D9CTM_PodNotReady".Translate(base.parent.Label), new LookTargets(base.parent), MessageTypeDefOf.NeutralEvent, false);
                 return;
             }
-            if (FuelingPortSource != null) FuelingPortSource.TryGetComp<CompRefuelable>().ConsumeFuel(FuelToLaunch);
+            if (FuelingPortSource != null) FuelingPortSource.TryGetComp<CompRefuelable>()?.ConsumeFuel(FuelToLaunch);
             Skyfaller skyfaller = SkyfallerMaker.MakeSkyfaller(Props.skyfallerDef);
             GenSpawn.Spawn(skyfaller, parent.Position, Map, WipeMode.Vanish);
             try
