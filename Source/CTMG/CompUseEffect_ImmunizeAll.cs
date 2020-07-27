@@ -39,7 +39,7 @@ namespace D9CTM
         public override bool CanBeUsedBy(Pawn p, out string failReason)
         {
             bool boo = HasAnyDisease(p);
-            if (!boo) failReason = "D9CTM_NoDiseases".Translate(p.LabelShort);
+            if (!boo) failReason = "D9CTM_NoDiseases".Translate(p.Named("PAWN"));
             else failReason = null;
             return boo;
         }

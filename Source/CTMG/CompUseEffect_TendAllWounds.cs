@@ -41,7 +41,7 @@ namespace D9CTM
         {
             IEnumerable<Hediff> toTend = HediffsToTend(p);
             bool boo = toTend.Any();
-            if (!boo) failReason = "D9CTM_NoTendableWounds".Translate(p.LabelShort);
+            if (!boo) failReason = "D9CTM_NoTendableWounds".Translate(p.Named("PAWN"));
             else failReason = null;
             return boo;
         }

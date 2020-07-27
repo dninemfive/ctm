@@ -19,9 +19,26 @@ namespace D9CTM
 
         public override void DoEffect(Pawn usedBy)
         {
-            base.DoEffect(usedBy);
-            if (HasConflictingHediff(usedBy)) Messages.Message("D9CTM_PawnHasConflictingHediffs".Translate(usedBy.LabelShort, FirstConflictingHediff(usedBy)), new LookTargets(usedBy), MessageTypeDefOf.CautionInput);
-            
+            base.DoEffect(usedBy);         
+        }
+
+        public override TaggedString ConfirmMessage(Pawn p)
+        {
+            List<Hediff> conflictingHediffs = ConflictingHediffs(p).ToList();
+            if(conflictingHediffs?.Count > 0)
+            {
+                if(conflictingHediffs?.Count == 1)
+                {
+                    return "D9CTM_PawnHasConflictingHediff".Translate(p.Named("PAWN"), conflictingHediffs.First().Label);
+                }
+                else
+                {
+                    TaggedString info = "D9CTM_PawnHasConflictingHediffs".Translate(p.Named("PAWN"));
+                    foreach (Hediff h in conflictingHediffs) info += "\n\t" + h.Label;
+                    return info;
+                }
+            }
+            return null;
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)
@@ -43,16 +60,15 @@ namespace D9CTM
             return pawn.health.hediffSet.hediffs.Where(h => h.def.HasModExtension<NaniteHediff>()).Any();
         }
 
-        public static HediffDef FirstConflictingHediff(Pawn pawn)
+        public static IEnumerable<Hediff> ConflictingHediffs(Pawn pawn)
         {
-            return pawn.health.hediffSet.hediffs
-                        .Where(h => h.def.HasModExtension<NaniteHediff>() && (!h.def.everCurableByItem || h.def.GetModExtension<NaniteHediff>().isSevere))?
-                        .First()?.def;
+            foreach (Hediff h in pawn.health.hediffSet.hediffs.Where(h => h.def.HasModExtension<NaniteHediff>() && (!h.def.everCurableByItem || h.def.GetModExtension<NaniteHediff>().isSevere)))
+                yield return h;
         }
 
         public static bool HasConflictingHediff(Pawn pawn)
         {
-            return FirstConflictingHediff(pawn) != null;
+            return ConflictingHediffs(pawn).Any();
         }
     }
     class CompProperties_UseEffectPurgeNanites : CompProperties
