@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!--===== Base Defs =====-->
+	<ThingDef ParentName="BuildingBase" Name="D9CTM_BasePod" Abstract="True">
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<designationCategory>Misc</designationCategory>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<statBases>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <WorkToBuild>1600</WorkToBuild>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<placeWorkers>
+		  <li>PlaceWorker_NeedsFuelingPort</li>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiIconScale>0.65</uiIconScale>
+	</ThingDef>
 	<!--===== Orbital Pod Launcher =====-->
 	<ThingDef ParentName="BuildingBase">
 		<defName>D9CTM_OrbitalPodLauncher</defName>
@@ -63,5 +86,60 @@
 		<uiIconScale>0.9</uiIconScale>
 	</ThingDef>
 	<!--===== Satellite Pods =====-->
+	<ThingDef ParentName="D9CTM_BasePod">
+		<defName>D9SatelliteBombardment</defName>
+		<label>orbital bombardment satellite</label>
+		<description>A launchable satellite containing a manually-targeted "rods from god" bombardment system. Only active for one use before the firing exhausts the satellite's ammo and pushes it out of its orbit.</description>
+		<graphicData>
+		  <texPath>Things/Building/Spacecraft/Satellite_Bombardment</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<costList>
+		  <Steel>300</Steel>
+		  <ComponentIndustrial>5</ComponentIndustrial>
+		  <Uranium>50</Uranium>
+		</costList>
+		<designatorDropdown>D9CTM_CombatSatelliteGroup</designatorDropdown>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>750.0</fuelToLaunch>
+			<thingsToCreateOnLaunch>
+				<OrbitalTargeterBombardment>1</OrbitalTargeterBombardment>
+			</thingsToCreateOnLaunch>
+			<launchCommandPath>UI/Commands/LaunchShip</launchCommandPath>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>D9CTM_OrbitalMechanics</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="D9SatelliteBase">
+		<defName>D9SatellitePower</defName>
+		<label>orbital power satellite</label>
+		<description>A launchable satellite which forms a solar collection system in orbit, producing consistent power which can be collected on the ground. The system may be targeted elsewhere, but this would burn out the satellite's power exchangers and render it unusable.</description>
+		<graphicData>
+		  <texPath>Things/Building/Spacecraft/Satellite_Power</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<costList>
+		  <Steel>400</Steel>
+		  <ComponentIndustrial>9</ComponentIndustrial>
+		</costList>
+		<designatorDropdown>D9CTM_CombatSatelliteGroup</designatorDropdown>
+		<comps>
+		  <li Class="D9CTM.CompProperties_LaunchableSatellite">
+			<fuelToLaunch>750.0</fuelToLaunch>
+			<thingsToCreateOnLaunch>
+				<OrbitalTargeterPowerBeam>1</OrbitalTargeterPowerBeam>
+			</thingsToCreateOnLaunch>
+			<launchCommandPath>UI/Commands/LaunchShip</launchCommandPath>
+		  </li>
+		</comps>
+		<researchPrerequisites>
+			<li>D9CTM_OrbitalPowerTransfer</li>
+		</researchPrerequisites>
+	</ThingDef>
 	<!--===== Asteroid Mining Pods =====-->
 </Defs>

@@ -3,4 +3,7 @@
 	<DesignatorDropdownGroupDef>
 		<defName>D9CTM_PodLauncherGroup</defName>
 	</DesignatorDropdownGroupDef>
+	<DesignatorDropdownGroupDef>
+		<defName>D9CTM_CombatSatelliteGroup</defName>
+	</DesignatorDropdownGroupDef>
 </Defs>
