@@ -41,8 +41,8 @@ namespace D9CTM
             }
             Command_Action launch = new Command_Action
             {
-                defaultLabel = "CommandLaunchSatellite".Translate(base.parent.Label),
-                defaultDesc = "CommandLaunchSatelliteDesc".Translate(base.parent.Label),
+                defaultLabel = "D9CTM_CommandLaunchPod".Translate(base.parent.Label),
+                defaultDesc = "D9CTM_CommandLaunchPodDesc".Translate(base.parent.Label),
                 icon = LaunchCommandTex,
                 alsoClickIfOtherInGroupClicked = false,
                 action = delegate
@@ -52,11 +52,11 @@ namespace D9CTM
             };
             if (!EnoughFuel)
             {
-                launch.Disable("NotEnoughFuelToLaunchSatellite".Translate(base.parent.Label));
+                launch.Disable("D9CTM_PodUnderfueled".Translate(base.parent.Label));
             }
             else if (IsUnderRoof)
             {
-                launch.Disable("SatelliteIsUnderRoof".Translate(base.parent.Label));
+                launch.Disable("D9CTM_PodUnderRoof".Translate(base.parent.Label));
             }
             yield return launch;
         }
@@ -65,19 +65,23 @@ namespace D9CTM
         {
             if (CanLaunch)
             {
-                return "ReadyForLaunchSatellite".Translate();
+                return "D9CTM_PodReadyToLaunch".Translate();
             }
             else
             {
-                if (IsUnderRoof) return "SatelliteIsUnderRoof".Translate(base.parent.Label);
-                if (!EnoughFuel) return "NotEnoughFuelToLaunchSatellite".Translate(base.parent.Label);
+                if (IsUnderRoof) return "D9CTM_PodUnderRoof".Translate(base.parent.Label);
+                if (!EnoughFuel) return "D9CTM_PodUnderfueled".Translate(base.parent.Label);
             }
             return null;
         }
 
         public void TryLaunch()
         {
-            if (!CanLaunch) return; //TODO: throw message
+            if (!CanLaunch)
+            {
+                Messages.Message("D9CTM_PodNotReady".Translate(base.parent.Label), new LookTargets(base.parent), MessageTypeDefOf.NeutralEvent, false);
+                return;
+            }
             if (FuelingPortSource != null) FuelingPortSource.TryGetComp<CompRefuelable>().ConsumeFuel(FuelToLaunch);
             Skyfaller skyfaller = SkyfallerMaker.MakeSkyfaller(Props.skyfallerDef);
             GenSpawn.Spawn(skyfaller, parent.Position, Map, WipeMode.Vanish);

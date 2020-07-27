@@ -26,10 +26,10 @@ namespace D9CTM
         {
             if (!req.HasThing) return;
             float? f;
-            if((f = getVal(req.Thing)) != null) val *= (float)f;
+            if((f = GetVal(req.Thing)) != null) val *= (float)f;
         }
         
-        public float? getVal(Thing t)
+        public float? GetVal(Thing t)
         {
             if (t == null) return null;
             foreach (StatModifier sm in t?.def.statBases) if (sm.stat == stat) return sm.value;
@@ -39,9 +39,9 @@ namespace D9CTM
         public override string ExplanationPart(StatRequest req)
         {
             if (!req.HasThing) return null;
-            float? f = getVal(req.Thing);
+            float? f = GetVal(req.Thing);
             if (f == null) return null;
-            return "D9StatPart_BaseValue".Translate((float)f);
+            return "D9CTM_StatPart_BaseValue".Translate((float)f);
         }
     }
     /// <summary>
@@ -53,7 +53,7 @@ namespace D9CTM
     {
 #pragma warning disable CS0649
         public List<BodyPartGroupMultiplier> multipliers; //not using a Dict<BPGD, float> bc the XML syntax for that is funky
-        float @default = 1f; //just for XML clarity
+        float @default = 1f; //@ is just for XML clarity
 #pragma warning restore CS0649
 
         public class BodyPartGroupMultiplier : IExposable
@@ -135,14 +135,14 @@ namespace D9CTM
         public override string ExplanationPart(StatRequest req)
         {
             if (!req.HasThing || !req.Thing.def.IsApparel) return null;
-            return "D9MultiplierForBodyPartGroup".Translate(GetBestMultiplier(req.Thing.def));
+            return "D9CTM_MultForBPGD".Translate(GetBestMultiplier(req.Thing.def));
         }
 
         public override IEnumerable<string> ConfigErrors()
         {
             multDict = new Dictionary<BodyPartGroupDef, float>();
             foreach (BodyPartGroupMultiplier bpgm in multipliers) multDict.Add(bpgm.bpgd, bpgm.multiplier);
-            if (multipliers.Count > multDict.Count) yield return "D9SP_BPGM_HashCollision".Translate();
+            if (multipliers.Count > multDict.Count) yield return "D9CTM_BPGM_HashCollision".Translate();
             foreach (BodyPartGroupDef bpgd in DefDatabase<BodyPartGroupDef>.AllDefsListForReading) if (!multDict.ContainsKey(bpgd)) multDict.Add(bpgd, @default);            
         }
     }

@@ -38,7 +38,7 @@ namespace D9CTM
             foreach(Hediff h in base.parent.pawn.health.hediffSet.hediffs.Where(x => Utils.Immunizable(x as HediffWithComps)))
             {
                 HediffComp_Immunizable hci = h.TryGetComp<HediffComp_Immunizable>();
-                if (hci != null) ret += (1 - Mathf.Clamp01(hci.Immunity)); //was going to scale it to severityPerDayNotImmune, but base defs would make that inconsistent (some have negative values, for example)
+                if (hci != null) ret += (1 - Mathf.Clamp01(hci.Immunity)); // was going to scale it to severityPerDayNotImmune, but base defs would make that inconsistent (some have negative values, for example)
             }
             return ret;
         }

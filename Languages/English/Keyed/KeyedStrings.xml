@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<!-- StatParts -->
-	<D9StatPart_BaseValue>Base value: {0}</D9StatPart_BaseValue>
-	<D9MultiplierForBodyPartGroup>Multiplier for body part: {0}</D9MultiplierForBodyPartGroup>
-	<D9SP_BPGM_HashCollision>Duplicate entries for the same body part.</D9SP_BPGM_HashCollision>
+	<D9CTM_StatPart_BaseValue>Base value: {0}</D9CTM_StatPart_BaseValue>
+	<D9CTM_MultForBPGD>Multiplier for body part: {0}</D9CTM_MultForBPGD>
+	<D9CTM_BPGM_HashCollision>Duplicate entries for the same body part.</D9CTM_BPGM_HashCollision>
 	<!-- CompUsables -->
-	<D9NoTendableWounds>{0} has no wounds that need tending</D9NoTendableWounds>
-	<D9NoDiseases>{0} has no diseases needing immunization</D9NoDiseases>
+	<D9CTM_NoTendableWounds>{0} has no wounds that need tending</D9CTM_NoTendableWounds>
+	<D9CTM_NoDiseases>{0} has no diseases needing immunization</D9CTM_NoDiseases>
 	<!-- Pods -->
-	
+	<D9CTM_CommandLaunchPod>Launch {0}</D9CTM_CommandLaunchPod>
+	<D9CTM_CommandLaunchPodDesc>Launch this {0} into space.</D9CTM_CommandLaunchPodDesc>
+	<D9CTM_PodUnderfueled>This {0} doesn't have enough fuel to launch.</D9CTM_PodUnderfueled>
+	<D9CTM_PodUnderRoof>You can't launch a spacecraft from under a roof!</D9CTM_PodUnderRoof>
+	<D9CTM_PodReadyToLaunch>Ready to launch.</D9CTM_PodReadyToLaunch>
+	<D9CTM_PodNotReady>The {0} is not ready to launch!</D9CTM_PodNotReady>
 </LanguageData>
