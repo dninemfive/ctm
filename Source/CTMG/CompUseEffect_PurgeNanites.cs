@@ -19,7 +19,7 @@ namespace D9CTM
 
         public override void DoEffect(Pawn usedBy)
         {
-            base.DoEffect(usedBy);         
+            base.DoEffect(usedBy);
         }
 
         public override TaggedString ConfirmMessage(Pawn p)
