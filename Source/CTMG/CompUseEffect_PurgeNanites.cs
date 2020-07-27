@@ -20,7 +20,8 @@ namespace D9CTM
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
-            if(HasConflictingHediff(usedBy)) Messages.Message("D9CTM_PawnHasConflictingHediffs".Translate(usedBy.LabelShort, FirstConflictingHediff(usedBy)))
+            if (HasConflictingHediff(usedBy)) Messages.Message("D9CTM_PawnHasConflictingHediffs".Translate(usedBy.LabelShort, FirstConflictingHediff(usedBy)), new LookTargets(usedBy), MessageTypeDefOf.CautionInput);
+            
         }
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)
@@ -35,16 +36,23 @@ namespace D9CTM
                 failReason = "D9CTM_PawnHasNoNaniteHediffs".Translate(p.LabelShort);
                 return false;
             }
-        }
-
-        public static bool HasConflictingHediff(Pawn pawn)
-        {
-            return pawn.health.hediffSet.hediffs.Where(h => h.def.HasModExtension<NaniteHediff>() && (!h.def.everCurableByItem || h.def.GetModExtension<NaniteHediff>().isSevere)).Any();
-        }
+        }        
 
         public static bool HasNaniteHediff(Pawn pawn)
         {
             return pawn.health.hediffSet.hediffs.Where(h => h.def.HasModExtension<NaniteHediff>()).Any();
+        }
+
+        public static HediffDef FirstConflictingHediff(Pawn pawn)
+        {
+            return pawn.health.hediffSet.hediffs
+                        .Where(h => h.def.HasModExtension<NaniteHediff>() && (!h.def.everCurableByItem || h.def.GetModExtension<NaniteHediff>().isSevere))?
+                        .First()?.def;
+        }
+
+        public static bool HasConflictingHediff(Pawn pawn)
+        {
+            return FirstConflictingHediff(pawn) != null;
         }
     }
     class CompProperties_UseEffectPurgeNanites : CompProperties

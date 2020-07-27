@@ -7,6 +7,7 @@
 	<!-- CompUsables -->
 	<D9CTM_NoTendableWounds>{0} has no wounds that need tending</D9CTM_NoTendableWounds>
 	<D9CTM_NoDiseases>{0} has no diseases needing immunization</D9CTM_NoDiseases>
+	<D9CTM_PawnHasConflictingHediffs>WARNING: {0} has at least one condition, {1}, which will likely cause death if purged.</D9CTM_PawnHasConflictingHediffs>
 	<!-- Pods -->
 	<D9CTM_CommandLaunchPod>Launch {0}</D9CTM_CommandLaunchPod>
 	<D9CTM_CommandLaunchPodDesc>Launch this {0} into space.</D9CTM_CommandLaunchPodDesc>
