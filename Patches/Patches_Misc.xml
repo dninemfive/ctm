@@ -25,4 +25,11 @@
 		<xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/label</xpath>
 		<value><label>vanometric battery</label></value>
 	</Operation>
+	<!-- Add the vanilla Pod Launcher to the PodLauncher DropDownGroup -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="PodLauncher"]</xpath>
+		<value>
+			<designatorDropdown>D9CTM_PodLauncherGroup</designatorDropdown>
+		</value>
+	</Operation>
 </Patch>
