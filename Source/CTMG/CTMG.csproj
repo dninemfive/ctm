@@ -31,8 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\__references\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="D9Framework">
       <HintPath>..\..\..\D9 Framework\Assemblies\D9Framework.dll</HintPath>
@@ -52,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompLaunchableSatellite.cs" />
+    <Compile Include="CompUseEffect_PurgeNanites.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
     <Compile Include="HediffComp_TimePerImmunity.cs" />

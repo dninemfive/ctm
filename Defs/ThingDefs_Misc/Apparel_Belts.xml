@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef ParentName="ApparelBase">
-    <defName>Apparel_D9CTM_RangedShieldBelt</defName>
-	<label>ranged shield belt</label>
-    <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It shuts down instantly if hit by EMP.\n\nThis advanced version allows the wearer to fire outward, but the increased energy expenditure makes it weaker and slower to recharge.</description>
-	<thingClass>D9Framework.RangedShieldBelt</thingClass>
-	<graphicData>
-		<texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
-		<graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <tickerType>Normal</tickerType>
-    <statBases>
-      <Mass>3</Mass>
-      <EnergyShieldRechargeRate>0.117</EnergyShieldRechargeRate>
-      <EnergyShieldEnergyMax>0.99</EnergyShieldEnergyMax>
-      <WorkToMake>28000</WorkToMake>
-	  <Flammability>0.4</Flammability>
-	  <EquipDelay>2</EquipDelay>
-    </statBases>
-	<thingSetMakerTags>
-      <li>RewardStandardMidFreq</li>
-      <li>RewardStandardQualitySuper</li>
-    </thingSetMakerTags>
-	<costList>
-		<ComponentIndustrial>3</ComponentIndustrial>
-		<Plasteel>30</Plasteel>
-		<Steel>50</Steel>
-		<AIPersonaFragment>1</AIPersonaFragment>
-	</costList>
+  <ThingDef Name="D9CTM_BeltBase" ParentName="ApparelBase">
+	<tickerType>Normal</tickerType>
+	<statBases>
+		<Mass>3</Mass>
+		<Flammability>0.4</Flammability>
+		<EquipDelay>2</EquipDelay>
+	</statBases>
 	<recipeMaker>
 		<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
-		<researchPrerequisite>D9CTM_RangedShieldBelts</researchPrerequisite>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<workSkill>Crafting</workSkill>
 		<effectWorking>Smith</effectWorking>
@@ -38,14 +16,11 @@
 		<recipeUsers>
 			<li>TableMachining</li>
 		</recipeUsers>
-		<skillRequirements>
-			<Crafting>12</Crafting>
-		</skillRequirements>
 	</recipeMaker>
-    <thingCategories>
-      <li>ApparelArmor</li>
+	<thingCategories>
+      <li>Apparel</li> <!-- TODO: make custom belt category -->
     </thingCategories>
-    <apparel>
+	<apparel>
       <careIfWornByCorpse>false</careIfWornByCorpse>
       <bodyPartGroups>
         <li>Waist</li>
@@ -53,11 +28,9 @@
       <layers>
         <li>Belt</li>
       </layers>
-      <tags>
-        <li>BeltDefenseRanged</li>
-      </tags>
+	  <!-- TODO: BeltUtility tag? If so, give to certain PawnKinds -->
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
+	<colorGenerator Class="ColorGenerator_Options">
       <options>
         <li>
           <weight>10</weight>
@@ -78,5 +51,78 @@
         </li>
       </options>
     </colorGenerator>
+  </ThingDef>
+  <!--===== Ranged Shield Belt =====-->
+  <ThingDef ParentName="D9CTM_BeltBase">
+    <defName>Apparel_D9CTM_RangedShieldBelt</defName>
+	<label>ranged shield belt</label>
+    <description>A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It shuts down instantly if hit by EMP.\n\nThis advanced version allows the wearer to fire outward, but the increased energy expenditure makes it weaker and slower to recharge.</description>
+	<thingClass>D9Framework.RangedShieldBelt</thingClass>
+	<graphicData>
+		<texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>3</Mass>
+      <EnergyShieldRechargeRate>0.117</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.99</EnergyShieldEnergyMax>
+      <WorkToMake>28000</WorkToMake>	  
+	  <EquipDelay>2</EquipDelay>
+    </statBases>
+	<thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+	<costList>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<Plasteel>30</Plasteel>
+		<Steel>50</Steel>
+		<AIPersonaFragment>1</AIPersonaFragment>
+	</costList>
+	<recipeMaker>
+		<researchPrerequisite>D9CTM_RangedShieldBelts</researchPrerequisite>		
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+    <thingCategories Inherit="False">
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <apparel>
+      <tags>
+        <li>BeltDefenseRanged</li>
+      </tags>
+    </apparel>    
+  </ThingDef>
+  <!--===== Exoskeleton Belt(s) =====-->
+  <ThingDef ParentName="D9CTM_BeltBase">
+    <defName>Apparel_D9CTM_ExoskeletonBelt</defName>
+	<label>exoskeleton belt</label>
+    <description>A simple self-powered exoskeleton which generally improves the wearer's strength and dexterity, improving both work speed and combat skills.</description>
+	<graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+	  <WorkToMake>16000</WorkToMake>
+    </statBases>
+	<costList>
+		<ComponentIndustrial>3</ComponentIndustrial>
+		<Plasteel>45</Plasteel>
+		<ComponentSpacer>1</ComponentSpacer>
+	</costList>
+	<recipeMaker>
+		<researchPrerequisite>D9CTM_ExoskeletonBelts</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+	<equippedStatOffsets>
+	  <MoveSpeed>0.1</MoveSpeed>
+      <WorkSpeedGlobal>0.25</WorkSpeedGlobal>	
+	  <MeleeHitChance>3</MeleeHitChance> <!-- Brawler is +4 -->
+	  <MeleeDodgeChance>5</MeleeDodgeChance> <!-- Nimble is +15, but movement affects this so I don't want to risk stacking too much -->
+	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn> <!-- Careful Shooter is +5, but this doesn't have the shooting speed penalty -->
+    </equippedStatOffsets>
   </ThingDef>
 </Defs>
