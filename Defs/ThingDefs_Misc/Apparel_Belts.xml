@@ -94,22 +94,25 @@
       </tags>
     </apparel>    
   </ThingDef>
-  <!--===== Exoskeleton Belt(s) =====-->
+  <!--===== Exoskeleton Belts =====-->
   <ThingDef ParentName="D9CTM_BeltBase">
-    <defName>Apparel_D9CTM_ExoskeletonBelt</defName>
-	<label>exoskeleton belt</label>
-    <description>A simple self-powered exoskeleton which generally improves the wearer's strength and dexterity, improving both work speed and combat skills.</description>
+    <defName>Apparel_D9CTM_ExoskeletonBelt_Combat</defName>
+	<label>combat exoskeleton belt</label>
+    <description>A simple self-powered exoskeleton which generally improves the wearer's dexterity, increasing performance in combat.</description>
 	<graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath> <!-- modify this texture -->
+      <texPath>Things/Pawn/Humanlike/Apparel/SmokepopBelt/SmokepopBelt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-	  <WorkToMake>16000</WorkToMake>
+	  <WorkToMake>14000</WorkToMake>
+	  <!-- Carry Mass Framework stuff -->
+	  <GearMass>0</GearMass>
+	  <CarryMassOffset>15</CarryMassOffset>
     </statBases>
 	<costList>
 		<ComponentIndustrial>3</ComponentIndustrial>
-		<Plasteel>45</Plasteel>
-		<ComponentSpacer>1</ComponentSpacer>
+		<Plasteel>55</Plasteel>
+		<ComponentSpacer>2</ComponentSpacer>
 	</costList>
 	<recipeMaker>
 		<researchPrerequisite>D9CTM_ExoskeletonBelts</researchPrerequisite>
@@ -119,10 +122,39 @@
 	</recipeMaker>
 	<equippedStatOffsets>
 	  <MoveSpeed>0.1</MoveSpeed>
-      <WorkSpeedGlobal>0.25</WorkSpeedGlobal>	
 	  <MeleeHitChance>3</MeleeHitChance> <!-- Brawler is +4 -->
 	  <MeleeDodgeChance>5</MeleeDodgeChance> <!-- Nimble is +15, but movement affects this so I don't want to risk stacking too much -->
 	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn> <!-- Careful Shooter is +5, but this doesn't have the shooting speed penalty -->
+    </equippedStatOffsets>
+  </ThingDef>
+  <ThingDef ParentName="D9CTM_BeltBase">
+    <defName>Apparel_D9CTM_ExoskeletonBelt_Work</defName>
+	<label>work exoskeleton belt</label>
+    <description>A simple self-powered exoskeleton which generally improves the wearer's strength, increasing their ability to perform manual labor.</description>
+	<graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SmokepopBelt/SmokepopBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+	  <WorkToMake>18000</WorkToMake>
+	  <!-- Carry Mass Framework stuff -->
+	  <GearMass>0</GearMass>
+	  <CarryMassOffset>50</CarryMassOffset>
+    </statBases>
+	<costList>
+		<ComponentIndustrial>5</ComponentIndustrial>
+		<Plasteel>75</Plasteel>
+		<ComponentSpacer>1</ComponentSpacer>
+	</costList>
+	<recipeMaker>
+		<researchPrerequisite>D9CTM_ExoskeletonBelts</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+	<equippedStatOffsets>
+	  <MoveSpeed>0.1</MoveSpeed>
+      <WorkSpeedGlobal>0.25</WorkSpeedGlobal>
     </equippedStatOffsets>
   </ThingDef>
 </Defs>
