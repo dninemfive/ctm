@@ -8,8 +8,32 @@ using RimWorld;
 
 namespace D9CTM
 {
-    class CompEMPable : CompWithApparelOffset
+    class CompEMPable : CompApparelScoreOffset
     {
-        
-    }    
+        public new CompProperties_EMPable Props => (CompProperties_EMPable)base.props;
+        public int CooldownTicks = 0;
+        public bool EMPed => CooldownTicks > 0;
+
+        public override void CompTick()
+        {
+            if (CooldownTicks > 0) CooldownTicks--;
+        }
+
+        public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+        {
+            if (Props.damageDefs.Contains(dinfo.Def)) CooldownTicks = Props.cooldownTicks;
+        }
+    }
+    class CompProperties_EMPable : CompProperties_ApparelScoreOffset
+    {
+#pragma warning disable CS0649
+        public List<DamageDef> damageDefs;
+        public int cooldownTicks = 250;
+#pragma warning restore CS0649
+
+        public CompProperties_EMPable()
+        {
+            base.compClass = typeof(CompEMPable);
+        }
+    }
 }
