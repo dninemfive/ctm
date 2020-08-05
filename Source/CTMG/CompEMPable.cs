@@ -30,7 +30,7 @@ namespace D9CTM
     {
 #pragma warning disable CS0649
         public List<DamageDef> damageDefs;
-        public int cooldownTicks = 250;
+        public int cooldownTicks = 3200; // same as ShieldBelt.startingTicksToReset, but that's private and idc to reflect it
 #pragma warning restore CS0649
 
         public CompProperties_EMPable()
