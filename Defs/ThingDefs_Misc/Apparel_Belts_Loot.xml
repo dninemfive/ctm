@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelBase" Name="D9LootBeltBase" Abstract="True">
+	<graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>3</Mass>
+    </statBases>
+	<thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+	<apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+	<colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.33,0.33,0.33,1)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.65,0.65,0.65,1)</only>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>RGBA(0.3,0.3,0.3,1)</min>
+          <max>RGBA(0.5,0.5,0.5,1)</max>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.9,0.9,0.9,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+	<thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+  </ThingDef>
+<!-- Mechanist's Exoskeleton: +10% workspeed, +20% manipulation, +25% repair speed, +20% mechanoid dissasembly efficiency -->
+  <ThingDef ParentName="D9LootBeltBase">
+    <defName>Apparel_MechanistExoskeleton</defName>
+	<label>mechanist's exoskeleton belt</label>
+    <description>A customized self-powered exoskeleton which generally improves the wearer's dexterity and manipulation, vastly increasing their work speed, especially regarding disassembly and repair.</description>
+	<equippedStatOffsets>
+      <WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+	  <ConstructionSpeed>0.15</ConstructionSpeed>
+	  <ButcheryMechanoidSpeed>0.2</ButcheryMechanoidSpeed>	  
+	  <ButcheryMechanoidEfficiency>0.2</ButcheryMechanoidEfficiency>	  
+    </equippedStatOffsets>
+	<!--<comps>
+		<li Class="D9CTM.ApparelAddHediff">
+			<def>(custom one which adds to the Manipulation capacity)</def>
+		</li>-->
+  </ThingDef>
+  <!-- Miner's exoskeleton: +25% mining speed, weak melee shield, +15% mining yield, +20% carry weight -->
+  <ThingDef ParentName="D9LootBeltBase">
+    <defName>Apparel_MinerExoskeleton</defName>
+	<label>miner's exoskeleton belt</label>
+	<thingClass>ShieldBelt</thingClass>
+    <description>A customized self-powered exoskeleton which greatly improves the wearer's strength, allowing them to mine more quickly and efficiently.\n\nHas a weak shield to fend off micrometeorite impacts, but this prevents the use of ranged weapons.</description>
+	<equippedStatOffsets>
+      <MiningSpeed>0.25</MiningSpeed>  
+	  <MiningYield>0.15</MiningYield>
+    </equippedStatOffsets>
+	<statBases>
+      <EnergyShieldRechargeRate>0.2</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.8</EnergyShieldEnergyMax>
+    </statBases>
+  </ThingDef>
+  <!-- Enforcer's shield belt: strong melee shield, strong melee combat bonus -->
+  <ThingDef ParentName="D9LootBeltBase">
+    <defName>Apparel_EnforcerBelt</defName>
+	<label>enforcer's shield belt</label>
+	<thingClass>ShieldBelt</thingClass>
+    <description>A customized shield belt which blocks ranged attacks but has good recharge and strength capabilities.\n\nFeatures an exoskeleton which improve's the wearer's dexterity, allowing them to dodge incoming punches and land their own hits.</description>
+	<equippedStatOffsets>
+	  <MeleeHitChance>6</MeleeHitChance> <!-- Brawler is +4 -->
+	  <MeleeDodgeChance>12</MeleeDodgeChance> <!-- Nimble is +15 -->
+    </equippedStatOffsets>
+	<statBases>
+      <EnergyShieldRechargeRate>0.24</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1.05</EnergyShieldEnergyMax>
+    </statBases>
+  </ThingDef>
+  <!-- Surgeon's exoskeleton: high medical improvement -->
+  <ThingDef ParentName="D9LootBeltBase">
+    <defName>Apparel_SurgeonExoskeleton</defName>
+	<label>surgeon's exoskeleton belt</label>
+    <description>A customized self-powered exoskeleton which generally improves the wearer's manipulation, allowing them to work more quickly and efficiently when doing surgery or performing other medical tasks.</description>
+	<equippedStatOffsets>
+      <MedicalTendSpeed>0.2</MedicalTendSpeed>
+	  <MedicalTendQuality>0.15</MedicalTendQuality>
+	  <MedicalOperationSpeed>0.2</MedicalOperationSpeed>	  
+	  <MedicalSurgerySuccessChance>0.3</MedicalSurgerySuccessChance>	  
+    </equippedStatOffsets>
+  </ThingDef>
+  <!-- Sniper's shield belt: +ranged cooldown time, +accuracy, weak but quick-recharging ranged shield -->
+  <ThingDef ParentName="D9LootBeltBase">
+    <defName>Apparel_SniperBelt</defName>
+	<label>sniper's shield belt</label>
+	<thingClass>D9Framework.RangedShieldBelt</thingClass>
+    <description>A customized shield belt which allows ranged attacks and recharges quickly but has a low max charge.\n\nExoskeleton arms stabilize the wearer's aim but restrict their movement, increasing aim time.</description>
+	<equippedStatOffsets>
+	  <MoveSpeed>0.2</MoveSpeed>
+	  <AimingDelayFactor>0.25</AimingDelayFactor>
+	  <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+    </equippedStatOffsets>
+	<statBases>
+      <EnergyShieldRechargeRate>0.35</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.75</EnergyShieldEnergyMax>
+    </statBases>
+  </ThingDef>
+</Defs>
