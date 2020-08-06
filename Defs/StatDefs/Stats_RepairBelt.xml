@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<StatDef>
+		<defName>D9CTM_BeltRepairRate</defName>
+		<label>Belt repair rate</label>
+		<description>The rate at which this belt will repair the wearer's equipment when worn.\n\nA value of 5 means five HP per hour will be restored, spread accross all worn and equipped items.</description>
+		<category>Apparel</category>
+		<minValue>0</minValue>
+		<toStringStyle>Integer</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>70</displayPriorityInCategory>
+		<parts>
+		  <li Class="StatPart_Quality">
+			<factorAwful>1</factorAwful>
+			<factorPoor>3</factorPoor>
+			<factorNormal>5</factorNormal>
+			<factorGood>7</factorGood>
+			<factorExcellent>9</factorExcellent>
+			<factorMasterwork>11</factorMasterwork>
+			<factorLegendary>15</factorLegendary>
+		  </li>
+		</parts>
+	</StatDef>
+</Defs>
