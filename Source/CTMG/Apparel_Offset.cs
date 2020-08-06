@@ -21,7 +21,7 @@ namespace D9CTM
     {
         public CompProperties_ApparelScoreOffset Props => (CompProperties_ApparelScoreOffset)base.props;
 
-        public virtual float ApparelScoreOffset => base.parent.GetStatValue(Props.apparelScoreOffsetStat);
+        public virtual float ApparelScoreOffset => base.parent.GetStatValue(Props.apparelScoreOffsetStat) * Props.apparelScoreFactor;
     }
     class CompProperties_ApparelScoreOffset : CompProperties
     {

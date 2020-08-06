@@ -183,6 +183,16 @@
 	<equippedStatOffsets>
 	  <ConstructionSpeed>0.35</ConstructionSpeed>
     </equippedStatOffsets>
+	<comps>
+		<li Class="D9CTM.CompProperties_RepairBelt">
+			<apparelScoreFactor>0.125</apparelScoreFactor> <!-- Tweaked so a high-quality repair belt is a little better than a shield belt, while it's otherwise quite a bit worse. Might want nonlinear factors in the future. -->
+			<apparelScoreOffsetStat>D9CTM_BeltRepairRate</apparelScoreOffsetStat> <!-- Sets the apparel score offset, is also used as the amount of HP healed per interval -->
+			<disablingDamageDefs>
+				<li>EMP</li> <!-- Disabled by EMPs -->
+			</disablingDamageDefs>
+			<tickInterval>2500</tickInterval> <!-- Repairs once an hour -->
+		</li>
+	</comps>
   </ThingDef>
   <ThingDef ParentName="D9CTM_BeltBase">
     <defName>Apparel_D9CTM_HealingBelt</defName>

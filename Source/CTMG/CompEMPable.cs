@@ -23,13 +23,13 @@ namespace D9CTM
 
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
-            if (Props.damageDefs.Contains(dinfo.Def)) CooldownTicks = Props.cooldownTicks;
+            if (Props.disablingDamageDefs.Contains(dinfo.Def)) CooldownTicks = Props.cooldownTicks;
         }        
     }
     class CompProperties_EMPable : CompProperties_ApparelScoreOffset
     {
 #pragma warning disable CS0649
-        public List<DamageDef> damageDefs;
+        public List<DamageDef> disablingDamageDefs;
         public int cooldownTicks = 3200; // same as ShieldBelt.startingTicksToReset, but that's private and idc to reflect it
 #pragma warning restore CS0649
 

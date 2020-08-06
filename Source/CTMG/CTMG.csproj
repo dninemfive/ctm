@@ -51,7 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apparel_Offset.cs" />
+    <Compile Include="CompEMPable.cs" />
     <Compile Include="CompLaunchableSatellite.cs" />
+    <Compile Include="CompRepairBelt.cs" />
     <Compile Include="CompUseEffect_PurgeNanites.cs" />
     <Compile Include="CompUseEffect_ImmunizeAll.cs" />
     <Compile Include="CompUseEffect_TendAllWounds.cs" />
