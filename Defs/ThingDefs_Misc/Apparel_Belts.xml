@@ -159,6 +159,32 @@
   </ThingDef>
   <!--===== Healing/Repair Belts =====-->
   <ThingDef ParentName="D9CTM_BeltBase">
+    <defName>Apparel_D9CTM_RepairBelt</defName>
+	<label>nanite repair belt</label>
+    <description>A belt which slowly repairs the wearer's equipment over time. Much slower than a dedicated repair field, but portable and self-powered.\n\nThe field extends just far enough that the wearer can use it to help when repairing buildings as well.</description>
+	<graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SmokepopBelt/SmokepopBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+	  <WorkToMake>17500</WorkToMake>
+	  <D9CTM_BeltRepairRate>1</D9CTM_BeltRepairRate>
+    </statBases>
+	<costList>
+		<Plasteel>50</Plasteel>
+		<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+	<recipeMaker>
+		<researchPrerequisite>D9CTM_NaniteProjector</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>13</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+	<equippedStatOffsets>
+	  <ConstructionSpeed>0.35</ConstructionSpeed>
+    </equippedStatOffsets>
+  </ThingDef>
+  <ThingDef ParentName="D9CTM_BeltBase">
     <defName>Apparel_D9CTM_HealingBelt</defName>
 	<label>nanite healing belt</label>
     <description>A belt which slowly heals the wearer's injuries over time. Much slower than a dedicated healing field, but portable and self-powered.\n\nThe field extends just far enough that the wearer can use it to help when healing others as well.</description>
@@ -171,10 +197,10 @@
     </statBases>
 	<costList>
 		<Plasteel>50</Plasteel>
-		<ComponentSpacer>2</ComponentSpacer>
+		<ComponentSpacer>3</ComponentSpacer>
 	</costList>
 	<recipeMaker>
-		<researchPrerequisite>D9CTM_ExoskeletonBelts</researchPrerequisite>
+		<researchPrerequisite>D9CTM_NaniteBiorepair</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>13</Crafting>
 		</skillRequirements>
