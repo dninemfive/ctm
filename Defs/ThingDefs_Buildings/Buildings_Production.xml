@@ -68,7 +68,7 @@
 		  <li Class="CompProperties_AffectedByFacilities">
 			<linkableFacilities>
 			  <li>ToolCabinet</li>
-			  <li>D9CTMToolCabinet</li>
+			  <li>D9CTM_NaniteCraftingAssistant</li>
 			</linkableFacilities>
 		  </li>
 		  <li Class="CompProperties_Breakdownable"/>
@@ -153,7 +153,7 @@
 			  </li-->
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
-				  <li>D9CTMToolCabinet</li>
+				  <li>D9CTM_NaniteCraftingAssistant</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Breakdownable"/>
@@ -241,7 +241,7 @@
 		  <li Class="CompProperties_AffectedByFacilities">
 			<linkableFacilities>
 			  <li>ToolCabinet</li>
-			  <li>D9CTMToolCabinet</li>
+			  <li>D9CTM_NaniteCraftingAssistant</li>
 			</linkableFacilities>
 		  </li>
 		  <li Class="CompProperties_Breakdownable"/>

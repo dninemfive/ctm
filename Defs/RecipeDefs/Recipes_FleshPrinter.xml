@@ -235,14 +235,14 @@
 		<label>print lung</label>
 		<description>Print a human lung from flesh and biomaterial.</description>
 		<jobString>Printing lung.</jobString>
-		<products><li>Lung</li></products>
+		<products><Lung>1</Lung></products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
 		<defName>Make_D9CTM_Kidney</defName>
 		<label>print kidney</label>
 		<description>Print a human kidney from flesh and biomaterial.</description>
 		<jobString>Printing kidney.</jobString>
-		<products><li>Kidney</li></products>
+		<products><Kidney>1</Kidney></products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
 		<defName>Make_D9CTM_Liver</defName>
@@ -268,13 +268,13 @@
 			<count>20</count>
 		  </li>	
 		</ingredients>
-		<products><li>Liver</li></products>
+		<products><Liver>1</Liver></products>
 	</RecipeDef>
 	<RecipeDef ParentName="D9CTM_FleshPrinter_OrganRecipeBase">
 		<defName>Make_D9CTM_Heart</defName>
 		<label>print heart</label>
 		<description>Print a human heart from flesh and biomaterial.</description>
 		<jobString>Printing heart.</jobString>
-		<products><li>Heart</li></products>
+		<products><Heart>1</Heart></products>
 	</RecipeDef>
 </Defs>

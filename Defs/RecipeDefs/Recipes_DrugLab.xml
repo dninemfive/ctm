@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<RecipeDef Name="D9CTM_DrugLabRecipeBase" Abstract="True">
-		<workSpeedStat>CookSpeed</workSpeedStat>
 		<requiredGiverWorkType>Crafting</requiredGiverWorkType>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_CookMeal</soundWorking>

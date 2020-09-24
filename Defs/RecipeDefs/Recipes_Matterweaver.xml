@@ -3,7 +3,7 @@
 	<RecipeDef Name="D9CTM_MatterweaverRecipeBase" Abstract="True">
 		<effectWorking>Smelt</effectWorking>
 		<soundWorking>Recipe_Smelt</soundWorking>
-		<workSpeedStat>TailoringSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<recipeUsers>
 			<li>D9CTM_TableMatterweaver</li>
 		</recipeUsers>

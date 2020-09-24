@@ -3,7 +3,7 @@
 	<RecipeDef Name="D9CTM_NanofabricatorRecipeBase" Abstract="True">
 		<effectWorking>Smelt</effectWorking>
 		<soundWorking>Recipe_Smelt</soundWorking>		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<recipeUsers>
 			<li>D9CTM_TableNanofabricator</li>
 		</recipeUsers>
@@ -135,7 +135,7 @@
 		</products>
 	</RecipeDef>
 	<!--===== Usables =====-->
-	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_NanomaterialRecipeBase">
+	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase">
 		<defName>Make_D9CTM_AutoImmunizer</defName>
 		<label>make auto-immunizer</label>
 		<description>Pre-program nanites and assemble an injector to create an auto-immunizer.</description>
@@ -190,7 +190,7 @@
 		</products>
 	</RecipeDef>
 	<!--===== Vanilla recipes =====-->
-	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase" Name="D9CTM_NanomaterialRecipeBase">
+	<RecipeDef ParentName="D9CTM_NanofabricatorRecipeBase">
 		<defName>Make_D9CTM_Luciferium</defName>
 		<label>make luciferium</label>
 		<description>Program nanites into a dose of the infamous drug Luciferium.</description>

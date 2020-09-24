@@ -3,7 +3,7 @@
 	<RecipeDef Name="D9CTM_MachiningTableRecipeBase" Abstract="True">
 		<effectWorking>Smelt</effectWorking>
 		<soundWorking>Recipe_Smelt</soundWorking>		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<recipeUsers><li>TableMachining</li></recipeUsers>
 	</RecipeDef>
 	<!-- Healing Foam Injector -->

@@ -54,7 +54,7 @@
 		</stuffCategories>
 		<costStuffCount>70</costStuffCount>
 		<costList>
-		  <D9VanometricCell>4</D9VanometricCell>
+		  <D9CTM_VanometricCell>4</D9CTM_VanometricCell>
 		  <AIPersonaFragment>1</AIPersonaFragment>
 		  <Plasteel>80</Plasteel>
 		  <ComponentSpacer>3</ComponentSpacer>
@@ -65,9 +65,9 @@
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<building>
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>Gun_ChargeRifles_Mounted</turretGunDef>
+			<turretGunDef>Gun_D9CTM_ChargeRifles_Mounted</turretGunDef>
 			<turretBurstCooldownTime>3.2</turretBurstCooldownTime>
-			<turretTopGraphicPath>Things/Item/ChargeRifles</turretTopGraphicPath>
+			<!--turretTopGraphicPath>Things/Item/ChargeRifles</turretTopGraphicPath-->
 		</building>
 		<placeWorkers>
 		  <li>PlaceWorker_TurretTop</li>
@@ -77,7 +77,7 @@
 		  <li>D9CTM_ChargeTurrets</li>
 		</researchPrerequisites>
 	</ThingDef>
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseGun">
     <defName>Gun_D9CTM_ChargeRifles_Mounted</defName>
     <label>twin-linked charge rifles (mounted)</label>
     <description>two twin-linked charge rifles, optimized for a high rate of fire. Unfortunately, the overcharged barrels produce less coherent plasma, reducing range.</description>
@@ -173,7 +173,7 @@
 		</stuffCategories>
 		<costStuffCount>70</costStuffCount>
 		<costList>
-		  <D9VanometricCell>2</D9VanometricCell>
+		  <D9CTM_VanometricCell>2</D9CTM_VanometricCell>
 		  <AIPersonaFragment>1</AIPersonaFragment>
 		  <Gun_ChargeLance>1</Gun_ChargeLance>
 		</costList>
@@ -183,9 +183,9 @@
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<building>
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>Gun_ChargeLance_Mounted</turretGunDef>
+			<turretGunDef>Gun_D9CTM_ChargeLance_Mounted</turretGunDef>
 			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
-			<turretTopGraphicPath>Things/Item/ChargeLanceMounted</turretTopGraphicPath>
+			<!--turretTopGraphicPath>Things/Item/ChargeLanceMounted</turretTopGraphicPath-->
 		</building>
 		<placeWorkers>
 		  <li>PlaceWorker_TurretTop</li>
@@ -195,7 +195,7 @@
 		  <li>D9CTM_ChargeTurrets</li>
 		</researchPrerequisites>
 	</ThingDef>
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseGun">
     <defName>Gun_D9CTM_ChargeLance_Mounted</defName>
     <label>charge lance (mounted)</label>
     <description>A pulse-charged rail-assisted lance weapon. It fires a single shot at high velocity, charging it with unstable energy as it leaves the acceleration rail.\n\nBecause it's mounted, it fires more accurately and somewhat more quickly.</description>

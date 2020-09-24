@@ -68,7 +68,6 @@
 			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 			<autoRefuelPercent>1</autoRefuelPercent>
 			<showFuelGizmo>true</showFuelGizmo>
-			<showFuelGizmo>true</showFuelGizmo>
 			<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
 			<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
 			<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
@@ -87,7 +86,7 @@
 	</ThingDef>
 	<!--===== Satellite Pods =====-->
 	<ThingDef ParentName="D9CTM_BasePod">
-		<defName>D9SatelliteBombardment</defName>
+		<defName>D9CTM_OrbitalBombardmentSatellite</defName>
 		<label>orbital bombardment satellite</label>
 		<description>A launchable satellite containing a manually-targeted "rods from god" bombardment system. Only active for one use before the firing exhausts the satellite's ammo and pushes it out of its orbit.</description>
 		<graphicData>
@@ -114,8 +113,8 @@
 			<li>D9CTM_OrbitalMechanics</li>
 		</researchPrerequisites>
 	</ThingDef>
-	<ThingDef ParentName="D9SatelliteBase">
-		<defName>D9SatellitePower</defName>
+	<ThingDef ParentName="D9CTM_BasePod">
+		<defName>D9CTM_OrbitalPowerSatellite</defName>
 		<label>orbital power satellite</label>
 		<description>A launchable satellite which forms a solar collection system in orbit, producing consistent power which can be collected on the ground. The system may be targeted elsewhere, but this would burn out the satellite's power exchangers and render it unusable.</description>
 		<graphicData>

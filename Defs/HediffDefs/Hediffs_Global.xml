@@ -37,25 +37,4 @@
 		  </li>
 		</stages>
 	</HediffDef>
-	<HediffDef Name="D9CTM_ApparelHediff" Abstract="True">
-		<isBad>false</isBad>
-		<initialSeverity>1</initialSeverity>
-		<makesAlert>false</makesAlert>
-		<scenarioCanAdd>false</scenarioCanAdd>
-		<comps>
-			<!-- From defaults: will use initialSeverity for the severity, removed when unworn, counts apparel as applying iff they apply this hediff in the first place, distributed rare ticks -->
-			<li Class="D9Framework.HediffCompProps_SeverityFromApparel"/>
-		</comps>
-	</HediffDef>
-	<HediffDef ParentName="D9CTM_HiddenBonus">
-		<defName>D9CTM_HealingRateBonus</defName>
-		<label>healing rate bonus</label>
-		<description>The healing rate bonus from a worn healing belt.</description>		
-		<stages>
-			<li>
-				<totalBleedFactor>0.9</totalBleedFactor>
-				<naturalHealingFactor>1.5</naturalHealingFactor>
-			</li>
-		</stages>
-	</HediffDef>
 </Defs>
