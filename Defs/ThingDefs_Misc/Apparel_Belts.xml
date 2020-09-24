@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef Name="D9CTM_BeltBase" ParentName="ApparelBase">
+  <ThingDef Name="D9CTM_BeltBase" ParentName="ApparelBase" Abstract="True">
 	<tickerType>Normal</tickerType>
 	<statBases>
 		<Mass>3</Mass>

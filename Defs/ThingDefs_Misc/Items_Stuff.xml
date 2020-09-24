@@ -53,7 +53,7 @@
       <StuffPower_Armor_Heat>2</StuffPower_Armor_Heat>
       <StuffPower_Insulation_Cold>0</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>0.1</StuffPower_Insulation_Heat>
-	  <StuffPower_PsychicSensivity>-0.25</StuffPower_PsychicSensivity>
+	  <StuffPower_D9CTM_PsychicSensivity>-0.25</StuffPower_D9CTM_PsychicSensivity>
 	  <StuffEffectMultiplierPsychicSensitivity>1.5</StuffEffectMultiplierPsychicSensitivity>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>2</MarketValue>
@@ -100,7 +100,7 @@
         <StuffPower_Armor_Heat>3.1</StuffPower_Armor_Heat>
         <StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
         <StuffPower_Insulation_Heat>33</StuffPower_Insulation_Heat>
-	    <StuffPower_PsychicSensivity>-0.1</StuffPower_PsychicSensivity>
+	    <StuffPower_D9CTM_PsychicSensivity>-0.1</StuffPower_D9CTM_PsychicSensivity>
 	</statBases>
 	<burnableByRecipe>false</burnableByRecipe>
     <healthAffectsPrice>false</healthAffectsPrice>

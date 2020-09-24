@@ -15,7 +15,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>D9CTM_HealingFoam</li>
+            <li>D9CTM_HealingFoamInjector</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -23,7 +23,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>D9CTM_HealingFoam</li>
+        <li>D9CTM_HealingFoamInjector</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

@@ -17,7 +17,7 @@
 			<useDuration>600</useDuration>
 		  </li>
 		  <li Class="D9CTM.CompProperties_UseEffectTendAllWounds">
-			<filthDef>Filth_D9_HealingFoam</filthDef>
+			<filthDef>Filth_D9CTM_HealingFoam</filthDef>
 			<filthAmount>3~5</filthAmount>
 			<tendQuality>0.85~1.1</tendQuality>
 		  </li>
@@ -63,7 +63,7 @@
 			<useDuration>400</useDuration>
 		  </li>
 		  <li Class="D9CTM.CompProperties_UseEffectImmunizeAll">
-			<comaHediff>D9NaniteComa</comaHediff>
+			<comaHediff>D9CTM_NaniteComa</comaHediff>
 		  </li>
 		  <li Class="CompProperties_UseEffect">
 			<compClass>CompUseEffect_DestroySelf</compClass>

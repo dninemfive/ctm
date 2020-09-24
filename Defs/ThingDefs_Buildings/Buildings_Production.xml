@@ -260,7 +260,7 @@
 		</placeWorkers>
     </ThingDef>
 	<ThingDef ParentName="BenchBase">
-    <defName>D9CTM_TableFleshPrinter</defName>
+		<defName>D9CTM_TableFleshPrinter</defName>
 		<label>flesh printer</label>
 		<description>A workstation featuring a growth vat and bioprinter capable of producing any organic chemical from biomass and printing them into biological structures.</description>
 		<thingClass>Building_WorkTable_HeatPush</thingClass>
