@@ -87,4 +87,33 @@
     </tradeTags>
 	<!-- idea: EMP explosion when destroyed? ideally, somehow EMP + antigrain -->
   </ThingDef>  
+  <ThingDef ParentName="ResourceBase">
+    <defName>D9CTM_NanoForge</defName>
+    <label>nano forge</label>
+    <description>An incredibly advanced ultratech device necessary for producing and manipulating nanites. Despite their expense, nano forges' use in colony ships mean they're not uncommon, even on rimworlds.</description>
+    <graphicData>
+      <texPath>Things/Item/Nanoforge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>4200</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>All</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
 </Defs>

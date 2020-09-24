@@ -77,7 +77,7 @@
 		<ComponentIndustrial>3</ComponentIndustrial>
 		<Plasteel>30</Plasteel>
 		<Steel>50</Steel>
-		<AIPersonaFragment>1</AIPersonaFragment>
+		<D9CTM_AIFragment>1</D9CTM_AIFragment>
 	</costList>
 	<recipeMaker>
 		<researchPrerequisite>D9CTM_RangedShieldBelts</researchPrerequisite>		

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<StatDef>
-		<defName>D9CTM_StuffEffectMultiplierPsychicSensitivity</defName>
+		<defName>StuffEffectMultiplier_D9CTM_PsychicSensitivity</defName>
 		<label>Psychic Sensitivity - Material effect multiplier</label>
 		<category>Apparel</category>
 		<defaultBaseValue>1</defaultBaseValue>
@@ -32,7 +32,7 @@
 		  <li Class="StatPart_Stuff">
 			<priority>100</priority>
 			<stuffPowerStat>StuffPower_D9CTM_PsychicSensivity</stuffPowerStat>
-			<multiplierStat>D9CTM_StuffEffectMultiplierPsychicSensitivity</multiplierStat>
+			<multiplierStat>StuffEffectMultiplier_D9CTM_PsychicSensitivity</multiplierStat>
 		  </li>
 		  <li Class="D9CTM.StatPart_MultiplyByOffset">
 			<stat>PsychicSensitivity</stat>

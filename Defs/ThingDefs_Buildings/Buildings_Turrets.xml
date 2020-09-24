@@ -55,7 +55,7 @@
 		<costStuffCount>70</costStuffCount>
 		<costList>
 		  <D9CTM_VanometricCell>4</D9CTM_VanometricCell>
-		  <AIPersonaFragment>1</AIPersonaFragment>
+		  <D9CTM_AIFragment>1</D9CTM_AIFragment>
 		  <Plasteel>80</Plasteel>
 		  <ComponentSpacer>3</ComponentSpacer>
 		</costList>
@@ -174,7 +174,7 @@
 		<costStuffCount>70</costStuffCount>
 		<costList>
 		  <D9CTM_VanometricCell>2</D9CTM_VanometricCell>
-		  <AIPersonaFragment>1</AIPersonaFragment>
+		  <D9CTM_AIFragment>1</D9CTM_AIFragment>
 		  <Gun_ChargeLance>1</Gun_ChargeLance>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>

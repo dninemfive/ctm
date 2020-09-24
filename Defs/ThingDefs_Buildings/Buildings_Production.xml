@@ -190,7 +190,7 @@
 		<staticSunShadowHeight>0.20</staticSunShadowHeight>
 		<costList>
 		  <Plasteel>150</Plasteel>
-		  <D9NanoForge>1</D9NanoForge>
+		  <D9CTM_NanoForge>1</D9CTM_NanoForge>
 		  <ComponentSpacer>3</ComponentSpacer>
 		</costList>
 		<altitudeLayer>Building</altitudeLayer>

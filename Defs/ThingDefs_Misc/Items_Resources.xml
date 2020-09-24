@@ -34,6 +34,7 @@
 		<soundInteract>Standard_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
+		<tickerType>Rare</tickerType>
 		<statBases>
 		  <MarketValue>3.3</MarketValue>
 		  <Mass>0.08</Mass>

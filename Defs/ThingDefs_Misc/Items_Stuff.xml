@@ -54,7 +54,7 @@
       <StuffPower_Insulation_Cold>0</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>0.1</StuffPower_Insulation_Heat>
 	  <StuffPower_D9CTM_PsychicSensivity>-0.25</StuffPower_D9CTM_PsychicSensivity>
-	  <StuffEffectMultiplierPsychicSensitivity>1.5</StuffEffectMultiplierPsychicSensitivity>
+	  <StuffEffectMultiplier_D9CTM_PsychicSensitivity>1.5</StuffEffectMultiplier_D9CTM_PsychicSensitivity>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>2</MarketValue>
       <Mass>0.5</Mass>
@@ -196,6 +196,7 @@
   </ThingDef>
   <ThingDef ParentName="ResourceBase"> <!-- Not based on stone blocks for various reasons, but some values copied from and all balanced around those defs -->
 	<defName>D9CTM_BlocksAerocrete</defName>
+	<label>aerocrete blocks</label>
 	<description>Blocks formed from a rocky material composed of pseudoliving calciferous nanostructures. They arrange themselves into a light, airy, and not particularly strong, but quite long-lasting material.\n\nAny damage to the structure is self-repaired over time.</description>
 	<graphicData>
       <texPath>Things/Item/Resource/StoneBlocks</texPath>
@@ -211,6 +212,7 @@
       <BluntDamageMultiplier>0.6</BluntDamageMultiplier>
       <Beauty>-12</Beauty>
       <ConstructionSpeedFactor>0.8</ConstructionSpeedFactor>
+	  <Mass>0.5</Mass>
     </statBases>
 	<thingCategories>
       <li>StoneBlocks</li>
