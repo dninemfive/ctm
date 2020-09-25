@@ -15,6 +15,7 @@ namespace D9CTM
     /// 
     /// Intended for use by Apparel_PsychicSensitivity, so that Psychic Foil works as intended (i.e. increases psychic sensitivity if the apparel in question should do so, and otherwise reduces it)
     /// </summary>
+    /// <remarks>Might make it just multiply by the sign of the offset in the future.</remarks>
     public class StatPart_MultiplyByOffset : StatPart
     {
 # pragma warning disable CS0649
@@ -47,8 +48,9 @@ namespace D9CTM
     /// <summary>
     /// Multiplies the stat if the parent thing is an item of clothing worn on specified body parts.
     /// 
-    /// If the apparel covers multiple conflicting body part groups, the chosen multiplier is the one with the greatest abs(1-modifier)
+    /// If the apparel covers multiple conflicting body part groups, the chosen multiplier is the one with the greatest abs(1-modifier)    /// 
     /// </summary>
+    /// <remarks>Ignores any apparel with the parent stat explicitly set, e.g. Royalty clothing with PsychicSensitivityOffset, because that's already being factored in</remarks>
     public class StatPart_BodyPartGroupMultiplier : StatPart
     {
 #pragma warning disable CS0649
@@ -108,7 +110,7 @@ namespace D9CTM
 
         public override void TransformValue(StatRequest req, ref float val)
         {
-            if (!req.HasThing) return;
+            if (!req.HasThing || req.Thing.def.equippedStatOffsets.Any(x => x.stat == parentStat)) return;
             val *= GetBestMultiplier(req.Thing.def);
         }
         
