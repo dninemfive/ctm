@@ -2,95 +2,98 @@
 <Patch>
 	<!-- check if Royalty is installed -->
 	<Operation Class="D9Framework.PatchOperationFindPackage">
-		<packageId>Ludeon.RimWorld.Royalty</packageId>
+		<packageIds><li>Ludeon.RimWorld.Royalty</li></packageIds>
 		<match Class="PatchOperationSequence">
 			<!--==== Add Royalty-specific techs ====-->
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs</xpath>
-				<value>
-					<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
-						<defName>D9CTM_ChargedMelee</defName>
-						<label>charged melee weapons</label>
-						<description>Develop technology to make use of vanometric cells to energize melee weapons.</description>
-						<baseCost>1200</baseCost>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+							<defName>D9CTM_ChargedMelee</defName>
+							<label>charged melee weapons</label>
+							<description>Develop technology to make use of vanometric cells to energize melee weapons.</description>
+							<baseCost>1200</baseCost>
+							<techprintCount>1</techprintCount>
+							<techprintCommonality>1</techprintCommonality>
+							<techprintMarketValue>1000</techprintMarketValue>
+							<heldByFactionCategoryTags>
+								<li>Empire</li>
+								<li>Exiled_Dawn</li>
+							</heldByFactionCategoryTags> 
+							<prerequisites>
+							  <li>LongBlades</li>
+							  <li>ChargedShot</li>
+							</prerequisites>
+						</ResearchProjectDef>
+						<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+							<defName>D9CTM_Bladelinking</defName>
+							<label>bladelinking</label>
+							<description>Learn the secrets of bladelinking, a technique which leverages personas to produce powerfully intuitive weapons.</description>
+							<baseCost>3200</baseCost>
+							<techLevel>Ultra</techLevel>
+							<techprintCount>1</techprintCount>
+							<techprintCommonality>1</techprintCommonality>
+							<techprintMarketValue>1000</techprintMarketValue>
+							<heldByFactionCategoryTags>
+								<li>Empire</li>
+								<li>Exiled_Dawn</li>
+							</heldByFactionCategoryTags> 
+							<prerequisites>
+							  <li>D9CTM_PsychicTheory</li>
+							  <li>LongBlades</li>
+							</prerequisites>
+						</ResearchProjectDef>
+						<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+							<defName>D9CTM_Psyfocusing</defName>
+							<label>psyfocusing</label>
+							<description>Further develop psychic theory, discovering ways to concentrate rather than dissipate psychic power.</description>
+							<baseCost>1600</baseCost>
+							<techLevel>Ultra</techLevel>
+							<techprintCount>1</techprintCount>
+							<techprintCommonality>1</techprintCommonality>
+							<techprintMarketValue>500</techprintMarketValue>
+							<heldByFactionCategoryTags>
+								<li>Empire</li>
+								<li>Exiled_Dawn</li>
+							</heldByFactionCategoryTags> 
+							<prerequisites>
+							  <li>D9CTM_PsychicTheory</li>
+							</prerequisites>
+						</ResearchProjectDef>
+					</value>
+				</li>
+				<!-- TODO: add recipes for Zeushammer, Plasma Sword, Monoblade here -->
+				<!--==== Give appropriate techs techprints ====-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ResearchProjectDef[defName="D9CTM_ChargeTurrets" or defName="D9CTM_Simpods" or defName="D9CTM_Hyperweave" or defName="D9CTM_VanometricBattery" or defName="D9CTM_NaniteBiomanipulation"]</xpath>
+					<value>
 						<techprintCount>1</techprintCount>
-						<techprintCommonality>1</techprintCommonality>
+						<techprintCommonality>0.95</techprintCommonality>
 						<techprintMarketValue>1000</techprintMarketValue>
+						<!-- TODO: remove the Empire tag when any relevant faction mod is installed -->
+						<!-- Also, patch the relevant methods to allow appropriate orbital traders to hold techprints -->
 						<heldByFactionCategoryTags>
 							<li>Empire</li>
 							<li>Exiled_Dawn</li>
 						</heldByFactionCategoryTags> 
-						<prerequisites>
-						  <li>LongBlades</li>
-						  <li>ChargedShot</li>
-						</prerequisites>
-					</ResearchProjectDef>
-					<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
-						<defName>D9CTM_Bladelinking</defName>
-						<label>bladelinking</label>
-						<description>Learn the secrets of bladelinking, a technique which leverages personas to produce powerfully intuitive weapons.</description>
-						<baseCost>3200</baseCost>
-						<techLevel>Ultra</techLevel>
-						<techprintCount>1</techprintCount>
-						<techprintCommonality>1</techprintCommonality>
-						<techprintMarketValue>1000</techprintMarketValue>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ResearchProjectDef[defName="D9CTM_Luciferium"]</xpath>
+					<value>
+						<techprintCount>3</techprintCount>
+						<techprintCommonality>0.5</techprintCommonality>
+						<techprintMarketValue>1337</techprintMarketValue>
+						<!-- TODO: remove the Empire tag when any relevant faction mod is installed -->
+						<!-- Also, patch the relevant methods to allow appropriate orbital traders to hold techprints -->
 						<heldByFactionCategoryTags>
 							<li>Empire</li>
 							<li>Exiled_Dawn</li>
 						</heldByFactionCategoryTags> 
-						<prerequisites>
-						  <li>D9CTM_PsychicTheory</li>
-						  <li>LongBlades</li>
-						</prerequisites>
-					</ResearchProjectDef>
-					<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
-						<defName>D9CTM_Psyfocusing</defName>
-						<label>psyfocusing</label>
-						<description>Further develop psychic theory, discovering ways to concentrate rather than dissipate psychic power.</description>
-						<baseCost>1600</baseCost>
-						<techLevel>Ultra</techLevel>
-						<techprintCount>1</techprintCount>
-						<techprintCommonality>1</techprintCommonality>
-						<techprintMarketValue>500</techprintMarketValue>
-						<heldByFactionCategoryTags>
-							<li>Empire</li>
-							<li>Exiled_Dawn</li>
-						</heldByFactionCategoryTags> 
-						<prerequisites>
-						  <li>D9CTM_PsychicTheory</li>
-						</prerequisites>
-					</ResearchProjectDef>
-			</li>
-			<!-- TODO: add recipes for Zeushammer, Plasma Sword, Monoblade here -->
-			<!--==== Give appropriate techs techprints ====-->
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/ResearchProjectDef[defName="D9CTM_ChargeTurrets" or defName="D9CTM_Simpods" or defName="D9CTM_Hyperweave" or defName="D9CTM_VanometricBattery" or defName="D9CTM_NaniteBiomanipulation"]</xpath>
-				<value>
-					<techprintCount>1</techprintCount>
-					<techprintCommonality>0.95</techprintCommonality>
-					<techprintMarketValue>1000</techprintMarketValue>
-					<!-- TODO: remove the Empire tag when any relevant faction mod is installed -->
-					<!-- Also, patch the relevant methods to allow appropriate orbital traders to hold techprints -->
-					<heldByFactionCategoryTags>
-						<li>Empire</li>
-						<li>Exiled_Dawn</li>
-					</heldByFactionCategoryTags> 
-				</value>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/ResearchProjectDef[defName="D9CTM_Luciferium"]</xpath>
-				<value>
-					<techprintCount>3</techprintCount>
-					<techprintCommonality>0.5</techprintCommonality>
-					<techprintMarketValue>1337</techprintMarketValue>
-					<!-- TODO: remove the Empire tag when any relevant faction mod is installed -->
-					<!-- Also, patch the relevant methods to allow appropriate orbital traders to hold techprints -->
-					<heldByFactionCategoryTags>
-						<li>Empire</li>
-						<li>Exiled_Dawn</li>
-					</heldByFactionCategoryTags> 
-				</value>
-			</li>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 </Patch>

@@ -5,7 +5,8 @@
 -->
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[@Name="BaseWeapon" or @Name="ApparelBase"]/tickerType</xpath>
+		<!-- TODO: specifically limit to stuffed weapons and apparel -->
+		<xpath>/Defs/ThingDef[@Name="BaseWeapon" or @Name="ApparelBase"]/tickerType</xpath>
 		<value><tickerType>Normal</tickerType></value>
 	</Operation>
 </Patch>

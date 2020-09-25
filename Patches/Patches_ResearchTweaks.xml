@@ -17,9 +17,9 @@
 	</Operation>
 	<!-- Recon Armor requires Exoskeleton -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ResearchProjectDef[defName="BionicReplacements"]</xpath>
+		<xpath>/Defs/ResearchProjectDef[defName="Bionics"]/hiddenPrerequisites</xpath>
 		<value>
-			<hiddenPrerequisites><li>D9CTM_ExoskeletonBelts</li></hiddenPrerequisites>
+			<li>D9CTM_ExoskeletonBelts</li>
 		</value>
 	</Operation>
 </Patch>

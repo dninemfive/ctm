@@ -2,6 +2,7 @@
 <Patch>
 	<!-- Add synthmilk to any (modded) recipes which specifically require milk, e.g. cheese recipes -->
 	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
 		<xpath>/Defs/RecipeDef//filter/thingDefs/li[text()="Milk"]/..</xpath>
 		<value><li>D9CTM_Synthmilk</li></value>
 	</Operation>
