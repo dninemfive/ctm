@@ -17,7 +17,7 @@
 		<hideAtValue>0</hideAtValue>
 		<toStringStyle>PercentZero</toStringStyle>
     </StatDef>
-	<StatDef>
+	<!--StatDef>
 		<defName>Apparel_D9CTM_PsychicSensitivity</defName>
 		<label>psychic sensitivity modifier</label>
 		<description>How much this apparel changes the wearer's psychic sensitivity.</description>
@@ -63,5 +63,5 @@
 			</multipliers>
 		  </li>
 		</parts>
-	</StatDef>	
+	</StatDef-->	
 </Defs>

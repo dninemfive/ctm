@@ -4,14 +4,52 @@
 		StatPart_ApparelOffset for psychic foil stuff
 		new StatPart for psychic sensitivity returning 0 when near a null field projector
 	-->
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/StatDef[defName="PsychicSensitivity"]</xpath>
+	<!-- NOTE: this breaks compatibility with 1.1, since PsychicSensitivity didn't have parts previously iirc -->
+	<!--Operation Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[defName="PsychicSensitivity"]/parts</xpath>
 		<value>
-			<parts>
-			  <li Class="StatPart_ApparelStatOffset">
-				<apparelStat>Apparel_PsychicSensitivity</apparelStat>
-			  </li>
-			</parts>
+		  <li Class="StatPart_ApparelStatOffset">
+			<apparelStat>Apparel_PsychicSensitivity</apparelStat>
+		  </li>
 		</value>
+	</Operation-->
+	<!-- PsychicSensitivityOffset is literally my Apparel_D9CTM_PsychicSensitivity stat lmao
+	     rip Awful apparel having inverted psychic effects -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[defName="PsychicSensitivityOffset"]/parts</xpath>
+		<order>Prepend</order>
+		<value>
+		  <!-- Multiplies/adds stuff values from base value, if relevant -->
+		  <li Class="StatPart_Stuff">
+			<priority>100</priority>
+			<stuffPowerStat>StuffPower_D9CTM_PsychicSensivity</stuffPowerStat>
+			<multiplierStat>StuffEffectMultiplier_D9CTM_PsychicSensitivity</multiplierStat>
+		  </li>
+		  <!-- Multiplies by psychic sensitivity statOffset, for mod compatibility -->
+		  <li Class="D9CTM.StatPart_MultiplyByOffset">
+			<stat>PsychicSensitivity</stat>
+		  </li>
+	    </value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[defName="PsychicSensitivityOffset"]/parts</xpath>
+		<value>
+		  <!-- Multiplies by body part if clothing and PsychicSensitivityOffset isn't explicitly set -->
+		  <li Class="D9CTM.StatPart_BodyPartGroupMultiplier">
+			<default>1</default>
+			<multipliers>
+				<FullHead>1.4</FullHead>
+				<UpperHead>1.2</UpperHead>
+				<Arms>0.9</Arms>
+				<Shoulders>0.9</Shoulders>
+				<Hands>0.9</Hands>
+				<LeftHand>0.8</LeftHand>
+				<RightHand>0.8</RightHand>
+				<MiddleFingers>0.5</MiddleFingers>
+				<Legs>0.75</Legs>
+				<Feet>0.6</Feet>
+			</multipliers>
+		  </li>
+	    </value>
 	</Operation>
 </Patch>
