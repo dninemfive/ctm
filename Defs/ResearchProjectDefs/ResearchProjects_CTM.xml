@@ -92,7 +92,7 @@
 	</ResearchProjectDef>
 	<!-- Deep-Space Mining goes here -->
 	<!--==== Materials Science and techs requiring it ====-->
-	<ResearchProjectDef ParentName="D9CTM_BaseTech_Spcr">
+	<ResearchProjectDef ParentName="D9CTM_BaseTech_Ind">
 		<defName>D9CTM_MaterialsScience</defName>
 		<label>materials science</label>
 		<description>Discover advanced matter-manipulation techniques allowing the construction of a Matterweaver and basic matter-woven materials, such as Synthread.</description>

@@ -126,6 +126,18 @@
 	  <MeleeDodgeChance>5</MeleeDodgeChance> <!-- Nimble is +15, but movement affects this so I don't want to risk stacking too much -->
 	  <ShootingAccuracyPawn>3</ShootingAccuracyPawn> <!-- Careful Shooter is +5, but this doesn't have the shooting speed penalty -->
     </equippedStatOffsets>
+	<!--comps>
+		<li Class="CompProperties_Reloadable">
+			<maxCharges>5</maxCharges>
+			<ammoDef>Chemfuel</ammoDef>
+			<ammoCountPerCharge>20</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>jump</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		</li>
+	</comps-->
   </ThingDef>
   <ThingDef ParentName="D9CTM_BeltBase">
     <defName>Apparel_D9CTM_ExoskeletonBelt_Work</defName>
